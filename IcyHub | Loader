@@ -4,7 +4,6 @@ local IcedHubUI = {}
 -- Services
 local TweenService = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")
-local RunService = game:GetService("RunService")
 
 -- Utility Functions
 local function createGradient(frame, color1, color2)
@@ -48,7 +47,7 @@ function IcedHubUI:CreateWindow(config)
     ScreenGui.Name = "IcedHub"
     ScreenGui.ResetOnSpawn = false
     ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-    ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
+    ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
     local MainFrame = Instance.new("Frame")
     MainFrame.Size = UDim2.new(0, 500, 0, 400)
@@ -151,11 +150,13 @@ function IcedHubUI:CreateWindow(config)
     end)
 
     -- Tab System
-    local TabContainer = Instance.new("Frame")
+    local TabContainer = Instance.new("ScrollingFrame")
     TabContainer.Size = UDim2.new(0, 150, 1, -50)
     TabContainer.Position = UDim2.new(0, 0, 0, 50)
     TabContainer.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
     TabContainer.BorderSizePixel = 0
+    TabContainer.ScrollBarThickness = 0
+    TabContainer.CanvasSize = UDim2.new(0, 0, 0, 0)
     TabContainer.Parent = MainFrame
 
     createGradient(TabContainer)
@@ -164,16 +165,8 @@ function IcedHubUI:CreateWindow(config)
     TabListLayout.SortOrder = Enum.SortOrder.LayoutOrder
     TabListLayout.Padding = UDim.new(0, 5)
     TabListLayout.Parent = TabContainer
-
-    local TabScroll = Instance.new("ScrollingFrame")
-    TabScroll.Size = UDim2.new(1, 0, 1, 0)
-    TabScroll.BackgroundTransparency = 1
-    TabScroll.BorderSizePixel = 0
-    TabScroll.ScrollBarThickness = 0
-    TabScroll.CanvasSize = UDim2.new(0, 0, 0, 0)
-    TabScroll.Parent = TabContainer
-    TabScroll.ChildAdded:Connect(function()
-        TabScroll.CanvasSize = UDim2.new(0, 0, 0, TabListLayout.AbsoluteContentSize.Y + 10)
+    TabListLayout.Changed:Connect(function()
+        TabContainer.CanvasSize = UDim2.new(0, 0, 0, TabListLayout.AbsoluteContentSize.Y + 10)
     end)
 
     local ContentFrame = Instance.new("ScrollingFrame")
@@ -198,7 +191,7 @@ function IcedHubUI:CreateWindow(config)
         TabButton.TextColor3 = Color3.fromRGB(150, 150, 150)
         TabButton.TextSize = 16
         TabButton.Font = Enum.Font.GothamBold
-        TabButton.Parent = TabScroll
+        TabButton.Parent = TabContainer
 
         local UICornerTab = Instance.new("UICorner")
         UICornerTab.CornerRadius = UDim.new(0, 6)
@@ -468,7 +461,7 @@ function IcedHubUI:CreateWindow(config)
             UICornerFill.Parent = Fill
 
             local dragging = false
-            SliderBar.Input cirrhosisBegan:Connect(function(input)
+            SliderBar.InputBegan:Connect(function(input)
                 if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
                     dragging = true
                 end
@@ -525,7 +518,7 @@ function IcedHubUI:CreateWindow(config)
     function UI:Notify(title, message)
         local Notification = Instance.new("Frame")
         Notification.Size = UDim2.new(0, 250, 0, 70)
-        Notification.Position = UDim2.new(1, -260, 1, -80)
+        Notification.Position = UDim2.new(1, 0, 1, -80)
         Notification.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
         Notification.Parent = ScreenGui
 
@@ -569,8 +562,11 @@ function IcedHubUI:CreateWindow(config)
     end
 
     function UI:Toggle()
-        MainFrame.Visible = not MainFrame.Visible
         if MainFrame.Visible then
+            TweenService:Create(MainFrame, TweenInfo.new(0.5, Enum.EasingStyle.Quad), {Size = UDim2.new(0, 0, 0, 0)}):Play()
+            task.delay(0.5, function() MainFrame.Visible = false end)
+        else
+            MainFrame.Visible = true
             TweenService:Create(MainFrame, TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Size = UDim2.new(0, 500, 0, 400)}):Play()
         end
     end
