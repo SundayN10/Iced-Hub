@@ -14,7 +14,7 @@ local ZoneFolder = workspace:FindFirstChild('zones')
 local LocalPlayerPawn = Players.LocalPlayer
 
 local Hint = Instance.new("Hint", game.CoreGui)
-Hint.Text = "Vixie | Waiting for game to load..."
+Hint.Text = "ICED HUB | Waiting for game to load..."
 
 
 LocalPlayerPawn.Idled:Connect(function()
@@ -23,17 +23,17 @@ LocalPlayerPawn.Idled:Connect(function()
 end)
 
 if WorldFolder == nil then
-    LocalPlayerPawn:Kick("[ICED HUB] Sorry but couldn't find world folder, Did Fisch have an update?")
+    LocalPlayerPawn:Kick("[ICEDHUB] Sorry but couldn't find world folder, Did Fisch have an update?")
     return
 end
 
 if ActiveFolder == nil then
-    LocalPlayerPawn:Kick("[ICED HUB] Sorry but couldn't find active folder, Did Fisch have an update?")
+    LocalPlayerPawn:Kick("[ICEDHUB] Sorry but couldn't find active folder, Did Fisch have an update?")
     return
 end
 
 if ZoneFolder == nil then
-    LocalPlayerPawn:Kick("[ICED HUB] Sorry but couldn't find zone folder, Did Fisch have an update?")
+    LocalPlayerPawn:Kick("[ICEDHUB] Sorry but couldn't find zone folder, Did Fisch have an update?")
     return
 end
 
@@ -48,12 +48,12 @@ local FishData = loadstring(game:HttpGet("https://raw.githubusercontent.com/Proj
 
 local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ProjektEta/Vixie.lua/refs/heads/main/Tools/Universal/UI.lua"))()
 local Window = lib:Window({
-    Name = "Vixie.lua",
-    Version = "<font color=\"#FFC0CB\">version: </font> keyless | v1.1"
+    Name = "IČ̣ed Hub",
+    Version = "<font color=\"#FFC0CB\">version: </font> 1 Hi Monke:3"
 })
 local pointers = Window.Flags 
 
-getgenv(). ICED_GLOBALS = {
+getgenv().ICED_GLOBALS = {
     getBait = function()
         local best, bvalue = nil, -math.huge
 
@@ -477,8 +477,8 @@ do -- client section
         Name = "Spoof Player Name",
         Callback = function()  
             LocalPlayerPawn.Character.HumanoidRootPart.user.level.Text = "BEST FREE SCRIPT"
-            LocalPlayerPawn.Character.HumanoidRootPart.user.user.Text = "VIXIE USER"
-            LocalPlayerPawn.Character.HumanoidRootPart.user.streak.Text = "VIXIE.LUA FREE"
+            LocalPlayerPawn.Character.HumanoidRootPart.user.user.Text = "ICED USER"
+            LocalPlayerPawn.Character.HumanoidRootPart.user.streak.Text = "ICED FREE"
             LocalPlayerPawn.Character.HumanoidRootPart.user.title.Text = "BEST FREE SCRIPT"
             LocalPlayerPawn.Character.HumanoidRootPart.user.fish:Destroy()
             LocalPlayerPawn.Character.HumanoidRootPart.user.fire:Destroy()  
@@ -692,8 +692,8 @@ do -- World
                 end
             end
 
-            Hint.Text = "Vixie | "..v.."'s Account is worth~: "..curValue.." C$"
-            print("Vixie | "..v.."'s Account is worth~: "..curValue.." C$")
+            Hint.Text = "ICED | "..v.."'s Account is worth~: "..curValue.." C$"
+            print("ICED | "..v.."'s Account is worth~: "..curValue.." C$")
 
         end
     })
@@ -883,7 +883,7 @@ local function mainLoop()
     end
 
     if pointers["autobait_enabled"] then
-        getgenv().VIXIE_GLOBALS.getBait()
+        getgenv().ICED_GLOBALS.getBait()
     end
 
     task.wait(1)
@@ -1071,7 +1071,7 @@ game.ReplicatedStorage.playerstats:FindFirstChild(LocalPlayerPawn.Name).Inventor
                 },
                 Body = game:GetService("HttpService"):JSONEncode({
                     ['embeds'] = {{
-                        ['title'] = "__**VIXIE AUTO FISHER**__",
+                        ['title'] = "__**ICED AUTO FISHER**__",
                         ['description'] = "You have caught a fish...",
                         ['type'] = "rich",
                         ['color'] = tonumber(0xffffff),
@@ -1090,11 +1090,11 @@ game.ReplicatedStorage.playerstats:FindFirstChild(LocalPlayerPawn.Name).Inventor
                             },
                             {
                                 ["name"] = "**ADVERTISEMENT**",
-                                ["value"] = "JOIN FEMSENSE NOW! https://discord.gg/x4RfPQZvs2"
+                                ["value"] = "JOIN ICEDHUB NOW! https://discord.gg/ad2UAxRT9B"
                             },
                         },
                         ['footer'] = {
-                            ['text'] = "Eta is best femboy ^^"
+                            ['text'] = "Sunnnnny ^^"
                         }
                     }}
                 })
