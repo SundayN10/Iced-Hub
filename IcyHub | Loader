@@ -1,4 +1,4 @@
--- IcedHub UI Framework (Luxware-Inspired, Max Effort)
+-- IcedHub UI Framework (Hybrid: Luxware, Linoria, Orion)
 local IcedHubUI = {}
 
 -- Services
@@ -10,8 +10,8 @@ local RunService = game:GetService("RunService")
 local function createGradient(frame, color1, color2)
     local UIGradient = Instance.new("UIGradient")
     UIGradient.Color = ColorSequence.new({
-        ColorSequenceKeypoint.new(0, color1 or Color3.fromRGB(25, 25, 25)),
-        ColorSequenceKeypoint.new(1, color2 or Color3.fromRGB(15, 15, 15))
+        ColorSequenceKeypoint.new(0, color1 or Color3.fromRGB(30, 30, 30)),
+        ColorSequenceKeypoint.new(1, color2 or Color3.fromRGB(20, 20, 20))
     })
     UIGradient.Parent = frame
 end
@@ -35,8 +35,8 @@ local function createGlow(frame)
     Glow.Position = UDim2.new(0, -10, 0, -10)
     Glow.BackgroundTransparency = 1
     Glow.Image = "rbxassetid://3570695787"
-    Glow.ImageColor3 = Color3.fromRGB(80, 120, 255)
-    Glow.ImageTransparency = 0.8
+    Glow.ImageColor3 = Color3.fromRGB(100, 150, 255)
+    Glow.ImageTransparency = 0.85
     Glow.ScaleType = Enum.ScaleType.Slice
     Glow.SliceCenter = Rect.new(100, 100, 100, 100)
     Glow.Parent = frame
@@ -53,7 +53,7 @@ function IcedHubUI:CreateWindow(config)
     local MainFrame = Instance.new("Frame")
     MainFrame.Size = UDim2.new(0, 500, 0, 400)
     MainFrame.Position = UDim2.new(0.5, -250, 0.5, -200)
-    MainFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+    MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
     MainFrame.BorderSizePixel = 0
     MainFrame.ClipsDescendants = true
     MainFrame.Parent = ScreenGui
@@ -67,29 +67,29 @@ function IcedHubUI:CreateWindow(config)
     UICorner.Parent = MainFrame
 
     local Wave = Instance.new("ImageLabel")
-    Wave.Size = UDim2.new(1, 0, 0.5, 0)
-    Wave.Position = UDim2.new(0, 0, 0.5, 0)
+    Wave.Size = UDim2.new(1, 0, 0.4, 0)
+    Wave.Position = UDim2.new(0, 0, 0.6, 0)
     Wave.BackgroundTransparency = 1
     Wave.Image = "rbxassetid://6087537285"
-    Wave.ImageColor3 = Color3.fromRGB(80, 120, 255)
-    Wave.ImageTransparency = 0.85
+    Wave.ImageColor3 = Color3.fromRGB(100, 150, 255)
+    Wave.ImageTransparency = 0.9
     Wave.ScaleType = Enum.ScaleType.Slice
     Wave.Parent = MainFrame
 
     local TitleBar = Instance.new("Frame")
     TitleBar.Size = UDim2.new(1, 0, 0, 50)
-    TitleBar.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    TitleBar.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
     TitleBar.BorderSizePixel = 0
     TitleBar.Parent = MainFrame
 
-    createGradient(TitleBar, Color3.fromRGB(20, 20, 20), Color3.fromRGB(10, 10, 10))
+    createGradient(TitleBar, Color3.fromRGB(25, 25, 25), Color3.fromRGB(15, 15, 15))
 
     local Title = Instance.new("TextLabel")
     Title.Size = UDim2.new(0.7, 0, 1, 0)
     Title.Position = UDim2.new(0, 15, 0, 0)
     Title.BackgroundTransparency = 1
     Title.Text = config.Title or "Iced Hub"
-    Title.TextColor3 = Color3.fromRGB(80, 120, 255)
+    Title.TextColor3 = Color3.fromRGB(100, 150, 255)
     Title.TextSize = 22
     Title.Font = Enum.Font.GothamBold
     Title.TextXAlignment = Enum.TextXAlignment.Left
@@ -151,28 +151,34 @@ function IcedHubUI:CreateWindow(config)
     end)
 
     -- Tab System
-    local TabContainer = Instance.new("ScrollingFrame")
-    TabContainer.Size = UDim2.new(0, 140, 1, -50)
+    local TabContainer = Instance.new("Frame")
+    TabContainer.Size = UDim2.new(0, 150, 1, -50)
     TabContainer.Position = UDim2.new(0, 0, 0, 50)
-    TabContainer.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    TabContainer.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
     TabContainer.BorderSizePixel = 0
-    TabContainer.ScrollBarThickness = 0
-    TabContainer.CanvasSize = UDim2.new(0, 0, 0, 0)
     TabContainer.Parent = MainFrame
 
     createGradient(TabContainer)
 
     local TabListLayout = Instance.new("UIListLayout")
     TabListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-    TabListLayout.Padding = UDim.new(0, 8)
+    TabListLayout.Padding = UDim.new(0, 5)
     TabListLayout.Parent = TabContainer
-    TabListLayout.Changed:Connect(function()
-        TabContainer.CanvasSize = UDim2.new(0, 0, 0, TabListLayout.AbsoluteContentSize.Y + 10)
+
+    local TabScroll = Instance.new("ScrollingFrame")
+    TabScroll.Size = UDim2.new(1, 0, 1, 0)
+    TabScroll.BackgroundTransparency = 1
+    TabScroll.BorderSizePixel = 0
+    TabScroll.ScrollBarThickness = 0
+    TabScroll.CanvasSize = UDim2.new(0, 0, 0, 0)
+    TabScroll.Parent = TabContainer
+    TabScroll.ChildAdded:Connect(function()
+        TabScroll.CanvasSize = UDim2.new(0, 0, 0, TabListLayout.AbsoluteContentSize.Y + 10)
     end)
 
     local ContentFrame = Instance.new("ScrollingFrame")
-    ContentFrame.Size = UDim2.new(1, -140, 1, -50)
-    ContentFrame.Position = UDim2.new(0, 140, 0, 50)
+    ContentFrame.Size = UDim2.new(1, -150, 1, -50)
+    ContentFrame.Position = UDim2.new(0, 150, 0, 50)
     ContentFrame.BackgroundTransparency = 1
     ContentFrame.BorderSizePixel = 0
     ContentFrame.ScrollBarThickness = 4
@@ -187,24 +193,20 @@ function IcedHubUI:CreateWindow(config)
     function UI:AddTab(name)
         local TabButton = Instance.new("TextButton")
         TabButton.Size = UDim2.new(1, -10, 0, 40)
-        TabButton.Position = UDim2.new(0, 5, 0, #Tabs * 48)
-        TabButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+        TabButton.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
         TabButton.Text = name
         TabButton.TextColor3 = Color3.fromRGB(150, 150, 150)
         TabButton.TextSize = 16
         TabButton.Font = Enum.Font.GothamBold
-        TabButton.Parent = TabContainer
+        TabButton.Parent = TabScroll
 
         local UICornerTab = Instance.new("UICorner")
         UICornerTab.CornerRadius = UDim.new(0, 6)
         UICornerTab.Parent = TabButton
 
-        local TabContent = Instance.new("ScrollingFrame")
+        local TabContent = Instance.new("Frame")
         TabContent.Size = UDim2.new(1, 0, 1, 0)
         TabContent.BackgroundTransparency = 1
-        TabContent.BorderSizePixel = 0
-        TabContent.ScrollBarThickness = 4
-        TabContent.CanvasSize = UDim2.new(0, 0, 0, 0)
         TabContent.Visible = false
         TabContent.Parent = ContentFrame
 
@@ -213,39 +215,36 @@ function IcedHubUI:CreateWindow(config)
         UIListLayout.Padding = UDim.new(0, 10)
         UIListLayout.Parent = TabContent
         UIListLayout.Changed:Connect(function()
-            TabContent.CanvasSize = UDim2.new(0, 0, 0, UIListLayout.AbsoluteContentSize.Y + 10)
+            ContentFrame.CanvasSize = UDim2.new(0, 0, 0, UIListLayout.AbsoluteContentSize.Y + 10)
         end)
 
         TabButton.MouseButton1Click:Connect(function()
             if CurrentTab then
                 CurrentTab.Button.TextColor3 = Color3.fromRGB(150, 150, 150)
-                CurrentTab.Button.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-                TweenService:Create(CurrentTab.Content, TweenInfo.new(0.3), {Position = UDim2.new(1, 0, 0, 0)}):Play()
-                task.delay(0.3, function() CurrentTab.Content.Visible = false end)
+                CurrentTab.Button.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+                CurrentTab.Content.Visible = false
             end
-            TabButton.TextColor3 = Color3.fromRGB(80, 120, 255)
-            TabButton.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+            TabButton.TextColor3 = Color3.fromRGB(100, 150, 255)
+            TabButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
             TabContent.Visible = true
-            TabContent.Position = UDim2.new(-1, 0, 0, 0)
-            TweenService:Create(TabContent, TweenInfo.new(0.3), {Position = UDim2.new(0, 0, 0, 0)}):Play()
             CurrentTab = {Button = TabButton, Content = TabContent}
         end)
 
         TabButton.MouseEnter:Connect(function()
             if CurrentTab ~= Tabs[#Tabs + 1] then
-                TweenService:Create(TabButton, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(40, 40, 40)}):Play()
+                TweenService:Create(TabButton, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(45, 45, 45)}):Play()
             end
         end)
         TabButton.MouseLeave:Connect(function()
             if CurrentTab ~= Tabs[#Tabs + 1] then
-                TweenService:Create(TabButton, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(30, 30, 30)}):Play()
+                TweenService:Create(TabButton, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(35, 35, 35)}):Play()
             end
         end)
 
         table.insert(Tabs, {Button = TabButton, Content = TabContent})
         if #Tabs == 1 then
-            TabButton.TextColor3 = Color3.fromRGB(80, 120, 255)
-            TabButton.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+            TabButton.TextColor3 = Color3.fromRGB(100, 150, 255)
+            TabButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
             TabContent.Visible = true
             CurrentTab = {Button = TabButton, Content = TabContent}
         end
@@ -262,7 +261,7 @@ function IcedHubUI:CreateWindow(config)
             SectionLabel.Size = UDim2.new(1, 0, 1, 0)
             SectionLabel.BackgroundTransparency = 1
             SectionLabel.Text = name
-            SectionLabel.TextColor3 = Color3.fromRGB(80, 120, 255)
+            SectionLabel.TextColor3 = Color3.fromRGB(100, 150, 255)
             SectionLabel.TextSize = 18
             SectionLabel.Font = Enum.Font.GothamBold
             SectionLabel.TextXAlignment = Enum.TextXAlignment.Left
@@ -272,7 +271,7 @@ function IcedHubUI:CreateWindow(config)
         function Tab:AddToggle(config)
             local ToggleFrame = Instance.new("Frame")
             ToggleFrame.Size = UDim2.new(1, -10, 0, 40)
-            ToggleFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+            ToggleFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
             ToggleFrame.Parent = TabContent
 
             createGradient(ToggleFrame)
@@ -295,7 +294,7 @@ function IcedHubUI:CreateWindow(config)
             local Toggle = Instance.new("Frame")
             Toggle.Size = UDim2.new(0, 50, 0, 25)
             Toggle.Position = UDim2.new(1, -60, 0.5, -12.5)
-            Toggle.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+            Toggle.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
             Toggle.Parent = ToggleFrame
 
             local UICornerToggle = Instance.new("UICorner")
@@ -305,7 +304,7 @@ function IcedHubUI:CreateWindow(config)
             local Knob = Instance.new("Frame")
             Knob.Size = UDim2.new(0, 20, 0, 20)
             Knob.Position = config.Default and UDim2.new(1, -25, 0.5, -10) or UDim2.new(0, 5, 0.5, -10)
-            Knob.BackgroundColor3 = config.Default and Color3.fromRGB(80, 120, 255) or Color3.fromRGB(100, 100, 100)
+            Knob.BackgroundColor3 = config.Default and Color3.fromRGB(100, 150, 255) or Color3.fromRGB(100, 100, 100)
             Knob.Parent = Toggle
 
             local UICornerKnob = Instance.new("UICorner")
@@ -318,7 +317,7 @@ function IcedHubUI:CreateWindow(config)
                     state = not state
                     TweenService:Create(Knob, TweenInfo.new(0.2), {
                         Position = state and UDim2.new(1, -25, 0.5, -10) or UDim2.new(0, 5, 0.5, -10),
-                        BackgroundColor3 = state and Color3.fromRGB(80, 120, 255) or Color3.fromRGB(100, 100, 100)
+                        BackgroundColor3 = state and Color3.fromRGB(100, 150, 255) or Color3.fromRGB(100, 100, 100)
                     }):Play()
                     if config.Callback then config.Callback(state) end
                 end
@@ -328,7 +327,7 @@ function IcedHubUI:CreateWindow(config)
         function Tab:AddDropdown(config)
             local DropdownFrame = Instance.new("Frame")
             DropdownFrame.Size = UDim2.new(1, -10, 0, 40)
-            DropdownFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+            DropdownFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
             DropdownFrame.Parent = TabContent
 
             createGradient(DropdownFrame)
@@ -351,7 +350,7 @@ function IcedHubUI:CreateWindow(config)
             local DropdownButton = Instance.new("TextButton")
             DropdownButton.Size = UDim2.new(0, 120, 0, 30)
             DropdownButton.Position = UDim2.new(1, -130, 0.5, -15)
-            DropdownButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+            DropdownButton.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
             DropdownButton.Text = config.Default or config.Options[1]
             DropdownButton.TextColor3 = Color3.fromRGB(200, 200, 200)
             DropdownButton.TextSize = 14
@@ -365,7 +364,7 @@ function IcedHubUI:CreateWindow(config)
             local OptionFrame = Instance.new("Frame")
             OptionFrame.Size = UDim2.new(0, 120, 0, 0)
             OptionFrame.Position = UDim2.new(1, -130, 0.5, 15)
-            OptionFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+            OptionFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
             OptionFrame.ClipsDescendants = true
             OptionFrame.Visible = false
             OptionFrame.Parent = DropdownFrame
@@ -395,7 +394,7 @@ function IcedHubUI:CreateWindow(config)
                 end)
 
                 OptionButton.MouseEnter:Connect(function()
-                    TweenService:Create(OptionButton, TweenInfo.new(0.1), {TextColor3 = Color3.fromRGB(80, 120, 255)}):Play()
+                    TweenService:Create(OptionButton, TweenInfo.new(0.1), {TextColor3 = Color3.fromRGB(100, 150, 255)}):Play()
                 end)
                 OptionButton.MouseLeave:Connect(function()
                     TweenService:Create(OptionButton, TweenInfo.new(0.1), {TextColor3 = Color3.fromRGB(200, 200, 200)}):Play()
@@ -419,7 +418,7 @@ function IcedHubUI:CreateWindow(config)
         function Tab:AddSlider(config)
             local SliderFrame = Instance.new("Frame")
             SliderFrame.Size = UDim2.new(1, -10, 0, 50)
-            SliderFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+            SliderFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
             SliderFrame.Parent = TabContent
 
             createGradient(SliderFrame)
@@ -452,7 +451,7 @@ function IcedHubUI:CreateWindow(config)
             local SliderBar = Instance.new("Frame")
             SliderBar.Size = UDim2.new(1, -20, 0, 8)
             SliderBar.Position = UDim2.new(0, 10, 0, 30)
-            SliderBar.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+            SliderBar.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
             SliderBar.Parent = SliderFrame
 
             local UICornerBar = Instance.new("UICorner")
@@ -461,7 +460,7 @@ function IcedHubUI:CreateWindow(config)
 
             local Fill = Instance.new("Frame")
             Fill.Size = UDim2.new((config.Default or config.Min - config.Min) / (config.Max - config.Min), 0, 1, 0)
-            Fill.BackgroundColor3 = Color3.fromRGB(80, 120, 255)
+            Fill.BackgroundColor3 = Color3.fromRGB(100, 150, 255)
             Fill.Parent = SliderBar
 
             local UICornerFill = Instance.new("UICorner")
@@ -469,7 +468,7 @@ function IcedHubUI:CreateWindow(config)
             UICornerFill.Parent = Fill
 
             local dragging = false
-            SliderBar.InputBegan:Connect(function(input)
+            SliderBar.Input cirrhosisBegan:Connect(function(input)
                 if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
                     dragging = true
                 end
@@ -497,7 +496,7 @@ function IcedHubUI:CreateWindow(config)
         function Tab:AddButton(config)
             local ButtonFrame = Instance.new("TextButton")
             ButtonFrame.Size = UDim2.new(1, -10, 0, 40)
-            ButtonFrame.BackgroundColor3 = Color3.fromRGB(80, 120, 255)
+            ButtonFrame.BackgroundColor3 = Color3.fromRGB(100, 150, 255)
             ButtonFrame.Text = config.Name
             ButtonFrame.TextColor3 = Color3.fromRGB(255, 255, 255)
             ButtonFrame.TextSize = 16
@@ -513,10 +512,10 @@ function IcedHubUI:CreateWindow(config)
             end)
 
             ButtonFrame.MouseEnter:Connect(function()
-                TweenService:Create(ButtonFrame, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(100, 140, 255)}):Play()
+                TweenService:Create(ButtonFrame, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(120, 170, 255)}):Play()
             end)
             ButtonFrame.MouseLeave:Connect(function()
-                TweenService:Create(ButtonFrame, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(80, 120, 255)}):Play()
+                TweenService:Create(ButtonFrame, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(100, 150, 255)}):Play()
             end)
         end
 
@@ -527,7 +526,7 @@ function IcedHubUI:CreateWindow(config)
         local Notification = Instance.new("Frame")
         Notification.Size = UDim2.new(0, 250, 0, 70)
         Notification.Position = UDim2.new(1, -260, 1, -80)
-        Notification.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+        Notification.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
         Notification.Parent = ScreenGui
 
         createGradient(Notification)
@@ -542,7 +541,7 @@ function IcedHubUI:CreateWindow(config)
         TitleLabel.Position = UDim2.new(0, 5, 0, 5)
         TitleLabel.BackgroundTransparency = 1
         TitleLabel.Text = title
-        TitleLabel.TextColor3 = Color3.fromRGB(80, 120, 255)
+        TitleLabel.TextColor3 = Color3.fromRGB(100, 150, 255)
         TitleLabel.TextSize = 16
         TitleLabel.Font = Enum.Font.GothamBold
         TitleLabel.TextXAlignment = Enum.TextXAlignment.Left
