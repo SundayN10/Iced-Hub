@@ -39,12 +39,12 @@ end
 
 local TpFolder = WorldFolder:WaitForChild("spawns"):WaitForChild("TpSpots") 
 local NpcFolder = WorldFolder:WaitForChild("npcs")
-local tp_locations = loadstring(game:HttpGet("https://raw.githubusercontent.com/ProjektEta/Vixie.lua/refs/heads/main/Tools/Fisch/TeleportAreas.lua"))()
-local worldevents =loadstring(game:HttpGet("https://raw.githubusercontent.com/ProjektEta/Vixie.lua/refs/heads/main/Tools/Fisch/WorldEvents.lua"))()
-local roddata = loadstring(game:HttpGet("https://raw.githubusercontent.com/ProjektEta/Vixie.lua/refs/heads/main/Tools/Fisch/RodData.lua"))()
-local baitdata = loadstring(game:HttpGet("https://raw.githubusercontent.com/ProjektEta/Vixie.lua/refs/heads/main/Tools/Fisch/BaitData.lua"))()
-local AppraisialData = loadstring(game:HttpGet("https://raw.githubusercontent.com/ProjektEta/Vixie.lua/refs/heads/main/Tools/Fisch/AppraisalData.lua"))()
-local FishData = loadstring(game:HttpGet("https://raw.githubusercontent.com/ProjektEta/Vixie.lua/refs/heads/main/Tools/Fisch/FishData.lua"))()
+local tp_locations = loadstring(game:HttpGet("https://raw.githubusercontent.com/SundayN10/Iced-Hub/refs/heads/main/Teleport.lua"))()
+local worldevents =loadstring(game:HttpGet("https://raw.githubusercontent.com/SundayN10/Iced-Hub/refs/heads/main/WorldEvents.lua"))()
+local roddata = loadstring(game:HttpGet("https://raw.githubusercontent.com/SundayN10/Iced-Hub/refs/heads/main/RodData.lua"))()
+local baitdata = loadstring(game:HttpGet("https://raw.githubusercontent.com/SundayN10/Iced-Hub/refs/heads/main/BaitData.lua"))()
+local AppraisialData = loadstring(game:HttpGet("https://raw.githubusercontent.com/SundayN10/Iced-Hub/refs/heads/main/ApraisalData.lua"))()
+local FishData = loadstring(game:HttpGet("https://raw.githubusercontent.com/SundayN10/Iced-Hub/refs/heads/main/FishData.lua"))()
 
 local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ProjektEta/Vixie.lua/refs/heads/main/Tools/Universal/UI.lua"))()
 local Window = lib:Window({
