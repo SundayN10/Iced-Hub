@@ -1,17 +1,517 @@
-⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢠⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⣸⣿⣧⡀⢀⣠⣤⣶⣶⣶⣶⣶⣦⣤⣀⠀⣠⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠈⣿⣿⣷⣜⣿⣿⣿⣿⣿⣿⣿⣿⣿⢏⣵⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠸⣿⣿⣿⡙⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⣼⣿⣿⡇⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢻⣿⣿⣷⣦⣀⣉⣽⣿⣿⣿⣿⣍⣁⣠⣾⣿⣿⣿⠁⠀⠀⠀⠀⣀⣀⡙⣷⣦⣄⠀⠀⠀
-⠀⠀⠀⣀⡀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⢀⣠⣴⣾⠿⠟⠛⢉⣿⡿⠿⢿⣦⡀
-⠀⢀⣴⠏⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⣅⣴⣿⡿⠟⠁⠀⠀⠀⠉⠁⠀⠀⠀⠀⠁
-⠀⣾⣿⠀⠀⠀⠀⠀⠀⠉⠛⠿⣿⣿⣿⣿⣿⡿⠟⠋⣹⣿⣿⡿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⢸⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣾⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠈⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣾⣿⣿⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠘⢿⣿⣿⣿⣷⣶⣤⣤⣴⣶⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠈⠙⠻⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+-- Iced Hub: Fisch Got Fucked by OG Sunny & J5stln
+
+-- Services
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
+local GuiService = game:GetService("GuiService")
+local VirtualInputManager = game:GetService("VirtualInputManager")
+local Workspace = game:GetService("Workspace")
+local TweenService = game:GetService("TweenService")
+local UserInputService = game:GetService("UserInputService")
+
+-- Prevent running on server
+if not RunService:IsClient() then return end
+
+-- Configuration
+local Config = {
+    Automation = {
+        autoCast = false, autoShake = false, autoReel = false, failReel = false,
+        autoSell = false, autoAppraise = false, walkOnWater = false, instantBobber = false,
+        selectedEnchantment = "None", autoreelType = "Legit", autoreelPChance = 50,
+        autoshakeDelay = 100, guiVisible = true
+    },
+    Settings = {
+        maxAutomationDuration = 3600, minWaitTime = 0.05
+    },
+    State = {
+        lastAction = tick(), connections = {}, uiDeathConn = false
+    }
+}
+
+-- Constants
+local LIBRARY_URL = "https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"
+local ENCHANTMENT_OPTIONS = {
+    "None", "Mythical", "Greedy", "Abyssal", "Fossilized", "Lunar", "Midas",
+    "Sparkling", "Shiny", "Glossy", "Silver", "Mosaic", "Hexed", "Electric",
+    "Scorched", "Darkened", "Translucent", "Frozen", "Negative", "Albino",
+    "Amber", "Giant", "Big"
+}
+local TELEPORT_LOCATIONS = {
+    ["Veil of Forsaken"] = CFrame.new(-1376, 50, -2778), ["Calm Zone"] = CFrame.new(-500, 50, -1500),
+    ["Alter"] = CFrame.new(100, 50, 200), ["Ancient Isle"] = CFrame.new(1200, 50, -3000),
+    ["The Arch"] = CFrame.new(0, 50, -2000), ["Atlantis"] = CFrame.new(-2000, 50, -4000),
+    ["Brine"] = CFrame.new(-3000, 50, 1000), ["Bunker"] = CFrame.new(1500, 50, 2500),
+    ["Camp 1"] = CFrame.new(500, 50, 1000), ["Camp 2"] = CFrame.new(700, 50, 1200),
+    ["Ancient Archives"] = CFrame.new(2000, 50, -1000), ["Desolate Pocket"] = CFrame.new(-2500, 50, -3500),
+    ["Glacial Gotto"] = CFrame.new(-1000, 50, 3000), ["Forsaken Shores"] = CFrame.new(3000, 50, -2000),
+    ["Keepers Secret"] = CFrame.new(2500, 50, 500), ["Grand Reef"] = CFrame.new(-1500, 50, -2500),
+    ["Kraken Puzzle"] = CFrame.new(-800, 50, -1800), ["Frigid Cavern"] = CFrame.new(1800, 50, 2800),
+    ["Sunstone Island"] = CFrame.new(800, 50, -500), ["Moosewood"] = CFrame.new(0, 50, 1500),
+    ["Mushgroove Swamp"] = CFrame.new(-1200, 50, 2000), ["Oilrig"] = CFrame.new(3500, 50, 0),
+    ["Poseidon Puzzle"] = CFrame.new(-1800, 50, -3200), ["Roslit"] = CFrame.new(1000, 50, 500),
+    ["Snowcap Island"] = CFrame.new(200, 50, 3000), ["Harvesters Spike"] = CFrame.new(2800, 50, -1500),
+    ["Statue of Sov"] = CFrame.new(-500, 50, 2500), ["Sunken Depths"] = CFrame.new(-3000, 50, -3000),
+    ["Terrapin Island"] = CFrame.new(1500, 50, -800), ["The Depths"] = CFrame.new(-4000, 50, -2000),
+    ["Trident Puzzle"] = CFrame.new(-600, 50, -2200), ["Vertigo"] = CFrame.new(2200, 50, 1000),
+    ["Volcano"] = CFrame.new(3000, 50, 2000), ["Upper Snowcap"] = CFrame.new(400, 50, 3200),
+    ["Zeus Trial"] = CFrame.new(-200, 50, -2800)
+}
+
+-- Utility Functions
+local function safeExecute(func, errorMsg)
+    return function(...)
+        local success, result = pcall(func, ...)
+        if not success then warn(errorMsg .. ": " .. tostring(result)) return nil end
+        return result
+    end
+end
+
+local LocalPlayer = getLocalPlayer()
+local getLocalPlayer = safeExecute(function() 
+    return Players.LocalPlayer or error("Local player not found") 
+end, "Failed to get local player")
+
+local getEquippedRod = safeExecute(function()
+    local character = LocalPlayer.Character
+    if not character then return nil end
+    for _, item in ipairs(character:GetChildren()) do
+        if item:IsA("Tool") and item:FindFirstChild("events") then return item end
+    end
+    return nil
+end, "Failed to get equipped rod")
+
+-- Library Loading
+local Fluent = safeExecute(function()
+    local response = game:HttpGetAsync(LIBRARY_URL)
+    assert(#response > 0, "Empty library response")
+    return loadstring(response)()
+end, "Failed to load Fluent library")()
+
+if not Fluent then return end
+
+-- Window Setup
+local Window = Fluent:CreateWindow({
+    Title = "Iced Hub",
+    SubTitle = "Fisch's Nightmare",
+    TabWidth = 160,
+    Size = UDim2.new(0, 500, 0, 400),
+    Theme = "Dark",
+    MinimizeKey = Enum.KeyCode.End
+})
+
+-- GUI Toggle Button
+local ScreenGui = Instance.new("ScreenGui", game.Players.LocalPlayer:WaitForChild("PlayerGui"))
+local ToggleButton = Instance.new("ImageButton", ScreenGui)
+ToggleButton.Size = UDim2.new(0, 50, 0, 50)
+ToggleButton.Position = UDim2.new(0, 10, 0, 10)
+ToggleButton.Image = "rbxassetid://131149725945145"
+ToggleButton.BackgroundTransparency = 1
+ToggleButton.MouseButton1Click:Connect(function()
+    Config.Automation.guiVisible = not Config.Automation.guiVisible
+    Window:SetVisible(Config.Automation.guiVisible)
+end)
+
+-- Organized Tabs
+local Tabs = {
+    Home = Window:AddTab({ Title = "Home", Icon = "home" }),
+    Fishing = Window:AddTab({ Title = "Fishing", Icon = "fish" }),
+    Automation = Window:AddTab({ Title = "Automation", Icon = "settings" }),
+    Teleport = Window:AddTab({ Title = "Teleport", Icon = "map" }),
+    Utilities = Window:AddTab({ Title = "Utilities", Icon = "wrench" })
+}
+
+-- Automation Functions
+local function createAutomationLoop(name, interval, callback)
+    return function()
+        local startTime = tick()
+        while Config.Automation[name] do
+            if tick() - startTime > Config.Settings.maxAutomationDuration then
+                Config.Automation[name] = false
+                warn(name .. " stopped: Max duration exceeded")
+                break
+            end
+            if tick() - Config.State.lastAction < Config.Settings.minWaitTime then
+                task.wait(Config.Settings.minWaitTime)
+            end
+            callback()
+            Config.State.lastAction = tick()
+            task.wait(interval)
+        end
+    end
+end
+
+local function StartAutoFishing()
+    LocalPlayer.Character.ChildAdded:Connect(function(child)
+        local rodName = Workspace:WaitForChild("playerstats"):WaitForChild(tostring(LocalPlayer)):WaitForChild("Stats"):WaitForChild("rod").Value
+        if child.Name == rodName and Config.Automation.autoCast then
+            task.spawn(function()
+                while Config.Automation.autoCast and LocalPlayer.Character:FindFirstChild(rodName) do
+                    local Rod = LocalPlayer.Character:FindFirstChild(rodName)
+                    if Rod then
+                        local randomValue = math.random(960, 989) / 10
+                        Rod.events.cast:FireServer(randomValue, 1)
+                        local Bobber = Rod:FindFirstChild("bobber")
+                        if Bobber and Config.Automation.instantBobber then
+                            local Params = RaycastParams.new()
+                            Params.FilterType = Enum.RaycastFilterType.Include
+                            Params.FilterDescendantsInstances = {workspace.Terrain}
+                            local RaycastResult = workspace:Raycast(Bobber.Position, -Vector3.yAxis * 100, Params)
+                            if RaycastResult and RaycastResult.Instance and RaycastResult.Instance:IsA("Terrain") then
+                                if Bobber:IsA("Model") and Bobber.PrimaryPart then
+                                    Bobber:SetPrimaryPartCFrame(CFrame.new(RaycastResult.Position))
+                                elseif Bobber:IsA("BasePart") then
+                                    Bobber.CFrame = CFrame.new(RaycastResult.Position)
+                                end
+                            end
+                        end
+                        RunService.Heartbeat:Wait() -- Fast casting
+                    end
+                end
+            end)
+        end
+    end)
+end
+
+local autoShake = safeExecute(function()
+    local ui, __db = nil, 0
+    repeat
+        ui = LocalPlayer.PlayerGui:FindFirstChild("shakeui")
+        task.wait(0.1)
+        __db = __db + 1
+        if __db > 20 then return end
+    until ui
+    
+    repeat
+        if ui:FindFirstChild("safezone") and ui.safezone:FindFirstChild("button") then
+            pcall(function()
+                GuiService.SelectedObject = ui.safezone:FindFirstChild("button")
+                if GuiService.SelectedObject == ui.safezone:FindFirstChild("button") then
+                    VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Return, false, game)
+                    VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Return, false, game)
+                end
+            end)
+        end
+        task.wait(Config.Automation.autoshakeDelay / 1000)
+        ui = LocalPlayer.PlayerGui:FindFirstChild("shakeui")
+        if not ui then ui = false end
+    until not ui
+end, "Failed to auto shake")
+
+local autoReel = createAutomationLoop("autoReel", 0.01, function()
+    if Config.Automation.failReel then return end
+    local ui = LocalPlayer.PlayerGui:FindFirstChild("reel")
+    
+    if Config.Automation.autoreelType == "Always Perfect" then
+        repeat
+            task.wait()
+            if ui and ui:FindFirstChild("bar") then
+                local b = ui.bar
+                if b:FindFirstChild("fish") and b:FindFirstChild("playerbar") then
+                    b.playerbar.Position = b.fish.Position
+                end
+                game.ReplicatedStorage.events["reelfinished "]:FireServer(100, true)
+            end
+            ui = LocalPlayer.PlayerGui:FindFirstChild("reel")
+            if not ui then ui = false end
+        until not ui
+        
+    elseif Config.Automation.autoreelType == "Legit" then
+        repeat
+            task.wait()
+            if ui and ui:FindFirstChild("bar") then
+                local b = ui.bar
+                if b:FindFirstChild("fish") and b:FindFirstChild("playerbar") then
+                    local tween = TweenService:Create(b.playerbar, 
+                        TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), 
+                        {Position = b.fish.Position})
+                    tween:Play()
+                    tween.Completed:Wait()
+                end
+                if b:FindFirstChild("progress") and b.progress.bar.Size.X.Scale > 0.7 then
+                    local isPerfect = math.random(1, 100) < Config.Automation.autoreelPChance
+                    game.ReplicatedStorage.events["reelfinished "]:FireServer(100, isPerfect)
+                end
+            end
+            ui = LocalPlayer.PlayerGui:FindFirstChild("reel")
+            if not ui then ui = false end
+        until not ui
+    end
+end)
+
+local autoSell = createAutomationLoop("autoSell", 1, function()
+    local events = ReplicatedStorage:FindFirstChild("events")
+    if events and events:FindFirstChild("SellAll") then events.SellAll:InvokeServer() end
+end)
+
+local autoAppraise = createAutomationLoop("autoAppraise", 1, function()
+    local character = LocalPlayer.Character
+    if not character then return end
+    
+    local heldFish = character:FindFirstChildWhichIsA("Tool")
+    if not heldFish or not heldFish:FindFirstChild("link") then return end
+    
+    local oldCF = character.HumanoidRootPart.CFrame
+    teleportTo("Alter")
+    
+    local appraiser = Workspace:FindFirstChild("world") and Workspace.world:FindFirstChild("npcs") and 
+                     Workspace.world.npcs:FindFirstChild("Appraiser") and Workspace.world.npcs.Appraiser:FindFirstChild("appraiser")
+    
+    if appraiser then
+        appraiser.appraise:InvokeServer()
+        heldFish.Parent = character
+        
+        local link = heldFish.link.Value
+        local hasMutation = link:FindFirstChild("Mutation") and link.Mutation.Value == Config.Automation.selectedEnchantment
+        local playerStats = ReplicatedStorage:FindFirstChild("playerstats") and ReplicatedStorage.playerstats[LocalPlayer.Name]
+        local lowCoins = playerStats and playerStats.Stats.coins.Value <= 250
+        
+        if hasMutation or lowCoins then character.HumanoidRootPart.CFrame = oldCF end
+    end
+end)
+
+local function toggleWalkOnWater(value)
+    local fishingZone = Workspace:FindFirstChild("zones") and Workspace.zones:FindFirstChild("fishing")
+    if fishingZone then
+        for _, part in pairs(fishingZone:GetChildren()) do
+            if part:IsA("Part") then part.CanCollide = value end
+        end
+    end
+end
+
+local function teleportTo(locationName)
+    local targetCFrame = TELEPORT_LOCATIONS[locationName]
+    if not targetCFrame then warn("Invalid teleport location: " .. tostring(locationName)) return end
+    
+    local character = LocalPlayer.Character
+    if character and character:FindFirstChild("HumanoidRootPart") then
+        character.HumanoidRootPart.CFrame = targetCFrame + Vector3.new(0, 5, 0)
+    end
+end
+
+-- UI Setup Functions
+local function setupHomeTab()
+    local section = Tabs.Home:AddSection("Iced Hub Core")
+    section:AddButton({ Title = "Respawn", Callback = function()
+        local char = LocalPlayer.Character
+        if char then char:BreakJoints() end
+    end})
+    section:AddToggle("AntiDeathUI", { Title = "Anti-Death UI", Default = false, Callback = function(value)
+        if value then
+            Config.State.uiDeathConn = LocalPlayer.PlayerGui:WaitForChild("death")
+            Config.State.uiDeathConn = Config.State.uiDeathConn:GetPropertyChangedSignal("Enabled"):Connect(function()
+                if LocalPlayer.PlayerGui.death.Enabled then LocalPlayer.PlayerGui.death.Enabled = false end
+            end)
+        elseif Config.State.uiDeathConn then
+            Config.State.uiDeathConn:Disconnect()
+            Config.State.uiDeathConn = false
+        end
+    end})
+end
+
+local function setupFishingTab()
+    local mainSection = Tabs.Fishing:AddSection("Fishing Controls")
+    mainSection:AddToggle("AutoCast", { 
+        Title = "Auto Cast", 
+        Default = false, 
+        Description = "Automatically casts the rod like a fucking boss",
+        Callback = function(value)
+            Config.Automation.autoCast = value
+            if value then StartAutoFishing() end
+        end
+    })
+    mainSection:AddToggle("InstantBobber", { 
+        Title = "Instant Bobber", 
+        Default = false, 
+        Description = "Snaps bobber to water instantly",
+        Callback = function(value) Config.Automation.instantBobber = value end
+    })
+    mainSection:AddToggle("AutoShake", { 
+        Title = "Auto Shake", 
+        Default = false, 
+        Callback = function(value)
+            Config.Automation.autoShake = value
+            if value then Config.State.connections.shake = RunService.RenderStepped:Connect(autoShake)
+            elseif Config.State.connections.shake then Config.State.connections.shake:Disconnect() Config.State.connections.shake = nil end
+        end
+    })
+    
+    local reelSection = Tabs.Fishing:AddSection("Reel Settings")
+    reelSection:AddToggle("AutoReel", { Title = "Auto Reel", Default = false, Callback = function(value)
+        Config.Automation.autoReel = value
+        if value then task.spawn(autoReel) end
+    end})
+    reelSection:AddToggle("FailReel", { Title = "Fail Reel", Default = false, Callback = function(value)
+        Config.Automation.failReel = value
+    end})
+    reelSection:AddDropdown("ReelType", { 
+        Title = "Reel Type", 
+        Values = {"Always Perfect", "Legit"}, 
+        Default = "Legit", 
+        Callback = function(value) Config.Automation.autoreelType = value end
+    })
+    reelSection:AddSlider("PerfectChance", { 
+        Title = "Perfect Chance %", 
+        Default = 50, 
+        Min = 0, 
+        Max = 100, 
+        Rounding = 0, 
+        Callback = function(value) Config.Automation.autoreelPChance = value end
+    })
+end
+
+local function setupAutomationTab()
+    local enchantSection = Tabs.Automation:AddSection("Enchantment")
+    enchantSection:AddDropdown("Enchantment", { 
+        Title = "Target Enchantment", 
+        Values = ENCHANTMENT_OPTIONS, 
+        Default = "None", 
+        Callback = function(value) Config.Automation.selectedEnchantment = value end
+    })
+    enchantSection:AddToggle("AutoAppraise", { 
+        Title = "Auto Appraise", 
+        Default = false, 
+        Callback = function(value)
+            Config.Automation.autoAppraise = value
+            if value then task.spawn(autoAppraise) end
+        end
+    })
+    
+    local marketSection = Tabs.Automation:AddSection("Market")
+    marketSection:AddToggle("AutoSell", { 
+        Title = "Auto Sell", 
+        Default = false, 
+        Callback = function(value)
+            Config.Automation.autoSell = value
+            if value then task.spawn(autoSell) end
+        end
+    })
+end
+
+local function setupTeleportTab()
+    local section = Tabs.Teleport:AddSection("Navigation")
+    section:AddDropdown("Location", { 
+        Title = "Teleport To", 
+        Values = (function()
+            local keys = {}
+            for k in pairs(TELEPORT_LOCATIONS) do table.insert(keys, k) end
+            table.sort(keys)
+            return keys
+        end)(), 
+        Default = "", 
+        Callback = function(value) teleportTo(value) end
+    })
+    section:AddToggle("WalkOnWater", { 
+        Title = "Walk on Water", 
+        Default = false, 
+        Callback = function(value)
+            Config.Automation.walkOnWater = value
+            toggleWalkOnWater(value)
+        end
+    })
+end
+
+local function setupUtilitiesTab()
+    local movementSection = Tabs.Utilities:AddSection("Movement")
+    movementSection:AddToggle("Freeze", { 
+        Title = "Freeze Position", 
+        Default = false, 
+        Callback = function(value)
+            local char = LocalPlayer.Character
+            if not char or not char:FindFirstChild("HumanoidRootPart") then return end
+            if value then
+                local pos = char.HumanoidRootPart.Position
+                Config.State.connections.freeze = RunService.RenderStepped:Connect(function()
+                    char.HumanoidRootPart.CFrame = CFrame.new(pos)
+                end)
+            else
+                if Config.State.connections.freeze then Config.State.connections.freeze:Disconnect() Config.State.connections.freeze = nil end
+            end
+        end
+    })
+    movementSection:AddSlider("WalkSpeed", { 
+        Title = "Walk Speed", 
+        Default = 16, 
+        Min = 16, 
+        Max = 100, 
+        Rounding = 1, 
+        Callback = function(value)
+            local humanoid = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid")
+            if humanoid then humanoid.WalkSpeed = value end
+        end
+    })
+    movementSection:AddSlider("JumpPower", { 
+        Title = "Jump Power", 
+        Default = 50, 
+        Min = 50, 
+        Max = 200, 
+        Rounding = 1, 
+        Callback = function(value)
+            local humanoid = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid")
+            if humanoid then humanoid.JumpPower = value end
+        end
+    })
+    
+    local visualSection = Tabs.Utilities:AddSection("Visual")
+    visualSection:AddButton({ 
+        Title = "Iced Hub Tag", 
+        Callback = function()
+            local root = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+            if root and root:FindFirstChild("user") then
+                local user = root.user
+                user.level.Text = "ICED LEGEND"
+                user.user.Text = "FROZEN KING"
+                user.streak.Text = "ICEDHUB.LUA"
+                user.title.Text = "MASTER OF ICE"
+                if user:FindFirstChild("fish") then user.fish:Destroy() end
+                if user:FindFirstChild("fire") then user.fire:Destroy() end
+            end
+        end
+    })
+end
+
+-- Initialization
+local function initialize()
+    setupHomeTab()
+    setupFishingTab()
+    setupAutomationTab()
+    setupTeleportTab()
+    setupUtilitiesTab()
+    
+    Window:SelectTab(1)
+    
+    LocalPlayer.CharacterAdded:Connect(function()
+        for name, conn in pairs(Config.State.connections) do if conn then conn:Disconnect() end end
+        if Config.State.uiDeathConn then Config.State.uiDeathConn:Disconnect() Config.State.uiDeathConn = false end
+        table.clear(Config.State.connections)
+        
+        if Config.Automation.autoCast then StartAutoFishing() end
+        if Config.Automation.autoShake then Config.State.connections.shake = RunService.RenderStepped:Connect(autoShake) end
+        if Config.Automation.autoReel then task.spawn(autoReel) end
+        if Config.Automation.autoSell then task.spawn(autoSell) end
+        if Config.Automation.autoAppraise then task.spawn(autoAppraise) end
+        if Config.Automation.walkOnWater then toggleWalkOnWater(true) end
+    end)
+    
+    Config.State.connections.water = RunService.RenderStepped:Connect(function()
+        if Config.Automation.walkOnWater then toggleWalkOnWater(true) end
+    end)
+end
+
+-- Badass Disclaimer
+print([[ 
+    ⠀⠀⠀⠀⠀⠀⠀⢀⣤⡄⠀⠀⠀⠀⠀⠀⠀⢤⣤⡀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⣰⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣆⠀⠀
+    ⠀⠀⠀⠀⣰⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣇⠀
+    ⠀⠀⠀⢀⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⢼⣿⣿⣿⡄
+    ⠀⠀⠀⢸⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⡇
+    ⠀⠀⠀⠘⣿⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⠇
+    ⠀⠀⠀⠀⢿⣿⣿⣿⡿⠃⠀⠀⠀⠀⠀⠘⢿⣿⣿⣿⡟⠀
+    ⠀⠀⠀⠀⠀⠙⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠋⠀⠀
+    FISCH GOT FUCKED BY ICED HUB
+    Forged in Ice by OG Sunny & J5stln
+    Freeze the seas, motherfuckers!
+]])
+
+-- Start
+safeExecute(initialize, "Failed to initialize Iced Hub")()
