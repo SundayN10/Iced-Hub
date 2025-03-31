@@ -1,0 +1,1721 @@
+-- [ICED HUB] Fishing & Event Script
+-- Made by ogsunny & J5stln ❄️ | Fully Fixed with New Features
+
+-- Services
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+local RunService = game:GetService("RunService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local VirtualInputManager = game:GetService("VirtualInputManager")
+local VirtualUser = game:GetService("VirtualUser")
+local HttpService = game:GetService("HttpService")
+local TeleportService = game:GetService("TeleportService")
+local GuiService = game:GetService("GuiService")
+
+-- Player Setup
+local LocalPlayer = Players.LocalPlayer
+local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+local Backpack = LocalPlayer:WaitForChild("Backpack")
+local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
+
+-- Load Fluent UI
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+
+-- Teleport Data
+local teleportData = {
+    Rods = {
+        ["Long Rod"] = Vector3.new(485.695, 171.656, 145.746),
+        ["Flimsy Rod"] = Vector3.new(471.108, 148.362, 229.642),
+        ["Fortune Rod"] = Vector3.new(-1520.880, 141.283, 771.947),
+        ["Fast Rod"] = Vector3.new(447.184, 148.226, 220.187),
+        ["Lost Rod"] = Vector3.new(2879.877, 135.792, 2727.481),
+        ["Summit Rod"] = Vector3.new(20207.754, 736.058, 5711.352),
+        ["Steady Rod"] = Vector3.new(-1511.235, 139.680, 759.417),
+        ["Kings Rod"] = Vector3.new(1375.576, -810.202, -303.509),
+        ["Carbon Rod"] = Vector3.new(454.084, 150.590, 225.329),
+        ["Lucky Rod"] = Vector3.new(446.086, 148.253, 222.160),
+        ["Training Rod"] = Vector3.new(457.694, 148.358, 230.414),
+        ["Phoenix Rod"] = Vector3.new(5971.031, 270.378, 852.373),
+        ["Magnet Rod"] = Vector3.new(-194.999, 130.148, 1930.971),
+        ["Avalanche Rod"] = Vector3.new(19770.182, 415.681, 5419.197),
+        ["Arctic Rod"] = Vector3.new(19578.236, 132.338, 5307.383),
+        ["Rapid Rod"] = Vector3.new(-1509.245, 139.726, 759.628),
+        ["Plastic Rod"] = Vector3.new(454.425, 148.170, 229.172),
+        ["Nocturnal Rod"] = Vector3.new(-141.874, -515.314, 1139.045),
+        ["Scurvy Rod"] = Vector3.new(-2828.219, 213.457, 1512.210),
+        ["Heaven's Rod"] = Vector3.new(20025.758, -468.918, 7146.933),
+        ["Rod Of The Depths"] = Vector3.new(1704.840, -903.547, 1447.787)
+    },
+    Islands = {
+        ["Forsaken Shores"] = Vector3.new(-2476.738, 133.000, 1573.267),
+        ["Snowcap"] = Vector3.new(2660.813, 155.061, 2395.789),
+        ["Mushgrove"] = Vector3.new(2409.366, 135.858, -732.337),
+        ["Roslit"] = Vector3.new(-1626.457, 133.330, 616.203),
+        ["Terrapin"] = Vector3.new(5869.422, 143.498, 7.101),
+        ["Sunstone"] = Vector3.new(-945.300, 131.079, -1116.235),
+        ["AncientIsle"] = Vector3.new(6047.911, 198.477, 335.518),
+        ["DesolateDeep"] = Vector3.new(-1651.958, -214.179, -2833.087),
+        ["Summit"] = Vector3.new(19664.459, 132.453, 5245.278)
+    },
+    NPCs = {
+        ["Inn Keeper Forsaken Shores"] = Vector3.new(-2476.738, 133.000, 1573.267),
+        ["Summit Inn Keeper"] = Vector3.new(19664.459, 132.453, 5245.278),
+        ["Rhea"] = Vector3.new(-1038.425, 203.337, -1115.580),
+        ["Kenith"] = Vector3.new(-1143.180, 134.634, -1077.207),
+        ["Skin Seller"] = Vector3.new(302.234, 132.145, 205.361),
+        ["Merlin"] = Vector3.new(-928.033, 223.700, -998.745),
+        ["Lantern Keeper"] = Vector3.new(658.446, 163.500, 260.214),
+        ["Appraiser"] = Vector3.new(453.182, 150.500, 206.909),
+        ["Bait Seller"] = Vector3.new(386, 137, 332)
+    },
+    Totems = {
+        ["Windset Totem"] = Vector3.new(2851.574, 178.117, 2703.023),
+        ["Tempest Totem"] = Vector3.new(36.425, 133.027, 1946.082),
+        ["Aurora Totem"] = Vector3.new(-1812.633, -139.750, -3279.988),
+        ["Smokescreen Totem"] = Vector3.new(2791.712, 137.351, -629.452),
+        ["Blizzard Totem"] = Vector3.new(20148.748, 740.134, 5803.661),
+        ["Meteor Totem"] = Vector3.new(-1945.826, 272.439, 231.544),
+        ["Sundial Totem"] = Vector3.new(-1149.453, 134.568, -1077.276),
+        ["Eclipse Totem"] = Vector3.new(5967.283, 272.290, 836.903)
+    }
+}
+
+-- Create Window
+local Window = Fluent:CreateWindow({
+    Title = "Iced Hub ❄️",
+    SubTitle = "Made by ogsunny & J5stln | Fully Fixed",
+    TabWidth = 150,
+    Size = UDim2.fromOffset(600, 400),
+    MinSize = UDim2.fromOffset(600, 400),
+    Acrylic = true,
+    Theme = "Dark"
+})
+
+-- Tabs
+local Tabs = {
+    Fish = Window:AddTab({ Title = "Fish", Icon = "🐟" }),
+    Teleport = Window:AddTab({ Title = "Teleport", Icon = "🌍" }),
+    Automation = Window:AddTab({ Title = "Automation", Icon = "⚙️" }),
+    Events = Window:AddTab({ Title = "Events", Icon = "🎣" }),
+    Character = Window:AddTab({ Title = "Character", Icon = "👤" }),
+    Gifting = Window:AddTab({ Title = "Gifting", Icon = "🎁" }), -- Renamed from "Trade"
+    Config = Window:AddTab({ Title = "Config", Icon = "🎚️" })
+}
+
+-- Variables
+local variables = {
+    FreezeCharacter = false,
+    AutoToggleRadar = false,
+    WhaleHunting = false,
+    AutoEnchant = false,
+    SelectedEnchant = nil,
+    AutoAppraise = false,
+    AppraiserConfig = {
+        Shiny = false,
+        Sparkling = false,
+        Mutation = false,
+        CustomWeight = false,
+        Weight = 0,
+        WantedMutation = "Random"
+    },
+    isAutoClicking = false,
+    isAutoCatch = false,
+    autoCastEnabled = false,
+    isAutoEquipRod = false,
+    isFishing = false
+}
+local genv = getgenv()
+genv.giftloop = false
+genv.autoconfirm = false
+local lastTeleportTime = 0
+local teleportCooldown = 5
+local oxygenConnection, oxygenPeaksConnection, temperatureConnection
+
+-- Global Functions Table for Config
+local AllFuncs = {}
+
+-- Utility Functions
+local function teleportTo(position)
+    if tick() - lastTeleportTime < teleportCooldown then
+        Fluent:Notify({ Title = "Cooldown", Content = "Wait " .. math.ceil(teleportCooldown - (tick() - lastTeleportTime)) .. "s", Duration = 3 })
+        return
+    end
+    local hrp = Character and Character:FindFirstChild("HumanoidRootPart")
+    if hrp then
+        TweenService:Create(hrp, TweenInfo.new(1, Enum.EasingStyle.Linear), { CFrame = CFrame.new(position) }):Play()
+        lastTeleportTime = tick()
+        Fluent:Notify({ Title = "Teleport", Content = "Teleported!", Duration = 3 })
+    else
+        Fluent:Notify({ Title = "Error", Content = "Character not found!", Duration = 3 })
+    end
+end
+
+-- Fish Tab
+Tabs.Fish:AddParagraph({ Title = "Notice", Content = "Tools for fishing automation." })
+
+local function click_this_gui(to_click)
+    if to_click and to_click:IsA("GuiObject") and to_click.Visible then
+        GuiService.SelectedObject = to_click
+        if GuiService.SelectedObject == to_click then
+            VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Return, false, game)
+            VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Return, false, game)
+        end
+    end
+end
+
+local function centerButton(button)
+    if variables.isAutoClicking and button:IsA("ImageButton") then
+        button.AnchorPoint = Vector2.new(0.5, 0.5)
+        button.Position = UDim2.new(0.5, 0, 0.5, 0)
+        button.Size = UDim2.new(0, 100, 0, 100)
+    end
+end
+
+local function autoClick()
+    local shakeUI = PlayerGui:FindFirstChild("shakeui")
+    if not shakeUI then return end
+    local button = shakeUI.safezone and shakeUI.safezone:FindFirstChild("button")
+    if button and button:IsA("ImageButton") and variables.isAutoClicking then
+        click_this_gui(button)
+    end
+end
+
+local Toggle = Tabs.Fish:AddToggle("AutoShake", { Title = "Auto Shake", Default = false })
+local autoClickCoroutine
+
+Toggle:OnChanged(function(value)
+    variables.isAutoClicking = value
+    if value then
+        autoClickCoroutine = coroutine.create(function()
+            while variables.isAutoClicking do
+                autoClick()
+                task.wait(0.01)
+            end
+        end)
+        coroutine.resume(autoClickCoroutine)
+        
+        local shakeUI = PlayerGui:FindFirstChild("shakeui")
+        if shakeUI then
+            local button = shakeUI.safezone and shakeUI.safezone:FindFirstChild("button")
+            if button then
+                centerButton(button)
+            end
+        end
+    else
+        variables.isAutoClicking = false
+        autoClickCoroutine = nil
+    end
+end)
+
+PlayerGui.ChildAdded:Connect(function(child)
+    if child.Name == "shakeui" and variables.isAutoClicking then
+        local safezone = child:WaitForChild("safezone", 5)
+        if safezone then
+            safezone.ChildAdded:Connect(function(newChild)
+                if newChild.Name == "button" then
+                    centerButton(newChild)
+                end
+            end)
+        end
+    end
+end)
+
+local reelingMethod = "Safe Reeling Perfect"
+local Dropdown = Tabs.Fish:AddDropdown("ReelingMethod", {
+    Title = "Reeling Method",
+    Values = { "Safe Reeling Perfect", "Instant Perfect" },
+    Multi = false,
+    Default = "Safe Reeling Perfect",
+})
+
+Dropdown:OnChanged(function(value)
+    reelingMethod = value
+end)
+
+local Toggle = Tabs.Fish:AddToggle("AutoCatch", { Title = "Auto Reel", Default = false })
+
+Toggle:OnChanged(function(value)
+    variables.isAutoCatch = value
+end)
+
+local function startCatching(perfect)
+    local reelBar = PlayerGui:FindFirstChild("reel") and PlayerGui.reel:FindFirstChild("bar")
+    if reelBar and variables.isAutoCatch then
+        game:GetService("ReplicatedStorage").events.reelfinished:FireServer(100, perfect)
+    end
+end
+
+local function syncPositions()
+    local reel = PlayerGui:FindFirstChild("reel")
+    if not reel then return end
+    local bar = reel:FindFirstChild("bar")
+    if not bar then return end
+    local fish = bar:FindFirstChild("fish")
+    local playerBar = bar:FindFirstChild("playerbar")
+    if fish and playerBar and variables.isAutoCatch then
+        playerBar.Position = fish.Position
+    end
+end
+
+game:GetService("RunService").RenderStepped:Connect(function()
+    if variables.isAutoCatch then
+        if reelingMethod == "Safe Reeling Perfect" then
+            syncPositions()
+        elseif reelingMethod == "Instant Perfect" then
+            startCatching(true)
+        end
+    end
+end)
+
+local FishingToggle = Tabs.Fish:AddToggle("FishingToggle", {
+    Title = "Instant Reel",
+    Description = "Enable Fast Reel To Working",
+    Default = false
+})
+
+FishingToggle:OnChanged(function(value)         
+    variables.isFishing = value
+    if value then
+        coroutine.wrap(function()
+            while variables.isFishing do
+                local rodName = workspace:FindFirstChild("PlayerStats") and workspace.PlayerStats:FindFirstChild(LocalPlayer.Name) and workspace.PlayerStats[LocalPlayer.Name]:FindFirstChild("T") and workspace.PlayerStats[LocalPlayer.Name].T:FindFirstChild(LocalPlayer.Name) and workspace.PlayerStats[LocalPlayer.Name].T[LocalPlayer.Name]:FindFirstChild("Stats") and workspace.PlayerStats[LocalPlayer.Name].T[LocalPlayer.Name].Stats:FindFirstChild("rod")
+                local reel
+                local startTime = tick()
+                while not reel and tick() - startTime < 10 do
+                    reel = PlayerGui and PlayerGui:FindFirstChild("reel")
+                    task.wait(0.1)
+                end
+                if reel then
+                    reel:Destroy()
+                    LocalPlayer.Character.Humanoid:UnequipTools()
+                    task.wait(0)
+                    LocalPlayer.Character.Humanoid:EquipTool(Backpack:FindFirstChild(rodName and rodName.Value or "Training Rod"))
+                else
+                    LocalPlayer.Character.Humanoid:UnequipTools()
+                    task.wait(0)
+                    LocalPlayer.Character.Humanoid:EquipTool(Backpack:FindFirstChild(rodName and rodName.Value or "Training Rod"))
+                end
+                task.wait(2)
+            end
+        end)()
+    end
+end)
+
+task.spawn(function()
+    while true do
+        local player = game:GetService("Players").LocalPlayer
+        if player and player.Character then
+            local rootPart = workspace:FindFirstChild(player.Character.Name)
+            if rootPart then
+                local humanoidRoot = rootPart:FindFirstChild("HumanoidRootPart")
+                if humanoidRoot then
+                    for _, obj in pairs(humanoidRoot:GetChildren()) do
+                        if obj:IsA("Sound") then
+                            obj:Destroy() 
+                        end
+                    end
+                end
+            end
+        end
+        task.wait(100)
+    end
+end)
+
+local function getEquippedRod()
+    return LocalPlayer.Character and LocalPlayer.Character:FindFirstChildWhichIsA("Tool") and LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Name:lower():find("rod") and LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+end
+
+local castArgs = {
+    [1] = 99.79999999999994,
+    [2] = 1
+}
+
+local function autoCast()
+    while variables.autoCastEnabled do
+        local rod = getEquippedRod()
+        if rod and rod:FindFirstChild("events") then
+            rod.events.cast:FireServer(unpack(castArgs))
+        end
+        task.wait(0.05)
+    end
+end
+
+local Toggle = Tabs.Fish:AddToggle("AutoCast", { Title = "Auto Rod Casting", Default = false })
+
+Toggle:OnChanged(function(value)
+    variables.autoCastEnabled = value
+    if value then
+        coroutine.wrap(autoCast)()
+    end
+end)
+
+local function equipRod()
+    local backpack = LocalPlayer.Backpack
+    for _, tool in ipairs(backpack:GetChildren()) do
+        if tool:IsA("Tool") and tool.Name:lower():find("rod") and tool:FindFirstChild("events") then
+            tool.events.reset:FireServer()
+            task.wait(0.1)
+            if LocalPlayer.Character and not LocalPlayer.Character:FindFirstChild(tool.Name) then
+                LocalPlayer.Character.Humanoid:EquipTool(tool)
+            end
+            return true
+        end
+    end
+    return false
+end
+
+local function autoEquipRod()
+    while variables.isAutoEquipRod do
+        if not getEquippedRod() then
+            equipRod()
+        end
+        task.wait(1)
+    end
+end
+
+local Toggle = Tabs.Fish:AddToggle("AutoEquipRod", { Title = "Auto Equip Rod", Default = false })
+
+Toggle:OnChanged(function(value)
+    variables.isAutoEquipRod = value
+    if value then
+        coroutine.wrap(autoEquipRod)()
+    end
+end)
+
+-- Teleport Tab
+Tabs.Teleport:AddParagraph({ Title = "Notice", Content = "Teleport to key locations." })
+
+local teleportCategory = "Rods"
+local selectedTeleport = ""
+local teleportLocationsDropdown
+local teleportPlayerDropdown
+
+Tabs.Teleport:AddDropdown("TeleportCategory", {
+    Title = "Category",
+    Values = {"Rods", "Islands", "NPCs", "Totems"},
+    Multi = false,
+    Default = "Rods",
+    Callback = function(value)
+        teleportCategory = value
+        local locations = {}
+        for loc in pairs(teleportData[teleportCategory]) do
+            table.insert(locations, loc)
+        end
+        teleportLocationsDropdown:SetValues(locations)
+        selectedTeleport = locations[1] or ""
+    end
+})
+
+teleportLocationsDropdown = Tabs.Teleport:AddDropdown("TeleportLocations", {
+    Title = "Locations",
+    Values = {},
+    Multi = false,
+    Default = "",
+    Callback = function(value)
+        selectedTeleport = value
+    end
+})
+
+do
+    local initialLocations = {}
+    for loc in pairs(teleportData[teleportCategory]) do
+        table.insert(initialLocations, loc)
+    end
+    teleportLocationsDropdown:SetValues(initialLocations)
+    selectedTeleport = initialLocations[1] or ""
+end
+
+Tabs.Teleport:AddButton({
+    Title = "Teleport",
+    Callback = function()
+        if teleportData[teleportCategory] and teleportData[teleportCategory][selectedTeleport] then
+            teleportTo(teleportData[teleportCategory][selectedTeleport])
+        else
+            Fluent:Notify({ Title = "Error", Content = "Invalid location!", Duration = 3 })
+        end
+    end
+})
+
+teleportPlayerDropdown = Tabs.Teleport:AddDropdown("TeleportToPlayer", {
+    Title = "Players",
+    Description = "Teleport to a player.",
+    Values = {},
+    Multi = false,
+    Default = "",
+    PlaceHolder = "Select Player",
+    Callback = function(selectedPlayer)
+        genv.selectedPlayer = selectedPlayer
+        local target = workspace:FindFirstChild(selectedPlayer)
+        if target and target:FindFirstChild("HumanoidRootPart") then
+            LocalPlayer.Character.HumanoidRootPart.CFrame = target.HumanoidRootPart.CFrame
+            Fluent:Notify({ Title = "Teleport", Content = "Teleported to " .. selectedPlayer, Duration = 3 })
+        end
+    end
+})
+
+do
+    local playerList = {}
+    for _, player in pairs(Players:GetPlayers()) do
+        if player ~= LocalPlayer then table.insert(playerList, player.Name) end
+    end
+    teleportPlayerDropdown:SetValues(playerList)
+end
+
+Tabs.Teleport:AddButton({
+    Title = "Discover All Locations",
+    Variant = "Primary",
+    Callback = function()
+        for key in pairs(teleportData) do
+            for loc in pairs(teleportData[key]) do
+                ReplicatedStorage:WaitForChild("events"):WaitForChild("discoverlocation"):FireServer(loc)
+            end
+        end
+        Fluent:Notify({ Title = "Success", Content = "All locations discovered!", Duration = 3 })
+    end
+})
+
+-- Automation Tab
+Tabs.Automation:AddParagraph({ Title = "Notice", Content = "Automation tools for enchanting and appraising." })
+
+local Enchants = {
+    ["Sea King"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Lucky"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Clever"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Sea Overlord"] = { IsExalted = true, IsSongOfTheDeep = false },
+    ["Scrapper"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Steady"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Divine"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Long"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Swift"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Mystical"] = { IsExalted = true, IsSongOfTheDeep = false },
+    ["Blessed Song"] = { IsExalted = false, IsSongOfTheDeep = true },
+    ["Immortal"] = { IsExalted = true, IsSongOfTheDeep = false },
+    ["Herculean"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Noir"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Controlled"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Abyssal"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Invincible"] = { IsExalted = true, IsSongOfTheDeep = false },
+    ["Wormhole"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Breezed"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Quantum"] = { IsExalted = true, IsSongOfTheDeep = false },
+    ["Blessed"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Resilient"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Unbreakable"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Insight"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Hasty"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Quality"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Piercing"] = { IsExalted = true, IsSongOfTheDeep = false },
+    ["Mutated"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Storming"] = { IsExalted = false, IsSongOfTheDeep = false },
+    ["Anomalous"] = { IsExalted = true, IsSongOfTheDeep = false },
+    ["Ghastly"] = { IsExalted = false, IsSongOfTheDeep = false },
+}
+
+local EnchantNames = {}
+for enchantName, _ in pairs(Enchants) do
+    table.insert(EnchantNames, enchantName)
+end
+
+Tabs.Automation:AddDropdown("EnchantSelectDropDown", {
+    Title = "Selected Enchant",
+    Values = EnchantNames,
+    Default = "",
+    PlaceHolder = "Select Enchant",
+    Multi = false,
+    Callback = function(selectedEnchant)
+        variables.SelectedEnchant = selectedEnchant
+    end
+})
+
+local function getEquippedRod()
+    for _, tool in pairs(Character:GetChildren()) do
+        if tool:IsA("Tool") and tool.Name:lower():find("rod") then
+            return tool.Name
+        end
+    end
+    return nil
+end
+
+Tabs.Automation:AddToggle("AutoEnchantToggle", {
+    Title = "Auto Enchant",
+    Default = false,
+    Callback = function(isEnabled)
+        variables.AutoEnchant = isEnabled
+
+        if not variables.SelectedEnchant then
+            Fluent:Notify({ Title = "Auto Enchant", Content = "Please select an enchant.", Duration = 5 })
+            return
+        end
+
+        if variables.AutoEnchant then
+            local selectedData = Enchants[variables.SelectedEnchant]
+            if not selectedData then
+                Fluent:Notify({ Title = "Auto Enchant", Content = "Invalid enchant selected.", Duration = 5 })
+                variables.AutoEnchant = false
+                return
+            end
+
+            local playerRelic = workspace[LocalPlayer.Name]:FindFirstChild(
+                selectedData.IsExalted and "Exalted Relic" or "Enchant Relic"
+            )
+            if not playerRelic then
+                Fluent:Notify({ Title = "Auto Enchant", Content = "Please hold the correct relic.", Duration = 5 })
+                variables.AutoEnchant = false
+                return
+            end
+
+            if ReplicatedStorage.world.cycle.Value ~= "Night" then
+                Fluent:Notify({ Title = "Auto Enchant", Content = "It needs to be night time.", Duration = 5 })
+                variables.AutoEnchant = false
+                return
+            end
+
+            local equippedRod = getEquippedRod()
+            if equippedRod and ReplicatedStorage.playerstats[LocalPlayer.Name].Rods[equippedRod].Value == variables.SelectedEnchant then
+                Fluent:Notify({ Title = "Auto Enchant", Content = "You already have this enchant.", Duration = 5 })
+                variables.AutoEnchant = false
+                return
+            end
+
+            LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1310, -799, -82)
+        end
+
+        task.wait(1)
+
+        task.spawn(function()
+            while variables.AutoEnchant do
+                task.wait(0.1)
+                local enchantAltar = workspace.world.interactables:FindFirstChild("Enchant Altar")
+
+                if enchantAltar and enchantAltar:FindFirstChild("ProximityPrompt") and enchantAltar.ProximityPrompt.Enabled then
+                    local selectedData = Enchants[variables.SelectedEnchant]
+                    local requiredRelic = selectedData.IsExalted and "Exalted Relic" or "Enchant Relic"
+
+                    if not workspace[LocalPlayer.Name]:FindFirstChild(requiredRelic) then
+                        Fluent:Notify({ Title = "Auto Enchant", Content = "Please hold the correct relic.", Duration = 5 })
+                        variables.AutoEnchant = false
+                        return
+                    end
+
+                    enchantAltar.ProximityPrompt.Parent = LocalPlayer.Character
+                    for _, obj in ipairs(LocalPlayer.Character:GetChildren()) do
+                        if obj:IsA("ProximityPrompt") then
+                            obj.HoldDuration = 0
+                            obj:InputHoldBegin()
+                            task.wait(0.01)
+                            obj:InputHoldEnd()
+                            obj.Parent = enchantAltar
+                        end
+                    end
+
+                    task.wait(0.5)
+
+                    if LocalPlayer.PlayerGui.over:FindFirstChild("prompt") then
+                        local confirmButton = LocalPlayer.PlayerGui.over.prompt.confirm
+                        if getconnections then
+                            for _, v in pairs(getconnections(confirmButton.MouseButton1Click)) do
+                                v:Function()
+                            end
+                        else
+                            firesignal(confirmButton.MouseButton1Click)
+                        end
+                    end
+                end
+
+                local equippedRod = getEquippedRod()
+                if equippedRod and ReplicatedStorage.playerstats[LocalPlayer.Name].Rods[equippedRod].Value == variables.SelectedEnchant then
+                    variables.AutoEnchant = false
+                end
+            end
+        end)
+    end
+})
+
+Tabs.Automation:AddParagraph({ Title = "Auto Appraise Notice", Content = "Hold a fish to appraise it based on set conditions." })
+
+Tabs.Automation:AddToggle("ShinyToggle", {
+    Title = "Require Shiny",
+    Default = false,
+    Callback = function(state)
+        variables.AppraiserConfig.Shiny = state
+    end
+})
+
+Tabs.Automation:AddToggle("SparklingToggle", {
+    Title = "Require Sparkling",
+    Default = false,
+    Callback = function(state)
+        variables.AppraiserConfig.Sparkling = state
+    end
+})
+
+Tabs.Automation:AddToggle("MutationToggle", {
+    Title = "Require Mutation",
+    Default = false,
+    Callback = function(state)
+        variables.AppraiserConfig.Mutation = state
+    end
+})
+
+Tabs.Automation:AddToggle("CustomWeightToggle", {
+    Title = "Require Custom Weight",
+    Default = false,
+    Callback = function(state)
+        variables.AppraiserConfig.CustomWeight = state
+    end
+})
+
+Tabs.Automation:AddInput("WeightInput", {
+    Title = "Minimum Weight",
+    Default = "0",
+    Numeric = true,
+    Callback = function(value)
+        variables.AppraiserConfig.Weight = tonumber(value) or 0
+    end
+})
+
+Tabs.Automation:AddDropdown("MutationDropdown", {
+    Title = "Wanted Mutation",
+    Values = {"Random", "Mythical", "Abyssal", "Lunar", "Midas", "Glossy", "Silver", "Mosaic", "Hexed", "Electric", "Darkened", "Translucent", "Frozen", "Negative", "Albino"},
+    Default = "Random",
+    Multi = false,
+    Callback = function(value)
+        variables.AppraiserConfig.WantedMutation = value
+    end
+})
+
+local function CheckFish(link)
+    local checks = true
+
+    if variables.AppraiserConfig.Mutation then
+        if link:FindFirstChild("Mutation") then
+            if variables.AppraiserConfig.WantedMutation == "Random" then
+                checks = true
+            else
+                checks = link:FindFirstChild("Mutation").Value == variables.AppraiserConfig.WantedMutation
+            end
+        else
+            checks = false
+        end
+    end
+
+    if checks == false then return false end
+    if variables.AppraiserConfig.Sparkling then checks = link:FindFirstChild("Sparkling") and true or not link:FindFirstChild("Sparkling") and false end
+    if checks == false then return false end
+    if variables.AppraiserConfig.Shiny then checks = link:FindFirstChild("Shiny") and true or not link:FindFirstChild("Shiny") and false end
+    if checks == false then return false end
+    if variables.AppraiserConfig.CustomWeight then checks = link.Weight.Value >= variables.AppraiserConfig.Weight end
+
+    return checks
+end
+
+Tabs.Automation:AddToggle("AutoAppraiseToggle", {
+    Title = "Auto Appraise",
+    Default = false,
+    Callback = function(state)
+        variables.AutoAppraise = state
+        if state then
+            task.spawn(function()
+                while variables.AutoAppraise do
+                    task.wait(0.1)
+                    local fish = Character:FindFirstChildOfClass("Tool")
+                    if not fish then
+                        Fluent:Notify({ Title = "Auto Appraise", Content = "Hold a fish to start!", Duration = 5 })
+                        variables.AutoAppraise = false
+                        return
+                    end
+
+                    if fish:FindFirstChild("Link") then
+                        local link = fish.Link.Value
+                        if CheckFish(link) then
+                            variables.AutoAppraise = false
+                            Fluent:Notify({ Title = "Auto Appraise", Content = "Desired fish found!", Duration = 5 })
+                            return
+                        end
+
+                        pcall(function()
+                            workspace.world.npcs.Appraiser.Appraiser.Appraise:InvokeServer()
+                        end)
+                    end
+                end
+            end)
+        end
+    end
+})
+
+-- Events Tab
+Tabs.Events:AddParagraph({ Title = "Notice", Content = "Tools for hunting and summoning sea creatures." })
+
+_G.Summon_Whale = false
+_G.Whale_Hunting = false
+_G.HuntWhaleDebounce = false
+_G.Kraken_Hunting = false
+_G.Ancient_Kraken = false
+_G.Scylla_Hunting = false
+_G.Meg_Hunting = false
+_G.Ancient_Meg = false
+_G.Phantom_Meg = false
+_G.Summon_Phantom = false
+_G.Orca_Hunting = false
+
+Tabs.Events:AddSection("Whale Hunting")
+
+Tabs.Events:AddToggle("HuntWhales", {
+    Title = "Hunt Whales",
+    Default = false,
+    Callback = function(Value)
+        _G.Whale_Hunting = Value
+        if Value then
+            task.spawn(function()
+                while _G.Whale_Hunting do
+                    task.wait()
+                    local whale_pool = workspace.zones.fishing:FindFirstChild("Whales Pool")
+                    if whale_pool then
+                        whale_pool.CanCollide = true
+                        if not whale_pool:FindFirstChild("RodEquipCheck") then
+                            local rodpart = Instance.new("Part", whale_pool)
+                            rodpart.Name = "RodEquipCheck"
+                            local toolhasbeenequippedyetlol = false
+                            for _, tool in LocalPlayer.Backpack:GetChildren() do
+                                if tool:IsA("Tool") then
+                                    for _, folder in tool:GetChildren() do
+                                        if folder:IsA("Folder") and folder.Name == "events" then
+                                            for _, v in LocalPlayer.Character:GetChildren() do
+                                                if v:IsA("Tool") then
+                                                    v.Parent = LocalPlayer.Backpack
+                                                    tool.Parent = LocalPlayer.Character
+                                                    toolhasbeenequippedyetlol = true
+                                                    break
+                                                end
+                                            end
+                                            if not toolhasbeenequippedyetlol then
+                                                tool.Parent = LocalPlayer.Character
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                        local whale_pos = CFrame.new(whale_pool.CFrame.Position + Vector3.new(0, 74, 0))
+                        LocalPlayer.Character.HumanoidRootPart.CFrame = whale_pos
+                    elseif _G.Summon_Whale then
+                        local found_tempest = false
+                        local found_smoke = false
+                        local hotbar = LocalPlayer.PlayerGui.hud.safezone.backpack.hotbar
+                        for _, object in hotbar:GetChildren() do
+                            if object:IsA("ImageButton") then
+                                if object:FindFirstChild("itemname") and object.itemname.Text == "Tempest Totem" then
+                                    found_tempest = true
+                                    local tempest_stack = object:FindFirstChild("stack") and object.stack.Text or ""
+                                    local tempest_stack_split = string.split(tempest_stack, " x")
+                                    if tempest_stack_split[1] == "" or #tempest_stack_split == 1 then
+                                        Fluent:Notify({
+                                            Title = "Notice",
+                                            Content = "You have one Tempest Totem. Summoning Has Stopped",
+                                            Duration = 6.5
+                                        })
+                                        _G.Summon_Whale = false
+                                        break
+                                    end
+                                elseif object:FindFirstChild("itemname") and object.itemname.Text == "Smokescreen Totem" then
+                                    found_smoke = true
+                                    local smoke_stack = object:FindFirstChild("stack") and object.stack.Text or ""
+                                    local smoke_stack_split = string.split(smoke_stack, " x")
+                                    if smoke_stack_split[1] == "" or #smoke_stack_split == 1 then
+                                        Fluent:Notify({
+                                            Title = "Notice",
+                                            Content = "You have one Smokescreen Totem. Summoning Has Stopped",
+                                            Duration = 6.5
+                                        })
+                                        _G.Summon_Whale = false
+                                        break
+                                    end
+                                end
+                            end
+                        end
+                        if found_tempest and found_smoke then
+                            for _, v in LocalPlayer.Character:GetChildren() do
+                                if v:IsA("Tool") then
+                                    v.Parent = LocalPlayer.Backpack
+                                end
+                            end
+                            local tempest_totem = LocalPlayer.Backpack:FindFirstChild("Tempest Totem")
+                            local smokescreen_totem = LocalPlayer.Backpack:FindFirstChild("Smokescreen Totem")
+                            if smokescreen_totem and tempest_totem then
+                                smokescreen_totem.Parent = LocalPlayer.Character
+                                smokescreen_totem:Activate()
+                                smokescreen_totem.Parent = LocalPlayer.Backpack
+                                task.wait(0.2)
+                                tempest_totem.Parent = LocalPlayer.Character
+                                tempest_totem:Activate()
+                                tempest_totem.Parent = LocalPlayer.Backpack
+                            else
+                                Fluent:Notify({
+                                    Title = "Error",
+                                    Content = "Couldn't Locate Totems In Hotbar",
+                                    Duration = 6.5
+                                })
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end
+})
+
+Tabs.Events:AddToggle("SummonWhales", {
+    Title = "Summon Whales",
+    Default = false,
+    Callback = function(Value)
+        _G.Summon_Whale = Value
+    end
+})
+
+Tabs.Events:AddSection("Orca Hunting")
+
+Tabs.Events:AddToggle("HuntOrcas", {
+    Title = "Hunt Orcas",
+    Default = false,
+    Callback = function(Value)
+        _G.Orca_Hunting = Value
+        if Value then
+            task.spawn(function()
+                while _G.Orca_Hunting do
+                    task.wait()
+                    local orca_pool = workspace.zones.fishing:FindFirstChild("Orcas Pool")
+                    if orca_pool then
+                        orca_pool.CanCollide = true
+                        if not orca_pool:FindFirstChild("RodEquipCheck") then
+                            local rodpart = Instance.new("Part", orca_pool)
+                            rodpart.Name = "RodEquipCheck"
+                            local toolhasbeenequippedyetlol = false
+                            for _, tool in LocalPlayer.Backpack:GetChildren() do
+                                if tool:IsA("Tool") then
+                                    for _, folder in tool:GetChildren() do
+                                        if folder:IsA("Folder") and folder.Name == "events" then
+                                            for _, v in LocalPlayer.Character:GetChildren() do
+                                                if v:IsA("Tool") then
+                                                    v.Parent = LocalPlayer.Backpack
+                                                    tool.Parent = LocalPlayer.Character
+                                                    toolhasbeenequippedyetlol = true
+                                                    break
+                                                end
+                                            end
+                                            if not toolhasbeenequippedyetlol then
+                                                tool.Parent = LocalPlayer.Character
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                        local orca_pos = CFrame.new(orca_pool.CFrame.Position + Vector3.new(0, 74, 0))
+                        LocalPlayer.Character.HumanoidRootPart.CFrame = orca_pos
+                    end
+                end
+            end)
+        end
+    end
+})
+
+Tabs.Events:AddSection("Kraken Hunting")
+
+Tabs.Events:AddToggle("HuntKrakens", {
+    Title = "Hunt Krakens",
+    Default = false,
+    Callback = function(Value)
+        _G.Kraken_Hunting = Value
+        if Value then
+            task.spawn(function()
+                while _G.Kraken_Hunting do
+                    task.wait()
+                    local kraken_pool = workspace.zones.fishing:FindFirstChild("Kraken Pool")
+                    local ancient_pool = workspace.zones.fishing:FindFirstChild("Ancient Kraken Pool")
+                    if _G.Ancient_Kraken and ancient_pool then
+                        ancient_pool.CanCollide = true
+                        if not ancient_pool:FindFirstChild("RodEquipCheck") then
+                            local rodpart = Instance.new("Part", ancient_pool)
+                            rodpart.Name = "RodEquipCheck"
+                            local toolhasbeenequippedyetlol = false
+                            for _, tool in LocalPlayer.Backpack:GetChildren() do
+                                if tool:IsA("Tool") then
+                                    for _, folder in tool:GetChildren() do
+                                        if folder:IsA("Folder") and folder.Name == "events" then
+                                            for _, v in LocalPlayer.Character:GetChildren() do
+                                                if v:IsA("Tool") then
+                                                    v.Parent = LocalPlayer.Backpack
+                                                    tool.Parent = LocalPlayer.Character
+                                                    toolhasbeenequippedyetlol = true
+                                                    break
+                                                end
+                                            end
+                                            if not toolhasbeenequippedyetlol then
+                                                tool.Parent = LocalPlayer.Character
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                        local ancient_pos = CFrame.new(ancient_pool.CFrame.Position + Vector3.new(0, 74, 0))
+                        LocalPlayer.Character.HumanoidRootPart.CFrame = ancient_pos
+                    elseif kraken_pool then
+                        kraken_pool.CanCollide = true
+                        if not kraken_pool:FindFirstChild("RodEquipCheck") then
+                            local rodpart = Instance.new("Part", kraken_pool)
+                            rodpart.Name = "RodEquipCheck"
+                            local toolhasbeenequippedyetlol = false
+                            for _, tool in LocalPlayer.Backpack:GetChildren() do
+                                if tool:IsA("Tool") then
+                                    for _, folder in tool:GetChildren() do
+                                        if folder:IsA("Folder") and folder.Name == "events" then
+                                            for _, v in LocalPlayer.Character:GetChildren() do
+                                                if v:IsA("Tool") then
+                                                    v.Parent = LocalPlayer.Backpack
+                                                    tool.Parent = LocalPlayer.Character
+                                                    toolhasbeenequippedyetlol = true
+                                                    break
+                                                end
+                                            end
+                                            if not toolhasbeenequippedyetlol then
+                                                tool.Parent = LocalPlayer.Character
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                        local kraken_pos = CFrame.new(kraken_pool.CFrame.Position + Vector3.new(0, 74, 0))
+                        LocalPlayer.Character.HumanoidRootPart.CFrame = kraken_pos
+                    end
+                end
+            end)
+        end
+    end
+})
+
+Tabs.Events:AddToggle("HuntAncientKrakens", {
+    Title = "Hunt Ancient Krakens",
+    Default = false,
+    Callback = function(Value)
+        _G.Ancient_Kraken = Value
+    end
+})
+
+Tabs.Events:AddSection("Scylla Hunting")
+
+Tabs.Events:AddToggle("HuntScylla", {
+    Title = "Hunt Scylla",
+    Default = false,
+    Callback = function(Value)
+        _G.Scylla_Hunting = Value
+        if Value then
+            task.spawn(function()
+                while _G.Scylla_Hunting do
+                    task.wait()
+                    local scylla_pool = workspace.zones.fishing:FindFirstChild("Forsaken Veil - Scylla")
+                    if scylla_pool then
+                        scylla_pool.CanCollide = true
+                        if not scylla_pool:FindFirstChild("RodEquipCheck") then
+                            local rodpart = Instance.new("Part", scylla_pool)
+                            rodpart.Name = "RodEquipCheck"
+                            local toolhasbeenequippedyetlol = false
+                            for _, tool in LocalPlayer.Backpack:GetChildren() do
+                                if tool:IsA("Tool") then
+                                    for _, folder in tool:GetChildren() do
+                                        if folder:IsA("Folder") and folder.Name == "events" then
+                                            for _, v in LocalPlayer.Character:GetChildren() do
+                                                if v:IsA("Tool") then
+                                                    v.Parent = LocalPlayer.Backpack
+                                                    tool.Parent = LocalPlayer.Character
+                                                    toolhasbeenequippedyetlol = true
+                                                    break
+                                                end
+                                            end
+                                            if not toolhasbeenequippedyetlol then
+                                                tool.Parent = LocalPlayer.Character
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                        local scylla_pos = CFrame.new(scylla_pool.CFrame.Position + Vector3.new(0, 74, 0))
+                        LocalPlayer.Character.HumanoidRootPart.CFrame = scylla_pos
+                    end
+                end
+            end)
+        end
+    end
+})
+
+Tabs.Events:AddSection("Megalodon Hunting")
+
+Tabs.Events:AddToggle("HuntMeg", {
+    Title = "Hunt Megalodon",
+    Default = false,
+    Callback = function(Value)
+        _G.Meg_Hunting = Value
+        if Value then
+            task.spawn(function()
+                while _G.Meg_Hunting do
+                    task.wait()
+                    local meg_pool = workspace.zones.fishing:FindFirstChild("Megalodon Default")
+                    local meg_ancient_pool = workspace.zones.fishing:FindFirstChild("Megalodon Ancient")
+                    local meg_phantom_pool = workspace.zones.fishing:FindFirstChild("Megalodon Phantom")
+                    if _G.Ancient_Meg and meg_ancient_pool then
+                        meg_ancient_pool.CanCollide = true
+                        if not meg_ancient_pool:FindFirstChild("RodEquipCheck") then
+                            local rodpart = Instance.new("Part", meg_ancient_pool)
+                            rodpart.Name = "RodEquipCheck"
+                            local toolhasbeenequippedyetlol = false
+                            for _, tool in LocalPlayer.Backpack:GetChildren() do
+                                if tool:IsA("Tool") then
+                                    for _, folder in tool:GetChildren() do
+                                        if folder:IsA("Folder") and folder.Name == "events" then
+                                            for _, v in LocalPlayer.Character:GetChildren() do
+                                                if v:IsA("Tool") then
+                                                    v.Parent = LocalPlayer.Backpack
+                                                    tool.Parent = LocalPlayer.Character
+                                                    toolhasbeenequippedyetlol = true
+                                                    break
+                                                end
+                                            end
+                                            if not toolhasbeenequippedyetlol then
+                                                tool.Parent = LocalPlayer.Character
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                        local ancient_meg_pos = CFrame.new(meg_ancient_pool.CFrame.Position + Vector3.new(0, 3, 0))
+                        LocalPlayer.Character.HumanoidRootPart.CFrame = ancient_meg_pos
+                    elseif _G.Phantom_Meg and meg_phantom_pool then
+                        meg_phantom_pool.CanCollide = true
+                        if not meg_phantom_pool:FindFirstChild("RodEquipCheck") then
+                            local rodpart = Instance.new("Part", meg_phantom_pool)
+                            rodpart.Name = "RodEquipCheck"
+                            local toolhasbeenequippedyetlol = false
+                            for _, tool in LocalPlayer.Backpack:GetChildren() do
+                                if tool:IsA("Tool") then
+                                    for _, folder in tool:GetChildren() do
+                                        if folder:IsA("Folder") and folder.Name == "events" then
+                                            for _, v in LocalPlayer.Character:GetChildren() do
+                                                if v:IsA("Tool") then
+                                                    v.Parent = LocalPlayer.Backpack
+                                                    tool.Parent = LocalPlayer.Character
+                                                    toolhasbeenequippedyetlol = true
+                                                    break
+                                                end
+                                            end
+                                            if not toolhasbeenequippedyetlol then
+                                                tool.Parent = LocalPlayer.Character
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                        local phantom_meg_pos = CFrame.new(meg_phantom_pool.CFrame.Position + Vector3.new(0, 3, 0))
+                        LocalPlayer.Character.HumanoidRootPart.CFrame = phantom_meg_pos
+                    elseif meg_pool then
+                        meg_pool.CanCollide = true
+                        if not meg_pool:FindFirstChild("RodEquipCheck") then
+                            local rodpart = Instance.new("Part", meg_pool)
+                            rodpart.Name = "RodEquipCheck"
+                            local toolhasbeenequippedyetlol = false
+                            for _, tool in LocalPlayer.Backpack:GetChildren() do
+                                if tool:IsA("Tool") then
+                                    for _, folder in tool:GetChildren() do
+                                        if folder:IsA("Folder") and folder.Name == "events" then
+                                            for _, v in LocalPlayer.Character:GetChildren() do
+                                                if v:IsA("Tool") then
+                                                    v.Parent = LocalPlayer.Backpack
+                                                    tool.Parent = LocalPlayer.Character
+                                                    toolhasbeenequippedyetlol = true
+                                                    break
+                                                end
+                                            end
+                                            if not toolhasbeenequippedyetlol then
+                                                tool.Parent = LocalPlayer.Character
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                        local meg_pos = CFrame.new(meg_pool.CFrame.Position + Vector3.new(0, 3, 0))
+                        LocalPlayer.Character.HumanoidRootPart.CFrame = meg_pos
+                    end
+                    if _G.Summon_Phantom and not meg_phantom_pool then
+                        local found_sundial = false
+                        local found_eclipse = false
+                        local hotbar = LocalPlayer.PlayerGui.hud.safezone.backpack.hotbar
+                        for _, object in hotbar:GetChildren() do
+                            if object:IsA("ImageButton") then
+                                if object:FindFirstChild("itemname") and object.itemname.Text == "Sundial Totem" then
+                                    found_sundial = true
+                                    local sundial_stack = object:FindFirstChild("stack") and object.stack.Text or ""
+                                    local sundial_stack_split = string.split(sundial_stack, " x")
+                                    if sundial_stack_split[1] == "" or #sundial_stack_split == 1 then
+                                        Fluent:Notify({
+                                            Title = "Notice",
+                                            Content = "You have one Sundial Totem. Summoning Has Stopped",
+                                            Duration = 6.5
+                                        })
+                                        _G.Summon_Phantom = false
+                                        break
+                                    end
+                                elseif object:FindFirstChild("itemname") and object.itemname.Text == "Eclipse Totem" then
+                                    found_eclipse = true
+                                    local e_stack = object:FindFirstChild("stack") and object.stack.Text or ""
+                                    local e_stack_split = string.split(e_stack, " x")
+                                    if e_stack_split[1] == "" or #e_stack_split == 1 then
+                                        Fluent:Notify({
+                                            Title = "Notice",
+                                            Content = "You have one Eclipse Totem. Summoning Has Stopped",
+                                            Duration = 6.5
+                                        })
+                                        _G.Summon_Phantom = false
+                                        break
+                                    end
+                                end
+                            end
+                        end
+                        if found_sundial and found_eclipse then
+                            for _, v in LocalPlayer.Character:GetChildren() do
+                                if v:IsA("Tool") then
+                                    v.Parent = LocalPlayer.Backpack
+                                end
+                            end
+                            local eclipse_totem = LocalPlayer.Backpack:FindFirstChild("Eclipse Totem")
+                            local sundial_totem = LocalPlayer.Backpack:FindFirstChild("Sundial Totem")
+                            if sundial_totem and eclipse_totem then
+                                sundial_totem.Parent = LocalPlayer.Character
+                                sundial_totem:Activate()
+                                sundial_totem.Parent = LocalPlayer.Backpack
+                                task.wait(1)
+                                eclipse_totem.Parent = LocalPlayer.Character
+                                eclipse_totem:Activate()
+                                eclipse_totem.Parent = LocalPlayer.Backpack
+                            else
+                                Fluent:Notify({
+                                    Title = "Error",
+                                    Content = "Couldn't Locate Totems In Hotbar",
+                                    Duration = 6.5
+                                })
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end
+})
+
+Tabs.Events:AddToggle("HuntAncientMeg", {
+    Title = "Hunt Ancient Megalodon",
+    Default = false,
+    Callback = function(Value)
+        _G.Ancient_Meg = Value
+    end
+})
+
+Tabs.Events:AddToggle("HuntPhantomMeg", {
+    Title = "Hunt Phantom Megalodon",
+    Default = false,
+    Callback = function(Value)
+        _G.Phantom_Meg = Value
+    end
+})
+
+Tabs.Events:AddToggle("SummonPhantomMeg", {
+    Title = "Summon Phantom Megalodon",
+    Default = false,
+    Callback = function(Value)
+        _G.Summon_Phantom = Value
+    end
+})
+
+-- Character Tab
+Tabs.Character:AddParagraph({ Title = "Notice", Content = "Character modification tools." })
+
+Tabs.Character:AddToggle("FreezeCharacter", {
+    Title = "Freeze Character",
+    Default = false,
+    Description = "Locks your character in place.",
+    Callback = function(isEnabled)
+        variables.FreezeCharacter = isEnabled
+        local oldpos = nil
+        if isEnabled then
+            task.spawn(function()
+                while variables.FreezeCharacter do
+                    local character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+                    local hrp = character:WaitForChild("HumanoidRootPart")
+                    if not oldpos then oldpos = hrp.CFrame end
+                    hrp.CFrame = oldpos
+                    hrp.Velocity = Vector3.zero
+                    task.wait()
+                end
+            end)
+        end
+    end
+})
+
+Tabs.Character:AddToggle("DisableOxygenNormal", {
+    Title = "Disable Oxygen - Normal",
+    Default = true,
+    Description = "Prevents oxygen depletion.",
+    Callback = function(isEnabled)
+        local oxygen = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("client") and LocalPlayer.Character.client:FindFirstChild("oxygen")
+        if isEnabled then
+            if oxygen then
+                oxygen.Disabled = true
+                oxygenConnection = oxygen.Changed:Connect(function() oxygen.Disabled = true end)
+            end
+        else
+            if oxygenConnection then
+                oxygenConnection:Disconnect()
+                if oxygen then oxygen.Disabled = false end
+            end
+        end
+    end
+})
+
+Tabs.Character:AddToggle("DisableOxygenPeaks", {
+    Title = "Disable Oxygen - Peaks",
+    Default = true,
+    Description = "Prevents oxygen depletion in peaks.",
+    Callback = function(isEnabled)
+        local oxygenPeaks = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("client") and LocalPlayer.Character.client:FindFirstChild("oxygen(peaks)")
+        if isEnabled then
+            if oxygenPeaks then
+                oxygenPeaks.Disabled = true
+                oxygenPeaksConnection = oxygenPeaks.Changed:Connect(function() oxygenPeaks.Disabled = true end)
+            end
+        else
+            if oxygenPeaksConnection then
+                oxygenPeaksConnection:Disconnect()
+                if oxygenPeaks then oxygenPeaks.Disabled = false end
+            end
+        end
+    end
+})
+
+Tabs.Character:AddToggle("DisableTemperature", {
+    Title = "Disable Temperature",
+    Default = true,
+    Description = "Prevents temperature effects.",
+    Callback = function(isEnabled)
+        local temperature = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("client") and LocalPlayer.Character.client:FindFirstChild("temperature")
+        if isEnabled then
+            if temperature then
+                temperature.Disabled = true
+                temperatureConnection = temperature.Changed:Connect(function() temperature.Disabled = true end)
+            end
+        else
+            if temperatureConnection then
+                temperatureConnection:Disconnect()
+                if temperature then temperature.Disabled = false end
+            end
+        end
+    end
+})
+
+Tabs.Character:AddButton({
+    Title = "Die",
+    Variant = "Primary",
+    Callback = function()
+        ReplicatedStorage:WaitForChild("events"):WaitForChild("drown"):FireServer(0)
+        Fluent:Notify({ Title = "Action", Content = "Character killed!", Duration = 3 })
+    end
+})
+
+Tabs.Character:AddToggle("HideIdentity", {
+    Title = "Hide LocalPlayer Identity",
+    Default = false,
+    Description = "Hides your identity with a rainbow effect.",
+    Callback = function(isEnabled)
+        if isEnabled then
+            genv.ToggledTest = true
+            local function createRainbowGradient(parent)
+                local gradient = Instance.new("UIGradient", parent)
+                gradient.Color = ColorSequence.new{
+                    ColorSequenceKeypoint.new(0, Color3.fromRGB(242, 138, 54)),
+                    ColorSequenceKeypoint.new(0.25, Color3.fromRGB(242, 54, 107)),
+                    ColorSequenceKeypoint.new(0.5, Color3.fromRGB(134, 54, 242)),
+                    ColorSequenceKeypoint.new(0.75, Color3.fromRGB(54, 187, 242)),
+                    ColorSequenceKeypoint.new(1, Color3.fromRGB(54, 242, 173))
+                }
+                return gradient
+            end
+
+            local function setupCharacter(character)
+                local hrp = character:WaitForChild("HumanoidRootPart")
+                local user = hrp:WaitForChild("user")
+                for _, v in ipairs(character:GetDescendants()) do
+                    if v:IsA("CharacterMesh") or v:IsA("Accessory") or v:IsA("SpecialMesh") or (v:IsA("Decal") and v.Name == "face") then
+                        v:Destroy()
+                    elseif v:IsA("BasePart") then
+                        v.Material = Enum.Material.Neon
+                        v.Color = Color3.fromRGB(255, 255, 255)
+                    end
+                end
+                if character:FindFirstChild("Shirt") then character.Shirt:Destroy() end
+                if character:FindFirstChild("Pants") then character.Pants:Destroy() end
+
+                local gradients = {
+                    createRainbowGradient(user.user),
+                    createRainbowGradient(user.level),
+                    createRainbowGradient(user.streak),
+                    createRainbowGradient(user.title),
+                    createRainbowGradient(PlayerGui.hud.safezone.coins),
+                    createRainbowGradient(PlayerGui.hud.safezone.lvl)
+                }
+
+                genv.lockConnections = {}
+                local function lockText(property, target, value)
+                    target[property] = value
+                    local conn = target:GetPropertyChangedSignal(property):Connect(function()
+                        if target[property] ~= value then target[property] = value end
+                    end)
+                    table.insert(genv.lockConnections, conn)
+                end
+
+                lockText("Text", user.user, "Hidden")
+                lockText("Text", user.level, "Level: ∞")
+                lockText("Text", user.streak, "∞")
+                lockText("Text", user.title, "❤")
+                lockText("Text", PlayerGui.hud.safezone.coins, "~~~~~~★ C$")
+                lockText("Text", PlayerGui.hud.safezone.lvl, "Level: ∞")
+
+                genv.MoneyLog = PlayerGui.hud.safezone.StatChangeList.ChildAdded:Connect(function(v)
+                    if v:IsA("TextLabel") then v.Text = "math.huge 👍" end
+                end)
+
+                local function animateRainbow()
+                    local multi, val = 0.7, 0
+                    RunService.RenderStepped:Connect(function(r)
+                        val = val + r * multi
+                        if val > 0.5 then multi = -multi elseif val < -0.5 then multi = -multi end
+                        for _, grad in pairs(gradients) do grad.Offset = Vector2.new(val, 0) end
+                    end)
+                end
+                task.spawn(animateRainbow)
+            end
+
+            genv.Cow = LocalPlayer.CharacterAdded:Connect(setupCharacter)
+            if LocalPlayer.Character then setupCharacter(LocalPlayer.Character) end
+        else
+            if genv.ToggledTest then
+                genv.ToggledTest = false
+                if genv.Cow then genv.Cow:Disconnect() end
+                if genv.MoneyLog then genv.MoneyLog:Disconnect() end
+                for _, conn in pairs(genv.lockConnections or {}) do conn:Disconnect() end
+                Fluent:Notify({ Title = "Identity", Content = "Disabled. Use 'Die' to fully reset.", Duration = 5 })
+            end
+        end
+    end
+})
+
+-- Gifting Tab (Replaced Trade Tab)
+Tabs.Gifting:AddParagraph({ Title = "Notice", Content = "Tools for gifting items to other players." })
+
+local selectedPlayer = ""
+local currentPlayerList = {}
+local Options = {}
+
+local function UpdatePlayerList()
+    local newPlayerList = {}
+    for _, player in pairs(Players:GetPlayers()) do
+        if player ~= LocalPlayer then
+            table.insert(newPlayerList, player.Name)
+        end
+    end
+    currentPlayerList = newPlayerList
+    if Options.PlayerSelect then
+        Options.PlayerSelect:SetValues(newPlayerList)
+    end
+end
+
+local function TradeEquipped()
+    if selectedPlayer == "" then
+        Fluent:Notify({
+            Title = "Error",
+            Content = "Select a player first!",
+            Duration = 3
+        })
+        return
+    end
+
+    local targetPlayer = Players:FindFirstChild(selectedPlayer)
+    if targetPlayer then
+        local equippedTool = LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+        if equippedTool and equippedTool:FindFirstChild("offer") then
+            equippedTool.offer:FireServer(targetPlayer)
+        else
+            Fluent:Notify({
+                Title = "Error",
+                Content = "Hold an item first!",
+                Duration = 3
+            })
+        end
+    end
+end
+
+local function GiftAll()
+    if selectedPlayer == "" then
+        Fluent:Notify({
+            Title = "Error",
+            Content = "Select a player first!",
+            Duration = 3
+        })
+        getgenv().giftloop = false
+        return
+    end
+
+    local targetPlayer = Players:FindFirstChild(selectedPlayer)
+    if targetPlayer then
+        while getgenv().giftloop do
+            for _, item in pairs(LocalPlayer.Backpack:GetChildren()) do
+                if not getgenv().giftloop then break end
+                if item:FindFirstChild("offer") then
+                    LocalPlayer.PlayerGui.hud.safezone.backpack.events.equip:FireServer(item)
+                    task.wait(0.1)
+                    item.offer:FireServer(targetPlayer)
+                    task.wait(0.2)
+                end
+            end
+            task.wait(0.5)
+        end
+    end
+end
+
+local function startAutoConfirm()
+    PlayerGui.hud.safezone.bodyannouncements.ChildAdded:Connect(function(child)
+        if getgenv().autoconfirm and child:IsA("Frame") and child.Name == "offer" then
+            local confirmButton = child:FindFirstChild("confirm")
+            local shouldStop = false
+            
+            child.AncestryChanged:Connect(function(_, parent)
+                if not parent then shouldStop = true end
+            end)
+            
+            if confirmButton then
+                confirmButton.AncestryChanged:Connect(function(_, parent)
+                    if not parent then shouldStop = true end
+                end)
+                
+                while not shouldStop and getgenv().autoconfirm do
+                    if confirmButton.Visible then
+                        local pos = confirmButton.AbsolutePosition
+                        local size = confirmButton.AbsoluteSize
+                        local x = pos.X + size.X / 2
+                        local y = pos.Y + size.Y / 2 + 58
+                        
+                        VirtualInputManager:SendMouseButtonEvent(x, y, 0, true, LocalPlayer, 0)
+                        VirtualInputManager:SendMouseButtonEvent(x, y, 0, false, LocalPlayer, 0)
+                    end
+                    task.wait(0.01)
+                end
+            end
+        end
+    end)
+end
+
+Options.PlayerSelect = Tabs.Gifting:AddDropdown("PlayerSelect", {
+    Title = "Select Player",
+    Values = {},
+    Multi = false,
+    Default = "",
+    Callback = function(Value)
+        selectedPlayer = Value
+    end
+})
+
+Tabs.Gifting:AddButton({
+    Title = "Refresh Player List",
+    Callback = UpdatePlayerList
+})
+
+Tabs.Gifting:AddToggle("AutoGift", {
+    Title = "Auto Gift All Items",
+    Default = false,
+    Callback = function(Value)
+        getgenv().giftloop = Value
+        if Value then
+            spawn(GiftAll)
+        end
+    end
+})
+
+Tabs.Gifting:AddButton({
+    Title = "Gift Equipped Fish",
+    Callback = TradeEquipped
+})
+
+Tabs.Gifting:AddToggle("AutoConfirm", {
+    Title = "Auto Confirm Gifts",
+    Default = false,
+    Callback = function(Value)
+        getgenv().autoconfirm = Value
+        if Value then
+            startAutoConfirm()
+        end
+    end
+})
+
+Players.PlayerAdded:Connect(function(player)
+    if player ~= LocalPlayer then
+        table.insert(currentPlayerList, player.Name)
+        Options.PlayerSelect:SetValues(currentPlayerList)
+        Fluent:Notify({
+            Title = "Player Joined",
+            Content = player.Name .. " joined!",
+            Duration = 3
+        })
+    end
+end)
+
+Players.PlayerRemoving:Connect(function(player)
+    for i, name in ipairs(currentPlayerList) do
+        if name == player.Name then
+            table.remove(currentPlayerList, i)
+            Options.PlayerSelect:SetValues(currentPlayerList)
+            Fluent:Notify({
+                Title = "Player Left",
+                Content = player.Name .. " left!",
+                Duration = 3
+            })
+            break
+        end
+    end
+end)
+
+-- Config Tab
+Tabs.Config:AddParagraph({ Title = "Notice", Content = "Configuration settings for character movement." })
+
+local Config = {
+    ['Toggle Walk Speed'] = false, 
+    ['Set Walk Speed'] = 50,
+    ['Toggle Jump Power'] = false,
+    ['Set Jump Power'] = 50
+}
+
+AllFuncs['Toggle Walk Speed'] = function()
+    while true do
+        if Config['Toggle Walk Speed'] then
+            pcall(function()
+                local humanoid = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid")
+                if humanoid then
+                    humanoid.WalkSpeed = Config['Set Walk Speed']
+                end
+            end)
+        else
+            pcall(function()
+                local humanoid = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid")
+                if humanoid then
+                    humanoid.WalkSpeed = 16 
+                end
+            end)
+        end
+        task.wait(0.1) 
+    end
+end
+
+AllFuncs['Toggle Jump Power'] = function()
+    while true do
+        if Config['Toggle Jump Power'] then
+            pcall(function()
+                local humanoid = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid")
+                if humanoid then
+                    humanoid.JumpPower = Config['Set Jump Power']
+                end
+            end)
+        else
+            pcall(function()
+                local humanoid = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid")
+                if humanoid then
+                    humanoid.JumpPower = 50
+                end
+            end)
+        end
+        task.wait(0.1)
+    end
+end
+
+local PlayerSection = Tabs.Config:AddSection("Player Settings")
+
+PlayerSection:AddToggle('Toggle Walk Speed', {
+    Title = "Toggle Walk Speed",
+    Default = false,
+    Callback = function(val)
+        Config['Toggle Walk Speed'] = val
+        print("Walk Speed Toggle:", val)
+    end
+})
+
+PlayerSection:AddToggle('Toggle Jump Power', {
+    Title = "Toggle Jump Power",
+    Default = false,
+    Callback = function(val)
+        Config['Toggle Jump Power'] = val
+        print("Jump Power Toggle:", val)
+    end
+})
+
+PlayerSection:AddSlider('Walk Speed', {
+    Title = "Walk Speed",
+    Min = 1,
+    Max = 500,
+    Default = 50,
+    Callback = function(val)
+        Config['Set Walk Speed'] = val
+        print('Walk Speed Set to:', val)
+    end
+})
+
+PlayerSection:AddSlider('Jump Power', {
+    Title = "Jump Power",
+    Min = 1,
+    Max = 500,
+    Default = 50,
+    Callback = function(val)
+        Config['Set Jump Power'] = val
+        print('Jump Power Set to:', val)
+    end
+})
+
+task.spawn(AllFuncs['Toggle Walk Speed'])
+task.spawn(AllFuncs['Toggle Jump Power'])
+
+-- Circular UI Toggle Button
+local ScreenGui = Instance.new("ScreenGui", PlayerGui)
+ScreenGui.ResetOnSpawn = false
+local ToggleButton = Instance.new("TextButton", ScreenGui)
+ToggleButton.Size = UDim2.new(0, 50, 0, 50)
+ToggleButton.Position = UDim2.new(0, 10, 0, 10)
+ToggleButton.Text = "❄️"
+ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 120, 215)
+ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton.BorderSizePixel = 0
+ToggleButton.TextScaled = true
+local Corner = Instance.new("UICorner", ToggleButton)
+Corner.CornerRadius = UDim.new(1, 0) -- Makes it fully circular
+local uiVisible = true
+ToggleButton.MouseButton1Click:Connect(function()
+    uiVisible = not uiVisible
+    Window.Container.Visible = uiVisible -- Directly toggle visibility of the Fluent UI container
+    ToggleButton.BackgroundColor3 = uiVisible and Color3.fromRGB(0, 120, 215) or Color3.fromRGB(100, 100, 100)
+end)
+
+-- Character Respawn
+LocalPlayer.CharacterAdded:Connect(function(char)
+    Character = char
+    HumanoidRootPart = char:WaitForChild("HumanoidRootPart")
+end)
+
+print("[ICED HUB] Script loaded successfully! ❄️")
