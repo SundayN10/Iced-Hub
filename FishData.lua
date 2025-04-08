@@ -61,7 +61,7 @@ return {
         ["Ghastly"] = { PriceMultiply = "2", Color = "0.380392, 1, 0.368627", Chance = "0" },
     },
     ["Fish"] = {
-        ["Helios Ray"] = { Price = "180", Rarity = "Unusual", WeightPool = {30, 60}, From = "Atlantis" },
+          ["Helios Ray"] = { Price = "180", Rarity = "Unusual", WeightPool = {30, 60}, From = "Atlantis" },
         ["Snowcap Algae"] = { Price = "50", Rarity = "Limited", WeightPool = {25, 50}, From = "N/A" },
         ["Icicle"] = { Price = "130", Rarity = "Limited", WeightPool = {4, 12}, From = "N/A" },
         ["Hydra Haddock"] = { Price = "400", Rarity = "Common", WeightPool = {210, 470}, From = "Veil of the Forsaken" },
