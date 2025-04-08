@@ -1,6 +1,6 @@
 return {
     ["Mutations"] = {
-        ["Blessed"] = { PriceMultiply = "10", Color = "1, 0.901961, 0.411765", Chance = "0" },
+                ["Blessed"] = { PriceMultiply = "10", Color = "1, 0.901961, 0.411765", Chance = "0" },
         ["Electric Shock"] = { PriceMultiply = "3.5", Color = "0.541176, 0.0862745, 0.866667", Chance = "0" },
         ["Chocolate"] = { PriceMultiply = "2.5", Color = "0.423529, 0.301961, 0.254902", Chance = "0" },
         ["Mosaic"] = { PriceMultiply = "1.5", Color = "0.984314, 0.756863, 1", Chance = "10" },
