@@ -1,3 +1,0 @@
-local function GitHubLoader(link)
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/isMoons/loader/main/StellarProtect.lua"))()
-end
