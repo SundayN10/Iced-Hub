@@ -1,17 +1,17 @@
 local Tropicana = {};
 
--- ExcHubHub
+-- TropicHub
 Tropicana["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 Tropicana["1"]["IgnoreGuiInset"] = true;
 Tropicana["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
-Tropicana["1"]["Name"] = [[ExcHubHub]];
+Tropicana["1"]["Name"] = [[TropicHub]];
 Tropicana["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
 
--- ExcHubHub.BackgroundFrame
+-- TropicHub.BackgroundFrame
 Tropicana["2"] = Instance.new("Frame", Tropicana["1"]);
 Tropicana["2"]["BorderSizePixel"] = 0;
-Tropicana["2"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["2"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
 Tropicana["2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
 Tropicana["2"]["Size"] = UDim2.new(0, 452, 0, 344);
 Tropicana["2"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
@@ -19,21 +19,21 @@ Tropicana["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 Tropicana["2"]["Name"] = [[BackgroundFrame]];
 
 
--- ExcHubHub.BackgroundFrame.UICorner
+-- TropicHub.BackgroundFrame.UICorner
 Tropicana["3"] = Instance.new("UICorner", Tropicana["2"]);
 Tropicana["3"]["CornerRadius"] = UDim.new(0, 10);
 
 
--- ExcHubHub.BackgroundFrame.UIGradient
+-- TropicHub.BackgroundFrame.UIGradient
 Tropicana["4"] = Instance.new("UIGradient", Tropicana["2"]);
 Tropicana["4"]["Rotation"] = -143;
 Tropicana["4"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(11, 11, 11)),ColorSequenceKeypoint.new(0.484, Color3.fromRGB(6, 244, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(26, 26, 26))};
 
 
--- ExcHubHub.BackgroundFrame.LightBlue
+-- TropicHub.BackgroundFrame.LightBlue
 Tropicana["5"] = Instance.new("Frame", Tropicana["2"]);
 Tropicana["5"]["BorderSizePixel"] = 0;
-Tropicana["5"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["5"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
 Tropicana["5"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["5"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
 Tropicana["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -41,21 +41,21 @@ Tropicana["5"]["Name"] = [[LightBlue]];
 Tropicana["5"]["BackgroundTransparency"] = 0.8;
 
 
--- ExcHubHub.BackgroundFrame.LightBlue.UIGradient
+-- TropicHub.BackgroundFrame.LightBlue.UIGradient
 Tropicana["6"] = Instance.new("UIGradient", Tropicana["5"]);
 Tropicana["6"]["Rotation"] = 50;
-Tropicana["6"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(166, 114, 2)),ColorSequenceKeypoint.new(0.461, Color3.fromRGB(0, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(166, 114, 2))};
+Tropicana["6"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.461, Color3.fromRGB(0, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
 
 
--- ExcHubHub.BackgroundFrame.LightBlue.UICorner
+-- TropicHub.BackgroundFrame.LightBlue.UICorner
 Tropicana["7"] = Instance.new("UICorner", Tropicana["5"]);
 Tropicana["7"]["CornerRadius"] = UDim.new(0, 10);
 
 
--- ExcHubHub.BackgroundFrame.Blue
+-- TropicHub.BackgroundFrame.Blue
 Tropicana["8"] = Instance.new("Frame", Tropicana["2"]);
 Tropicana["8"]["BorderSizePixel"] = 0;
-Tropicana["8"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["8"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
 Tropicana["8"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["8"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
 Tropicana["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -63,18 +63,18 @@ Tropicana["8"]["Name"] = [[Blue]];
 Tropicana["8"]["BackgroundTransparency"] = 0.6;
 
 
--- ExcHubHub.BackgroundFrame.Blue.UIGradient
+-- TropicHub.BackgroundFrame.Blue.UIGradient
 Tropicana["9"] = Instance.new("UIGradient", Tropicana["8"]);
 Tropicana["9"]["Rotation"] = -70;
-Tropicana["9"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(166, 114, 2)),ColorSequenceKeypoint.new(0.491, Color3.fromRGB(0, 50, 123)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(166, 114, 2))};
+Tropicana["9"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.491, Color3.fromRGB(0, 50, 123)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
 
 
--- ExcHubHub.BackgroundFrame.Blue.UICorner
+-- TropicHub.BackgroundFrame.Blue.UICorner
 Tropicana["a"] = Instance.new("UICorner", Tropicana["8"]);
 Tropicana["a"]["CornerRadius"] = UDim.new(0, 10);
 
 
--- ExcHubHub.BackgroundFrame.Main
+-- TropicHub.BackgroundFrame.Main
 Tropicana["b"] = Instance.new("Frame", Tropicana["2"]);
 Tropicana["b"]["ZIndex"] = 2;
 Tropicana["b"]["BorderSizePixel"] = 0;
@@ -86,12 +86,12 @@ Tropicana["b"]["Name"] = [[Main]];
 Tropicana["b"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.BackgroundFrame.Main.Tabs
+-- TropicHub.BackgroundFrame.Main.Tabs
 Tropicana["c"] = Instance.new("Folder", Tropicana["b"]);
 Tropicana["c"]["Name"] = [[Tabs]];
 
 
--- ExcHubHub.BackgroundFrame.Side
+-- TropicHub.BackgroundFrame.Side
 Tropicana["d"] = Instance.new("Frame", Tropicana["2"]);
 Tropicana["d"]["ZIndex"] = 2;
 Tropicana["d"]["BorderSizePixel"] = 0;
@@ -103,21 +103,21 @@ Tropicana["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 Tropicana["d"]["Name"] = [[Side]];
 
 
--- ExcHubHub.BackgroundFrame.Side.UICorner
+-- TropicHub.BackgroundFrame.Side.UICorner
 Tropicana["e"] = Instance.new("UICorner", Tropicana["d"]);
 Tropicana["e"]["CornerRadius"] = UDim.new(0, 10);
 
 
--- ExcHubHub.BackgroundFrame.Side.UIGradient
+-- TropicHub.BackgroundFrame.Side.UIGradient
 Tropicana["f"] = Instance.new("UIGradient", Tropicana["d"]);
 Tropicana["f"]["Rotation"] = -51;
 Tropicana["f"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(11, 11, 11)),ColorSequenceKeypoint.new(0.484, Color3.fromRGB(6, 244, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(26, 26, 26))};
 
 
--- ExcHubHub.BackgroundFrame.Side.LightBlue
+-- TropicHub.BackgroundFrame.Side.LightBlue
 Tropicana["10"] = Instance.new("Frame", Tropicana["d"]);
 Tropicana["10"]["BorderSizePixel"] = 0;
-Tropicana["10"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["10"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
 Tropicana["10"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["10"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
 Tropicana["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -125,21 +125,21 @@ Tropicana["10"]["Name"] = [[LightBlue]];
 Tropicana["10"]["BackgroundTransparency"] = 0.8;
 
 
--- ExcHubHub.BackgroundFrame.Side.LightBlue.UIGradient
+-- TropicHub.BackgroundFrame.Side.LightBlue.UIGradient
 Tropicana["11"] = Instance.new("UIGradient", Tropicana["10"]);
 Tropicana["11"]["Rotation"] = 50;
-Tropicana["11"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(166, 114, 2)),ColorSequenceKeypoint.new(0.461, Color3.fromRGB(0, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(166, 114, 2))};
+Tropicana["11"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.461, Color3.fromRGB(0, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
 
 
--- ExcHubHub.BackgroundFrame.Side.LightBlue.UICorner
+-- TropicHub.BackgroundFrame.Side.LightBlue.UICorner
 Tropicana["12"] = Instance.new("UICorner", Tropicana["10"]);
 Tropicana["12"]["CornerRadius"] = UDim.new(0, 10);
 
 
--- ExcHubHub.BackgroundFrame.Side.Blue
+-- TropicHub.BackgroundFrame.Side.Blue
 Tropicana["13"] = Instance.new("Frame", Tropicana["d"]);
 Tropicana["13"]["BorderSizePixel"] = 0;
-Tropicana["13"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["13"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
 Tropicana["13"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["13"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
 Tropicana["13"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -147,21 +147,21 @@ Tropicana["13"]["Name"] = [[Blue]];
 Tropicana["13"]["BackgroundTransparency"] = 0.6;
 
 
--- ExcHubHub.BackgroundFrame.Side.Blue.UIGradient
+-- TropicHub.BackgroundFrame.Side.Blue.UIGradient
 Tropicana["14"] = Instance.new("UIGradient", Tropicana["13"]);
 Tropicana["14"]["Rotation"] = -70;
-Tropicana["14"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(166, 114, 2)),ColorSequenceKeypoint.new(0.491, Color3.fromRGB(0, 50, 123)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(166, 114, 2))};
+Tropicana["14"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.491, Color3.fromRGB(0, 50, 123)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
 
 
--- ExcHubHub.BackgroundFrame.Side.Blue.UICorner
+-- TropicHub.BackgroundFrame.Side.Blue.UICorner
 Tropicana["15"] = Instance.new("UICorner", Tropicana["13"]);
 Tropicana["15"]["CornerRadius"] = UDim.new(0, 10);
 
 
--- ExcHubHub.BackgroundFrame.Side.Cyan
+-- TropicHub.BackgroundFrame.Side.Cyan
 Tropicana["16"] = Instance.new("CanvasGroup", Tropicana["d"]);
 Tropicana["16"]["BorderSizePixel"] = 0;
-Tropicana["16"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["16"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
 Tropicana["16"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["16"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
 Tropicana["16"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -169,21 +169,21 @@ Tropicana["16"]["Name"] = [[Cyan]];
 Tropicana["16"]["BackgroundTransparency"] = 0.8;
 
 
--- ExcHubHub.BackgroundFrame.Side.Cyan.UIGradient
+-- TropicHub.BackgroundFrame.Side.Cyan.UIGradient
 Tropicana["17"] = Instance.new("UIGradient", Tropicana["16"]);
 Tropicana["17"]["Rotation"] = -26;
-Tropicana["17"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(166, 114, 2)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(0, 35, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(166, 114, 2))};
+Tropicana["17"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(0, 35, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
 
 
--- ExcHubHub.BackgroundFrame.Side.Cyan.UICorner
+-- TropicHub.BackgroundFrame.Side.Cyan.UICorner
 Tropicana["18"] = Instance.new("UICorner", Tropicana["16"]);
 Tropicana["18"]["CornerRadius"] = UDim.new(0, 10);
 
 
--- ExcHubHub.BackgroundFrame.Side.Cyan.AbstractBg
+-- TropicHub.BackgroundFrame.Side.Cyan.AbstractBg
 Tropicana["19"] = Instance.new("ImageLabel", Tropicana["16"]);
 Tropicana["19"]["BorderSizePixel"] = 0;
-Tropicana["19"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["19"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["19"]["ImageColor3"] = Color3.fromRGB(0, 183, 22);
 Tropicana["19"]["Image"] = [[rbxassetid://88984077541230]];
 Tropicana["19"]["Size"] = UDim2.new(0, 549, 0, 364);
@@ -195,14 +195,14 @@ Tropicana["19"]["Name"] = [[AbstractBg]];
 Tropicana["19"]["Position"] = UDim2.new(0.41197, 0, 0.48528, 0);
 
 
--- ExcHubHub.BackgroundFrame.Side.TabButtons
+-- TropicHub.BackgroundFrame.Side.TabButtons
 Tropicana["1a"] = Instance.new("ScrollingFrame", Tropicana["d"]);
 Tropicana["1a"]["ZIndex"] = 5;
 Tropicana["1a"]["BorderSizePixel"] = 0;
 Tropicana["1a"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
 Tropicana["1a"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
 Tropicana["1a"]["TopImage"] = [[rbxasset://textures/ui/Scroll/scroll-middle.png]];
-Tropicana["1a"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["1a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["1a"]["Name"] = [[TabButtons]];
 Tropicana["1a"]["Selectable"] = false;
 Tropicana["1a"]["BottomImage"] = [[rbxasset://textures/ui/Scroll/scroll-middle.png]];
@@ -215,26 +215,26 @@ Tropicana["1a"]["ScrollBarThickness"] = 2;
 Tropicana["1a"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.BackgroundFrame.Side.TabButtons.UIListLayout
+-- TropicHub.BackgroundFrame.Side.TabButtons.UIListLayout
 Tropicana["1b"] = Instance.new("UIListLayout", Tropicana["1a"]);
 Tropicana["1b"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
 
--- ExcHubHub.BackgroundFrame.Side.DraggablePart
+-- TropicHub.BackgroundFrame.Side.DraggablePart
 Tropicana["1c"] = Instance.new("Frame", Tropicana["d"]);
 Tropicana["1c"]["ZIndex"] = 5;
 Tropicana["1c"]["BorderSizePixel"] = 0;
-Tropicana["1c"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["1c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["1c"]["Size"] = UDim2.new(0, 140, 0, 55);
 Tropicana["1c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 Tropicana["1c"]["Name"] = [[DraggablePart]];
 Tropicana["1c"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.BackgroundFrame.Side.DraggablePart.Logo
+-- TropicHub.BackgroundFrame.Side.DraggablePart.Logo
 Tropicana["1d"] = Instance.new("ImageLabel", Tropicana["1c"]);
 Tropicana["1d"]["BorderSizePixel"] = 0;
-Tropicana["1d"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["1d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["1d"]["Image"] = [[rbxassetid://75447466645806]];
 Tropicana["1d"]["Size"] = UDim2.new(0, 33, 0, 35);
 Tropicana["1d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -243,26 +243,26 @@ Tropicana["1d"]["Name"] = [[Logo]];
 Tropicana["1d"]["Position"] = UDim2.new(0, 12, 0, 13);
 
 
--- ExcHubHub.BackgroundFrame.Side.DraggablePart.Logo.UIAspectRatioConstraint
+-- TropicHub.BackgroundFrame.Side.DraggablePart.Logo.UIAspectRatioConstraint
 Tropicana["1e"] = Instance.new("UIAspectRatioConstraint", Tropicana["1d"]);
 
 
 
--- ExcHubHub.BackgroundFrame.Side.DraggablePart.Logo.UICorner
+-- TropicHub.BackgroundFrame.Side.DraggablePart.Logo.UICorner
 Tropicana["1f"] = Instance.new("UICorner", Tropicana["1d"]);
 
 
 
--- ExcHubHub.BackgroundFrame.Side.DraggablePart.Title
+-- TropicHub.BackgroundFrame.Side.DraggablePart.Title
 Tropicana["20"] = Instance.new("TextLabel", Tropicana["1c"]);
 Tropicana["20"]["TextWrapped"] = true;
 Tropicana["20"]["BorderSizePixel"] = 0;
 Tropicana["20"]["TextXAlignment"] = Enum.TextXAlignment.Left;
 Tropicana["20"]["TextScaled"] = true;
-Tropicana["20"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["20"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["20"]["TextSize"] = 14;
 Tropicana["20"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-Tropicana["20"]["TextColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["20"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["20"]["BackgroundTransparency"] = 1;
 Tropicana["20"]["AnchorPoint"] = Vector2.new(0, 0.5);
 Tropicana["20"]["Size"] = UDim2.new(0, 80, 0, 17);
@@ -273,13 +273,13 @@ Tropicana["20"]["Name"] = [[Title]];
 Tropicana["20"]["Position"] = UDim2.new(0, 55, 0, 29);
 
 
--- ExcHubHub.BackgroundFrame.Side.DraggablePart.Title.UIGradient
+-- TropicHub.BackgroundFrame.Side.DraggablePart.Title.UIGradient
 Tropicana["21"] = Instance.new("UIGradient", Tropicana["20"]);
 Tropicana["21"]["Rotation"] = -90;
 Tropicana["21"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
 
 
--- ExcHubHub.BackgroundFrame.DropShadowHolder
+-- TropicHub.BackgroundFrame.DropShadowHolder
 Tropicana["22"] = Instance.new("Frame", Tropicana["2"]);
 Tropicana["22"]["ZIndex"] = 0;
 Tropicana["22"]["BorderSizePixel"] = 0;
@@ -288,7 +288,7 @@ Tropicana["22"]["Name"] = [[DropShadowHolder]];
 Tropicana["22"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.BackgroundFrame.DropShadowHolder.DropShadow
+-- TropicHub.BackgroundFrame.DropShadowHolder.DropShadow
 Tropicana["23"] = Instance.new("ImageLabel", Tropicana["22"]);
 Tropicana["23"]["ZIndex"] = 0;
 Tropicana["23"]["BorderSizePixel"] = 0;
@@ -303,10 +303,10 @@ Tropicana["23"]["Name"] = [[DropShadow]];
 Tropicana["23"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
 
 
--- ExcHubHub.BackgroundFrame.Cyan
+-- TropicHub.BackgroundFrame.Cyan
 Tropicana["24"] = Instance.new("Frame", Tropicana["2"]);
 Tropicana["24"]["BorderSizePixel"] = 0;
-Tropicana["24"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["24"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
 Tropicana["24"]["ClipsDescendants"] = true;
 Tropicana["24"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["24"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
@@ -315,38 +315,38 @@ Tropicana["24"]["Name"] = [[Cyan]];
 Tropicana["24"]["BackgroundTransparency"] = 0.8;
 
 
--- ExcHubHub.BackgroundFrame.Cyan.UIGradient
+-- TropicHub.BackgroundFrame.Cyan.UIGradient
 Tropicana["25"] = Instance.new("UIGradient", Tropicana["24"]);
 Tropicana["25"]["Rotation"] = -26;
-Tropicana["25"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(166, 114, 2)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(0, 35, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(166, 114, 2))};
+Tropicana["25"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(0, 35, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
 
 
--- ExcHubHub.BackgroundFrame.Cyan.UICorner
+-- TropicHub.BackgroundFrame.Cyan.UICorner
 Tropicana["26"] = Instance.new("UICorner", Tropicana["24"]);
 Tropicana["26"]["CornerRadius"] = UDim.new(0, 10);
 
 
--- ExcHubHub.Library
+-- TropicHub.Library
 Tropicana["27"] = Instance.new("ModuleScript", Tropicana["1"]);
 Tropicana["27"]["Name"] = [[Library]];
 
 
--- ExcHubHub.IconLib
+-- TropicHub.IconLib
 Tropicana["28"] = Instance.new("ModuleScript", Tropicana["1"]);
 Tropicana["28"]["Name"] = [[IconLib]];
 
 
--- ExcHubHub.Template
+-- TropicHub.Template
 Tropicana["29"] = Instance.new("Folder", Tropicana["1"]);
 Tropicana["29"]["Name"] = [[Template]];
 
 
--- ExcHubHub.Template.TabButton
+-- TropicHub.Template.TabButton
 Tropicana["2a"] = Instance.new("TextButton", Tropicana["29"]);
 Tropicana["2a"]["BorderSizePixel"] = 0;
 Tropicana["2a"]["TextSize"] = 14;
 Tropicana["2a"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["2a"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["2a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["2a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 Tropicana["2a"]["Size"] = UDim2.new(0, 137, 0, 39);
 Tropicana["2a"]["BackgroundTransparency"] = 1;
@@ -356,10 +356,10 @@ Tropicana["2a"]["Text"] = [[]];
 Tropicana["2a"]["Visible"] = false;
 
 
--- ExcHubHub.Template.TabButton.Icon
+-- TropicHub.Template.TabButton.Icon
 Tropicana["2b"] = Instance.new("ImageLabel", Tropicana["2a"]);
 Tropicana["2b"]["BorderSizePixel"] = 0;
-Tropicana["2b"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["2b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["2b"]["AnchorPoint"] = Vector2.new(0, 0.5);
 Tropicana["2b"]["Image"] = [[rbxassetid://97623395395101]];
 Tropicana["2b"]["Size"] = UDim2.new(0, 25, 0, 25);
@@ -369,21 +369,21 @@ Tropicana["2b"]["Name"] = [[Icon]];
 Tropicana["2b"]["Position"] = UDim2.new(0.07, 0, 0.5, 0);
 
 
--- ExcHubHub.Template.TabButton.Icon.UIAspectRatioConstraint
+-- TropicHub.Template.TabButton.Icon.UIAspectRatioConstraint
 Tropicana["2c"] = Instance.new("UIAspectRatioConstraint", Tropicana["2b"]);
 
 
 
--- ExcHubHub.Template.TabButton.Title
+-- TropicHub.Template.TabButton.Title
 Tropicana["2d"] = Instance.new("TextLabel", Tropicana["2a"]);
 Tropicana["2d"]["TextWrapped"] = true;
 Tropicana["2d"]["BorderSizePixel"] = 0;
 Tropicana["2d"]["TextXAlignment"] = Enum.TextXAlignment.Left;
 Tropicana["2d"]["TextScaled"] = true;
-Tropicana["2d"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["2d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["2d"]["TextSize"] = 14;
 Tropicana["2d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-Tropicana["2d"]["TextColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["2d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["2d"]["BackgroundTransparency"] = 1;
 Tropicana["2d"]["AnchorPoint"] = Vector2.new(0, 0.5);
 Tropicana["2d"]["Size"] = UDim2.new(0, 90, 0, 17);
@@ -393,32 +393,32 @@ Tropicana["2d"]["Name"] = [[Title]];
 Tropicana["2d"]["Position"] = UDim2.new(0.33, 0, 0.5, 0);
 
 
--- ExcHubHub.Template.TabButton.Title.UIGradient
+-- TropicHub.Template.TabButton.Title.UIGradient
 Tropicana["2e"] = Instance.new("UIGradient", Tropicana["2d"]);
 Tropicana["2e"]["Rotation"] = -90;
 Tropicana["2e"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
 
 
--- ExcHubHub.Template.TabFrame
+-- TropicHub.Template.TabFrame
 Tropicana["2f"] = Instance.new("Frame", Tropicana["29"]);
 Tropicana["2f"]["Visible"] = false;
 Tropicana["2f"]["ZIndex"] = 0;
 Tropicana["2f"]["BorderSizePixel"] = 0;
-Tropicana["2f"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["2f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["2f"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["2f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 Tropicana["2f"]["Name"] = [[TabFrame]];
 Tropicana["2f"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.Template.TabFrame.ScrollingFrameRight
+-- TropicHub.Template.TabFrame.ScrollingFrameRight
 Tropicana["30"] = Instance.new("ScrollingFrame", Tropicana["2f"]);
 Tropicana["30"]["Active"] = true;
 Tropicana["30"]["ZIndex"] = 2;
 Tropicana["30"]["BorderSizePixel"] = 0;
 Tropicana["30"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
 Tropicana["30"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
-Tropicana["30"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["30"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["30"]["Name"] = [[ScrollingFrameRight]];
 Tropicana["30"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
 Tropicana["30"]["Size"] = UDim2.new(0.5, 0, 1, 0);
@@ -429,27 +429,27 @@ Tropicana["30"]["ScrollBarThickness"] = 0;
 Tropicana["30"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.Template.TabFrame.ScrollingFrameRight.UIListLayout
+-- TropicHub.Template.TabFrame.ScrollingFrameRight.UIListLayout
 Tropicana["31"] = Instance.new("UIListLayout", Tropicana["30"]);
 Tropicana["31"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
 Tropicana["31"]["Padding"] = UDim.new(0, 10);
 Tropicana["31"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
 
--- ExcHubHub.Template.TabFrame.ScrollingFrameRight.UIPadding
+-- TropicHub.Template.TabFrame.ScrollingFrameRight.UIPadding
 Tropicana["32"] = Instance.new("UIPadding", Tropicana["30"]);
 Tropicana["32"]["PaddingTop"] = UDim.new(0, 10);
 Tropicana["32"]["PaddingBottom"] = UDim.new(0, 10);
 
 
--- ExcHubHub.Template.TabFrame.ScrollingFrameLeft
+-- TropicHub.Template.TabFrame.ScrollingFrameLeft
 Tropicana["33"] = Instance.new("ScrollingFrame", Tropicana["2f"]);
 Tropicana["33"]["Active"] = true;
 Tropicana["33"]["ZIndex"] = 0;
 Tropicana["33"]["BorderSizePixel"] = 0;
 Tropicana["33"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
 Tropicana["33"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
-Tropicana["33"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["33"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["33"]["Name"] = [[ScrollingFrameLeft]];
 Tropicana["33"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
 Tropicana["33"]["Size"] = UDim2.new(0.5, 0, 1, 0);
@@ -459,20 +459,20 @@ Tropicana["33"]["ScrollBarThickness"] = 0;
 Tropicana["33"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.Template.TabFrame.ScrollingFrameLeft.UIListLayout
+-- TropicHub.Template.TabFrame.ScrollingFrameLeft.UIListLayout
 Tropicana["34"] = Instance.new("UIListLayout", Tropicana["33"]);
 Tropicana["34"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
 Tropicana["34"]["Padding"] = UDim.new(0, 10);
 Tropicana["34"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
 
--- ExcHubHub.Template.TabFrame.ScrollingFrameLeft.UIPadding
+-- TropicHub.Template.TabFrame.ScrollingFrameLeft.UIPadding
 Tropicana["35"] = Instance.new("UIPadding", Tropicana["33"]);
 Tropicana["35"]["PaddingTop"] = UDim.new(0, 10);
 Tropicana["35"]["PaddingBottom"] = UDim.new(0, 10);
 
 
--- ExcHubHub.Template.Section
+-- TropicHub.Template.Section
 Tropicana["36"] = Instance.new("Frame", Tropicana["29"]);
 Tropicana["36"]["Visible"] = false;
 Tropicana["36"]["ZIndex"] = 2;
@@ -486,12 +486,12 @@ Tropicana["36"]["Name"] = [[Section]];
 Tropicana["36"]["BackgroundTransparency"] = 0.75;
 
 
--- ExcHubHub.Template.Section.UICorner
+-- TropicHub.Template.Section.UICorner
 Tropicana["37"] = Instance.new("UICorner", Tropicana["36"]);
 Tropicana["37"]["CornerRadius"] = UDim.new(0, 5);
 
 
--- ExcHubHub.Template.Section.Seperator
+-- TropicHub.Template.Section.Seperator
 Tropicana["38"] = Instance.new("Frame", Tropicana["36"]);
 Tropicana["38"]["BorderSizePixel"] = 0;
 Tropicana["38"]["BackgroundColor3"] = Color3.fromRGB(56, 56, 56);
@@ -501,21 +501,21 @@ Tropicana["38"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 Tropicana["38"]["Name"] = [[Seperator]];
 
 
--- ExcHubHub.Template.Section.Seperator.UIGradient
+-- TropicHub.Template.Section.Seperator.UIGradient
 Tropicana["39"] = Instance.new("UIGradient", Tropicana["38"]);
 Tropicana["39"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(58, 144, 255))};
 
 
--- ExcHubHub.Template.Section.Title
+-- TropicHub.Template.Section.Title
 Tropicana["3a"] = Instance.new("TextLabel", Tropicana["36"]);
 Tropicana["3a"]["TextWrapped"] = true;
 Tropicana["3a"]["BorderSizePixel"] = 0;
 Tropicana["3a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
 Tropicana["3a"]["TextScaled"] = true;
-Tropicana["3a"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["3a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["3a"]["TextSize"] = 14;
 Tropicana["3a"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-Tropicana["3a"]["TextColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["3a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["3a"]["BackgroundTransparency"] = 1;
 Tropicana["3a"]["Size"] = UDim2.new(0, 95, 0, 13);
 Tropicana["3a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -524,12 +524,12 @@ Tropicana["3a"]["Name"] = [[Title]];
 Tropicana["3a"]["Position"] = UDim2.new(0, 8, 0, 7);
 
 
--- ExcHubHub.Template.Section.Title.UIGradient
+-- TropicHub.Template.Section.Title.UIGradient
 Tropicana["3b"] = Instance.new("UIGradient", Tropicana["3a"]);
 Tropicana["3b"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 90, 255)),ColorSequenceKeypoint.new(0.247, Color3.fromRGB(63, 156, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 248))};
 
 
--- ExcHubHub.Template.Section.SectionItems
+-- TropicHub.Template.Section.SectionItems
 Tropicana["3c"] = Instance.new("Frame", Tropicana["36"]);
 Tropicana["3c"]["BorderSizePixel"] = 0;
 Tropicana["3c"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
@@ -541,18 +541,18 @@ Tropicana["3c"]["Name"] = [[SectionItems]];
 Tropicana["3c"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.Template.Section.SectionItems.UIListLayout
+-- TropicHub.Template.Section.SectionItems.UIListLayout
 Tropicana["3d"] = Instance.new("UIListLayout", Tropicana["3c"]);
 Tropicana["3d"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
 Tropicana["3d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
 
--- ExcHubHub.Template.Section.SectionItems.UIPadding
+-- TropicHub.Template.Section.SectionItems.UIPadding
 Tropicana["3e"] = Instance.new("UIPadding", Tropicana["3c"]);
 Tropicana["3e"]["PaddingTop"] = UDim.new(0, 6);
 
 
--- ExcHubHub.Template.Section.Mark
+-- TropicHub.Template.Section.Mark
 Tropicana["3f"] = Instance.new("Frame", Tropicana["36"]);
 Tropicana["3f"]["BorderSizePixel"] = 0;
 Tropicana["3f"]["BackgroundColor3"] = Color3.fromRGB(246, 246, 246);
@@ -561,24 +561,24 @@ Tropicana["3f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 Tropicana["3f"]["Name"] = [[Mark]];
 
 
--- ExcHubHub.Template.Section.Mark.UIGradient
+-- TropicHub.Template.Section.Mark.UIGradient
 Tropicana["40"] = Instance.new("UIGradient", Tropicana["3f"]);
 Tropicana["40"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
 
 
--- ExcHubHub.Template.Section.UIPadding
+-- TropicHub.Template.Section.UIPadding
 Tropicana["41"] = Instance.new("UIPadding", Tropicana["36"]);
 Tropicana["41"]["PaddingBottom"] = UDim.new(0, 6);
 
 
--- ExcHubHub.Template.DropdownButton
+-- TropicHub.Template.DropdownButton
 Tropicana["42"] = Instance.new("TextButton", Tropicana["29"]);
 Tropicana["42"]["TextWrapped"] = true;
 Tropicana["42"]["BorderSizePixel"] = 0;
 Tropicana["42"]["TextSize"] = 14;
 Tropicana["42"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
 Tropicana["42"]["TextScaled"] = true;
-Tropicana["42"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["42"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["42"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
 Tropicana["42"]["Selectable"] = false;
 Tropicana["42"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -591,18 +591,18 @@ Tropicana["42"]["Visible"] = false;
 Tropicana["42"]["Position"] = UDim2.new(0.5, 0, 0.05513, 0);
 
 
--- ExcHubHub.Template.DropdownButton.UIGradient
+-- TropicHub.Template.DropdownButton.UIGradient
 Tropicana["43"] = Instance.new("UIGradient", Tropicana["42"]);
 Tropicana["43"]["Enabled"] = false;
 Tropicana["43"]["Rotation"] = -90;
 Tropicana["43"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
 
 
--- ExcHubHub.Template.Notification
+-- TropicHub.Template.Notification
 Tropicana["44"] = Instance.new("Frame", Tropicana["29"]);
 Tropicana["44"]["Visible"] = false;
 Tropicana["44"]["BorderSizePixel"] = 0;
-Tropicana["44"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["44"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
 Tropicana["44"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
 Tropicana["44"]["AutomaticSize"] = Enum.AutomaticSize.Y;
 Tropicana["44"]["Size"] = UDim2.new(0, 265, 0, 65);
@@ -611,22 +611,22 @@ Tropicana["44"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 Tropicana["44"]["Name"] = [[Notification]];
 
 
--- ExcHubHub.Template.Notification.UICorner
+-- TropicHub.Template.Notification.UICorner
 Tropicana["45"] = Instance.new("UICorner", Tropicana["44"]);
 Tropicana["45"]["CornerRadius"] = UDim.new(0, 10);
 
 
--- ExcHubHub.Template.Notification.UIGradient
+-- TropicHub.Template.Notification.UIGradient
 Tropicana["46"] = Instance.new("UIGradient", Tropicana["44"]);
 Tropicana["46"]["Rotation"] = 180;
 Tropicana["46"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(11, 11, 11)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(5, 185, 191)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(26, 26, 26))};
 
 
--- ExcHubHub.Template.Notification.LightBlue
+-- TropicHub.Template.Notification.LightBlue
 Tropicana["47"] = Instance.new("Frame", Tropicana["44"]);
 Tropicana["47"]["BorderSizePixel"] = 0;
 Tropicana["47"]["AutoLocalize"] = false;
-Tropicana["47"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["47"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
 Tropicana["47"]["BorderMode"] = Enum.BorderMode.Inset;
 Tropicana["47"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["47"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
@@ -635,27 +635,27 @@ Tropicana["47"]["Name"] = [[LightBlue]];
 Tropicana["47"]["BackgroundTransparency"] = 0.8;
 
 
--- ExcHubHub.Template.Notification.LightBlue.UIGradient
+-- TropicHub.Template.Notification.LightBlue.UIGradient
 Tropicana["48"] = Instance.new("UIGradient", Tropicana["47"]);
 Tropicana["48"]["Rotation"] = -77;
-Tropicana["48"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(166, 114, 2)),ColorSequenceKeypoint.new(0.461, Color3.fromRGB(0, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(166, 114, 2))};
+Tropicana["48"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.461, Color3.fromRGB(0, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
 
 
--- ExcHubHub.Template.Notification.LightBlue.UICorner
+-- TropicHub.Template.Notification.LightBlue.UICorner
 Tropicana["49"] = Instance.new("UICorner", Tropicana["47"]);
 Tropicana["49"]["CornerRadius"] = UDim.new(0, 10);
 
 
--- ExcHubHub.Template.Notification.LightBlue.UISizeConstraint
+-- TropicHub.Template.Notification.LightBlue.UISizeConstraint
 Tropicana["4a"] = Instance.new("UISizeConstraint", Tropicana["47"]);
 Tropicana["4a"]["MaxSize"] = Vector2.new(265, math.huge);
 
 
--- ExcHubHub.Template.Notification.Blue
+-- TropicHub.Template.Notification.Blue
 Tropicana["4b"] = Instance.new("Frame", Tropicana["44"]);
 Tropicana["4b"]["BorderSizePixel"] = 0;
 Tropicana["4b"]["AutoLocalize"] = false;
-Tropicana["4b"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["4b"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
 Tropicana["4b"]["BorderMode"] = Enum.BorderMode.Inset;
 Tropicana["4b"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["4b"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
@@ -664,27 +664,27 @@ Tropicana["4b"]["Name"] = [[Blue]];
 Tropicana["4b"]["BackgroundTransparency"] = 0.6;
 
 
--- ExcHubHub.Template.Notification.Blue.UIGradient
+-- TropicHub.Template.Notification.Blue.UIGradient
 Tropicana["4c"] = Instance.new("UIGradient", Tropicana["4b"]);
 Tropicana["4c"]["Rotation"] = 93;
-Tropicana["4c"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(166, 114, 2)),ColorSequenceKeypoint.new(0.491, Color3.fromRGB(0, 50, 123)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(166, 114, 2))};
+Tropicana["4c"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.491, Color3.fromRGB(0, 50, 123)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
 
 
--- ExcHubHub.Template.Notification.Blue.UICorner
+-- TropicHub.Template.Notification.Blue.UICorner
 Tropicana["4d"] = Instance.new("UICorner", Tropicana["4b"]);
 Tropicana["4d"]["CornerRadius"] = UDim.new(0, 10);
 
 
--- ExcHubHub.Template.Notification.Blue.UISizeConstraint
+-- TropicHub.Template.Notification.Blue.UISizeConstraint
 Tropicana["4e"] = Instance.new("UISizeConstraint", Tropicana["4b"]);
 Tropicana["4e"]["MaxSize"] = Vector2.new(265, math.huge);
 
 
--- ExcHubHub.Template.Notification.Cyan
+-- TropicHub.Template.Notification.Cyan
 Tropicana["4f"] = Instance.new("Frame", Tropicana["44"]);
 Tropicana["4f"]["BorderSizePixel"] = 0;
 Tropicana["4f"]["AutoLocalize"] = false;
-Tropicana["4f"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["4f"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
 Tropicana["4f"]["BorderMode"] = Enum.BorderMode.Inset;
 Tropicana["4f"]["ClipsDescendants"] = true;
 Tropicana["4f"]["Size"] = UDim2.new(1, 0, 1, 0);
@@ -694,27 +694,27 @@ Tropicana["4f"]["Name"] = [[Cyan]];
 Tropicana["4f"]["BackgroundTransparency"] = 0.8;
 
 
--- ExcHubHub.Template.Notification.Cyan.UIGradient
+-- TropicHub.Template.Notification.Cyan.UIGradient
 Tropicana["50"] = Instance.new("UIGradient", Tropicana["4f"]);
 Tropicana["50"]["Rotation"] = -98;
-Tropicana["50"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(166, 114, 2)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(0, 35, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(166, 114, 2))};
+Tropicana["50"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(0, 35, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
 
 
--- ExcHubHub.Template.Notification.Cyan.UICorner
+-- TropicHub.Template.Notification.Cyan.UICorner
 Tropicana["51"] = Instance.new("UICorner", Tropicana["4f"]);
 Tropicana["51"]["CornerRadius"] = UDim.new(0, 10);
 
 
--- ExcHubHub.Template.Notification.Cyan.UISizeConstraint
+-- TropicHub.Template.Notification.Cyan.UISizeConstraint
 Tropicana["52"] = Instance.new("UISizeConstraint", Tropicana["4f"]);
 Tropicana["52"]["MaxSize"] = Vector2.new(265, math.huge);
 
 
--- ExcHubHub.Template.Notification.Items
+-- TropicHub.Template.Notification.Items
 Tropicana["53"] = Instance.new("ImageLabel", Tropicana["44"]);
 Tropicana["53"]["ZIndex"] = 2;
 Tropicana["53"]["BorderSizePixel"] = 0;
-Tropicana["53"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["53"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["53"]["AutomaticSize"] = Enum.AutomaticSize.Y;
 Tropicana["53"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["53"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -722,30 +722,30 @@ Tropicana["53"]["BackgroundTransparency"] = 1;
 Tropicana["53"]["Name"] = [[Items]];
 
 
--- ExcHubHub.Template.Notification.Items.UIListLayout
+-- TropicHub.Template.Notification.Items.UIListLayout
 Tropicana["54"] = Instance.new("UIListLayout", Tropicana["53"]);
 Tropicana["54"]["Padding"] = UDim.new(0, 5);
 Tropicana["54"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
 Tropicana["54"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
 
--- ExcHubHub.Template.Notification.Items.UIPadding
+-- TropicHub.Template.Notification.Items.UIPadding
 Tropicana["55"] = Instance.new("UIPadding", Tropicana["53"]);
 Tropicana["55"]["PaddingTop"] = UDim.new(0, 15);
 Tropicana["55"]["PaddingLeft"] = UDim.new(0, 15);
 Tropicana["55"]["PaddingBottom"] = UDim.new(0, 15);
 
 
--- ExcHubHub.Template.Notification.Items.Title
+-- TropicHub.Template.Notification.Items.Title
 Tropicana["56"] = Instance.new("TextLabel", Tropicana["53"]);
 Tropicana["56"]["TextWrapped"] = true;
 Tropicana["56"]["BorderSizePixel"] = 0;
 Tropicana["56"]["TextXAlignment"] = Enum.TextXAlignment.Left;
 Tropicana["56"]["TextScaled"] = true;
-Tropicana["56"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["56"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["56"]["TextSize"] = 14;
 Tropicana["56"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-Tropicana["56"]["TextColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["56"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["56"]["BackgroundTransparency"] = 1;
 Tropicana["56"]["AnchorPoint"] = Vector2.new(0, 0.5);
 Tropicana["56"]["Size"] = UDim2.new(0, 235, 0, 15);
@@ -755,16 +755,16 @@ Tropicana["56"]["Name"] = [[Title]];
 Tropicana["56"]["Position"] = UDim2.new(0, 0, 0, 9);
 
 
--- ExcHubHub.Template.Notification.Items.Title.UIGradient
+-- TropicHub.Template.Notification.Items.Title.UIGradient
 Tropicana["57"] = Instance.new("UIGradient", Tropicana["56"]);
 Tropicana["57"]["Rotation"] = -90;
 Tropicana["57"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
 
 
--- ExcHubHub.Template.Notification.Items.Title.Close
+-- TropicHub.Template.Notification.Items.Title.Close
 Tropicana["58"] = Instance.new("ImageButton", Tropicana["56"]);
 Tropicana["58"]["BorderSizePixel"] = 0;
-Tropicana["58"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["58"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["58"]["AnchorPoint"] = Vector2.new(0, 0.5);
 Tropicana["58"]["Image"] = [[rbxassetid://10747384394]];
 Tropicana["58"]["Size"] = UDim2.new(0.09706, 0, 1.33333, 0);
@@ -774,26 +774,26 @@ Tropicana["58"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 Tropicana["58"]["Position"] = UDim2.new(0.92, 0, 0.5, 0);
 
 
--- ExcHubHub.Template.Notification.Items.Title.Close.UIGradient
+-- TropicHub.Template.Notification.Items.Title.Close.UIGradient
 Tropicana["59"] = Instance.new("UIGradient", Tropicana["58"]);
 Tropicana["59"]["Rotation"] = -90;
 Tropicana["59"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
 
 
--- ExcHubHub.Template.Notification.Items.Title.Close.UIAspectRatioConstraint
+-- TropicHub.Template.Notification.Items.Title.Close.UIAspectRatioConstraint
 Tropicana["5a"] = Instance.new("UIAspectRatioConstraint", Tropicana["58"]);
 Tropicana["5a"]["AspectRatio"] = 1.054;
 
 
--- ExcHubHub.Template.Notification.Items.Content
+-- TropicHub.Template.Notification.Items.Content
 Tropicana["5b"] = Instance.new("TextLabel", Tropicana["53"]);
 Tropicana["5b"]["TextWrapped"] = true;
 Tropicana["5b"]["BorderSizePixel"] = 0;
 Tropicana["5b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-Tropicana["5b"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["5b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["5b"]["TextSize"] = 12;
 Tropicana["5b"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-Tropicana["5b"]["TextColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["5b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["5b"]["BackgroundTransparency"] = 1;
 Tropicana["5b"]["AnchorPoint"] = Vector2.new(0, 0.5);
 Tropicana["5b"]["Size"] = UDim2.new(0, 218, 0, 10);
@@ -804,19 +804,19 @@ Tropicana["5b"]["Name"] = [[Content]];
 Tropicana["5b"]["Position"] = UDim2.new(0, 0, 0, 19);
 
 
--- ExcHubHub.Template.Notification.Items.Content.UIGradient
+-- TropicHub.Template.Notification.Items.Content.UIGradient
 Tropicana["5c"] = Instance.new("UIGradient", Tropicana["5b"]);
 Tropicana["5c"]["Enabled"] = false;
 Tropicana["5c"]["Rotation"] = -90;
 Tropicana["5c"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
 
 
--- ExcHubHub.Template.Notification.Items.SubContent
+-- TropicHub.Template.Notification.Items.SubContent
 Tropicana["5d"] = Instance.new("TextLabel", Tropicana["53"]);
 Tropicana["5d"]["TextWrapped"] = true;
 Tropicana["5d"]["BorderSizePixel"] = 0;
 Tropicana["5d"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-Tropicana["5d"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["5d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["5d"]["TextSize"] = 12;
 Tropicana["5d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 Tropicana["5d"]["TextColor3"] = Color3.fromRGB(181, 181, 181);
@@ -831,18 +831,18 @@ Tropicana["5d"]["Name"] = [[SubContent]];
 Tropicana["5d"]["Position"] = UDim2.new(0, 0, 0, 19);
 
 
--- ExcHubHub.Template.Notification.Items.SubContent.UIGradient
+-- TropicHub.Template.Notification.Items.SubContent.UIGradient
 Tropicana["5e"] = Instance.new("UIGradient", Tropicana["5d"]);
 Tropicana["5e"]["Enabled"] = false;
 Tropicana["5e"]["Rotation"] = -90;
 Tropicana["5e"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
 
 
--- ExcHubHub.Template.NotificationList
+-- TropicHub.Template.NotificationList
 Tropicana["5f"] = Instance.new("Frame", Tropicana["29"]);
 Tropicana["5f"]["Visible"] = false;
 Tropicana["5f"]["BorderSizePixel"] = 0;
-Tropicana["5f"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["5f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["5f"]["Size"] = UDim2.new(0.3349, 0, 1, 0);
 Tropicana["5f"]["Position"] = UDim2.new(0.665, 0, 0, 0);
 Tropicana["5f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -850,7 +850,7 @@ Tropicana["5f"]["Name"] = [[NotificationList]];
 Tropicana["5f"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.Template.NotificationList.UIListLayout
+-- TropicHub.Template.NotificationList.UIListLayout
 Tropicana["60"] = Instance.new("UIListLayout", Tropicana["5f"]);
 Tropicana["60"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Right;
 Tropicana["60"]["Padding"] = UDim.new(0, 10);
@@ -858,17 +858,17 @@ Tropicana["60"]["VerticalAlignment"] = Enum.VerticalAlignment.Bottom;
 Tropicana["60"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
 
--- ExcHubHub.Template.NotificationList.UIPadding
+-- TropicHub.Template.NotificationList.UIPadding
 Tropicana["61"] = Instance.new("UIPadding", Tropicana["5f"]);
 Tropicana["61"]["PaddingRight"] = UDim.new(0, 30);
 Tropicana["61"]["PaddingBottom"] = UDim.new(0, 30);
 
 
--- ExcHubHub.Template.Button
+-- TropicHub.Template.Button
 Tropicana["62"] = Instance.new("Frame", Tropicana["29"]);
 Tropicana["62"]["Visible"] = false;
 Tropicana["62"]["BorderSizePixel"] = 0;
-Tropicana["62"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["62"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["62"]["AutomaticSize"] = Enum.AutomaticSize.Y;
 Tropicana["62"]["Size"] = UDim2.new(0, 145, 0, 39);
 Tropicana["62"]["Position"] = UDim2.new(0, 0, 0.58209, 0);
@@ -877,7 +877,7 @@ Tropicana["62"]["Name"] = [[Button]];
 Tropicana["62"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.Template.Button.Button
+-- TropicHub.Template.Button.Button
 Tropicana["63"] = Instance.new("TextButton", Tropicana["62"]);
 Tropicana["63"]["BorderSizePixel"] = 0;
 Tropicana["63"]["AutoButtonColor"] = false;
@@ -893,36 +893,36 @@ Tropicana["63"]["Text"] = [[]];
 Tropicana["63"]["Position"] = UDim2.new(0.00752, 0, 0.16667, 0);
 
 
--- ExcHubHub.Template.Button.Button.UICorner
+-- TropicHub.Template.Button.Button.UICorner
 Tropicana["64"] = Instance.new("UICorner", Tropicana["63"]);
 Tropicana["64"]["CornerRadius"] = UDim.new(0, 4);
 
 
--- ExcHubHub.Template.Button.Button.UIStroke
+-- TropicHub.Template.Button.Button.UIStroke
 Tropicana["65"] = Instance.new("UIStroke", Tropicana["63"]);
 Tropicana["65"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 Tropicana["65"]["Thickness"] = 1.5;
 Tropicana["65"]["Color"] = Color3.fromRGB(56, 56, 56);
 
 
--- ExcHubHub.Template.Button.Button.UIStroke.UIGradient
+-- TropicHub.Template.Button.Button.UIStroke.UIGradient
 Tropicana["66"] = Instance.new("UIGradient", Tropicana["65"]);
 Tropicana["66"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
 
 
--- ExcHubHub.Template.Button.Button.UIGradientOff
+-- TropicHub.Template.Button.Button.UIGradientOff
 Tropicana["67"] = Instance.new("UIGradient", Tropicana["63"]);
 Tropicana["67"]["Rotation"] = -90;
 Tropicana["67"]["Name"] = [[UIGradientOff]];
 Tropicana["67"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
 
 
--- ExcHubHub.Template.Button.Button.TextLabel
+-- TropicHub.Template.Button.Button.TextLabel
 Tropicana["68"] = Instance.new("TextLabel", Tropicana["63"]);
 Tropicana["68"]["TextWrapped"] = true;
 Tropicana["68"]["LineHeight"] = 1.1;
 Tropicana["68"]["BorderSizePixel"] = 0;
-Tropicana["68"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["68"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["68"]["TextSize"] = 14;
 Tropicana["68"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
 Tropicana["68"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
@@ -935,33 +935,33 @@ Tropicana["68"]["AutomaticSize"] = Enum.AutomaticSize.Y;
 Tropicana["68"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
 
 
--- ExcHubHub.Template.Button.Button.TextLabel.UIGradient
+-- TropicHub.Template.Button.Button.TextLabel.UIGradient
 Tropicana["69"] = Instance.new("UIGradient", Tropicana["68"]);
 Tropicana["69"]["Rotation"] = -90;
 Tropicana["69"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
 
 
--- ExcHubHub.Template.Button.Button.UIGradientOn
+-- TropicHub.Template.Button.Button.UIGradientOn
 Tropicana["6a"] = Instance.new("UIGradient", Tropicana["63"]);
 Tropicana["6a"]["Enabled"] = false;
 Tropicana["6a"]["Name"] = [[UIGradientOn]];
 Tropicana["6a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
 
 
--- ExcHubHub.Template.Button.Button.UIListLayout
+-- TropicHub.Template.Button.Button.UIListLayout
 Tropicana["6b"] = Instance.new("UIListLayout", Tropicana["63"]);
 Tropicana["6b"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
 Tropicana["6b"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
 Tropicana["6b"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
 
--- ExcHubHub.Template.Button.Button.UIPadding
+-- TropicHub.Template.Button.Button.UIPadding
 Tropicana["6c"] = Instance.new("UIPadding", Tropicana["63"]);
 Tropicana["6c"]["PaddingTop"] = UDim.new(0, 6);
 Tropicana["6c"]["PaddingBottom"] = UDim.new(0, 6);
 
 
--- ExcHubHub.Template.Button.UIListLayout
+-- TropicHub.Template.Button.UIListLayout
 Tropicana["6d"] = Instance.new("UIListLayout", Tropicana["62"]);
 Tropicana["6d"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
 Tropicana["6d"]["Padding"] = UDim.new(0, 10);
@@ -970,17 +970,17 @@ Tropicana["6d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 Tropicana["6d"]["FillDirection"] = Enum.FillDirection.Horizontal;
 
 
--- ExcHubHub.Template.Button.UIPadding
+-- TropicHub.Template.Button.UIPadding
 Tropicana["6e"] = Instance.new("UIPadding", Tropicana["62"]);
 Tropicana["6e"]["PaddingRight"] = UDim.new(0, 6);
 Tropicana["6e"]["PaddingLeft"] = UDim.new(0, 6);
 
 
--- ExcHubHub.Template.Dropdown
+-- TropicHub.Template.Dropdown
 Tropicana["6f"] = Instance.new("Frame", Tropicana["29"]);
 Tropicana["6f"]["Visible"] = false;
 Tropicana["6f"]["BorderSizePixel"] = 0;
-Tropicana["6f"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["6f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["6f"]["AutomaticSize"] = Enum.AutomaticSize.Y;
 Tropicana["6f"]["Size"] = UDim2.new(0, 145, 0, 54);
 Tropicana["6f"]["Position"] = UDim2.new(0, 0, 0.78629, 0);
@@ -989,7 +989,7 @@ Tropicana["6f"]["Name"] = [[Dropdown]];
 Tropicana["6f"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.Template.Dropdown.UIListLayout
+-- TropicHub.Template.Dropdown.UIListLayout
 Tropicana["70"] = Instance.new("UIListLayout", Tropicana["6f"]);
 Tropicana["70"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
 Tropicana["70"]["Padding"] = UDim.new(0, 5);
@@ -997,24 +997,24 @@ Tropicana["70"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
 Tropicana["70"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
 
--- ExcHubHub.Template.Dropdown.UIPadding
+-- TropicHub.Template.Dropdown.UIPadding
 Tropicana["71"] = Instance.new("UIPadding", Tropicana["6f"]);
 Tropicana["71"]["PaddingRight"] = UDim.new(0, 6);
 Tropicana["71"]["PaddingLeft"] = UDim.new(0, 8);
 
 
--- ExcHubHub.Template.Dropdown.UIGradient
+-- TropicHub.Template.Dropdown.UIGradient
 Tropicana["72"] = Instance.new("UIGradient", Tropicana["6f"]);
 Tropicana["72"]["Rotation"] = -90;
 Tropicana["72"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
 
 
--- ExcHubHub.Template.Dropdown.OnChanged
+-- TropicHub.Template.Dropdown.OnChanged
 Tropicana["73"] = Instance.new("BindableEvent", Tropicana["6f"]);
 Tropicana["73"]["Name"] = [[OnChanged]];
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton
+-- TropicHub.Template.Dropdown.DropdownButton
 Tropicana["74"] = Instance.new("Frame", Tropicana["6f"]);
 Tropicana["74"]["BorderSizePixel"] = 0;
 Tropicana["74"]["BackgroundColor3"] = Color3.fromRGB(41, 41, 41);
@@ -1027,7 +1027,7 @@ Tropicana["74"]["Name"] = [[DropdownButton]];
 Tropicana["74"]["SelectionGroup"] = true;
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.Button
+-- TropicHub.Template.Dropdown.DropdownButton.Button
 Tropicana["75"] = Instance.new("TextButton", Tropicana["74"]);
 Tropicana["75"]["BorderSizePixel"] = 0;
 Tropicana["75"]["AutoButtonColor"] = false;
@@ -1041,28 +1041,28 @@ Tropicana["75"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 Tropicana["75"]["Text"] = [[]];
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.Button.UICorner
+-- TropicHub.Template.Dropdown.DropdownButton.Button.UICorner
 Tropicana["76"] = Instance.new("UICorner", Tropicana["75"]);
 Tropicana["76"]["CornerRadius"] = UDim.new(0, 4);
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.Button.UIStroke
+-- TropicHub.Template.Dropdown.DropdownButton.Button.UIStroke
 Tropicana["77"] = Instance.new("UIStroke", Tropicana["75"]);
 Tropicana["77"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 Tropicana["77"]["Thickness"] = 1.5;
 Tropicana["77"]["Color"] = Color3.fromRGB(56, 56, 56);
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.Button.UIStroke.UIGradient
+-- TropicHub.Template.Dropdown.DropdownButton.Button.UIStroke.UIGradient
 Tropicana["78"] = Instance.new("UIGradient", Tropicana["77"]);
 Tropicana["78"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.Button.TextLabel
+-- TropicHub.Template.Dropdown.DropdownButton.Button.TextLabel
 Tropicana["79"] = Instance.new("TextLabel", Tropicana["75"]);
 Tropicana["79"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
 Tropicana["79"]["BorderSizePixel"] = 0;
-Tropicana["79"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["79"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["79"]["TextSize"] = 14;
 Tropicana["79"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
 Tropicana["79"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
@@ -1074,50 +1074,50 @@ Tropicana["79"]["Text"] = [[Test]];
 Tropicana["79"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.Button.TextLabel.UIGradient
+-- TropicHub.Template.Dropdown.DropdownButton.Button.TextLabel.UIGradient
 Tropicana["7a"] = Instance.new("UIGradient", Tropicana["79"]);
 Tropicana["7a"]["Rotation"] = -90;
 Tropicana["7a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.Button.UIGradientOff
+-- TropicHub.Template.Dropdown.DropdownButton.Button.UIGradientOff
 Tropicana["7b"] = Instance.new("UIGradient", Tropicana["75"]);
 Tropicana["7b"]["Rotation"] = -90;
 Tropicana["7b"]["Name"] = [[UIGradientOff]];
 Tropicana["7b"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.Button.UIGradientOn
+-- TropicHub.Template.Dropdown.DropdownButton.Button.UIGradientOn
 Tropicana["7c"] = Instance.new("UIGradient", Tropicana["75"]);
 Tropicana["7c"]["Enabled"] = false;
 Tropicana["7c"]["Name"] = [[UIGradientOn]];
 Tropicana["7c"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.UICorner
+-- TropicHub.Template.Dropdown.DropdownButton.UICorner
 Tropicana["7d"] = Instance.new("UICorner", Tropicana["74"]);
 Tropicana["7d"]["CornerRadius"] = UDim.new(0, 4);
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.UIStroke
+-- TropicHub.Template.Dropdown.DropdownButton.UIStroke
 Tropicana["7e"] = Instance.new("UIStroke", Tropicana["74"]);
 Tropicana["7e"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 Tropicana["7e"]["Color"] = Color3.fromRGB(45, 45, 45);
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.UIStroke.UIGradient
+-- TropicHub.Template.Dropdown.DropdownButton.UIStroke.UIGradient
 Tropicana["7f"] = Instance.new("UIGradient", Tropicana["7e"]);
 Tropicana["7f"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.ScrollingFrame
+-- TropicHub.Template.Dropdown.DropdownButton.ScrollingFrame
 Tropicana["80"] = Instance.new("ScrollingFrame", Tropicana["74"]);
 Tropicana["80"]["Active"] = true;
 Tropicana["80"]["BorderSizePixel"] = 0;
 Tropicana["80"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
 Tropicana["80"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
 Tropicana["80"]["TopImage"] = [[rbxasset://textures/ui/Scroll/scroll-middle.png]];
-Tropicana["80"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["80"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["80"]["BottomImage"] = [[rbxasset://textures/ui/Scroll/scroll-middle.png]];
 Tropicana["80"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
 Tropicana["80"]["Size"] = UDim2.new(1, 0, 0.11377, 100);
@@ -1127,14 +1127,14 @@ Tropicana["80"]["ScrollBarThickness"] = 2;
 Tropicana["80"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.ScrollingFrame.UIListLayout
+-- TropicHub.Template.Dropdown.DropdownButton.ScrollingFrame.UIListLayout
 Tropicana["81"] = Instance.new("UIListLayout", Tropicana["80"]);
 Tropicana["81"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
 Tropicana["81"]["Padding"] = UDim.new(0, 5);
 Tropicana["81"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.SeacrhBox
+-- TropicHub.Template.Dropdown.DropdownButton.SeacrhBox
 Tropicana["82"] = Instance.new("Frame", Tropicana["74"]);
 Tropicana["82"]["Active"] = true;
 Tropicana["82"]["BorderSizePixel"] = 0;
@@ -1147,33 +1147,33 @@ Tropicana["82"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 Tropicana["82"]["Name"] = [[SeacrhBox]];
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.SeacrhBox.UIStroke
+-- TropicHub.Template.Dropdown.DropdownButton.SeacrhBox.UIStroke
 Tropicana["83"] = Instance.new("UIStroke", Tropicana["82"]);
 Tropicana["83"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 Tropicana["83"]["Thickness"] = 1.5;
 Tropicana["83"]["Color"] = Color3.fromRGB(56, 56, 56);
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.SeacrhBox.UIStroke.UIGradient
+-- TropicHub.Template.Dropdown.DropdownButton.SeacrhBox.UIStroke.UIGradient
 Tropicana["84"] = Instance.new("UIGradient", Tropicana["83"]);
 Tropicana["84"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.SeacrhBox.UIGradient
+-- TropicHub.Template.Dropdown.DropdownButton.SeacrhBox.UIGradient
 Tropicana["85"] = Instance.new("UIGradient", Tropicana["82"]);
 Tropicana["85"]["Rotation"] = -90;
 Tropicana["85"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.SeacrhBox.TextBox
+-- TropicHub.Template.Dropdown.DropdownButton.SeacrhBox.TextBox
 Tropicana["86"] = Instance.new("TextBox", Tropicana["82"]);
-Tropicana["86"]["TextColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["86"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["86"]["PlaceholderColor3"] = Color3.fromRGB(179, 179, 179);
 Tropicana["86"]["BorderSizePixel"] = 0;
 Tropicana["86"]["TextWrapped"] = true;
 Tropicana["86"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
 Tropicana["86"]["TextSize"] = 11;
-Tropicana["86"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["86"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["86"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
 Tropicana["86"]["PlaceholderText"] = [[Search Here]];
 Tropicana["86"]["Size"] = UDim2.new(1, 0, 1, 0);
@@ -1182,12 +1182,12 @@ Tropicana["86"]["Text"] = [[]];
 Tropicana["86"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.SeacrhBox.UICorner
+-- TropicHub.Template.Dropdown.DropdownButton.SeacrhBox.UICorner
 Tropicana["87"] = Instance.new("UICorner", Tropicana["82"]);
 Tropicana["87"]["CornerRadius"] = UDim.new(0, 4);
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.ScrollingFrameSearch
+-- TropicHub.Template.Dropdown.DropdownButton.ScrollingFrameSearch
 Tropicana["88"] = Instance.new("ScrollingFrame", Tropicana["74"]);
 Tropicana["88"]["Visible"] = false;
 Tropicana["88"]["Active"] = true;
@@ -1195,7 +1195,7 @@ Tropicana["88"]["BorderSizePixel"] = 0;
 Tropicana["88"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
 Tropicana["88"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
 Tropicana["88"]["TopImage"] = [[rbxasset://textures/ui/Scroll/scroll-middle.png]];
-Tropicana["88"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["88"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["88"]["Name"] = [[ScrollingFrameSearch]];
 Tropicana["88"]["BottomImage"] = [[rbxasset://textures/ui/Scroll/scroll-middle.png]];
 Tropicana["88"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
@@ -1206,26 +1206,26 @@ Tropicana["88"]["ScrollBarThickness"] = 2;
 Tropicana["88"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.ScrollingFrameSearch.UIListLayout
+-- TropicHub.Template.Dropdown.DropdownButton.ScrollingFrameSearch.UIListLayout
 Tropicana["89"] = Instance.new("UIListLayout", Tropicana["88"]);
 Tropicana["89"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
 Tropicana["89"]["Padding"] = UDim.new(0, 5);
 Tropicana["89"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
 
--- ExcHubHub.Template.Dropdown.DropdownButton.UIGradient
+-- TropicHub.Template.Dropdown.DropdownButton.UIGradient
 Tropicana["8a"] = Instance.new("UIGradient", Tropicana["74"]);
 Tropicana["8a"]["Rotation"] = -90;
 Tropicana["8a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
 
 
--- ExcHubHub.Template.Dropdown.Title
+-- TropicHub.Template.Dropdown.Title
 Tropicana["8b"] = Instance.new("TextLabel", Tropicana["6f"]);
 Tropicana["8b"]["TextWrapped"] = true;
 Tropicana["8b"]["LineHeight"] = 1.1;
 Tropicana["8b"]["BorderSizePixel"] = 0;
 Tropicana["8b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-Tropicana["8b"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["8b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["8b"]["TextSize"] = 14;
 Tropicana["8b"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
 Tropicana["8b"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
@@ -1239,11 +1239,11 @@ Tropicana["8b"]["Name"] = [[Title]];
 Tropicana["8b"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
 
 
--- ExcHubHub.Template.Paragraph
+-- TropicHub.Template.Paragraph
 Tropicana["8c"] = Instance.new("Frame", Tropicana["29"]);
 Tropicana["8c"]["Visible"] = false;
 Tropicana["8c"]["BorderSizePixel"] = 0;
-Tropicana["8c"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["8c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["8c"]["AutomaticSize"] = Enum.AutomaticSize.Y;
 Tropicana["8c"]["Size"] = UDim2.new(0, 145, 0, 42);
 Tropicana["8c"]["Position"] = UDim2.new(0, 0, 0.91602, 0);
@@ -1252,7 +1252,7 @@ Tropicana["8c"]["Name"] = [[Paragraph]];
 Tropicana["8c"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.Template.Paragraph.UIListLayout
+-- TropicHub.Template.Paragraph.UIListLayout
 Tropicana["8d"] = Instance.new("UIListLayout", Tropicana["8c"]);
 Tropicana["8d"]["Padding"] = UDim.new(0, 5);
 Tropicana["8d"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
@@ -1260,7 +1260,7 @@ Tropicana["8d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 Tropicana["8d"]["FillDirection"] = Enum.FillDirection.Horizontal;
 
 
--- ExcHubHub.Template.Paragraph.Paragraph
+-- TropicHub.Template.Paragraph.Paragraph
 Tropicana["8e"] = Instance.new("Frame", Tropicana["8c"]);
 Tropicana["8e"]["BorderSizePixel"] = 0;
 Tropicana["8e"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
@@ -1273,30 +1273,30 @@ Tropicana["8e"]["Name"] = [[Paragraph]];
 Tropicana["8e"]["BackgroundTransparency"] = 0.8;
 
 
--- ExcHubHub.Template.Paragraph.Paragraph.UICorner
+-- TropicHub.Template.Paragraph.Paragraph.UICorner
 Tropicana["8f"] = Instance.new("UICorner", Tropicana["8e"]);
 Tropicana["8f"]["CornerRadius"] = UDim.new(0, 4);
 
 
--- ExcHubHub.Template.Paragraph.Paragraph.UIStroke
+-- TropicHub.Template.Paragraph.Paragraph.UIStroke
 Tropicana["90"] = Instance.new("UIStroke", Tropicana["8e"]);
 Tropicana["90"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 Tropicana["90"]["Thickness"] = 1.5;
 Tropicana["90"]["Color"] = Color3.fromRGB(56, 56, 56);
 
 
--- ExcHubHub.Template.Paragraph.Paragraph.UIStroke.UIGradient
+-- TropicHub.Template.Paragraph.Paragraph.UIStroke.UIGradient
 Tropicana["91"] = Instance.new("UIGradient", Tropicana["90"]);
 Tropicana["91"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
 
 
--- ExcHubHub.Template.Paragraph.Paragraph.Title
+-- TropicHub.Template.Paragraph.Paragraph.Title
 Tropicana["92"] = Instance.new("TextLabel", Tropicana["8e"]);
 Tropicana["92"]["TextWrapped"] = true;
 Tropicana["92"]["BorderSizePixel"] = 0;
 Tropicana["92"]["TextXAlignment"] = Enum.TextXAlignment.Left;
 Tropicana["92"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-Tropicana["92"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["92"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["92"]["TextSize"] = 17;
 Tropicana["92"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
 Tropicana["92"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
@@ -1310,13 +1310,13 @@ Tropicana["92"]["Name"] = [[Title]];
 Tropicana["92"]["Position"] = UDim2.new(0, 0, 0, 27);
 
 
--- ExcHubHub.Template.Paragraph.Paragraph.Title.UIPadding
+-- TropicHub.Template.Paragraph.Paragraph.Title.UIPadding
 Tropicana["93"] = Instance.new("UIPadding", Tropicana["92"]);
 Tropicana["93"]["PaddingRight"] = UDim.new(0, 6);
 Tropicana["93"]["PaddingLeft"] = UDim.new(0, 6);
 
 
--- ExcHubHub.Template.Paragraph.Paragraph.UIPadding
+-- TropicHub.Template.Paragraph.Paragraph.UIPadding
 Tropicana["94"] = Instance.new("UIPadding", Tropicana["8e"]);
 Tropicana["94"]["PaddingTop"] = UDim.new(0, 8);
 Tropicana["94"]["PaddingRight"] = UDim.new(0, 5);
@@ -1324,20 +1324,20 @@ Tropicana["94"]["PaddingLeft"] = UDim.new(0, 5);
 Tropicana["94"]["PaddingBottom"] = UDim.new(0, 8);
 
 
--- ExcHubHub.Template.Paragraph.Paragraph.UIListLayout
+-- TropicHub.Template.Paragraph.Paragraph.UIListLayout
 Tropicana["95"] = Instance.new("UIListLayout", Tropicana["8e"]);
 Tropicana["95"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
 Tropicana["95"]["Padding"] = UDim.new(0, 5);
 Tropicana["95"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
 
--- ExcHubHub.Template.Paragraph.Paragraph.Content
+-- TropicHub.Template.Paragraph.Paragraph.Content
 Tropicana["96"] = Instance.new("TextLabel", Tropicana["8e"]);
 Tropicana["96"]["TextWrapped"] = true;
 Tropicana["96"]["BorderSizePixel"] = 0;
 Tropicana["96"]["TextXAlignment"] = Enum.TextXAlignment.Left;
 Tropicana["96"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-Tropicana["96"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["96"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["96"]["TextSize"] = 13;
 Tropicana["96"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 Tropicana["96"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
@@ -1351,23 +1351,23 @@ Tropicana["96"]["Name"] = [[Content]];
 Tropicana["96"]["Position"] = UDim2.new(0, 0, 0, 27);
 
 
--- ExcHubHub.Template.Paragraph.Paragraph.Content.UIPadding
+-- TropicHub.Template.Paragraph.Paragraph.Content.UIPadding
 Tropicana["97"] = Instance.new("UIPadding", Tropicana["96"]);
 Tropicana["97"]["PaddingRight"] = UDim.new(0, 6);
 Tropicana["97"]["PaddingLeft"] = UDim.new(0, 6);
 
 
--- ExcHubHub.Template.Paragraph.UIPadding
+-- TropicHub.Template.Paragraph.UIPadding
 Tropicana["98"] = Instance.new("UIPadding", Tropicana["8c"]);
 Tropicana["98"]["PaddingRight"] = UDim.new(0, 8);
 Tropicana["98"]["PaddingLeft"] = UDim.new(0, 8);
 
 
--- ExcHubHub.Template.Slider
+-- TropicHub.Template.Slider
 Tropicana["99"] = Instance.new("Frame", Tropicana["29"]);
 Tropicana["99"]["Visible"] = false;
 Tropicana["99"]["BorderSizePixel"] = 0;
-Tropicana["99"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["99"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["99"]["AutomaticSize"] = Enum.AutomaticSize.Y;
 Tropicana["99"]["Size"] = UDim2.new(0, 145, 0, 47);
 Tropicana["99"]["Position"] = UDim2.new(0, 0, 0.63063, 0);
@@ -1376,7 +1376,7 @@ Tropicana["99"]["Name"] = [[Slider]];
 Tropicana["99"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.Template.Slider.UIListLayout
+-- TropicHub.Template.Slider.UIListLayout
 Tropicana["9a"] = Instance.new("UIListLayout", Tropicana["99"]);
 Tropicana["9a"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
 Tropicana["9a"]["Padding"] = UDim.new(0, 6);
@@ -1384,7 +1384,7 @@ Tropicana["9a"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
 Tropicana["9a"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
 
--- ExcHubHub.Template.Slider.UIPadding
+-- TropicHub.Template.Slider.UIPadding
 Tropicana["9b"] = Instance.new("UIPadding", Tropicana["99"]);
 Tropicana["9b"]["PaddingTop"] = UDim.new(0, 10);
 Tropicana["9b"]["PaddingRight"] = UDim.new(0, 6);
@@ -1392,17 +1392,17 @@ Tropicana["9b"]["PaddingLeft"] = UDim.new(0, 8);
 Tropicana["9b"]["PaddingBottom"] = UDim.new(0, 10);
 
 
--- ExcHubHub.Template.Slider.Frame
+-- TropicHub.Template.Slider.Frame
 Tropicana["9c"] = Instance.new("Frame", Tropicana["99"]);
 Tropicana["9c"]["BorderSizePixel"] = 0;
-Tropicana["9c"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["9c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["9c"]["AutomaticSize"] = Enum.AutomaticSize.Y;
 Tropicana["9c"]["Size"] = UDim2.new(0, 125, 0, 13);
 Tropicana["9c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 Tropicana["9c"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.Template.Slider.Frame.UIListLayout
+-- TropicHub.Template.Slider.Frame.UIListLayout
 Tropicana["9d"] = Instance.new("UIListLayout", Tropicana["9c"]);
 Tropicana["9d"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
 Tropicana["9d"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
@@ -1410,13 +1410,13 @@ Tropicana["9d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 Tropicana["9d"]["FillDirection"] = Enum.FillDirection.Horizontal;
 
 
--- ExcHubHub.Template.Slider.Frame.Title
+-- TropicHub.Template.Slider.Frame.Title
 Tropicana["9e"] = Instance.new("TextLabel", Tropicana["9c"]);
 Tropicana["9e"]["TextWrapped"] = true;
 Tropicana["9e"]["BorderSizePixel"] = 0;
 Tropicana["9e"]["TextXAlignment"] = Enum.TextXAlignment.Left;
 Tropicana["9e"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-Tropicana["9e"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["9e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["9e"]["TextSize"] = 13;
 Tropicana["9e"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
 Tropicana["9e"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
@@ -1430,7 +1430,7 @@ Tropicana["9e"]["Name"] = [[Title]];
 Tropicana["9e"]["Position"] = UDim2.new(0, 0, 0, 27);
 
 
--- ExcHubHub.Template.Slider.Frame.ValueText
+-- TropicHub.Template.Slider.Frame.ValueText
 Tropicana["9f"] = Instance.new("TextBox", Tropicana["9c"]);
 Tropicana["9f"]["Active"] = false;
 Tropicana["9f"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
@@ -1440,7 +1440,7 @@ Tropicana["9f"]["TextWrapped"] = true;
 Tropicana["9f"]["TextSize"] = 14;
 Tropicana["9f"]["Name"] = [[ValueText]];
 Tropicana["9f"]["TextScaled"] = true;
-Tropicana["9f"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["9f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["9f"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 Tropicana["9f"]["Selectable"] = false;
 Tropicana["9f"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -1451,19 +1451,19 @@ Tropicana["9f"]["Text"] = [[0]];
 Tropicana["9f"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.Template.Slider.Frame.ValueText.UIGradient
+-- TropicHub.Template.Slider.Frame.ValueText.UIGradient
 Tropicana["a0"] = Instance.new("UIGradient", Tropicana["9f"]);
 Tropicana["a0"]["Enabled"] = false;
 Tropicana["a0"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 90, 255)),ColorSequenceKeypoint.new(0.247, Color3.fromRGB(63, 156, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 248))};
 
 
--- ExcHubHub.Template.Slider.Trigger
+-- TropicHub.Template.Slider.Trigger
 Tropicana["a1"] = Instance.new("TextButton", Tropicana["99"]);
 Tropicana["a1"]["BorderSizePixel"] = 0;
 Tropicana["a1"]["AutoButtonColor"] = false;
 Tropicana["a1"]["TextSize"] = 14;
 Tropicana["a1"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["a1"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["a1"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["a1"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 Tropicana["a1"]["Size"] = UDim2.new(0, 120, 0, 10);
 Tropicana["a1"]["BackgroundTransparency"] = 1;
@@ -1473,7 +1473,7 @@ Tropicana["a1"]["Text"] = [[]];
 Tropicana["a1"]["Position"] = UDim2.new(0.00763, 0, 0.59239, 0);
 
 
--- ExcHubHub.Template.Slider.Trigger.Fill
+-- TropicHub.Template.Slider.Trigger.Fill
 Tropicana["a2"] = Instance.new("TextButton", Tropicana["a1"]);
 Tropicana["a2"]["Active"] = false;
 Tropicana["a2"]["Interactable"] = false;
@@ -1481,7 +1481,7 @@ Tropicana["a2"]["BorderSizePixel"] = 0;
 Tropicana["a2"]["AutoButtonColor"] = false;
 Tropicana["a2"]["TextSize"] = 14;
 Tropicana["a2"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["a2"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["a2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["a2"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 Tropicana["a2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
 Tropicana["a2"]["Size"] = UDim2.new(0, 120, 0, 4);
@@ -1491,21 +1491,21 @@ Tropicana["a2"]["Text"] = [[]];
 Tropicana["a2"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
 
 
--- ExcHubHub.Template.Slider.Trigger.Fill.UIGradient
+-- TropicHub.Template.Slider.Trigger.Fill.UIGradient
 Tropicana["a3"] = Instance.new("UIGradient", Tropicana["a2"]);
 Tropicana["a3"]["Rotation"] = 180;
 Tropicana["a3"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
 
 
--- ExcHubHub.Template.Slider.Trigger.Fill.UICorner
+-- TropicHub.Template.Slider.Trigger.Fill.UICorner
 Tropicana["a4"] = Instance.new("UICorner", Tropicana["a2"]);
 Tropicana["a4"]["CornerRadius"] = UDim.new(10, 10);
 
 
--- ExcHubHub.Template.Slider.Trigger.Fill.Circle
+-- TropicHub.Template.Slider.Trigger.Fill.Circle
 Tropicana["a5"] = Instance.new("Frame", Tropicana["a2"]);
 Tropicana["a5"]["BorderSizePixel"] = 0;
-Tropicana["a5"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["a5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["a5"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
 Tropicana["a5"]["Size"] = UDim2.new(0, 10, 0, 10);
 Tropicana["a5"]["Position"] = UDim2.new(0, 0, 0.5, 0);
@@ -1513,21 +1513,21 @@ Tropicana["a5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 Tropicana["a5"]["Name"] = [[Circle]];
 
 
--- ExcHubHub.Template.Slider.Trigger.Fill.Circle.UICorner
+-- TropicHub.Template.Slider.Trigger.Fill.Circle.UICorner
 Tropicana["a6"] = Instance.new("UICorner", Tropicana["a5"]);
 Tropicana["a6"]["CornerRadius"] = UDim.new(10, 10);
 
 
--- ExcHubHub.Template.Slider.OnChanged
+-- TropicHub.Template.Slider.OnChanged
 Tropicana["a7"] = Instance.new("BindableEvent", Tropicana["99"]);
 Tropicana["a7"]["Name"] = [[OnChanged]];
 
 
--- ExcHubHub.Template.Textbox
+-- TropicHub.Template.Textbox
 Tropicana["a8"] = Instance.new("Frame", Tropicana["29"]);
 Tropicana["a8"]["Visible"] = false;
 Tropicana["a8"]["BorderSizePixel"] = 0;
-Tropicana["a8"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["a8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["a8"]["AutomaticSize"] = Enum.AutomaticSize.Y;
 Tropicana["a8"]["Size"] = UDim2.new(0, 145, 0, 35);
 Tropicana["a8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -1535,7 +1535,7 @@ Tropicana["a8"]["Name"] = [[Textbox]];
 Tropicana["a8"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.Template.Textbox.UIListLayout
+-- TropicHub.Template.Textbox.UIListLayout
 Tropicana["a9"] = Instance.new("UIListLayout", Tropicana["a8"]);
 Tropicana["a9"]["Padding"] = UDim.new(0, 5);
 Tropicana["a9"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
@@ -1543,7 +1543,7 @@ Tropicana["a9"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 Tropicana["a9"]["FillDirection"] = Enum.FillDirection.Horizontal;
 
 
--- ExcHubHub.Template.Textbox.UIPadding
+-- TropicHub.Template.Textbox.UIPadding
 Tropicana["aa"] = Instance.new("UIPadding", Tropicana["a8"]);
 Tropicana["aa"]["PaddingTop"] = UDim.new(0, 8);
 Tropicana["aa"]["PaddingRight"] = UDim.new(0, 8);
@@ -1551,18 +1551,18 @@ Tropicana["aa"]["PaddingLeft"] = UDim.new(0, 8);
 Tropicana["aa"]["PaddingBottom"] = UDim.new(0, 8);
 
 
--- ExcHubHub.Template.Textbox.OnChanged
+-- TropicHub.Template.Textbox.OnChanged
 Tropicana["ab"] = Instance.new("BindableEvent", Tropicana["a8"]);
 Tropicana["ab"]["Name"] = [[OnChanged]];
 
 
--- ExcHubHub.Template.Textbox.Title
+-- TropicHub.Template.Textbox.Title
 Tropicana["ac"] = Instance.new("TextLabel", Tropicana["a8"]);
 Tropicana["ac"]["TextWrapped"] = true;
 Tropicana["ac"]["BorderSizePixel"] = 0;
 Tropicana["ac"]["TextXAlignment"] = Enum.TextXAlignment.Left;
 Tropicana["ac"]["TextTransparency"] = 0.7;
-Tropicana["ac"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["ac"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["ac"]["TextSize"] = 13;
 Tropicana["ac"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
 Tropicana["ac"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
@@ -1574,7 +1574,7 @@ Tropicana["ac"]["AutomaticSize"] = Enum.AutomaticSize.Y;
 Tropicana["ac"]["Name"] = [[Title]];
 
 
--- ExcHubHub.Template.Textbox.Box
+-- TropicHub.Template.Textbox.Box
 Tropicana["ad"] = Instance.new("TextButton", Tropicana["a8"]);
 Tropicana["ad"]["TextWrapped"] = true;
 Tropicana["ad"]["BorderSizePixel"] = 0;
@@ -1590,30 +1590,30 @@ Tropicana["ad"]["Text"] = [[]];
 Tropicana["ad"]["Position"] = UDim2.new(0.5969, 0, 0.02174, 0);
 
 
--- ExcHubHub.Template.Textbox.Box.UICorner
+-- TropicHub.Template.Textbox.Box.UICorner
 Tropicana["ae"] = Instance.new("UICorner", Tropicana["ad"]);
 Tropicana["ae"]["CornerRadius"] = UDim.new(0, 4);
 
 
--- ExcHubHub.Template.Textbox.Box.UIStroke
+-- TropicHub.Template.Textbox.Box.UIStroke
 Tropicana["af"] = Instance.new("UIStroke", Tropicana["ad"]);
 Tropicana["af"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 Tropicana["af"]["Thickness"] = 1.5;
 Tropicana["af"]["Color"] = Color3.fromRGB(56, 56, 56);
 
 
--- ExcHubHub.Template.Textbox.Box.UIStroke.UIGradient
+-- TropicHub.Template.Textbox.Box.UIStroke.UIGradient
 Tropicana["b0"] = Instance.new("UIGradient", Tropicana["af"]);
 Tropicana["b0"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
 
 
--- ExcHubHub.Template.Textbox.Box.UIGradient
+-- TropicHub.Template.Textbox.Box.UIGradient
 Tropicana["b1"] = Instance.new("UIGradient", Tropicana["ad"]);
 Tropicana["b1"]["Rotation"] = -90;
 Tropicana["b1"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
 
 
--- ExcHubHub.Template.Textbox.Box.Textbox
+-- TropicHub.Template.Textbox.Box.Textbox
 Tropicana["b2"] = Instance.new("TextBox", Tropicana["ad"]);
 Tropicana["b2"]["TextColor3"] = Color3.fromRGB(151, 151, 151);
 Tropicana["b2"]["PlaceholderColor3"] = Color3.fromRGB(96, 96, 96);
@@ -1623,7 +1623,7 @@ Tropicana["b2"]["TextWrapped"] = true;
 Tropicana["b2"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
 Tropicana["b2"]["TextSize"] = 12;
 Tropicana["b2"]["Name"] = [[Textbox]];
-Tropicana["b2"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["b2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["b2"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
 Tropicana["b2"]["Selectable"] = false;
 Tropicana["b2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -1635,24 +1635,24 @@ Tropicana["b2"]["Text"] = [[]];
 Tropicana["b2"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.Template.Textbox.Box.Textbox.UIGradient
+-- TropicHub.Template.Textbox.Box.Textbox.UIGradient
 Tropicana["b3"] = Instance.new("UIGradient", Tropicana["b2"]);
 Tropicana["b3"]["Enabled"] = false;
 Tropicana["b3"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 90, 255)),ColorSequenceKeypoint.new(0.247, Color3.fromRGB(63, 156, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 248))};
 
 
--- ExcHubHub.Template.Textbox.Box.Textbox.UIPadding
+-- TropicHub.Template.Textbox.Box.Textbox.UIPadding
 Tropicana["b4"] = Instance.new("UIPadding", Tropicana["b2"]);
 Tropicana["b4"]["PaddingTop"] = UDim.new(0, 5);
 Tropicana["b4"]["PaddingLeft"] = UDim.new(0, 5);
 Tropicana["b4"]["PaddingBottom"] = UDim.new(0, 5);
 
 
--- ExcHubHub.Template.Toggle
+-- TropicHub.Template.Toggle
 Tropicana["b5"] = Instance.new("Frame", Tropicana["29"]);
 Tropicana["b5"]["Visible"] = false;
 Tropicana["b5"]["BorderSizePixel"] = 0;
-Tropicana["b5"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["b5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["b5"]["AutomaticSize"] = Enum.AutomaticSize.Y;
 Tropicana["b5"]["Size"] = UDim2.new(0, 145, 0, 35);
 Tropicana["b5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -1660,7 +1660,7 @@ Tropicana["b5"]["Name"] = [[Toggle]];
 Tropicana["b5"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.Template.Toggle.UIListLayout
+-- TropicHub.Template.Toggle.UIListLayout
 Tropicana["b6"] = Instance.new("UIListLayout", Tropicana["b5"]);
 Tropicana["b6"]["Padding"] = UDim.new(0, 5);
 Tropicana["b6"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
@@ -1668,7 +1668,7 @@ Tropicana["b6"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 Tropicana["b6"]["FillDirection"] = Enum.FillDirection.Horizontal;
 
 
--- ExcHubHub.Template.Toggle.UIPadding
+-- TropicHub.Template.Toggle.UIPadding
 Tropicana["b7"] = Instance.new("UIPadding", Tropicana["b5"]);
 Tropicana["b7"]["PaddingTop"] = UDim.new(0, 5);
 Tropicana["b7"]["PaddingRight"] = UDim.new(0, 9);
@@ -1676,25 +1676,25 @@ Tropicana["b7"]["PaddingLeft"] = UDim.new(0, 9);
 Tropicana["b7"]["PaddingBottom"] = UDim.new(0, 5);
 
 
--- ExcHubHub.Template.Toggle.State
+-- TropicHub.Template.Toggle.State
 Tropicana["b8"] = Instance.new("BoolValue", Tropicana["b5"]);
 Tropicana["b8"]["Name"] = [[State]];
 Tropicana["b8"]["Value"] = true;
 
 
--- ExcHubHub.Template.Toggle.OnChanged
+-- TropicHub.Template.Toggle.OnChanged
 Tropicana["b9"] = Instance.new("BindableEvent", Tropicana["b5"]);
 Tropicana["b9"]["Name"] = [[OnChanged]];
 
 
--- ExcHubHub.Template.Toggle.Title
+-- TropicHub.Template.Toggle.Title
 Tropicana["ba"] = Instance.new("TextLabel", Tropicana["b5"]);
 Tropicana["ba"]["TextWrapped"] = true;
 Tropicana["ba"]["BorderSizePixel"] = 0;
 Tropicana["ba"]["TextXAlignment"] = Enum.TextXAlignment.Left;
 Tropicana["ba"]["TextTransparency"] = 0.7;
 Tropicana["ba"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-Tropicana["ba"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["ba"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["ba"]["TextSize"] = 13;
 Tropicana["ba"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
 Tropicana["ba"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
@@ -1707,7 +1707,7 @@ Tropicana["ba"]["Name"] = [[Title]];
 Tropicana["ba"]["Position"] = UDim2.new(0, 0, 0, 27);
 
 
--- ExcHubHub.Template.Toggle.Toggle
+-- TropicHub.Template.Toggle.Toggle
 Tropicana["bb"] = Instance.new("TextButton", Tropicana["b5"]);
 Tropicana["bb"]["BorderSizePixel"] = 0;
 Tropicana["bb"]["AutoButtonColor"] = false;
@@ -1722,48 +1722,48 @@ Tropicana["bb"]["Text"] = [[]];
 Tropicana["bb"]["Position"] = UDim2.new(0.05517, 0, 0.13333, 0);
 
 
--- ExcHubHub.Template.Toggle.Toggle.UICorner
+-- TropicHub.Template.Toggle.Toggle.UICorner
 Tropicana["bc"] = Instance.new("UICorner", Tropicana["bb"]);
 Tropicana["bc"]["CornerRadius"] = UDim.new(0, 4);
 
 
--- ExcHubHub.Template.Toggle.Toggle.UIStroke
+-- TropicHub.Template.Toggle.Toggle.UIStroke
 Tropicana["bd"] = Instance.new("UIStroke", Tropicana["bb"]);
 Tropicana["bd"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 Tropicana["bd"]["Thickness"] = 1.5;
 Tropicana["bd"]["Color"] = Color3.fromRGB(56, 56, 56);
 
 
--- ExcHubHub.Template.Toggle.Toggle.UIStroke.UIGradient
+-- TropicHub.Template.Toggle.Toggle.UIStroke.UIGradient
 Tropicana["be"] = Instance.new("UIGradient", Tropicana["bd"]);
 Tropicana["be"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
 
 
--- ExcHubHub.Template.Toggle.Toggle.UIGradient
+-- TropicHub.Template.Toggle.Toggle.UIGradient
 Tropicana["bf"] = Instance.new("UIGradient", Tropicana["bb"]);
 Tropicana["bf"]["Rotation"] = -90;
 Tropicana["bf"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
 
 
--- ExcHubHub.Floating
+-- TropicHub.Floating
 Tropicana["c0"] = Instance.new("Frame", Tropicana["1"]);
 Tropicana["c0"]["BorderSizePixel"] = 0;
-Tropicana["c0"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["c0"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
 Tropicana["c0"]["Size"] = UDim2.new(0, 158, 0, 42);
 Tropicana["c0"]["Position"] = UDim2.new(0.02, 0, 0.1, 0);
 Tropicana["c0"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 Tropicana["c0"]["Name"] = [[Floating]];
 
 
--- ExcHubHub.Floating.UICorner
+-- TropicHub.Floating.UICorner
 Tropicana["c1"] = Instance.new("UICorner", Tropicana["c0"]);
 Tropicana["c1"]["CornerRadius"] = UDim.new(0, 10);
 
 
--- ExcHubHub.Floating.LightBlue
+-- TropicHub.Floating.LightBlue
 Tropicana["c2"] = Instance.new("Frame", Tropicana["c0"]);
 Tropicana["c2"]["BorderSizePixel"] = 0;
-Tropicana["c2"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["c2"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
 Tropicana["c2"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["c2"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
 Tropicana["c2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -1771,21 +1771,21 @@ Tropicana["c2"]["Name"] = [[LightBlue]];
 Tropicana["c2"]["BackgroundTransparency"] = 0.8;
 
 
--- ExcHubHub.Floating.LightBlue.UIGradient
+-- TropicHub.Floating.LightBlue.UIGradient
 Tropicana["c3"] = Instance.new("UIGradient", Tropicana["c2"]);
 Tropicana["c3"]["Rotation"] = 50;
-Tropicana["c3"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(166, 114, 2)),ColorSequenceKeypoint.new(0.461, Color3.fromRGB(0, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(166, 114, 2))};
+Tropicana["c3"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.461, Color3.fromRGB(0, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
 
 
--- ExcHubHub.Floating.LightBlue.UICorner
+-- TropicHub.Floating.LightBlue.UICorner
 Tropicana["c4"] = Instance.new("UICorner", Tropicana["c2"]);
 Tropicana["c4"]["CornerRadius"] = UDim.new(0, 10);
 
 
--- ExcHubHub.Floating.Blue
+-- TropicHub.Floating.Blue
 Tropicana["c5"] = Instance.new("Frame", Tropicana["c0"]);
 Tropicana["c5"]["BorderSizePixel"] = 0;
-Tropicana["c5"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["c5"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
 Tropicana["c5"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["c5"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
 Tropicana["c5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -1793,21 +1793,21 @@ Tropicana["c5"]["Name"] = [[Blue]];
 Tropicana["c5"]["BackgroundTransparency"] = 0.6;
 
 
--- ExcHubHub.Floating.Blue.UIGradient
+-- TropicHub.Floating.Blue.UIGradient
 Tropicana["c6"] = Instance.new("UIGradient", Tropicana["c5"]);
 Tropicana["c6"]["Rotation"] = -72;
-Tropicana["c6"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(166, 114, 2)),ColorSequenceKeypoint.new(0.491, Color3.fromRGB(0, 50, 123)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(166, 114, 2))};
+Tropicana["c6"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.491, Color3.fromRGB(0, 50, 123)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
 
 
--- ExcHubHub.Floating.Blue.UICorner
+-- TropicHub.Floating.Blue.UICorner
 Tropicana["c7"] = Instance.new("UICorner", Tropicana["c5"]);
 Tropicana["c7"]["CornerRadius"] = UDim.new(0, 10);
 
 
--- ExcHubHub.Floating.Cyan
+-- TropicHub.Floating.Cyan
 Tropicana["c8"] = Instance.new("CanvasGroup", Tropicana["c0"]);
 Tropicana["c8"]["BorderSizePixel"] = 0;
-Tropicana["c8"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["c8"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
 Tropicana["c8"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["c8"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
 Tropicana["c8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -1815,21 +1815,21 @@ Tropicana["c8"]["Name"] = [[Cyan]];
 Tropicana["c8"]["BackgroundTransparency"] = 0.8;
 
 
--- ExcHubHub.Floating.Cyan.UIGradient
+-- TropicHub.Floating.Cyan.UIGradient
 Tropicana["c9"] = Instance.new("UIGradient", Tropicana["c8"]);
 Tropicana["c9"]["Rotation"] = -26;
-Tropicana["c9"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(166, 114, 2)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(0, 35, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(166, 114, 2))};
+Tropicana["c9"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(0, 35, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
 
 
--- ExcHubHub.Floating.Cyan.UICorner
+-- TropicHub.Floating.Cyan.UICorner
 Tropicana["ca"] = Instance.new("UICorner", Tropicana["c8"]);
 Tropicana["ca"]["CornerRadius"] = UDim.new(0, 10);
 
 
--- ExcHubHub.Floating.Cyan.AbstractBg
+-- TropicHub.Floating.Cyan.AbstractBg
 Tropicana["cb"] = Instance.new("ImageLabel", Tropicana["c8"]);
 Tropicana["cb"]["BorderSizePixel"] = 0;
-Tropicana["cb"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["cb"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["cb"]["ImageColor3"] = Color3.fromRGB(0, 183, 22);
 Tropicana["cb"]["Image"] = [[rbxassetid://88984077541230]];
 Tropicana["cb"]["Size"] = UDim2.new(0, 549, 0, 364);
@@ -1841,7 +1841,7 @@ Tropicana["cb"]["Name"] = [[AbstractBg]];
 Tropicana["cb"]["Position"] = UDim2.new(0.41197, 0, 0.48528, 0);
 
 
--- ExcHubHub.Floating.DropShadowHolder
+-- TropicHub.Floating.DropShadowHolder
 Tropicana["cc"] = Instance.new("Frame", Tropicana["c0"]);
 Tropicana["cc"]["ZIndex"] = 0;
 Tropicana["cc"]["BorderSizePixel"] = 0;
@@ -1850,7 +1850,7 @@ Tropicana["cc"]["Name"] = [[DropShadowHolder]];
 Tropicana["cc"]["BackgroundTransparency"] = 1;
 
 
--- ExcHubHub.Floating.DropShadowHolder.DropShadow
+-- TropicHub.Floating.DropShadowHolder.DropShadow
 Tropicana["cd"] = Instance.new("ImageLabel", Tropicana["cc"]);
 Tropicana["cd"]["ZIndex"] = 0;
 Tropicana["cd"]["BorderSizePixel"] = 0;
@@ -1865,15 +1865,15 @@ Tropicana["cd"]["Name"] = [[DropShadow]];
 Tropicana["cd"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
 
 
--- ExcHubHub.Floating.Folder
+-- TropicHub.Floating.Folder
 Tropicana["ce"] = Instance.new("Folder", Tropicana["c0"]);
 
 
 
--- ExcHubHub.Floating.Folder.Logo
+-- TropicHub.Floating.Folder.Logo
 Tropicana["cf"] = Instance.new("ImageLabel", Tropicana["ce"]);
 Tropicana["cf"]["BorderSizePixel"] = 0;
-Tropicana["cf"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["cf"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["cf"]["Image"] = [[rbxassetid://75447466645806]];
 Tropicana["cf"]["Size"] = UDim2.new(0, 24, 0, 25);
 Tropicana["cf"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -1882,47 +1882,47 @@ Tropicana["cf"]["Name"] = [[Logo]];
 Tropicana["cf"]["Position"] = UDim2.new(0, 8, 0, 8);
 
 
--- ExcHubHub.Floating.Folder.Logo.UIAspectRatioConstraint
+-- TropicHub.Floating.Folder.Logo.UIAspectRatioConstraint
 Tropicana["d0"] = Instance.new("UIAspectRatioConstraint", Tropicana["cf"]);
 
 
 
--- ExcHubHub.Floating.Folder.Logo.UICorner
+-- TropicHub.Floating.Folder.Logo.UICorner
 Tropicana["d1"] = Instance.new("UICorner", Tropicana["cf"]);
 
 
 
--- ExcHubHub.Floating.Folder.Frame
+-- TropicHub.Floating.Folder.Frame
 Tropicana["d2"] = Instance.new("Frame", Tropicana["ce"]);
 Tropicana["d2"]["BorderSizePixel"] = 0;
-Tropicana["d2"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["d2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["d2"]["AnchorPoint"] = Vector2.new(0, 0.5);
 Tropicana["d2"]["Size"] = UDim2.new(0, 2, 0, 27);
 Tropicana["d2"]["Position"] = UDim2.new(0, 40, 0.5, 0);
 Tropicana["d2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 
 
--- ExcHubHub.Floating.Folder.Frame.UIGradient
+-- TropicHub.Floating.Folder.Frame.UIGradient
 Tropicana["d3"] = Instance.new("UIGradient", Tropicana["d2"]);
 Tropicana["d3"]["Rotation"] = -90;
 Tropicana["d3"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
 
 
--- ExcHubHub.Floating.Folder.Frame.UICorner
+-- TropicHub.Floating.Folder.Frame.UICorner
 Tropicana["d4"] = Instance.new("UICorner", Tropicana["d2"]);
 Tropicana["d4"]["CornerRadius"] = UDim.new(100, 100);
 
 
--- ExcHubHub.Floating.Folder.Title
+-- TropicHub.Floating.Folder.Title
 Tropicana["d5"] = Instance.new("TextLabel", Tropicana["ce"]);
 Tropicana["d5"]["TextWrapped"] = true;
 Tropicana["d5"]["BorderSizePixel"] = 0;
 Tropicana["d5"]["TextXAlignment"] = Enum.TextXAlignment.Left;
 Tropicana["d5"]["TextScaled"] = true;
-Tropicana["d5"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["d5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["d5"]["TextSize"] = 14;
 Tropicana["d5"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-Tropicana["d5"]["TextColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["d5"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["d5"]["BackgroundTransparency"] = 1;
 Tropicana["d5"]["AnchorPoint"] = Vector2.new(0, 0.5);
 Tropicana["d5"]["Size"] = UDim2.new(0, 70, 0, 15);
@@ -1932,17 +1932,17 @@ Tropicana["d5"]["Name"] = [[Title]];
 Tropicana["d5"]["Position"] = UDim2.new(0, 53, 0, 21);
 
 
--- ExcHubHub.Floating.Folder.Title.UIGradient
+-- TropicHub.Floating.Folder.Title.UIGradient
 Tropicana["d6"] = Instance.new("UIGradient", Tropicana["d5"]);
 Tropicana["d6"]["Rotation"] = -90;
 Tropicana["d6"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
 
 
--- ExcHubHub.Floating.Folder.Status
+-- TropicHub.Floating.Folder.Status
 Tropicana["d7"] = Instance.new("ImageButton", Tropicana["ce"]);
 Tropicana["d7"]["Active"] = false;
 Tropicana["d7"]["BorderSizePixel"] = 0;
-Tropicana["d7"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["d7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["d7"]["Selectable"] = false;
 Tropicana["d7"]["AnchorPoint"] = Vector2.new(0, 0.5);
 Tropicana["d7"]["Image"] = [[rbxassetid://10734895698]];
@@ -1953,26 +1953,26 @@ Tropicana["d7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 Tropicana["d7"]["Position"] = UDim2.new(0, 128, 0.5, 0);
 
 
--- ExcHubHub.Floating.Folder.Status.UIAspectRatioConstraint
+-- TropicHub.Floating.Folder.Status.UIAspectRatioConstraint
 Tropicana["d8"] = Instance.new("UIAspectRatioConstraint", Tropicana["d7"]);
 
 
 
--- ExcHubHub.Floating.Folder.Status.UICorner
+-- TropicHub.Floating.Folder.Status.UICorner
 Tropicana["d9"] = Instance.new("UICorner", Tropicana["d7"]);
 
 
 
--- ExcHubHub.Floating.Folder.Status.UIGradient
+-- TropicHub.Floating.Folder.Status.UIGradient
 Tropicana["da"] = Instance.new("UIGradient", Tropicana["d7"]);
 Tropicana["da"]["Rotation"] = -90;
 Tropicana["da"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
 
 
--- ExcHubHub.Floating.Folder.DraggablePart
+-- TropicHub.Floating.Folder.DraggablePart
 Tropicana["db"] = Instance.new("Frame", Tropicana["ce"]);
 Tropicana["db"]["BorderSizePixel"] = 0;
-Tropicana["db"]["BackgroundColor3"] = Color3.fromRGB(166, 114, 2);
+Tropicana["db"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["db"]["Size"] = UDim2.new(0, 40, 0, 42);
 Tropicana["db"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 Tropicana["db"]["Name"] = [[DraggablePart]];
@@ -2434,19 +2434,19 @@ Tropicana_MODULES[Tropicana["27"]] = {
 							newButton.Button.TextLabel.UIGradient.Enabled = false
 							newButton.Button.UIGradientOff.Enabled = false
 							newButton.Button.UIGradientOn.Enabled = true
-							Tween(newButton.Button, {BackgroundColor3 = Color3.fromRGB(166, 114, 2)})
+							Tween(newButton.Button, {BackgroundColor3 = Color3.fromRGB(200,200,200)})
 						end)
 						newButton.Button.MouseButton1Up:Connect(function()
 							newButton.Button.TextLabel.UIGradient.Enabled = true
 							newButton.Button.UIGradientOff.Enabled = true
 							newButton.Button.UIGradientOn.Enabled = false
-							Tween(newButton.Button, {BackgroundColor3 = Color3.fromRGB(166, 114, 2)})
+							Tween(newButton.Button, {BackgroundColor3 = Color3.fromRGB(40,40,40)})
 						end)
 						newButton.Button.MouseLeave:Connect(function()
 							newButton.Button.TextLabel.UIGradient.Enabled = true
 							newButton.Button.UIGradientOff.Enabled = true
 							newButton.Button.UIGradientOn.Enabled = false
-							Tween(newButton.Button, {BackgroundColor3 = Color3.fromRGB(166, 114, 2)})
+							Tween(newButton.Button, {BackgroundColor3 = Color3.fromRGB(40,40,40)})
 						end)
 
 						newButton.Button.MouseButton1Click:Connect(Callback)
@@ -2486,7 +2486,7 @@ Tropicana_MODULES[Tropicana["27"]] = {
 						if state == true then
 							newToggle.Title.TextTransparency = 0
 
-							newToggle.Toggle.BackgroundColor3 = Color3.fromRGB(166, 114, 2)
+							newToggle.Toggle.BackgroundColor3 = Color3.fromRGB(255,255,255)
 						end
 
 						newToggle.Visible = true
@@ -2516,7 +2516,7 @@ Tropicana_MODULES[Tropicana["27"]] = {
 								newToggle.OnChanged:Fire(state)
 								Callback(state)
 								Tween(newToggle.Title, {TextTransparency = 0})
-								Tween(newToggle.Toggle, {BackgroundColor3 = Color3.fromRGB(166, 114, 2)})
+								Tween(newToggle.Toggle, {BackgroundColor3 = Color3.fromRGB(255,255,255)})
 							elseif state == true then
 								state = false
 
@@ -2525,7 +2525,7 @@ Tropicana_MODULES[Tropicana["27"]] = {
 								newToggle.OnChanged:Fire(state)
 								Callback(state)
 								Tween(newToggle.Title, {TextTransparency = 0.7})
-								Tween(newToggle.Toggle, {BackgroundColor3 = Color3.fromRGB(166, 114, 2)})
+								Tween(newToggle.Toggle, {BackgroundColor3 = Color3.fromRGB(40,40,40)})
 							end
 						end)
 
@@ -2538,10 +2538,10 @@ Tropicana_MODULES[Tropicana["27"]] = {
 
 							if state == true then
 								Tween(newToggle.Title, {TextTransparency = 0})
-								Tween(newToggle.Toggle, {BackgroundColor3 = Color3.fromRGB(166, 114, 2)})
+								Tween(newToggle.Toggle, {BackgroundColor3 = Color3.fromRGB(255,255,255)})
 							elseif state == false then
 								Tween(newToggle.Title, {TextTransparency = 0.7})
-								Tween(newToggle.Toggle, {BackgroundColor3 = Color3.fromRGB(166, 114, 2)})
+								Tween(newToggle.Toggle, {BackgroundColor3 = Color3.fromRGB(40,40,40)})
 							end
 
 							self.Value = state
@@ -2766,20 +2766,20 @@ Tropicana_MODULES[Tropicana["27"]] = {
 							newDropdown.DropdownButton.Button.TextLabel.UIGradient.Enabled = false
 							newDropdown.DropdownButton.Button.UIGradientOff.Enabled = false
 							newDropdown.DropdownButton.Button.UIGradientOn.Enabled = true
-							Tween(newDropdown.DropdownButton.Button, {BackgroundColor3 = Color3.fromRGB(166, 114, 2)})
+							Tween(newDropdown.DropdownButton.Button, {BackgroundColor3 = Color3.fromRGB(200,200,200)})
 						end)
 						newDropdown.DropdownButton.Button.MouseButton1Up:Connect(function()
 							newDropdown.DropdownButton.Button.TextLabel.UIGradient.Enabled = true
 							newDropdown.DropdownButton.Button.UIGradientOff.Enabled = true
 							newDropdown.DropdownButton.Button.UIGradientOn.Enabled = false
-							Tween(newDropdown.DropdownButton.Button, {BackgroundColor3 = Color3.fromRGB(166, 114, 2)})
+							Tween(newDropdown.DropdownButton.Button, {BackgroundColor3 = Color3.fromRGB(40,40,40)})
 						end)
 
 						newDropdown.DropdownButton.Button.MouseLeave:Connect(function()
 							newDropdown.DropdownButton.Button.TextLabel.UIGradient.Enabled = true
 							newDropdown.DropdownButton.Button.UIGradientOff.Enabled = true
 							newDropdown.DropdownButton.Button.UIGradientOn.Enabled = false
-							Tween(newDropdown.DropdownButton.Button, {BackgroundColor3 = Color3.fromRGB(166, 114, 2)})
+							Tween(newDropdown.DropdownButton.Button, {BackgroundColor3 = Color3.fromRGB(40,40,40)})
 						end)
 
 						newDropdown.DropdownButton.Button.MouseButton1Click:Connect(function()
