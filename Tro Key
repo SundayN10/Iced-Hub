@@ -1,0 +1,404 @@
+import discord
+from discord.ui import Button, View, Modal, TextInput
+from discord.ext import commands
+import sqlite3
+import datetime
+import random
+import string
+import hashlib
+
+# Bot setup
+intents = discord.Intents.default()
+intents.message_content = True
+bot = commands.Bot(command_prefix="!", intents=intents)
+
+# Owners
+OWNERS = [1251516320722321418, 1324711594956947506]
+
+# Database setup
+conn = sqlite3.connect("tropicana_keysystem.db")
+cursor = conn.cursor()
+
+# Create tables
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS users (
+        user_id INTEGER PRIMARY KEY,
+        hwid TEXT,
+        is_premium BOOLEAN,
+        key TEXT,
+        redeemed_by INTEGER
+    )
+''')
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS keys (
+        key TEXT PRIMARY KEY,
+        used BOOLEAN,
+        redeemed_by INTEGER
+    )
+''')
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS hwid_reset_requests (
+        user_id INTEGER PRIMARY KEY,
+        requested_at TEXT,
+        message_id INTEGER,
+        channel_id INTEGER
+    )
+''')
+conn.commit()
+
+# Generate secure keys in the format TROP_XXXXXX-YYYY
+def generate_secure_key():
+    chars = string.ascii_uppercase + string.digits
+    part1 = ''.join(random.choices(chars, k=6))  # e.g., 4A7B2C
+    part2 = ''.join(random.choices(chars, k=4))  # e.g., XYZ1
+    return f"TROP_{part1}-{part2}"
+
+# Pre-generate 200 keys
+def generate_initial_keys():
+    cursor.execute("SELECT COUNT(*) FROM keys")
+    if cursor.fetchone()[0] == 0:  # Only generate if the table is empty
+        keys = set()
+        while len(keys) < 200:
+            keys.add(generate_secure_key())
+        for key in keys:
+            cursor.execute("INSERT INTO keys (key, used, redeemed_by) VALUES (?, ?, ?)", (key, False, None))
+        conn.commit()
+        # Print the keys for you to copy
+        print("Generated 200 secure keys:")
+        for key in sorted(keys):
+            print(key, end=", ")
+        print()
+
+generate_initial_keys()
+
+# Simulate HWID (in a real system, this would be fetched from the executor)
+def generate_hwid(user_id):
+    return hashlib.sha256(f"{user_id}{random.randint(1000, 9999)}".encode()).hexdigest()[:16]
+
+# Bot event: On ready
+@bot.event
+async def on_ready():
+    print(f"Logged in as {bot.user}")
+
+# Command: Display the key menu
+@bot.command()
+async def keymenu(ctx):
+    # Create a sleek tropical-themed embed with a new color
+    embed = discord.Embed(
+        title="Tropicana Hub Key System",
+        description=(
+            "Welcome to **Tropicana Hub**! Unlock exclusive features with a premium key.\n\n"
+            "**Premium Users**: Use 'Get Premium Script' to receive your script via DM.\n"
+            "**Free Users**: Try the free script or redeem a key to upgrade.\n"
+            "Manage your account and enjoy the tropical experience!"
+        ),
+        color=discord.Color.from_rgb(255, 127, 127)  # Coral (vibrant tropical color)
+    )
+    embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/1349636965917655041/1360281005256212490/image-2.jpg?ex=67fa8be8&is=67f93a68&hm=7db9231b9dec716fa4c9a24c8b5663eb6bb5979c796e551a7d587d607e800290&")
+    # Suggest adding a banner image (upload a tropical beach image to Discord and get the URL)
+    # embed.set_image(url="URL_TO_A_TROPICAL_BANNER_IMAGE")
+
+    # Show premium perks
+    embed.add_field(
+        name="Premium Perks",
+        value=(
+            "- Exclusive scripts\n"
+            "- Priority support\n"
+            "- Special in-game features\n"
+            "- HWID reset privileges"
+        ),
+        inline=True
+    )
+
+    # Show user status (owners are always premium)
+    is_owner = ctx.author.id in OWNERS
+    cursor.execute("SELECT is_premium FROM users WHERE user_id = ?", (ctx.author.id,))
+    result = cursor.fetchone()
+    is_premium = True if is_owner else (result[0] if result else False)
+    status_text = "Owner (Premium)" if is_owner else ("Premium" if is_premium else "Free")
+    embed.add_field(
+        name="Your Status",
+        value=f"**{status_text}**",
+        inline=True
+    )
+
+    embed.set_footer(
+        text=f"Powered by Tropicana Hub • {datetime.datetime.now().strftime('%m/%d/%Y %I:%M %p')}",
+        icon_url="https://cdn.discordapp.com/attachments/1349636965917655041/1360281005256212490/image-2.jpg?ex=67fa8be8&is=67f93a68&hm=7db9231b9dec716fa4c9a24c8b5663eb6bb5979c796e551a7d587d607e800290&"
+    )
+
+    # Create buttons and organize them into rows
+    view = View(timeout=None)
+
+    # Row 1: Generate Key and Redeem Key
+    generate_button = Button(label="Generate Key (Owner Only)", style=discord.ButtonStyle.green)
+    async def generate_callback(interaction):
+        if interaction.user.id not in OWNERS:
+            await interaction.response.send_message("You are not an owner!", ephemeral=True)
+            return
+        new_key = generate_secure_key()
+        cursor.execute("INSERT INTO keys (key, used, redeemed_by) VALUES (?, ?, ?)", (new_key, False, None))
+        conn.commit()
+        await interaction.response.send_message(f"Generated Key: `{new_key}`", ephemeral=True)
+    generate_button.callback = generate_callback
+
+    class RedeemModal(Modal, title="Redeem Your Key"):
+        key_input = TextInput(
+            label="Enter Your Key",
+            placeholder="e.g., TROP_4A7B2C-XYZ1",
+            required=True,
+            max_length=50
+        )
+
+        async def on_submit(self, interaction: discord.Interaction):
+            key = self.key_input.value.strip()
+
+            # Check if the key exists and is unused
+            cursor.execute("SELECT used, redeemed_by FROM keys WHERE key = ?", (key,))
+            result = cursor.fetchone()
+            if result is None:
+                await interaction.response.send_message("Invalid key!", ephemeral=True)
+                return
+            if result[0]:
+                await interaction.response.send_message("This key has already been used!", ephemeral=True)
+                return
+
+            # Mark the key as used and tie it to the user
+            cursor.execute("UPDATE keys SET used = ?, redeemed_by = ? WHERE key = ?", (True, interaction.user.id, key))
+            cursor.execute(
+                "INSERT OR REPLACE INTO users (user_id, hwid, is_premium, key, redeemed_by) VALUES (?, ?, ?, ?, ?)",
+                (interaction.user.id, generate_hwid(interaction.user.id), True, key, interaction.user.id)
+            )
+            conn.commit()
+
+            # Send the premium script via DM
+            script = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/SundayN10/Tropicana_Hub/refs/heads/main/Tropicana%20Hub"))()'
+            try:
+                await interaction.user.send(
+                    f"**Welcome to Tropicana Hub Premium!**\n"
+                    f"You have successfully redeemed your key: `{key}`\n"
+                    f"Here is your premium script:\n```lua\n{script}\n```"
+                )
+                await interaction.response.send_message(
+                    "Key redeemed! Check your DMs for the premium script!",
+                    ephemeral=True
+                )
+            except discord.Forbidden:
+                await interaction.response.send_message(
+                    "I couldn't send you a DM! Please enable DMs from server members.",
+                    ephemeral=True
+                )
+
+    redeem_button = Button(label="Redeem Key", style=discord.ButtonStyle.blurple)
+    async def redeem_callback(interaction):
+        await interaction.response.send_modal(RedeemModal())
+    redeem_button.callback = redeem_callback
+
+    # Row 2: Get Premium Script and Get Free Script
+    get_script_button = Button(label="Get Premium Script", style=discord.ButtonStyle.grey)
+    async def get_script_callback(interaction):
+        cursor.execute("SELECT is_premium, redeemed_by FROM users WHERE user_id = ?", (interaction.user.id,))
+        result = cursor.fetchone()
+        if not result:
+            await interaction.response.send_message(
+                "You need to redeem a key first to become a Premium User!",
+                ephemeral=True
+            )
+            return
+        if not result[0] or result[1] != interaction.user.id:
+            await interaction.response.send_message(
+                "You need to be a Premium User to access premium scripts! Redeem a key first.",
+                ephemeral=True
+            )
+            return
+
+        script = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/SundayN10/Tropicana_Hub/refs/heads/main/Tropicana%20Hub"))()'
+        try:
+            await interaction.user.send(
+                f"**Tropicana Hub Premium Script**\n"
+                f"Here is your premium script:\n```lua\n{script}\n```"
+            )
+            await interaction.response.send_message(
+                "Premium script sent to your DMs!",
+                ephemeral=True
+            )
+        except discord.Forbidden:
+            await interaction.response.send_message(
+                "I couldn't send you a DM! Please enable DMs from server members.",
+                ephemeral=True
+            )
+    get_script_button.callback = get_script_callback
+
+    get_free_script_button = Button(label="Get Free Script", style=discord.ButtonStyle.grey)
+    async def get_free_script_callback(interaction):
+        script = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/SundayN10/Tropicana_Hub/refs/heads/main/Tropicana%20Hub"))()'
+        try:
+            await interaction.user.send(
+                f"**Tropicana Hub Free Script**\n"
+                f"Here is your free script (premium features are locked):\n```lua\n{script}\n```"
+                f"\nTo unlock premium features, redeem a key!"
+            )
+            await interaction.response.send_message(
+                "Free script sent to your DMs! Note: Premium features are locked.",
+                ephemeral=True
+            )
+        except discord.Forbidden:
+            await interaction.response.send_message(
+                "I couldn't send you a DM! Please enable DMs from server members.",
+                ephemeral=True
+            )
+    get_free_script_button.callback = get_free_script_callback
+
+    # Row 3: Reset HWID and Help
+    reset_hwid_button = Button(label="Reset HWID", style=discord.ButtonStyle.red)
+    async def reset_hwid_callback(interaction):
+        cursor.execute("SELECT hwid, redeemed_by FROM users WHERE user_id = ?", (interaction.user.id,))
+        result = cursor.fetchone()
+        if not result or result[1] != interaction.user.id:
+            await interaction.response.send_message(
+                "You need to redeem a key first!",
+                ephemeral=True
+            )
+            return
+
+        # Check if a request already exists
+        cursor.execute("SELECT requested_at FROM hwid_reset_requests WHERE user_id = ?", (interaction.user.id,))
+        if cursor.fetchone():
+            await interaction.response.send_message(
+                "You already have a pending HWID reset request!",
+                ephemeral=True
+            )
+            return
+
+        # Add the request to the database
+        cursor.execute(
+            "INSERT INTO hwid_reset_requests (user_id, requested_at, message_id, channel_id) VALUES (?, ?, ?, ?)",
+            (interaction.user.id, datetime.datetime.now().isoformat(), None, None)
+        )
+        conn.commit()
+
+        # Notify owners with buttons
+        for owner_id in OWNERS:
+            owner = await bot.fetch_user(owner_id)
+            if not owner:
+                continue
+
+            # Create a unique view for each owner
+            view = View(timeout=None)
+
+            approve_button = Button(label="Approve", style=discord.ButtonStyle.green)
+            async def approve_callback(owner_interaction):
+                # Check if the request still exists
+                cursor.execute("SELECT user_id FROM hwid_reset_requests WHERE user_id = ?", (interaction.user.id,))
+                if not cursor.fetchone():
+                    await owner_interaction.response.send_message("This request no longer exists!", ephemeral=True)
+                    return
+
+                # Reset the HWID
+                new_hwid = generate_hwid(interaction.user.id)
+                cursor.execute("UPDATE users SET hwid = ? WHERE user_id = ?", (new_hwid, interaction.user.id))
+                cursor.execute("DELETE FROM hwid_reset_requests WHERE user_id = ?", (interaction.user.id,))
+                conn.commit()
+
+                # Notify the user
+                try:
+                    await interaction.user.send(f"Your HWID has been reset! New HWID: `{new_hwid}`")
+                except discord.Forbidden:
+                    pass
+                await owner_interaction.response.send_message(f"HWID reset approved for {interaction.user.mention}!", ephemeral=True)
+
+                # Disable the buttons
+                approve_button.disabled = True
+                deny_button.disabled = True
+                await owner_interaction.message.edit(view=view)
+
+            deny_button = Button(label="Deny", style=discord.ButtonStyle.red)
+            async def deny_callback(owner_interaction):
+                # Check if the request still exists
+                cursor.execute("SELECT user_id FROM hwid_reset_requests WHERE user_id = ?", (interaction.user.id,))
+                if not cursor.fetchone():
+                    await owner_interaction.response.send_message("This request no longer exists!", ephemeral=True)
+                    return
+
+                # Deny the request
+                cursor.execute("DELETE FROM hwid_reset_requests WHERE user_id = ?", (interaction.user.id,))
+                conn.commit()
+
+                # Notify the user
+                try:
+                    await interaction.user.send("Your HWID reset request was denied by an owner.")
+                except discord.Forbidden:
+                    pass
+                await owner_interaction.response.send_message(f"HWID reset denied for {interaction.user.mention}!", ephemeral=True)
+
+                # Disable the buttons
+                approve_button.disabled = True
+                deny_button.disabled = True
+                await owner_interaction.message.edit(view=view)
+
+            approve_button.callback = approve_callback
+            deny_button.callback = deny_callback
+
+            view.add_item(approve_button)
+            view.add_item(deny_button)
+
+            try:
+                message = await owner.send(
+                    f"**HWID Reset Request**\n"
+                    f"User: {interaction.user.mention} (ID: {interaction.user.id})\n"
+                    f"Requested at: {datetime.datetime.now().strftime('%m/%d/%Y %I:%M %p')}",
+                    view=view
+                )
+                cursor.execute(
+                    "UPDATE hwid_reset_requests SET message_id = ?, channel_id = ? WHERE user_id = ?",
+                    (message.id, message.channel.id, interaction.user.id)
+                )
+                conn.commit()
+            except discord.Forbidden:
+                continue
+
+        await interaction.response.send_message(
+            "HWID reset requested! Please wait for owner approval.",
+            ephemeral=True
+        )
+    reset_hwid_button.callback = reset_hwid_callback
+
+    help_button = Button(label="Help", style=discord.ButtonStyle.blurple)
+    async def help_callback(interaction):
+        await interaction.response.send_message(
+            "**Tropicana Hub Help**\n"
+            "- **Generate Key**: Owners can generate new keys.\n"
+            "- **Redeem Key**: Enter a key to become premium.\n"
+            "- **Get Premium Script**: Get your premium script via DM.\n"
+            "- **Get Free Script**: Get the free script (premium features locked).\n"
+            "- **Reset HWID**: Request an HWID reset (requires owner approval).\n"
+            "- **Need help?** Contact an owner!",
+            ephemeral=True
+        )
+    help_button.callback = help_callback
+
+    # Add buttons to the view in rows
+    view.add_item(generate_button)
+    view.add_item(redeem_button)
+    view.add_item(get_script_button)
+    view.add_item(get_free_script_button)
+    view.add_item(reset_hwid_button)
+    view.add_item(help_button)
+
+    # Send a welcome message via DM if the user is new
+    cursor.execute("SELECT user_id FROM users WHERE user_id = ?", (ctx.author.id,))
+    if not cursor.fetchone() and not is_owner:
+        try:
+            await ctx.author.send(
+                f"**Welcome to Tropicana Hub!**\n"
+                f"To get started, redeem a key using the `Redeem Key` button or try the free script.\n"
+                f"Need a key? Contact an owner!"
+            )
+        except discord.Forbidden:
+            pass
+
+    # Send the embed with buttons
+    await ctx.send(embed=embed, view=view)
+
+# Run the bot
+bot.run("MTM2MDI4MjAzODY2MTU0NjExNQ.G9_sEI.Ds83xTNl_78u-Rpjz22zVFEMt___7ZZgkJZxb0")
