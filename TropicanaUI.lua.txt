@@ -11,7 +11,7 @@ Tropicana["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 -- TropicHub.BackgroundFrame
 Tropicana["2"] = Instance.new("Frame", Tropicana["1"]);
 Tropicana["2"]["BorderSizePixel"] = 0;
-Tropicana["2"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+Tropicana["2"]["BackgroundColor3"] = Color3.fromRGB(242, 103, 34);
 Tropicana["2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
 Tropicana["2"]["Size"] = UDim2.new(0, 452, 0, 344);
 Tropicana["2"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
@@ -27,13 +27,13 @@ Tropicana["3"]["CornerRadius"] = UDim.new(0, 10);
 -- TropicHub.BackgroundFrame.UIGradient
 Tropicana["4"] = Instance.new("UIGradient", Tropicana["2"]);
 Tropicana["4"]["Rotation"] = -143;
-Tropicana["4"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(11, 11, 11)),ColorSequenceKeypoint.new(0.484, Color3.fromRGB(6, 244, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(26, 26, 26))};
+Tropicana["4"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(11, 11, 11)),ColorSequenceKeypoint.new(0.484, Color3.fromRGB(6, 244, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(20, 43, 53))};
 
 
 -- TropicHub.BackgroundFrame.LightBlue
 Tropicana["5"] = Instance.new("Frame", Tropicana["2"]);
 Tropicana["5"]["BorderSizePixel"] = 0;
-Tropicana["5"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+Tropicana["5"]["BackgroundColor3"] = Color3.fromRGB(242, 103, 34);
 Tropicana["5"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["5"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
 Tropicana["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -55,7 +55,7 @@ Tropicana["7"]["CornerRadius"] = UDim.new(0, 10);
 -- TropicHub.BackgroundFrame.Blue
 Tropicana["8"] = Instance.new("Frame", Tropicana["2"]);
 Tropicana["8"]["BorderSizePixel"] = 0;
-Tropicana["8"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+Tropicana["8"]["BackgroundColor3"] = Color3.fromRGB(242, 103, 34);
 Tropicana["8"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["8"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
 Tropicana["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -111,13 +111,13 @@ Tropicana["e"]["CornerRadius"] = UDim.new(0, 10);
 -- TropicHub.BackgroundFrame.Side.UIGradient
 Tropicana["f"] = Instance.new("UIGradient", Tropicana["d"]);
 Tropicana["f"]["Rotation"] = -51;
-Tropicana["f"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(11, 11, 11)),ColorSequenceKeypoint.new(0.484, Color3.fromRGB(6, 244, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(26, 26, 26))};
+Tropicana["f"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(11, 11, 11)),ColorSequenceKeypoint.new(0.484, Color3.fromRGB(6, 244, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(20, 43, 53))};
 
 
 -- TropicHub.BackgroundFrame.Side.LightBlue
 Tropicana["10"] = Instance.new("Frame", Tropicana["d"]);
 Tropicana["10"]["BorderSizePixel"] = 0;
-Tropicana["10"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+Tropicana["10"]["BackgroundColor3"] = Color3.fromRGB(242, 103, 34);
 Tropicana["10"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["10"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
 Tropicana["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -139,7 +139,7 @@ Tropicana["12"]["CornerRadius"] = UDim.new(0, 10);
 -- TropicHub.BackgroundFrame.Side.Blue
 Tropicana["13"] = Instance.new("Frame", Tropicana["d"]);
 Tropicana["13"]["BorderSizePixel"] = 0;
-Tropicana["13"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+Tropicana["13"]["BackgroundColor3"] = Color3.fromRGB(242, 103, 34);
 Tropicana["13"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["13"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
 Tropicana["13"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -161,7 +161,7 @@ Tropicana["15"]["CornerRadius"] = UDim.new(0, 10);
 -- TropicHub.BackgroundFrame.Side.Cyan
 Tropicana["16"] = Instance.new("CanvasGroup", Tropicana["d"]);
 Tropicana["16"]["BorderSizePixel"] = 0;
-Tropicana["16"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+Tropicana["16"]["BackgroundColor3"] = Color3.fromRGB(242, 103, 34);
 Tropicana["16"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["16"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
 Tropicana["16"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -306,7 +306,7 @@ Tropicana["23"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
 -- TropicHub.BackgroundFrame.Cyan
 Tropicana["24"] = Instance.new("Frame", Tropicana["2"]);
 Tropicana["24"]["BorderSizePixel"] = 0;
-Tropicana["24"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+Tropicana["24"]["BackgroundColor3"] = Color3.fromRGB(242, 103, 34);
 Tropicana["24"]["ClipsDescendants"] = true;
 Tropicana["24"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["24"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
@@ -602,7 +602,7 @@ Tropicana["43"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Co
 Tropicana["44"] = Instance.new("Frame", Tropicana["29"]);
 Tropicana["44"]["Visible"] = false;
 Tropicana["44"]["BorderSizePixel"] = 0;
-Tropicana["44"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+Tropicana["44"]["BackgroundColor3"] = Color3.fromRGB(242, 103, 34);
 Tropicana["44"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
 Tropicana["44"]["AutomaticSize"] = Enum.AutomaticSize.Y;
 Tropicana["44"]["Size"] = UDim2.new(0, 265, 0, 65);
@@ -619,14 +619,14 @@ Tropicana["45"]["CornerRadius"] = UDim.new(0, 10);
 -- TropicHub.Template.Notification.UIGradient
 Tropicana["46"] = Instance.new("UIGradient", Tropicana["44"]);
 Tropicana["46"]["Rotation"] = 180;
-Tropicana["46"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(11, 11, 11)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(5, 185, 191)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(26, 26, 26))};
+Tropicana["46"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(11, 11, 11)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(5, 185, 191)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(20, 43, 53))};
 
 
 -- TropicHub.Template.Notification.LightBlue
 Tropicana["47"] = Instance.new("Frame", Tropicana["44"]);
 Tropicana["47"]["BorderSizePixel"] = 0;
 Tropicana["47"]["AutoLocalize"] = false;
-Tropicana["47"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+Tropicana["47"]["BackgroundColor3"] = Color3.fromRGB(242, 103, 34);
 Tropicana["47"]["BorderMode"] = Enum.BorderMode.Inset;
 Tropicana["47"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["47"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
@@ -655,7 +655,7 @@ Tropicana["4a"]["MaxSize"] = Vector2.new(265, math.huge);
 Tropicana["4b"] = Instance.new("Frame", Tropicana["44"]);
 Tropicana["4b"]["BorderSizePixel"] = 0;
 Tropicana["4b"]["AutoLocalize"] = false;
-Tropicana["4b"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+Tropicana["4b"]["BackgroundColor3"] = Color3.fromRGB(242, 103, 34);
 Tropicana["4b"]["BorderMode"] = Enum.BorderMode.Inset;
 Tropicana["4b"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["4b"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
@@ -684,7 +684,7 @@ Tropicana["4e"]["MaxSize"] = Vector2.new(265, math.huge);
 Tropicana["4f"] = Instance.new("Frame", Tropicana["44"]);
 Tropicana["4f"]["BorderSizePixel"] = 0;
 Tropicana["4f"]["AutoLocalize"] = false;
-Tropicana["4f"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+Tropicana["4f"]["BackgroundColor3"] = Color3.fromRGB(242, 103, 34);
 Tropicana["4f"]["BorderMode"] = Enum.BorderMode.Inset;
 Tropicana["4f"]["ClipsDescendants"] = true;
 Tropicana["4f"]["Size"] = UDim2.new(1, 0, 1, 0);
@@ -1748,7 +1748,7 @@ Tropicana["bf"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Co
 -- TropicHub.Floating
 Tropicana["c0"] = Instance.new("Frame", Tropicana["1"]);
 Tropicana["c0"]["BorderSizePixel"] = 0;
-Tropicana["c0"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+Tropicana["c0"]["BackgroundColor3"] = Color3.fromRGB(242, 103, 34);
 Tropicana["c0"]["Size"] = UDim2.new(0, 158, 0, 42);
 Tropicana["c0"]["Position"] = UDim2.new(0.02, 0, 0.1, 0);
 Tropicana["c0"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -1763,7 +1763,7 @@ Tropicana["c1"]["CornerRadius"] = UDim.new(0, 10);
 -- TropicHub.Floating.LightBlue
 Tropicana["c2"] = Instance.new("Frame", Tropicana["c0"]);
 Tropicana["c2"]["BorderSizePixel"] = 0;
-Tropicana["c2"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+Tropicana["c2"]["BackgroundColor3"] = Color3.fromRGB(242, 103, 34);
 Tropicana["c2"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["c2"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
 Tropicana["c2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -1785,7 +1785,7 @@ Tropicana["c4"]["CornerRadius"] = UDim.new(0, 10);
 -- TropicHub.Floating.Blue
 Tropicana["c5"] = Instance.new("Frame", Tropicana["c0"]);
 Tropicana["c5"]["BorderSizePixel"] = 0;
-Tropicana["c5"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+Tropicana["c5"]["BackgroundColor3"] = Color3.fromRGB(242, 103, 34);
 Tropicana["c5"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["c5"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
 Tropicana["c5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -1807,7 +1807,7 @@ Tropicana["c7"]["CornerRadius"] = UDim.new(0, 10);
 -- TropicHub.Floating.Cyan
 Tropicana["c8"] = Instance.new("CanvasGroup", Tropicana["c0"]);
 Tropicana["c8"]["BorderSizePixel"] = 0;
-Tropicana["c8"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+Tropicana["c8"]["BackgroundColor3"] = Color3.fromRGB(242, 103, 34);
 Tropicana["c8"]["Size"] = UDim2.new(1, 0, 1, 0);
 Tropicana["c8"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
 Tropicana["c8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
