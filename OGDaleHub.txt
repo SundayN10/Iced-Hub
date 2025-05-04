@@ -1,0 +1,1856 @@
+-- OGDale Hub UI Library
+-- A modern, vibrant, and optimized UI library for Roblox with a futuristic neon aesthetic
+-- Version: 2.0 | Created by xAI
+
+local Library = {}
+local SaveTheme = {}
+local NotificationStack = 0 -- Tracks number of active notifications for stacking
+
+-- Define the enhanced neon theme with smooth gradients and high contrast
+local themes = {
+	index = {'Neon'},
+	Neon = {
+		Shadow = Color3.fromRGB(10, 10, 25),
+		Background = Color3.fromRGB(20, 20, 40),
+		Page = Color3.fromRGB(15, 15, 35),
+		Main = Color3.fromRGB(0, 255, 220),
+		TextAndIcon = Color3.fromRGB(245, 245, 255),
+		Gradient = ColorSequence.new{
+			ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 220)),
+			ColorSequenceKeypoint.new(1, Color3.fromRGB(50, 150, 255))
+		},
+		Function = {
+			Toggle = {
+				Background = Color3.fromRGB(30, 30, 55),
+				True = {
+					ToggleBackground = Color3.fromRGB(40, 40, 70),
+					ToggleValue = Color3.fromRGB(0, 255, 220)
+				},
+				False = {
+					ToggleBackground = Color3.fromRGB(25, 25, 50),
+					ToggleValue = Color3.fromRGB(60, 60, 80)
+				}
+			},
+			Label = {
+				Background = Color3.fromRGB(30, 30, 55)
+			},
+			Dropdown = {
+				Background = Color3.fromRGB(30, 30, 55),
+				ValueBackground = Color3.fromRGB(20, 20, 45),
+				ValueStroke = Color3.fromRGB(245, 245, 255),
+				DropdownSelect = {
+					Background = Color3.fromRGB(20, 20, 45),
+					Search = Color3.fromRGB(25, 25, 50),
+					ItemBackground = Color3.fromRGB(25, 25, 50)
+				}
+			},
+			Slider = {
+				Background = Color3.fromRGB(30, 30, 55),
+				ValueBackground = Color3.fromRGB(20, 20, 45),
+				ValueStroke = Color3.fromRGB(245, 245, 255),
+				SliderBar = Color3.fromRGB(40, 40, 70),
+				SliderBarValue = Color3.fromRGB(0, 255, 220),
+				CircleValue = Color3.fromRGB(255, 255, 255)
+			},
+			Code = {
+				Background = ColorSequence.new{
+					ColorSequenceKeypoint.new(0, Color3.fromRGB(30, 30, 55)),
+					ColorSequenceKeypoint.new(1, Color3.fromRGB(30, 30, 55))
+				},
+				BackgroundCode = Color3.fromRGB(35, 35, 60),
+				BackgroundCodeValue = Color3.fromRGB(25, 25, 50),
+				ScrollingFrameCode = Color3.fromRGB(140, 140, 170)
+			},
+			Button = {
+				Background = Color3.fromRGB(30, 30, 55),
+				Click = Color3.fromRGB(245, 245, 255)
+			},
+			Textbox = {
+				Background = Color3.fromRGB(30, 30, 55),
+				ValueBackground = Color3.fromRGB(20, 20, 45),
+				ValueStroke = Color3.fromRGB(245, 245, 255)
+			},
+			Keybind = {
+				Background = Color3.fromRGB(30, 30, 55),
+				ValueBackground = Color3.fromRGB(20, 20, 45),
+				ValueStroke = Color3.fromRGB(245, 245, 255),
+				True = {
+					ToggleBackground = Color3.fromRGB(40, 40, 70),
+					ToggleValue = Color3.fromRGB(0, 255, 220)
+				},
+				False = {
+					ToggleBackground = Color3.fromRGB(25, 25, 50),
+					ToggleValue = Color3.fromRGB(60, 60, 80)
+				}
+			},
+			ColorPicker = {
+				Background = Color3.fromRGB(30, 30, 55),
+				ColorSelect = {
+					Background = Color3.fromRGB(20, 20, 45),
+					UIStroke = Color3.fromRGB(245, 245, 255)
+				}
+			}
+		}
+	}
+}
+
+-- Services and utilities
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local RunService = game:GetService("RunService")
+local protectGui = protectgui or (syn and syn.protect_gui) or function() end
+
+-- Create ScreenGui
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "OGDaleHub"
+ScreenGui.Parent = gethui and gethui() or game:GetService("CoreGui") or game:GetService("Players").LocalPlayer.PlayerGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+protectGui(ScreenGui)
+
+-- Utility functions
+do
+	-- Theme management
+	function addToTheme(name, obj)
+		SaveTheme[name] = SaveTheme[name] or {}
+		table.insert(SaveTheme[name], obj)
+	end
+
+	function getColorFromPath(tbl, path)
+		local result = tbl
+		for _, part in ipairs(path:split(".")) do
+			result = result and result[part]
+		end
+		return result
+	end
+
+	function Library:setTheme(themeName)
+		local theme = themes[themeName] or themes.Neon
+		for name, objects in pairs(SaveTheme) do
+			local color = getColorFromPath(theme, name)
+			if color then
+				for _, obj in ipairs(objects) do
+					local success, err = pcall(function()
+						if obj:IsA("Frame") or obj:IsA("CanvasGroup") then
+							obj.BackgroundColor3 = color
+						elseif obj:IsA("TextLabel") or obj:IsA("TextButton") or obj:IsA("TextBox") then
+							obj.TextColor3 = color
+						elseif obj:IsA("ImageLabel") or obj:IsA("ImageButton") then
+							obj.ImageColor3 = color
+						elseif obj:IsA("ScrollingFrame") then
+							obj.ScrollBarImageColor3 = color
+						elseif obj:IsA("UIStroke") then
+							obj.Color = color
+						elseif obj:IsA("UIGradient") then
+							obj.Color = color
+						end
+					end)
+					if not success then
+						warn("Failed to apply theme to object: " .. tostring(err))
+					end
+				end
+			end
+		end
+	end
+
+	-- Image handling
+	function getImage(image)
+		if type(image) == "string" and not image:find("rbxassetid://") then
+			return { Image = "rbxassetid://" .. image, ImageRectSize = Vector2.new(0, 0), ImageRectOffset = Vector2.new(0, 0) }
+		elseif type(image) == "number" then
+			return { Image = "rbxassetid://" .. tostring(image), ImageRectSize = Vector2.new(0, 0), ImageRectOffset = Vector2.new(0, 0) }
+		end
+		return image or { Image = "", ImageRectSize = Vector2.new(0, 0), ImageRectOffset = Vector2.new(0, 0) }
+	end
+
+	-- Tween creation with spring-like behavior
+	function createTween(instance, time, style, direction, goal)
+		return TweenService:Create(
+			instance,
+			TweenInfo.new(time, style or Enum.EasingStyle.Sine, direction or Enum.EasingDirection.Out),
+			goal
+		)
+	end
+
+	-- Update canvas size for scrolling frames
+	function updateCanvasSize(scrollingFrame, uiListLayout, padding)
+		uiListLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+			scrollingFrame.CanvasSize = UDim2.new(0, 0, 0, uiListLayout.AbsoluteContentSize.Y + (padding or 10))
+		end)
+	end
+
+	-- Click effect with optimized cleanup
+	function createClickEffect(container, parent)
+		local mouse = game.Players.LocalPlayer:GetMouse()
+		local relativeX = mouse.X - container.AbsolutePosition.X
+		local relativeY = mouse.Y - container.AbsolutePosition.Y
+
+		if relativeX < 0 or relativeY < 0 or relativeX > container.AbsoluteSize.X or relativeY > container.AbsoluteSize.Y then
+			return
+		end
+
+		local clickCircle = Instance.new("Frame")
+		clickCircle.Parent = parent
+		clickCircle.BackgroundColor3 = themes.Neon.Function.Button.Click
+		clickCircle.BackgroundTransparency = 0.6
+		clickCircle.BorderSizePixel = 0
+		clickCircle.AnchorPoint = Vector2.new(0.5, 0.5)
+		clickCircle.Position = UDim2.new(0, relativeX, 0, relativeY)
+		clickCircle.Size = UDim2.new(0, 0, 0, 0)
+		clickCircle.ZIndex = 10
+
+		local uiCorner = Instance.new("UICorner")
+		uiCorner.CornerRadius = UDim.new(1, 0)
+		uiCorner.Parent = clickCircle
+
+		local tween = createTween(clickCircle, 0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, {
+			Size = UDim2.new(0, container.AbsoluteSize.X * 1.2, 0, container.AbsoluteSize.X * 1.2),
+			BackgroundTransparency = 1
+		})
+		tween.Completed:Connect(function()
+			clickCircle:Destroy()
+		end)
+		tween:Play()
+	end
+
+	-- Dragging functionality with smoother behavior
+	function makeDraggable(frame, target)
+		local dragging, dragInput, dragStart, startPos
+		local function update(input)
+			local delta = input.Position - dragStart
+			local newPos = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+			createTween(target, 0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, { Position = newPos }):Play()
+		end
+
+		frame.InputBegan:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+				dragging = true
+				dragStart = input.Position
+				startPos = target.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragging = false
+					end
+				end)
+			end
+		end)
+
+		frame.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+				dragInput = input
+			end
+		end)
+
+		UserInputService.InputChanged:Connect(function(input)
+			if input == dragInput and dragging then
+				update(input)
+			end
+		end)
+	end
+
+	-- Create a clickable overlay
+	function createClickOverlay(parent)
+		local click = Instance.new("TextButton")
+		click.Name = "Click"
+		click.Parent = parent
+		click.BackgroundTransparency = 1
+		click.Size = UDim2.new(1, 0, 1, 0)
+		click.Font = Enum.Font.SourceSans
+		click.Text = ""
+		click.TextColor3 = Color3.fromRGB(0, 0, 0)
+		click.TextSize = 14
+		return click
+	end
+
+	-- Create a background for UI elements
+	function createBackground(parent, title, desc, icon, elementType)
+		local realBackground = Instance.new("Frame")
+		local background = Instance.new("Frame")
+		local uiCorner = Instance.new("UICorner")
+		local contentFrame = Instance.new("Frame")
+		local uiListLayout = Instance.new("UIListLayout")
+		local uiPadding = Instance.new("UIPadding")
+		local titleLabel = Instance.new("TextLabel")
+		local descLabel = Instance.new("TextLabel")
+
+		realBackground.Name = "RealBackground"
+		realBackground.Parent = parent
+		realBackground.BackgroundTransparency = 1
+		realBackground.Size = UDim2.new(1, 0, 0, 40)
+		realBackground.ClipsDescendants = true
+
+		background.Name = "Background"
+		background.Parent = realBackground
+		background.BackgroundColor3 = themes.Neon.Function[elementType].Background
+		background.Size = UDim2.new(1, 0, 1, 0)
+		background.ClipsDescendants = true
+		addToTheme('Function.' .. elementType .. '.Background', background)
+
+		uiCorner.Parent = background
+		uiCorner.CornerRadius = UDim.new(0, 8)
+
+		contentFrame.Name = "Content"
+		contentFrame.Parent = background
+		contentFrame.AnchorPoint = Vector2.new(0, 0.5)
+		contentFrame.BackgroundTransparency = 1
+		contentFrame.Position = UDim2.new(0, 0, 0.5, 0)
+		contentFrame.Size = UDim2.new(1, 0, 1, 0)
+
+		uiListLayout.Parent = contentFrame
+		uiListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+		uiListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+
+		uiPadding.Parent = contentFrame
+		uiPadding.PaddingLeft = UDim.new(0, 15)
+		uiPadding.PaddingRight = UDim.new(0, 80)
+
+		titleLabel.Parent = contentFrame
+		titleLabel.BackgroundTransparency = 1
+		titleLabel.Size = UDim2.new(1, 0, 0, 16)
+		titleLabel.Font = Enum.Font.GothamBold
+		titleLabel.Text = tostring(title or "Untitled")
+		titleLabel.TextColor3 = themes.Neon.TextAndIcon
+		titleLabel.TextSize = 14
+		titleLabel.TextXAlignment = Enum.TextXAlignment.Left
+		titleLabel.Name = "Title"
+		addToTheme('TextAndIcon', titleLabel)
+
+		descLabel.Parent = contentFrame
+		descLabel.BackgroundTransparency = 1
+		descLabel.Size = UDim2.new(1, 0, 0, 14)
+		descLabel.Font = Enum.Font.Gotham
+		descLabel.Text = tostring(desc or "")
+		descLabel.TextColor3 = themes.Neon.TextAndIcon
+		descLabel.TextSize = 12
+		descLabel.TextTransparency = 0.6
+		descLabel.TextXAlignment = Enum.TextXAlignment.Left
+		descLabel.Visible = desc and desc ~= ""
+		descLabel.Name = "Desc"
+		addToTheme('TextAndIcon', descLabel)
+
+		if icon and icon ~= "" then
+			uiPadding.PaddingLeft = UDim.new(0, 55)
+			local imageFrame = Instance.new("Frame")
+			local iconLabel = Instance.new("ImageLabel")
+			local separator = Instance.new("Frame")
+
+			imageFrame.Name = "Image"
+			imageFrame.Parent = background
+			imageFrame.BackgroundTransparency = 1
+			imageFrame.Size = UDim2.new(0, 45, 1, 0)
+
+			iconLabel.Name = "Icon"
+			iconLabel.Parent = imageFrame
+			iconLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+			iconLabel.BackgroundTransparency = 1
+			iconLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
+			iconLabel.Size = UDim2.new(0, 24, 0, 24)
+			local imgData = getImage(icon)
+			iconLabel.Image = imgData.Image
+			iconLabel.ImageTransparency = 0.4
+			addToTheme('TextAndIcon', iconLabel)
+
+			separator.Parent = imageFrame
+			separator.AnchorPoint = Vector2.new(1, 0.5)
+			separator.BackgroundColor3 = themes.Neon.TextAndIcon
+			separator.BackgroundTransparency = 0.8
+			separator.Size = UDim2.new(0, 1, 0.7, 0)
+			separator.Position = UDim2.new(1, 0, 0.5, 0)
+			addToTheme('TextAndIcon', separator)
+		end
+
+		local function updateSize()
+			task.defer(function()
+				local newSize = uiListLayout.AbsoluteContentSize.Y + 24
+				if realBackground.Size.Y.Offset ~= newSize then
+					realBackground.Size = UDim2.new(1, 0, 0, newSize)
+				end
+			end)
+		end
+
+		task.defer(updateSize)
+		uiListLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(updateSize)
+
+		local bgFunctions = {}
+		function bgFunctions:SetTitle(text)
+			titleLabel.Text = tostring(text or "Untitled")
+		end
+		function bgFunctions:SetDesc(text)
+			descLabel.Text = tostring(text or "")
+			descLabel.Visible = text and text ~= ""
+		end
+		function bgFunctions:SetTextTransparency(value)
+			createTween(titleLabel, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, { TextTransparency = value }):Play()
+			if icon and icon ~= "" then
+				createTween(background.Image.Icon, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, { ImageTransparency = value }):Play()
+			end
+		end
+		function bgFunctions:SetPaddingRight(value)
+			uiPadding.PaddingRight = UDim.new(0, value or 80)
+		end
+		function bgFunctions:SetDescVisible(visible)
+			descLabel.Visible = visible
+		end
+
+		return background, bgFunctions
+	end
+
+	-- Dropdown selection UI
+	function createDropdownSelect(parent, clickParent, isMulti, callback, defaultValue, options)
+		local frame = Instance.new("Frame")
+		local uiListLayout = Instance.new("UIListLayout")
+		local uiPadding = Instance.new("UIPadding")
+		local dropdownValue = Instance.new("Frame")
+		local uiCorner = Instance.new("UICorner")
+		local uiStroke = Instance.new("UIStroke")
+		local valueLabel = Instance.new("TextLabel")
+		local arrowIcon = Instance.new("ImageLabel")
+		local dropdownSelect = Instance.new("Frame")
+		local uiCornerSelect = Instance.new("UICorner")
+		local uiStrokeSelect = Instance.new("UIStroke")
+		local searchBar = Instance.new("Frame")
+		local uiCornerSearch = Instance.new("UICorner")
+		local searchInput = Instance.new("TextBox")
+		local scrollingFrame = Instance.new("ScrollingFrame")
+		local uiListLayoutScroll = Instance.new("UIListLayout")
+		local uiPaddingScroll = Instance.new("UIPadding")
+
+		frame.Name = "DropdownFrame"
+		frame.Parent = parent
+		frame.AnchorPoint = Vector2.new(1, 0.5)
+		frame.BackgroundTransparency = 1
+		frame.Position = UDim2.new(1, 0, 0.5, 0)
+		frame.Size = UDim2.new(0, 140, 0.8, 0)
+
+		uiListLayout.Parent = frame
+		uiListLayout.Padding = UDim.new(0, 10)
+		uiListLayout.FillDirection = Enum.FillDirection.Horizontal
+		uiListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
+		uiListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+
+		uiPadding.Parent = frame
+		uiPadding.PaddingRight = UDim.new(0, 15)
+
+		dropdownValue.Parent = frame
+		dropdownValue.BackgroundColor3 = themes.Neon.Function.Dropdown.ValueBackground
+		dropdownValue.Size = UDim2.new(0, 120, 0, 24)
+		addToTheme('Function.Dropdown.ValueBackground', dropdownValue)
+
+		uiCorner.Parent = dropdownValue
+		uiCorner.CornerRadius = UDim.new(0, 6)
+
+		uiStroke.Parent = dropdownValue
+		uiStroke.Color = themes.Neon.Function.Dropdown.ValueStroke
+		uiStroke.Thickness = 1
+		uiStroke.Transparency = 0.8
+		addToTheme('Function.Dropdown.ValueStroke', uiStroke)
+
+		valueLabel.Parent = dropdownValue
+		valueLabel.BackgroundTransparency = 1
+		valueLabel.Size = UDim2.new(0.8, 0, 1, 0)
+		valueLabel.Font = Enum.Font.GothamBold
+		valueLabel.Text = "--"
+		valueLabel.TextColor3 = themes.Neon.TextAndIcon
+		valueLabel.TextSize = 12
+		valueLabel.TextTransparency = 0.3
+		valueLabel.TextXAlignment = Enum.TextXAlignment.Left
+		valueLabel.TextTruncate = Enum.TextTruncate.AtEnd
+		addToTheme('TextAndIcon', valueLabel)
+
+		arrowIcon.Parent = dropdownValue
+		arrowIcon.AnchorPoint = Vector2.new(1, 0.5)
+		arrowIcon.BackgroundTransparency = 1
+		arrowIcon.Position = UDim2.new(1, 0, 0.5, 0)
+		arrowIcon.Size = UDim2.new(0, 20, 0, 20)
+		arrowIcon.Image = "rbxassetid://7072706620" -- Down arrow icon
+		arrowIcon.ImageTransparency = 0.3
+		addToTheme('TextAndIcon', arrowIcon)
+
+		dropdownSelect.Parent = ScreenGui
+		dropdownSelect.BackgroundColor3 = themes.Neon.Function.Dropdown.DropdownSelect.Background
+		dropdownSelect.Size = UDim2.new(0, 180, 0, 0)
+		dropdownSelect.ClipsDescendants = true
+		dropdownSelect.Visible = false
+		addToTheme('Function.Dropdown.DropdownSelect.Background', dropdownSelect)
+
+		local function updateDropdownPosition()
+			dropdownSelect.Position = UDim2.new(
+				0, dropdownValue.AbsolutePosition.X - ScreenGui.AbsolutePosition.X + dropdownValue.Size.X.Offset - 150,
+				0, dropdownValue.AbsolutePosition.Y - ScreenGui.AbsolutePosition.Y + dropdownValue.Size.Y.Offset + 5
+			)
+		end
+		updateDropdownPosition()
+		RunService.RenderStepped:Connect(updateDropdownPosition)
+
+		uiCornerSelect.Parent = dropdownSelect
+		uiCornerSelect.CornerRadius = UDim.new(0, 6)
+
+		uiStrokeSelect.Parent = dropdownSelect
+		uiStrokeSelect.Color = themes.Neon.TextAndIcon
+		uiStrokeSelect.Thickness = 1
+		uiStrokeSelect.Transparency = 1
+		addToTheme('TextAndIcon', uiStrokeSelect)
+
+		searchBar.Name = "Search"
+		searchBar.Parent = dropdownSelect
+		searchBar.BackgroundColor3 = themes.Neon.Function.Dropdown.DropdownSelect.Search
+		searchBar.Size = UDim2.new(1, 0, 0, 24)
+		addToTheme('Function.Dropdown.DropdownSelect.Search', searchBar)
+
+		uiCornerSearch.Parent = searchBar
+		uiCornerSearch.CornerRadius = UDim.new(0, 6)
+
+		searchInput.Parent = searchBar
+		searchInput.BackgroundTransparency = 1
+		searchInput.Size = UDim2.new(1, -10, 1, 0)
+		searchInput.Position = UDim2.new(0, 5, 0, 0)
+		searchInput.Font = Enum.Font.Gotham
+		searchInput.PlaceholderColor3 = Color3.fromRGB(170, 170, 190)
+		searchInput.PlaceholderText = "Search..."
+		searchInput.Text = ""
+		searchInput.TextColor3 = themes.Neon.TextAndIcon
+		searchInput.TextSize = 12
+		addToTheme('TextAndIcon', searchInput)
+
+		scrollingFrame.Name = "Items"
+		scrollingFrame.Parent = dropdownSelect
+		scrollingFrame.BackgroundTransparency = 1
+		scrollingFrame.Size = UDim2.new(1, 0, 1, -30)
+		scrollingFrame.Position = UDim2.new(0, 0, 0, 30)
+		scrollingFrame.ScrollBarThickness = 3
+		scrollingFrame.ScrollBarImageColor3 = themes.Neon.TextAndIcon
+		addToTheme('TextAndIcon', scrollingFrame)
+
+		uiListLayoutScroll.Parent = scrollingFrame
+		uiListLayoutScroll.SortOrder = Enum.SortOrder.LayoutOrder
+		uiListLayoutScroll.Padding = UDim.new(0, 4)
+
+		uiPaddingScroll.Parent = scrollingFrame
+		uiPaddingScroll.PaddingRight = UDim.new(0, 5)
+		uiPaddingScroll.PaddingTop = UDim.new(0, 5)
+
+		local click = createClickOverlay(clickParent)
+		local isOpen = false
+		local selectedValues = isMulti and {} or nil
+		local selectedItem = not isMulti and defaultValue or nil
+
+		local function updateDropdownSize()
+			if not isOpen then return end
+			local contentHeight = math.min(uiListLayoutScroll.AbsoluteContentSize.Y + 60, 200)
+			createTween(dropdownSelect, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, {
+				Size = UDim2.new(0, 180, 0, contentHeight)
+			}):Play()
+		end
+
+		searchInput:GetPropertyChangedSignal("Text"):Connect(function()
+			local searchText = searchInput.Text:lower()
+			for _, item in ipairs(scrollingFrame:GetChildren()) do
+				if item:IsA("Frame") and item:FindFirstChild("TextLabel") then
+					item.Visible = searchText == "" or item.TextLabel.Text:lower():find(searchText) ~= nil
+				end
+			end
+			updateDropdownSize()
+		end)
+
+		local function openDropdown()
+			if isOpen then return end
+			dropdownSelect.Visible = true
+			updateDropdownSize()
+			createTween(uiStrokeSelect, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, { Transparency = 0.8 }):Play()
+			createTween(arrowIcon, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, { Rotation = 180 }):Play()
+			isOpen = true
+		end
+
+		local function closeDropdown()
+			if not isOpen then return end
+			createTween(uiStrokeSelect, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, { Transparency = 1 }):Play()
+			createTween(arrowIcon, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, { Rotation = 0 }):Play()
+			local tween = createTween(dropdownSelect, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, { Size = UDim2.new(0, 180, 0, 0) })
+			tween.Completed:Connect(function()
+				dropdownSelect.Visible = false
+				isOpen = false
+			end)
+			tween:Play()
+		end
+
+		UserInputService.InputBegan:Connect(function(input)
+			if isOpen and (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
+				local pos, size = dropdownSelect.AbsolutePosition, dropdownSelect.AbsoluteSize
+				local mouse = game.Players.LocalPlayer:GetMouse()
+				if mouse.X < pos.X or mouse.X > pos.X + size.X or mouse.Y < pos.Y or mouse.Y > pos.Y + size.Y then
+					closeDropdown()
+				end
+			end
+		end)
+
+		click.MouseButton1Click:Connect(function()
+			if isOpen then closeDropdown() else openDropdown() end
+			createClickEffect(clickParent, clickParent)
+		end)
+
+		local itemsList = {}
+		function itemsList:Clear(item)
+			local function shouldClear(v)
+				if item == nil then return true end
+				if type(item) == "string" then return v.TextLabel.Text == item end
+				if type(item) == "table" then
+					for _, name in ipairs(item) do
+						if v.TextLabel.Text == name then return true end
+					end
+				end
+				return false
+			end
+
+			if isMulti then
+				selectedValues = {}
+				valueLabel.Text = "--"
+				pcall(callback, selectedValues)
+			else
+				selectedItem = nil
+				valueLabel.Text = "--"
+				pcall(callback, nil)
+			end
+
+			for _, v in ipairs(scrollingFrame:GetChildren()) do
+				if v:IsA("Frame") and shouldClear(v) then
+					v:Destroy()
+				end
+			end
+		end
+
+		function itemsList:Add(text)
+			local item = Instance.new("Frame")
+			local textLabel = Instance.new("TextLabel")
+			local uiCorner = Instance.new("UICorner")
+			local uiPadding = Instance.new("UIPadding")
+
+			item.Name = "Item"
+			item.Parent = scrollingFrame
+			item.BackgroundColor3 = themes.Neon.Function.Dropdown.DropdownSelect.ItemBackground
+			item.BackgroundTransparency = 0.8
+			item.Size = UDim2.new(1, 0, 0, 22)
+			addToTheme('Function.Dropdown.DropdownSelect.ItemBackground', item)
+
+			uiCorner.Parent = item
+			uiCorner.CornerRadius = UDim.new(0, 4)
+
+			uiPadding.Parent = item
+			uiPadding.PaddingLeft = UDim.new(0, 8)
+
+			textLabel.Parent = item
+			textLabel.BackgroundTransparency = 1
+			textLabel.Size = UDim2.new(1, 0, 1, 0)
+			textLabel.Font = Enum.Font.GothamBold
+			textLabel.Text = tostring(text)
+			textLabel.TextColor3 = themes.Neon.TextAndIcon
+			textLabel.TextSize = 12
+			textLabel.TextXAlignment = Enum.TextXAlignment.Left
+			textLabel.TextTransparency = 0.6
+			addToTheme('TextAndIcon', textLabel)
+
+			local clickItem = createClickOverlay(item)
+			local function select()
+				createTween(textLabel, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, { TextTransparency = 0 }):Play()
+			end
+			local function unselect()
+				createTween(textLabel, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, { TextTransparency = 0.6 }):Play()
+			end
+
+			clickItem.MouseButton1Click:Connect(function()
+				if isMulti then
+					if selectedValues[text] then
+						selectedValues[text] = nil
+						unselect()
+					else
+						selectedValues[text] = true
+						select()
+					end
+					local selectedList = {}
+					for k in pairs(selectedValues) do
+						table.insert(selectedList, k)
+					end
+					valueLabel.Text = #selectedList > 0 and table.concat(selectedList, ", ") or "--"
+					pcall(callback, selectedList)
+				else
+					for _, v in ipairs(scrollingFrame:GetChildren()) do
+						if v:IsA("Frame") and v:FindFirstChild("TextLabel") then
+							createTween(v.TextLabel, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, { TextTransparency = 0.6 }):Play()
+						end
+					end
+					select()
+					selectedItem = text
+					valueLabel.Text = text
+					closeDropdown()
+					pcall(callback, text)
+				end
+				createClickEffect(item, item)
+			end)
+
+			if isMulti and defaultValue and type(defaultValue) == "table" and table.find(defaultValue, text) then
+				selectedValues[text] = true
+				select()
+				local selectedList = {}
+				for k in pairs(selectedValues) do
+					table.insert(selectedList, k)
+				end
+				valueLabel.Text = #selectedList > 0 and table.concat(selectedList, ", ") or "--"
+			elseif not isMulti and text == defaultValue then
+				select()
+				selectedItem = text
+				valueLabel.Text = text
+			end
+		end
+
+		function itemsList:SetValue(value)
+			if isMulti then
+				selectedValues = {}
+				if type(value) == "table" then
+					for _, v in ipairs(value) do
+						selectedValues[v] = true
+					end
+				end
+				local selectedList = {}
+				for k in pairs(selectedValues) do
+					table.insert(selectedList, k)
+				end
+				valueLabel.Text = #selectedList > 0 and table.concat(selectedList, ", ") or "--"
+				for _, v in ipairs(scrollingFrame:GetChildren()) do
+					if v:IsA("Frame") and v:FindFirstChild("TextLabel") then
+						local isSelected = selectedValues[v.TextLabel.Text]
+						createTween(v.TextLabel, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, {
+							TextTransparency = isSelected and 0 or 0.6
+						}):Play()
+					end
+				end
+				pcall(callback, selectedList)
+			else
+				selectedItem = value
+				valueLabel.Text = tostring(value or "--")
+				for _, v in ipairs(scrollingFrame:GetChildren()) do
+					if v:IsA("Frame") and v:FindFirstChild("TextLabel") then
+						local isSelected = v.TextLabel.Text == value
+						createTween(v.TextLabel, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, {
+							TextTransparency = isSelected and 0 or 0.6
+						}):Play()
+					end
+				end
+				pcall(callback, value)
+			end
+		end
+
+		for _, option in ipairs(options or {}) do
+			itemsList:Add(option)
+		end
+
+		updateCanvasSize(scrollingFrame, uiListLayoutScroll, 10)
+		return itemsList
+	end
+end
+
+-- Main window creation
+function Library:CreateWindow(params)
+	local title = params.Title or "OGDale Hub"
+	local author = params.Author or "xAI"
+	local icon = params.Icon or "7072706620"
+	local theme = params.Theme or "Neon"
+	local keybind = params.Keybind or Enum.KeyCode.RightControl
+	local size = params.Size or UDim2.new(0, 580, 0, 440)
+
+	local isOpen = true
+	local isMaximized = false
+	local tabsList = {}
+	local currentTab = nil
+
+	-- Create window structure
+	local shadow = Instance.new("ImageLabel")
+	local uiPadding = Instance.new("UIPadding")
+	local background = Instance.new("CanvasGroup")
+	local uiCorner = Instance.new("UICorner")
+	local page = Instance.new("Frame")
+	local uiPaddingPage = Instance.new("UIPadding")
+	local topbar = Instance.new("Frame")
+	local controls = Instance.new("Frame")
+	local uiPaddingControls = Instance.new("UIPadding")
+	local uiListLayoutControls = Instance.new("UIListLayout")
+	local minimize = Instance.new("ImageButton")
+	local close = Instance.new("ImageButton")
+	local resize = Instance.new("ImageButton")
+	local tabContainer = Instance.new("Frame")
+	local uiPaddingTabs = Instance.new("UIPadding")
+	local uiListLayoutTabs = Instance.new("UIListLayout")
+	local iconLabel = Instance.new("ImageLabel")
+	local titleFrame = Instance.new("Frame")
+	local titleLabel = Instance.new("TextLabel")
+	local authorLabel = Instance.new("TextLabel")
+
+	shadow.Name = "Shadow"
+	shadow.Parent = ScreenGui
+	shadow.AnchorPoint = Vector2.new(0.5, 0.5)
+	shadow.BackgroundTransparency = 1
+	shadow.Position = UDim2.new(0.5, 0, 0.5, 0)
+	shadow.Size = size
+	shadow.Image = "rbxassetid://1316045217"
+	shadow.ImageColor3 = themes.Neon.Shadow
+	shadow.ImageTransparency = 0.6
+	shadow.ScaleType = Enum.ScaleType.Slice
+	shadow.SliceCenter = Rect.new(10, 10, 118, 118)
+	addToTheme('Shadow', shadow)
+
+	uiPadding.Parent = shadow
+	uiPadding.PaddingBottom = UDim.new(0, 12)
+	uiPadding.PaddingLeft = UDim.new(0, 12)
+	uiPadding.PaddingRight = UDim.new(0, 12)
+	uiPadding.PaddingTop = UDim.new(0, 12)
+
+	background.Name = "Background"
+	background.Parent = shadow
+	background.AnchorPoint = Vector2.new(0.5, 0.5)
+	background.BackgroundColor3 = themes.Neon.Background
+	background.Position = UDim2.new(0.5, 0, 0.5, 0)
+	background.Size = UDim2.new(1, 0, 1, 0)
+	background.ClipsDescendants = true
+	background.GroupTransparency = 0
+	addToTheme('Background', background)
+
+	uiCorner.Parent = background
+	uiCorner.CornerRadius = UDim.new(0, 12)
+
+	page.Name = "Page"
+	page.Parent = background
+	page.BackgroundTransparency = 1
+	page.Size = UDim2.new(1, 0, 1, 0)
+
+	uiPaddingPage.Parent = page
+	uiPaddingPage.PaddingBottom = UDim.new(0, 10)
+	uiPaddingPage.PaddingLeft = UDim.new(0, 140)
+	uiPaddingPage.PaddingRight = UDim.new(0, 10)
+	uiPaddingPage.PaddingTop = UDim.new(0, 60)
+
+	topbar.Name = "Topbar"
+	topbar.Parent = background
+	topbar.BackgroundTransparency = 1
+	topbar.Size = UDim2.new(1, 0, 0, 60)
+
+	controls.Name = "Controls"
+	controls.Parent = topbar
+	controls.BackgroundTransparency = 1
+	controls.Size = UDim2.new(1, 0, 0, 30)
+	controls.Position = UDim2.new(0, 0, 1, -30)
+
+	uiPaddingControls.Parent = controls
+	uiPaddingControls.PaddingRight = UDim.new(0, 10)
+
+	uiListLayoutControls.Parent = controls
+	uiListLayoutControls.FillDirection = Enum.FillDirection.Horizontal
+	uiListLayoutControls.HorizontalAlignment = Enum.HorizontalAlignment.Right
+	uiListLayoutControls.VerticalAlignment = Enum.VerticalAlignment.Center
+	uiListLayoutControls.Padding = UDim.new(0, 8)
+
+	minimize.Name = "Minimize"
+	minimize.Parent = controls
+	minimize.BackgroundTransparency = 1
+	minimize.Size = UDim2.new(0, 24, 0, 24)
+	minimize.Image = "rbxassetid://7072706747"
+	minimize.ImageTransparency = 0.3
+	addToTheme('TextAndIcon', minimize)
+
+	close.Name = "Close"
+	close.Parent = controls
+	close.BackgroundTransparency = 1
+	close.Size = UDim2.new(0, 24, 0, 24)
+	close.Image = "rbxassetid://7072725342"
+	close.ImageTransparency = 0.3
+	addToTheme('TextAndIcon', close)
+
+	resize.Name = "Resize"
+	resize.Parent = controls
+	resize.BackgroundTransparency = 1
+	resize.Size = UDim2.new(0, 24, 0, 24)
+	resize.Image = "rbxassetid://7072719338"
+	resize.ImageTransparency = 0.3
+	addToTheme('TextAndIcon', resize)
+
+	tabContainer.Name = "TabContainer"
+	tabContainer.Parent = background
+	tabContainer.BackgroundTransparency = 1
+	tabContainer.Size = UDim2.new(0, 130, 1, -70)
+	tabContainer.Position = UDim2.new(0, 10, 0, 60)
+
+	uiPaddingTabs.Parent = tabContainer
+	uiPaddingTabs.PaddingTop = UDim.new(0, 5)
+
+	uiListLayoutTabs.Parent = tabContainer
+	uiListLayoutTabs.SortOrder = Enum.SortOrder.LayoutOrder
+	uiListLayoutTabs.Padding = UDim.new(0, 5)
+
+	iconLabel.Name = "Icon"
+	iconLabel.Parent = topbar
+	iconLabel.BackgroundTransparency = 1
+	iconLabel.Size = UDim2.new(0, 24, 0, 24)
+	iconLabel.Position = UDim2.new(0, 15, 0, 18)
+	local imgData = getImage(icon)
+	iconLabel.Image = imgData.Image
+	iconLabel.ImageTransparency = 0.3
+	addToTheme('TextAndIcon', iconLabel)
+
+	titleFrame.Name = "TitleFrame"
+	titleFrame.Parent = topbar
+	titleFrame.BackgroundTransparency = 1
+	titleFrame.Size = UDim2.new(0, 0, 1, 0)
+	titleFrame.Position = UDim2.new(0, 45, 0, 0)
+	titleFrame.AutomaticSize = Enum.AutomaticSize.X
+
+	titleLabel.Name = "Title"
+	titleLabel.Parent = titleFrame
+	titleLabel.BackgroundTransparency = 1
+	titleLabel.Size = UDim2.new(0, 0, 0, 18)
+	titleLabel.AutomaticSize = Enum.AutomaticSize.X
+	titleLabel.Font = Enum.Font.GothamBold
+	titleLabel.Text = title
+	titleLabel.TextColor3 = themes.Neon.TextAndIcon
+	titleLabel.TextSize = 16
+	addToTheme('TextAndIcon', titleLabel)
+
+	authorLabel.Name = "Author"
+	authorLabel.Parent = titleFrame
+	authorLabel.BackgroundTransparency = 1
+	authorLabel.Size = UDim2.new(0, 0, 0, 14)
+	authorLabel.Position = UDim2.new(0, 0, 0, 20)
+	authorLabel.AutomaticSize = Enum.AutomaticSize.X
+	authorLabel.Font = Enum.Font.Gotham
+	authorLabel.Text = author
+	authorLabel.TextColor3 = themes.Neon.TextAndIcon
+	authorLabel.TextSize = 12
+	authorLabel.TextTransparency = 0.6
+	authorLabel.Visible = author ~= ""
+	addToTheme('TextAndIcon', authorLabel)
+
+	-- Tab creation
+	local Tabs = {}
+	function Tabs:CreateTab(params)
+		local tabTitle = params.Title or "Tab"
+		local tabIcon = params.Icon or ""
+
+		local tabButton = Instance.new("TextButton")
+		local iconLabel = Instance.new("ImageLabel")
+		local titleLabel = Instance.new("TextLabel")
+		local uiCorner = Instance.new("UICorner")
+		local scrollingFrame = Instance.new("ScrollingFrame")
+		local uiListLayout = Instance.new("UIListLayout")
+		local uiPadding = Instance.new("UIPadding")
+
+		tabButton.Name = "TabButton"
+		tabButton.Parent = tabContainer
+		tabButton.BackgroundColor3 = themes.Neon.Background
+		tabButton.Size = UDim2.new(1, -10, 0, 40)
+		tabButton.Font = Enum.Font.SourceSans
+		tabButton.Text = ""
+		tabButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+		tabButton.TextSize = 14
+		addToTheme('Background', tabButton)
+
+		uiCorner.Parent = tabButton
+		uiCorner.CornerRadius = UDim.new(0, 8)
+
+		iconLabel.Parent = tabButton
+		iconLabel.BackgroundTransparency = 1
+		iconLabel.Size = UDim2.new(0, 20, 0, 20)
+		iconLabel.Position = UDim2.new(0, 10, 0.5, 0)
+		iconLabel.AnchorPoint = Vector2.new(0, 0.5)
+		local imgData = getImage(tabIcon)
+		iconLabel.Image = imgData.Image
+		iconLabel.ImageTransparency = 0.5
+		addToTheme('TextAndIcon', iconLabel)
+
+		titleLabel.Parent = tabButton
+		titleLabel.BackgroundTransparency = 1
+		titleLabel.Size = UDim2.new(0, 90, 1, 0)
+		titleLabel.Position = UDim2.new(0, 35, 0, 0)
+		titleLabel.Font = Enum.Font.GothamBold
+		titleLabel.Text = tabTitle
+		titleLabel.TextColor3 = themes.Neon.TextAndIcon
+		titleLabel.TextSize = 12
+		titleLabel.TextXAlignment = Enum.TextXAlignment.Left
+		addToTheme('TextAndIcon', titleLabel)
+
+		scrollingFrame.Name = "TabContent"
+		scrollingFrame.Parent = page
+		scrollingFrame.BackgroundTransparency = 1
+		scrollingFrame.Size = UDim2.new(1, 0, 1, 0)
+		scrollingFrame.Visible = false
+		scrollingFrame.ScrollBarThickness = 3
+		scrollingFrame.ScrollBarImageColor3 = themes.Neon.TextAndIcon
+		addToTheme('TextAndIcon', scrollingFrame)
+
+		uiListLayout.Parent = scrollingFrame
+		uiListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+		uiListLayout.Padding = UDim.new(0, 8)
+
+		uiPadding.Parent = scrollingFrame
+		uiPadding.PaddingLeft = UDim.new(0, 5)
+		uiPadding.PaddingRight = UDim.new(0, 5)
+		uiPadding.PaddingTop = UDim.new(0, 5)
+
+		updateCanvasSize(scrollingFrame, uiListLayout, 10)
+		table.insert(tabsList, { button = tabButton, content = scrollingFrame })
+
+		local function selectTab()
+			if currentTab == tabButton then return end
+			if currentTab then
+				local prevTab = currentTab
+				createTween(prevTab, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, { BackgroundColor3 = themes.Neon.Background }):Play()
+				createTween(prevTab.IconLabel, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, { ImageTransparency = 0.5 }):Play()
+				createTween(prevTab.TitleLabel, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, { TextTransparency = 0.5 }):Play()
+				prevTab.Parent.ScrollingFrame.Visible = false
+			end
+			currentTab = tabButton
+			scrollingFrame.Visible = true
+			createTween(tabButton, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, { BackgroundColor3 = themes.Neon.Main }):Play()
+			createTween(iconLabel, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, { ImageTransparency = 0 }):Play()
+			createTween(titleLabel, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, { TextTransparency = 0 }):Play()
+		end
+
+		tabButton.MouseButton1Click:Connect(function()
+			selectTab()
+			createClickEffect(tabButton, tabButton)
+		end)
+
+		if #tabsList == 1 then
+			selectTab()
+		end
+
+		local tabFunctions = {}
+		function tabFunctions:CreateToggle(params)
+			local title = params.Title or "Toggle"
+			local desc = params.Desc or ""
+			local icon = params.Icon or ""
+			local default = params.Default or false
+			local callback = params.Callback or function() end
+
+			local background, bgFunctions = createBackground(scrollingFrame, title, desc, icon, "Toggle")
+			local toggle = Instance.new("Frame")
+			local uiCorner = Instance.new("UICorner")
+			local circle = Instance.new("Frame")
+			local uiCornerCircle = Instance.new("UICorner")
+			local click = createClickOverlay(background)
+
+			toggle.Name = "Toggle"
+			toggle.Parent = background
+			toggle.AnchorPoint = Vector2.new(1, 0.5)
+			toggle.BackgroundColor3 = themes.Neon.Function.Toggle[default and "True" or "False"].ToggleBackground
+			toggle.Position = UDim2.new(1, -15, 0.5, 0)
+			toggle.Size = UDim2.new(0, 40, 0, 20)
+			addToTheme('Function.Toggle.' .. (default and 'True' or 'False') .. '.ToggleBackground', toggle)
+
+			uiCorner.Parent = toggle
+			uiCorner.CornerRadius = UDim.new(1, 0)
+
+			circle.Name = "Circle"
+			circle.Parent = toggle
+			circle.BackgroundColor3 = themes.Neon.Function.Toggle[default and "True" or "False"].ToggleValue
+			circle.Position = default and UDim2.new(1, -10, 0.5, 0) or UDim2.new(0, 10, 0.5, 0)
+			circle.Size = UDim2.new(0, 12, 0, 12)
+			circle.AnchorPoint = Vector2.new(0.5, 0.5)
+			addToTheme('Function.Toggle.' .. (default and 'True' or 'False') .. '.ToggleValue', circle)
+
+			uiCornerCircle.Parent = circle
+			uiCornerCircle.CornerRadius = UDim.new(1, 0)
+
+			local state = default
+			local function updateToggle(newState)
+				state = newState
+				createTween(toggle, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, {
+					BackgroundColor3 = themes.Neon.Function.Toggle[state and "True" or "False"].ToggleBackground
+				}):Play()
+				createTween(circle, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, {
+					BackgroundColor3 = themes.Neon.Function.Toggle[state and "True" or "False"].ToggleValue,
+					Position = state and UDim2.new(1, -10, 0.5, 0) or UDim2.new(0, 10, 0.5, 0)
+				}):Play()
+				pcall(callback, state)
+			end
+
+			click.MouseButton1Click:Connect(function()
+				updateToggle(not state)
+				createClickEffect(background, background)
+			end)
+
+			local toggleFunctions = {}
+			function toggleFunctions:Set(value)
+				updateToggle(value == true)
+			end
+			function toggleFunctions:Get()
+				return state
+			end
+			return toggleFunctions
+		end
+
+		function tabFunctions:CreateButton(params)
+			local title = params.Title or "Button"
+			local desc = params.Desc or ""
+			local icon = params.Icon or ""
+			local callback = params.Callback or function() end
+
+			local background, bgFunctions = createBackground(scrollingFrame, title, desc, icon, "Button")
+			local click = createClickOverlay(background)
+
+			click.MouseButton1Click:Connect(function()
+				pcall(callback)
+				createClickEffect(background, background)
+			end)
+
+			return bgFunctions
+		end
+
+		function tabFunctions:CreateLabel(params)
+			local title = params.Title or "Label"
+			local desc = params.Desc or ""
+			local icon = params.Icon or ""
+
+			local background, bgFunctions = createBackground(scrollingFrame, title, desc, icon, "Label")
+			return bgFunctions
+		end
+
+		function tabFunctions:CreateDropdown(params)
+			local title = params.Title or "Dropdown"
+			local desc = params.Desc or ""
+			local icon = params.Icon or ""
+			local isMulti = params.Multi or false
+			local defaultValue = params.Value
+			local options = params.List or {}
+			local callback = params.Callback or function() end
+
+			local background, bgFunctions = createBackground(scrollingFrame, title, desc, icon, "Dropdown")
+			local itemsList = createDropdownSelect(background, background, isMulti, callback, defaultValue, options)
+			bgFunctions:SetPaddingRight(160)
+			return itemsList
+		end
+
+		function tabFunctions:CreateSlider(params)
+			local title = params.Title or "Slider"
+			local desc = params.Desc or ""
+			local icon = params.Icon or ""
+			local min = params.Min or 0
+			local max = params.Max or 100
+			local default = math.clamp(params.Default or min, min, max)
+			local step = params.Step or 1
+			local callback = params.Callback or function() end
+
+			local background, bgFunctions = createBackground(scrollingFrame, title, desc, icon, "Slider")
+			local slider = Instance.new("Frame")
+			local uiCorner = Instance.new("UICorner")
+			local bar = Instance.new("Frame")
+			local uiCornerBar = Instance.new("UICorner")
+			local valueBar = Instance.new("Frame")
+			local uiCornerValueBar = Instance.new("UICorner")
+			local circle = Instance.new("Frame")
+			local uiCornerCircle = Instance.new("UICorner")
+			local valueLabel = Instance.new("TextLabel")
+			local click = createClickOverlay(background)
+
+			slider.Name = "Slider"
+			slider.Parent = background
+			slider.AnchorPoint = Vector2.new(1, 0.5)
+			slider.BackgroundColor3 = themes.Neon.Function.Slider.Background
+			slider.Position = UDim2.new(1, -15, 0.5, 0)
+			slider.Size = UDim2.new(0, 130, 0, 24)
+			addToTheme('Function.Slider.Background', slider)
+
+			uiCorner.Parent = slider
+			uiCorner.CornerRadius = UDim.new(0, 6)
+
+			bar.Name = "Bar"
+			bar.Parent = slider
+			bar.BackgroundColor3 = themes.Neon.Function.Slider.SliderBar
+			bar.Size = UDim2.new(1, -10, 0, 4)
+			bar.Position = UDim2.new(0, 5, 0.5, 0)
+			bar.AnchorPoint = Vector2.new(0, 0.5)
+			addToTheme('Function.Slider.SliderBar', bar)
+
+			uiCornerBar.Parent = bar
+			uiCornerBar.CornerRadius = UDim.new(1, 0)
+
+			valueBar.Name = "ValueBar"
+			valueBar.Parent = bar
+			valueBar.BackgroundColor3 = themes.Neon.Function.Slider.SliderBarValue
+			valueBar.Size = UDim2.new((default - min) / (max - min), 0, 1, 0)
+			addToTheme('Function.Slider.SliderBarValue', valueBar)
+
+			uiCornerValueBar.Parent = valueBar
+			uiCornerValueBar.CornerRadius = UDim.new(1, 0)
+
+			circle.Name = "Circle"
+			circle.Parent = bar
+			circle.BackgroundColor3 = themes.Neon.Function.Slider.CircleValue
+			circle.Size = UDim2.new(0, 10, 0, 10)
+			circle.Position = UDim2.new((default - min) / (max - min), 0, 0.5, 0)
+			circle.AnchorPoint = Vector2.new(0.5, 0.5)
+			addToTheme('Function.Slider.CircleValue', circle)
+
+			uiCornerCircle.Parent = circle
+			uiCornerCircle.CornerRadius = UDim.new(1, 0)
+
+			valueLabel.Name = "Value"
+			valueLabel.Parent = slider
+			valueLabel.BackgroundTransparency = 1
+			valueLabel.Size = UDim2.new(0, 40, 0, 14)
+			valueLabel.Position = UDim2.new(1, -45, 0, -18)
+			valueLabel.Font = Enum.Font.GothamBold
+			valueLabel.Text = tostring(default)
+			valueLabel.TextColor3 = themes.Neon.TextAndIcon
+			valueLabel.TextSize = 12
+			addToTheme('TextAndIcon', valueLabel)
+
+			local dragging = false
+			local value = default
+
+			local function updateSlider(input)
+				local relativeX = math.clamp((input.Position.X - bar.AbsolutePosition.X) / bar.AbsoluteSize.X, 0, 1)
+				value = math.floor((min + (max - min) * relativeX) / step + 0.5) * step
+				value = math.clamp(value, min, max)
+				valueLabel.Text = tostring(value)
+				createTween(valueBar, 0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, {
+					Size = UDim2.new((value - min) / (max - min), 0, 1, 0)
+				}):Play()
+				createTween(circle, 0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, {
+					Position = UDim2.new((value - min) / (max - min), 0, 0.5, 0)
+				}):Play()
+				pcall(callback, value)
+			end
+
+			click.MouseButton1Down:Connect(function()
+				dragging = true
+				updateSlider(UserInputService:GetMouseLocation())
+				createClickEffect(background, background)
+			end)
+
+			UserInputService.InputChanged:Connect(function(input)
+				if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+					updateSlider(input)
+				end
+			end)
+
+			UserInputService.InputEnded:Connect(function(input)
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					dragging = false
+				end
+			end)
+
+			local sliderFunctions = {}
+			function sliderFunctions:Set(newValue)
+				value = math.clamp(math.floor((newValue or min) / step + 0.5) * step, min, max)
+				valueLabel.Text = tostring(value)
+				createTween(valueBar, 0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, {
+					Size = UDim2.new((value - min) / (max - min), 0, 1, 0)
+				}):Play()
+				createTween(circle, 0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, {
+					Position = UDim2.new((value - min) / (max - min), 0, 0.5, 0)
+				}):Play()
+				pcall(callback, value)
+			end
+			function sliderFunctions:Get()
+				return value
+			end
+			return sliderFunctions
+		end
+
+		function tabFunctions:CreateTextbox(params)
+			local title = params.Title or "Textbox"
+			local desc = params.Desc or ""
+			local icon = params.Icon or ""
+			local placeholder = params.Placeholder or "Enter text..."
+			local default = params.Default or ""
+			local callback = params.Callback or function() end
+
+			local background, bgFunctions = createBackground(scrollingFrame, title, desc, icon, "Textbox")
+			local textbox = Instance.new("Frame")
+			local uiCorner = Instance.new("UICorner")
+			local uiStroke = Instance.new("UIStroke")
+			local input = Instance.new("TextBox")
+
+			textbox.Name = "Textbox"
+			textbox.Parent = background
+			textbox.AnchorPoint = Vector2.new(1, 0.5)
+			textbox.BackgroundColor3 = themes.Neon.Function.Textbox.ValueBackground
+			textbox.Position = UDim2.new(1, -15, 0.5, 0)
+			textbox.Size = UDim2.new(0, 130, 0, 24)
+			addToTheme('Function.Textbox.ValueBackground', textbox)
+
+			uiCorner.Parent = textbox
+			uiCorner.CornerRadius = UDim.new(0, 6)
+
+			uiStroke.Parent = textbox
+			uiStroke.Color = themes.Neon.Function.Textbox.ValueStroke
+			uiStroke.Thickness = 1
+			uiStroke.Transparency = 0.8
+			addToTheme('Function.Textbox.ValueStroke', uiStroke)
+
+			input.Name = "Input"
+			input.Parent = textbox
+			input.BackgroundTransparency = 1
+			input.Size = UDim2.new(1, -10, 1, 0)
+			input.Position = UDim2.new(0, 5, 0, 0)
+			input.Font = Enum.Font.GothamBold
+			input.PlaceholderText = placeholder
+			input.Text = default
+			input.TextColor3 = themes.Neon.TextAndIcon
+			input.TextSize = 12
+			input.TextXAlignment = Enum.TextXAlignment.Left
+			addToTheme('TextAndIcon', input)
+
+			input.FocusLost:Connect(function(enterPressed)
+				if enterPressed then
+					pcall(callback, input.Text)
+				end
+			end)
+
+			local textboxFunctions = {}
+			function textboxFunctions:Set(text)
+				input.Text = tostring(text or "")
+				pcall(callback, input.Text)
+			end
+			function textboxFunctions:Get()
+				return input.Text
+			end
+			return textboxFunctions
+		end
+
+		function tabFunctions:CreateKeybind(params)
+			local title = params.Title or "Keybind"
+			local desc = params.Desc or ""
+			local icon = params.Icon or ""
+			local default = params.Default or Enum.KeyCode.Unknown
+			local callback = params.Callback or function() end
+
+			local background, bgFunctions = createBackground(scrollingFrame, title, desc, icon, "Keybind")
+			local keybind = Instance.new("Frame")
+			local uiCorner = Instance.new("UICorner")
+			local uiStroke = Instance.new("UIStroke")
+			local keyLabel = Instance.new("TextLabel")
+			local click = createClickOverlay(background)
+
+			keybind.Name = "Keybind"
+			keybind.Parent = background
+			keybind.AnchorPoint = Vector2.new(1, 0.5)
+			keybind.BackgroundColor3 = themes.Neon.Function.Keybind.ValueBackground
+			keybind.Position = UDim2.new(1, -15, 0.5, 0)
+			keybind.Size = UDim2.new(0, 70, 0, 24)
+			addToTheme('Function.Keybind.ValueBackground', keybind)
+
+			uiCorner.Parent = keybind
+			uiCorner.CornerRadius = UDim.new(0, 6)
+
+			uiStroke.Parent = keybind
+			uiStroke.Color = themes.Neon.Function.Keybind.ValueStroke
+			uiStroke.Thickness = 1
+			uiStroke.Transparency = 0.8
+			addToTheme('Function.Keybind.ValueStroke', uiStroke)
+
+			keyLabel.Name = "Key"
+			keyLabel.Parent = keybind
+			keyLabel.BackgroundTransparency = 1
+			keyLabel.Size = UDim2.new(1, 0, 1, 0)
+			keyLabel.Font = Enum.Font.GothamBold
+			keyLabel.Text = default.Name or "None"
+			keyLabel.TextColor3 = themes.Neon.TextAndIcon
+			keyLabel.TextSize = 12
+			addToTheme('TextAndIcon', keyLabel)
+
+			local binding = false
+			local key = default
+
+			click.MouseButton1Click:Connect(function()
+				binding = true
+				keyLabel.Text = "..."
+				createClickEffect(background, background)
+			end)
+
+			UserInputService.InputBegan:Connect(function(input)
+				if binding and input.UserInputType == Enum.UserInputType.Keyboard then
+					key = input.KeyCode
+					keyLabel.Text = key.Name or "None"
+					binding = false
+					pcall(callback, key)
+				end
+			end)
+
+			local keybindFunctions = {}
+			function keybindFunctions:Set(newKey)
+				if typeof(newKey) == "EnumItem" and newKey.EnumType == Enum.KeyCode then
+					key = newKey
+					keyLabel.Text = key.Name or "None"
+					pcall(callback, key)
+				end
+			end
+			function keybindFunctions:Get()
+				return key
+			end
+			return keybindFunctions
+		end
+
+		function tabFunctions:CreateColorPicker(params)
+			local title = params.Title or "Color Picker"
+			local desc = params.Desc or ""
+			local icon = params.Icon or ""
+			local default = params.Default or Color3.fromRGB(255, 255, 255)
+			local callback = params.Callback or function() end
+
+			local background, bgFunctions = createBackground(scrollingFrame, title, desc, icon, "ColorPicker")
+			local colorPicker = Instance.new("Frame")
+			local uiCorner = Instance.new("UICorner")
+			local colorDisplay = Instance.new("Frame")
+			local uiCornerDisplay = Instance.new("UICorner")
+			local colorSelect = Instance.new("Frame")
+			local uiCornerSelect = Instance.new("UICorner")
+			local uiStrokeSelect = Instance.new("UIStroke")
+			local hueBar = Instance.new("ImageLabel")
+			local hueCircle = Instance.new("ImageLabel")
+			local saturationPicker = Instance.new("ImageLabel")
+			local saturationCircle = Instance.new("ImageLabel")
+			local click = createClickOverlay(background)
+
+			colorPicker.Name = "ColorPicker"
+			colorPicker.Parent = background
+			colorPicker.AnchorPoint = Vector2.new(1, 0.5)
+			colorPicker.BackgroundColor3 = themes.Neon.Function.ColorPicker.Background
+			colorPicker.Position = UDim2.new(1, -15, 0.5, 0)
+			colorPicker.Size = UDim2.new(0, 40, 0, 24)
+			addToTheme('Function.ColorPicker.Background', colorPicker)
+
+			uiCorner.Parent = colorPicker
+			uiCorner.CornerRadius = UDim.new(0, 6)
+
+			colorDisplay.Name = "ColorDisplay"
+			colorDisplay.Parent = colorPicker
+			colorDisplay.BackgroundColor3 = default
+			colorDisplay.Size = UDim2.new(1, -8, 1, -8)
+			colorDisplay.Position = UDim2.new(0.5, 0, 0.5, 0)
+			colorDisplay.AnchorPoint = Vector2.new(0.5, 0.5)
+
+			uiCornerDisplay.Parent = colorDisplay
+			uiCornerDisplay.CornerRadius = UDim.new(0, 4)
+
+			colorSelect.Name = "ColorSelect"
+			colorSelect.Parent = ScreenGui
+			colorSelect.BackgroundColor3 = themes.Neon.Function.ColorPicker.ColorSelect.Background
+			colorSelect.Size = UDim2.new(0, 220, 0, 0)
+			colorSelect.Visible = false
+			colorSelect.ClipsDescendants = true
+			addToTheme('Function.ColorPicker.ColorSelect.Background', colorSelect)
+
+			local function updateColorSelectPosition()
+				colorSelect.Position = UDim2.new(
+					0, colorPicker.AbsolutePosition.X - ScreenGui.AbsolutePosition.X + colorPicker.Size.X.Offset - 190,
+					0, colorPicker.AbsolutePosition.Y - ScreenGui.AbsolutePosition.Y + colorPicker.Size.Y.Offset + 5
+				)
+			end
+			updateColorSelectPosition()
+			RunService.RenderStepped:Connect(updateColorSelectPosition)
+
+			uiCornerSelect.Parent = colorSelect
+			uiCornerSelect.CornerRadius = UDim.new(0, 6)
+
+			uiStrokeSelect.Parent = colorSelect
+			uiStrokeSelect.Color = themes.Neon.Function.ColorPicker.ColorSelect.UIStroke
+			uiStrokeSelect.Thickness = 1
+			uiStrokeSelect.Transparency = 1
+			addToTheme('Function.ColorPicker.ColorSelect.UIStroke', uiStrokeSelect)
+
+			hueBar.Name = "Hue"
+			hueBar.Parent = colorSelect
+			hueBar.BackgroundTransparency = 1
+			hueBar.Size = UDim2.new(0, 20, 0, 120)
+			hueBar.Position = UDim2.new(0, 10, 0, 10)
+			hueBar.Image = "rbxassetid://261013153" -- Hue gradient
+
+			hueCircle.Name = "Circle"
+			hueCircle.Parent = hueBar
+			hueCircle.BackgroundTransparency = 1
+			hueCircle.Size = UDim2.new(0, 24, 0, 8)
+			hueCircle.Image = "rbxassetid://7072706620"
+			hueCircle.ImageColor3 = Color3.fromRGB(255, 255, 255)
+
+			saturationPicker.Name = "Saturation"
+			saturationPicker.Parent = colorSelect
+			saturationPicker.BackgroundTransparency = 1
+			saturationPicker.Size = UDim2.new(0, 160, 0, 120)
+			saturationPicker.Position = UDim2.new(0, 40, 0, 10)
+			saturationPicker.Image = "rbxassetid://261013324" -- Saturation gradient
+
+			saturationCircle.Name = "Circle"
+			saturationCircle.Parent = saturationPicker
+			saturationCircle.BackgroundTransparency = 1
+			saturationCircle.Size = UDim2.new(0, 12, 0, 12)
+			saturationCircle.Image = "rbxassetid://7072706620"
+			saturationCircle.ImageColor3 = Color3.fromRGB(255, 255, 255)
+
+			local isOpen = false
+			local h, s, v = default:ToHSV()
+
+			local function updateColor()
+				local color = Color3.fromHSV(h, s, v)
+				colorDisplay.BackgroundColor3 = color
+				saturationPicker.ImageColor3 = Color3.fromHSV(h, 1, 1)
+				pcall(callback, color)
+			end
+
+			local function updateHue(input)
+				local relativeY = math.clamp((input.Position.Y - hueBar.AbsolutePosition.Y) / hueBar.AbsoluteSize.Y, 0, 1)
+				h = 1 - relativeY
+				createTween(hueCircle, 0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, {
+					Position = UDim2.new(0.5, 0, relativeY, 0)
+				}):Play()
+				updateColor()
+			end
+
+			local function updateSaturation(input)
+				local relativeX = math.clamp((input.Position.X - saturationPicker.AbsolutePosition.X) / saturationPicker.AbsoluteSize.X, 0, 1)
+				local relativeY = math.clamp((input.Position.Y - saturationPicker.AbsolutePosition.Y) / saturationPicker.AbsoluteSize.Y, 0, 1)
+				s = relativeX
+				v = 1 - relativeY
+				createTween(saturationCircle, 0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, {
+					Position = UDim2.new(relativeX, 0, relativeY, 0)
+				}):Play()
+				updateColor()
+			end
+
+			local hueDragging, saturationDragging = false, false
+
+			hueBar.InputBegan:Connect(function(input)
+				if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+					hueDragging = true
+					updateHue(input)
+				end
+			end)
+
+			saturationPicker.InputBegan:Connect(function(input)
+				if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+					saturationDragging = true
+					updateSaturation(input)
+				end
+			end)
+
+			UserInputService.InputChanged:Connect(function(input)
+				if input.UserInputType == Enum.UserInputType.MouseMovement then
+					if hueDragging then
+						updateHue(input)
+					end
+					if saturationDragging then
+						updateSaturation(input)
+					end
+				end
+			end)
+
+			UserInputService.InputEnded:Connect(function(input)
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					hueDragging = false
+					saturationDragging = false
+				end
+			end)
+
+			local function openColorPicker()
+				if isOpen then return end
+				colorSelect.Visible = true
+				createTween(colorSelect, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, { Size = UDim2.new(0, 220, 0, 140) }):Play()
+				createTween(uiStrokeSelect, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, { Transparency = 0.8 }):Play()
+				isOpen = true
+			end
+
+			local function closeColorPicker()
+				if not isOpen then return end
+				createTween(uiStrokeSelect, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, { Transparency = 1 }):Play()
+				local tween = createTween(colorSelect, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, { Size = UDim2.new(0, 220, 0, 0) })
+				tween.Completed:Connect(function()
+					colorSelect.Visible = false
+					isOpen = false
+				end)
+				tween:Play()
+			end
+
+			click.MouseButton1Click:Connect(function()
+				if isOpen then closeColorPicker() else openColorPicker() end
+				createClickEffect(background, background)
+			end)
+
+			UserInputService.InputBegan:Connect(function(input)
+				if isOpen and (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
+					local pos, size = colorSelect.AbsolutePosition, colorSelect.AbsoluteSize
+					local mouse = game.Players.LocalPlayer:GetMouse()
+					if mouse.X < pos.X or mouse.X > pos.X + size.X or mouse.Y < pos.Y or mouse.Y > pos.Y + size.Y then
+						closeColorPicker()
+					end
+				end
+			end)
+
+		
+			-- Initialize positions
+			createTween(hueCircle, 0, nil, nil, { Position = UDim2.new(0.5, 0, 1 - h, 0) }):Play()
+			createTween(saturationCircle, 0, nil, nil, { Position = UDim2.new(s, 0, 1 - v, 0) }):Play()
+			updateColor()
+
+			local colorPickerFunctions = {}
+			function colorPickerFunctions:Set(color)
+				if typeof(color) == "Color3" then
+					h, s, v = color:ToHSV()
+					createTween(hueCircle, 0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, {
+						Position = UDim2.new(0.5, 0, 1 - h, 0)
+					}):Play()
+					createTween(saturationCircle, 0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, {
+						Position = UDim2.new(s, 0, 1 - v, 0)
+					}):Play()
+					updateColor()
+				end
+			end
+			function colorPickerFunctions:Get()
+				return Color3.fromHSV(h, s, v)
+			end
+			return colorPickerFunctions
+		end
+
+		return tabFunctions
+	end
+
+	-- Window interaction functions
+	local function toggleUI()
+		isOpen = not isOpen
+		createTween(background, 0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, {
+			GroupTransparency = isOpen and 0 or 1
+		}):Play()
+		createTween(shadow, 0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, {
+			ImageTransparency = isOpen and 0.6 or 1
+		}):Play()
+	end
+
+	minimize.MouseButton1Click:Connect(function()
+		toggleUI()
+		createClickEffect(minimize, minimize)
+	end)
+
+	close.MouseButton1Click:Connect(function()
+		ScreenGui:Destroy()
+		createClickEffect(close, close)
+	end)
+
+	resize.MouseButton1Click:Connect(function()
+		isMaximized = not isMaximized
+		local targetSize = isMaximized and UDim2.new(0, 700, 0, 500) or size
+		createTween(shadow, 0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, {
+			Size = targetSize
+		}):Play()
+		createClickEffect(resize, resize)
+	end)
+
+	UserInputService.InputBegan:Connect(function(input)
+		if input.KeyCode == keybind and not binding then
+			toggleUI()
+		end
+	end)
+
+	-- Make the window draggable
+	makeDraggable(topbar, shadow)
+
+	-- Apply initial theme
+	Library:setTheme(theme)
+
+	return Tabs
+end
+
+-- Notification creation with stacking support
+function Library:CreateNotification(params)
+	local title = params.Title or "Notification"
+	local desc = params.Desc or ""
+	local duration = params.Duration or 3
+
+	local notification = Instance.new("Frame")
+	local uiCorner = Instance.new("UICorner")
+	local uiStroke = Instance.new("UIStroke")
+	local titleLabel = Instance.new("TextLabel")
+	local descLabel = Instance.new("TextLabel")
+	local closeButton = Instance.new("ImageButton")
+
+	notification.Name = "Notification"
+	notification.Parent = ScreenGui
+	notification.BackgroundColor3 = themes.Neon.Background
+	notification.Position = UDim2.new(1, -10, 0, 10 + (NotificationStack * 100))
+	notification.Size = UDim2.new(0, 250, 0, 80)
+	notification.AnchorPoint = Vector2.new(1, 0)
+	addToTheme('Background', notification)
+
+	NotificationStack = NotificationStack + 1
+
+	uiCorner.Parent = notification
+	uiCorner.CornerRadius = UDim.new(0, 8)
+
+	uiStroke.Parent = notification
+	uiStroke.Color = themes.Neon.TextAndIcon
+	uiStroke.Thickness = 1
+	uiStroke.Transparency = 0.8
+	addToTheme('TextAndIcon', uiStroke)
+
+	titleLabel.Name = "Title"
+	titleLabel.Parent = notification
+	titleLabel.BackgroundTransparency = 1
+	titleLabel.Position = UDim2.new(0, 10, 0, 10)
+	titleLabel.Size = UDim2.new(1, -50, 0, 20)
+	titleLabel.Font = Enum.Font.GothamBold
+	titleLabel.Text = title
+	titleLabel.TextColor3 = themes.Neon.TextAndIcon
+	titleLabel.TextSize = 14
+	titleLabel.TextXAlignment = Enum.TextXAlignment.Left
+	addToTheme('TextAndIcon', titleLabel)
+
+	descLabel.Name = "Desc"
+	descLabel.Parent = notification
+	descLabel.BackgroundTransparency = 1
+	descLabel.Position = UDim2.new(0, 10, 0, 30)
+	descLabel.Size = UDim2.new(1, -50, 0, 40)
+	descLabel.Font = Enum.Font.Gotham
+	descLabel.Text = desc
+	descLabel.TextColor3 = themes.Neon.TextAndIcon
+	descLabel.TextSize = 12
+	descLabel.TextTransparency = 0.6
+	descLabel.TextXAlignment = Enum.TextXAlignment.Left
+	descLabel.TextWrapped = true
+	addToTheme('TextAndIcon', descLabel)
+
+	closeButton.Name = "Close"
+	closeButton.Parent = notification
+	closeButton.BackgroundTransparency = 1
+	closeButton.Position = UDim2.new(1, -30, 0, 10)
+	closeButton.Size = UDim2.new(0, 20, 0, 20)
+	closeButton.Image = "rbxassetid://7072725342"
+	closeButton.ImageTransparency = 0.3
+	addToTheme('TextAndIcon', closeButton)
+
+	local function dismiss()
+		createTween(notification, 0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, {
+			Position = UDim2.new(1, 250, 0, notification.Position.Y.Offset)
+		}):Play()
+		task.delay(0.3, function()
+			notification:Destroy()
+			NotificationStack = NotificationStack - 1
+			-- Reposition remaining notifications
+			for _, notif in ipairs(ScreenGui:GetChildren()) do
+				if notif.Name == "Notification" then
+					local index = math.floor((notif.Position.Y.Offset - 10) / 100)
+					createTween(notif, 0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, {
+						Position = UDim2.new(1, -10, 0, 10 + (index * 100))
+					}):Play()
+				end
+			end
+		end)
+	end
+
+	closeButton.MouseButton1Click:Connect(function()
+		dismiss()
+		createClickEffect(closeButton, closeButton)
+	end)
+
+	createTween(notification, 0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, {
+		Position = UDim2.new(1, -10, 0, notification.Position.Y.Offset)
+	}):Play()
+	task.delay(duration, dismiss)
+end
+
+-- Dialog creation
+function Library:CreateDialog(params)
+	local title = params.Title or "Dialog"
+	local desc = params.Desc or ""
+	local buttons = params.Buttons or {}
+
+	local dialog = Instance.new("Frame")
+	local uiCorner = Instance.new("UICorner")
+	local uiStroke = Instance.new("UIStroke")
+	local titleLabel = Instance.new("TextLabel")
+	local descLabel = Instance.new("TextLabel")
+	local buttonFrame = Instance.new("Frame")
+	local uiListLayout = Instance.new("UIListLayout")
+
+	dialog.Name = "Dialog"
+	dialog.Parent = ScreenGui
+	dialog.BackgroundColor3 = themes.Neon.Background
+	dialog.Position = UDim2.new(0.5, 0, 0.5, 0)
+	dialog.Size = UDim2.new(0, 300, 0, 150)
+	dialog.AnchorPoint = Vector2.new(0.5, 0.5)
+	addToTheme('Background', dialog)
+
+	uiCorner.Parent = dialog
+	uiCorner.CornerRadius = UDim.new(0, 8)
+
+	uiStroke.Parent = dialog
+	uiStroke.Color = themes.Neon.TextAndIcon
+	uiStroke.Thickness = 1
+	uiStroke.Transparency = 0.8
+	addToTheme('TextAndIcon', uiStroke)
+
+	titleLabel.Name = "Title"
+	titleLabel.Parent = dialog
+	titleLabel.BackgroundTransparency = 1
+	titleLabel.Position = UDim2.new(0, 10, 0, 10)
+	titleLabel.Size = UDim2.new(1, -20, 0, 20)
+	titleLabel.Font = Enum.Font.GothamBold
+	titleLabel.Text = title
+	titleLabel.TextColor3 = themes.Neon.TextAndIcon
+	titleLabel.TextSize = 16
+	addToTheme('TextAndIcon', titleLabel)
+
+	descLabel.Name = "Desc"
+	descLabel.Parent = dialog
+	descLabel.BackgroundTransparency = 1
+	descLabel.Position = UDim2.new(0, 10, 0, 35)
+	descLabel.Size = UDim2.new(1, -20, 0, 60)
+	descLabel.Font = Enum.Font.Gotham
+	descLabel.Text = desc
+	descLabel.TextColor3 = themes.Neon.TextAndIcon
+	descLabel.TextSize = 12
+	descLabel.TextTransparency = 0.6
+	descLabel.TextWrapped = true
+	addToTheme('TextAndIcon', descLabel)
+
+	buttonFrame.Name = "ButtonFrame"
+	buttonFrame.Parent = dialog
+	buttonFrame.BackgroundTransparency = 1
+	buttonFrame.Position = UDim2.new(0, 10, 1, -40)
+	buttonFrame.Size = UDim2.new(1, -20, 0, 30)
+
+	uiListLayout.Parent = buttonFrame
+	uiListLayout.FillDirection = Enum.FillDirection.Horizontal
+	uiListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
+	uiListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+	uiListLayout.Padding = UDim.new(0, 10)
+
+	for _, button in ipairs(buttons) do
+		local buttonObj = Instance.new("TextButton")
+		local uiCorner = Instance.new("UICorner")
+
+		buttonObj.Name = button.Text or "Button"
+		buttonObj.Parent = buttonFrame
+		buttonObj.BackgroundColor3 = themes.Neon.Function.Button.Background
+		buttonObj.Size = UDim2.new(0, 80, 0, 24)
+		buttonObj.Font = Enum.Font.GothamBold
+		buttonObj.Text = button.Text or "Button"
+		buttonObj.TextColor3 = themes.Neon.TextAndIcon
+		buttonObj.TextSize = 12
+		addToTheme('Function.Button.Background', buttonObj)
+		addToTheme('TextAndIcon', buttonObj)
+
+		uiCorner.Parent = buttonObj
+		uiCorner.CornerRadius = UDim.new(0, 6)
+
+		buttonObj.MouseButton1Click:Connect(function()
+			pcall(button.Callback)
+			createTween(dialog, 0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, {
+				BackgroundTransparency = 1
+			}):Play()
+			task.delay(0.3, function()
+				dialog:Destroy()
+			end)
+			createClickEffect(buttonObj, buttonObj)
+		end)
+	end
+
+	createTween(dialog, 0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, {
+		BackgroundTransparency = 0
+	}):Play()
+end
+
+return Library
