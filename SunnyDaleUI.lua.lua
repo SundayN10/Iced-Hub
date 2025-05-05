@@ -1,1989 +1,1989 @@
-local Tropicana = {};
-
--- TropicHub
-Tropicana["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
-Tropicana["1"]["IgnoreGuiInset"] = true;
-Tropicana["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
-Tropicana["1"]["Name"] = [[TropicHub]];
-Tropicana["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+local SunnyDale = {};
+
+-- SunnyDHub
+SunnyDale["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+SunnyDale["1"]["IgnoreGuiInset"] = true;
+SunnyDale["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
+SunnyDale["1"]["Name"] = [[SunnyDHub]];
+SunnyDale["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
 
--- TropicHub.BackgroundFrame
-Tropicana["2"] = Instance.new("Frame", Tropicana["1"]);
-Tropicana["2"]["BorderSizePixel"] = 0;
-Tropicana["2"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
-Tropicana["2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-Tropicana["2"]["Size"] = UDim2.new(0, 452, 0, 344);
-Tropicana["2"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
-Tropicana["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["2"]["Name"] = [[BackgroundFrame]];
+-- SunnyDHub.BackgroundFrame
+SunnyDale["2"] = Instance.new("Frame", SunnyDale["1"]);
+SunnyDale["2"]["BorderSizePixel"] = 0;
+SunnyDale["2"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+SunnyDale["2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+SunnyDale["2"]["Size"] = UDim2.new(0, 452, 0, 344);
+SunnyDale["2"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+SunnyDale["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["2"]["Name"] = [[BackgroundFrame]];
 
 
--- TropicHub.BackgroundFrame.UICorner
-Tropicana["3"] = Instance.new("UICorner", Tropicana["2"]);
-Tropicana["3"]["CornerRadius"] = UDim.new(0, 10);
+-- SunnyDHub.BackgroundFrame.UICorner
+SunnyDale["3"] = Instance.new("UICorner", SunnyDale["2"]);
+SunnyDale["3"]["CornerRadius"] = UDim.new(0, 10);
 
-
--- TropicHub.BackgroundFrame.UIGradient
-Tropicana["4"] = Instance.new("UIGradient", Tropicana["2"]);
-Tropicana["4"]["Rotation"] = -143;
-Tropicana["4"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(11, 11, 11)),ColorSequenceKeypoint.new(0.484, Color3.fromRGB(6, 244, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(26, 26, 26))};
+
+-- SunnyDHub.BackgroundFrame.UIGradient
+SunnyDale["4"] = Instance.new("UIGradient", SunnyDale["2"]);
+SunnyDale["4"]["Rotation"] = -143;
+SunnyDale["4"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(11, 11, 11)),ColorSequenceKeypoint.new(0.484, Color3.fromRGB(6, 244, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(26, 26, 26))};
 
 
--- TropicHub.BackgroundFrame.LightBlue
-Tropicana["5"] = Instance.new("Frame", Tropicana["2"]);
-Tropicana["5"]["BorderSizePixel"] = 0;
-Tropicana["5"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
-Tropicana["5"]["Size"] = UDim2.new(1, 0, 1, 0);
-Tropicana["5"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
-Tropicana["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["5"]["Name"] = [[LightBlue]];
-Tropicana["5"]["BackgroundTransparency"] = 0.8;
+-- SunnyDHub.BackgroundFrame.LightBlue
+SunnyDale["5"] = Instance.new("Frame", SunnyDale["2"]);
+SunnyDale["5"]["BorderSizePixel"] = 0;
+SunnyDale["5"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+SunnyDale["5"]["Size"] = UDim2.new(1, 0, 1, 0);
+SunnyDale["5"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
+SunnyDale["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["5"]["Name"] = [[LightBlue]];
+SunnyDale["5"]["BackgroundTransparency"] = 0.8;
 
 
--- TropicHub.BackgroundFrame.LightBlue.UIGradient
-Tropicana["6"] = Instance.new("UIGradient", Tropicana["5"]);
-Tropicana["6"]["Rotation"] = 50;
-Tropicana["6"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.461, Color3.fromRGB(0, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
+-- SunnyDHub.BackgroundFrame.LightBlue.UIGradient
+SunnyDale["6"] = Instance.new("UIGradient", SunnyDale["5"]);
+SunnyDale["6"]["Rotation"] = 50;
+SunnyDale["6"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.461, Color3.fromRGB(0, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
 
 
--- TropicHub.BackgroundFrame.LightBlue.UICorner
-Tropicana["7"] = Instance.new("UICorner", Tropicana["5"]);
-Tropicana["7"]["CornerRadius"] = UDim.new(0, 10);
+-- SunnyDHub.BackgroundFrame.LightBlue.UICorner
+SunnyDale["7"] = Instance.new("UICorner", SunnyDale["5"]);
+SunnyDale["7"]["CornerRadius"] = UDim.new(0, 10);
 
 
--- TropicHub.BackgroundFrame.Blue
-Tropicana["8"] = Instance.new("Frame", Tropicana["2"]);
-Tropicana["8"]["BorderSizePixel"] = 0;
-Tropicana["8"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
-Tropicana["8"]["Size"] = UDim2.new(1, 0, 1, 0);
-Tropicana["8"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
-Tropicana["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["8"]["Name"] = [[Blue]];
-Tropicana["8"]["BackgroundTransparency"] = 0.6;
+-- SunnyDHub.BackgroundFrame.Blue
+SunnyDale["8"] = Instance.new("Frame", SunnyDale["2"]);
+SunnyDale["8"]["BorderSizePixel"] = 0;
+SunnyDale["8"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+SunnyDale["8"]["Size"] = UDim2.new(1, 0, 1, 0);
+SunnyDale["8"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
+SunnyDale["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["8"]["Name"] = [[Blue]];
+SunnyDale["8"]["BackgroundTransparency"] = 0.6;
 
 
--- TropicHub.BackgroundFrame.Blue.UIGradient
-Tropicana["9"] = Instance.new("UIGradient", Tropicana["8"]);
-Tropicana["9"]["Rotation"] = -70;
-Tropicana["9"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.491, Color3.fromRGB(0, 50, 123)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
+-- SunnyDHub.BackgroundFrame.Blue.UIGradient
+SunnyDale["9"] = Instance.new("UIGradient", SunnyDale["8"]);
+SunnyDale["9"]["Rotation"] = -70;
+SunnyDale["9"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.491, Color3.fromRGB(0, 50, 123)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
 
 
--- TropicHub.BackgroundFrame.Blue.UICorner
-Tropicana["a"] = Instance.new("UICorner", Tropicana["8"]);
-Tropicana["a"]["CornerRadius"] = UDim.new(0, 10);
+-- SunnyDHub.BackgroundFrame.Blue.UICorner
+SunnyDale["a"] = Instance.new("UICorner", SunnyDale["8"]);
+SunnyDale["a"]["CornerRadius"] = UDim.new(0, 10);
 
 
--- TropicHub.BackgroundFrame.Main
-Tropicana["b"] = Instance.new("Frame", Tropicana["2"]);
-Tropicana["b"]["ZIndex"] = 2;
-Tropicana["b"]["BorderSizePixel"] = 0;
-Tropicana["b"]["BackgroundColor3"] = Color3.fromRGB(67, 67, 67);
-Tropicana["b"]["Size"] = UDim2.new(0, 311, 0, 343);
-Tropicana["b"]["Position"] = UDim2.new(0, 140, 0, 0);
-Tropicana["b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["b"]["Name"] = [[Main]];
-Tropicana["b"]["BackgroundTransparency"] = 1;
+-- SunnyDHub.BackgroundFrame.Main
+SunnyDale["b"] = Instance.new("Frame", SunnyDale["2"]);
+SunnyDale["b"]["ZIndex"] = 2;
+SunnyDale["b"]["BorderSizePixel"] = 0;
+SunnyDale["b"]["BackgroundColor3"] = Color3.fromRGB(67, 67, 67);
+SunnyDale["b"]["Size"] = UDim2.new(0, 311, 0, 343);
+SunnyDale["b"]["Position"] = UDim2.new(0, 140, 0, 0);
+SunnyDale["b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["b"]["Name"] = [[Main]];
+SunnyDale["b"]["BackgroundTransparency"] = 1;
 
 
--- TropicHub.BackgroundFrame.Main.Tabs
-Tropicana["c"] = Instance.new("Folder", Tropicana["b"]);
-Tropicana["c"]["Name"] = [[Tabs]];
+-- SunnyDHub.BackgroundFrame.Main.Tabs
+SunnyDale["c"] = Instance.new("Folder", SunnyDale["b"]);
+SunnyDale["c"]["Name"] = [[Tabs]];
 
 
--- TropicHub.BackgroundFrame.Side
-Tropicana["d"] = Instance.new("Frame", Tropicana["2"]);
-Tropicana["d"]["ZIndex"] = 2;
-Tropicana["d"]["BorderSizePixel"] = 0;
-Tropicana["d"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
-Tropicana["d"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-Tropicana["d"]["Size"] = UDim2.new(0, 140, 0, 344);
-Tropicana["d"]["Position"] = UDim2.new(0.15487, 0, 0.5, 0);
-Tropicana["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["d"]["Name"] = [[Side]];
+-- SunnyDHub.BackgroundFrame.Side
+SunnyDale["d"] = Instance.new("Frame", SunnyDale["2"]);
+SunnyDale["d"]["ZIndex"] = 2;
+SunnyDale["d"]["BorderSizePixel"] = 0;
+SunnyDale["d"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
+SunnyDale["d"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+SunnyDale["d"]["Size"] = UDim2.new(0, 140, 0, 344);
+SunnyDale["d"]["Position"] = UDim2.new(0.15487, 0, 0.5, 0);
+SunnyDale["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["d"]["Name"] = [[Side]];
 
 
--- TropicHub.BackgroundFrame.Side.UICorner
-Tropicana["e"] = Instance.new("UICorner", Tropicana["d"]);
-Tropicana["e"]["CornerRadius"] = UDim.new(0, 10);
-
-
--- TropicHub.BackgroundFrame.Side.UIGradient
-Tropicana["f"] = Instance.new("UIGradient", Tropicana["d"]);
-Tropicana["f"]["Rotation"] = -51;
-Tropicana["f"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(11, 11, 11)),ColorSequenceKeypoint.new(0.484, Color3.fromRGB(6, 244, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(26, 26, 26))};
-
-
--- TropicHub.BackgroundFrame.Side.LightBlue
-Tropicana["10"] = Instance.new("Frame", Tropicana["d"]);
-Tropicana["10"]["BorderSizePixel"] = 0;
-Tropicana["10"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
-Tropicana["10"]["Size"] = UDim2.new(1, 0, 1, 0);
-Tropicana["10"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
-Tropicana["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["10"]["Name"] = [[LightBlue]];
-Tropicana["10"]["BackgroundTransparency"] = 0.8;
-
-
--- TropicHub.BackgroundFrame.Side.LightBlue.UIGradient
-Tropicana["11"] = Instance.new("UIGradient", Tropicana["10"]);
-Tropicana["11"]["Rotation"] = 50;
-Tropicana["11"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.461, Color3.fromRGB(0, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
-
-
--- TropicHub.BackgroundFrame.Side.LightBlue.UICorner
-Tropicana["12"] = Instance.new("UICorner", Tropicana["10"]);
-Tropicana["12"]["CornerRadius"] = UDim.new(0, 10);
-
-
--- TropicHub.BackgroundFrame.Side.Blue
-Tropicana["13"] = Instance.new("Frame", Tropicana["d"]);
-Tropicana["13"]["BorderSizePixel"] = 0;
-Tropicana["13"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
-Tropicana["13"]["Size"] = UDim2.new(1, 0, 1, 0);
-Tropicana["13"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
-Tropicana["13"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["13"]["Name"] = [[Blue]];
-Tropicana["13"]["BackgroundTransparency"] = 0.6;
-
-
--- TropicHub.BackgroundFrame.Side.Blue.UIGradient
-Tropicana["14"] = Instance.new("UIGradient", Tropicana["13"]);
-Tropicana["14"]["Rotation"] = -70;
-Tropicana["14"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.491, Color3.fromRGB(0, 50, 123)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
-
+-- SunnyDHub.BackgroundFrame.Side.UICorner
+SunnyDale["e"] = Instance.new("UICorner", SunnyDale["d"]);
+SunnyDale["e"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- SunnyDHub.BackgroundFrame.Side.UIGradient
+SunnyDale["f"] = Instance.new("UIGradient", SunnyDale["d"]);
+SunnyDale["f"]["Rotation"] = -51;
+SunnyDale["f"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(11, 11, 11)),ColorSequenceKeypoint.new(0.484, Color3.fromRGB(6, 244, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(26, 26, 26))};
+
+
+-- SunnyDHub.BackgroundFrame.Side.LightBlue
+SunnyDale["10"] = Instance.new("Frame", SunnyDale["d"]);
+SunnyDale["10"]["BorderSizePixel"] = 0;
+SunnyDale["10"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+SunnyDale["10"]["Size"] = UDim2.new(1, 0, 1, 0);
+SunnyDale["10"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
+SunnyDale["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["10"]["Name"] = [[LightBlue]];
+SunnyDale["10"]["BackgroundTransparency"] = 0.8;
+
+
+-- SunnyDHub.BackgroundFrame.Side.LightBlue.UIGradient
+SunnyDale["11"] = Instance.new("UIGradient", SunnyDale["10"]);
+SunnyDale["11"]["Rotation"] = 50;
+SunnyDale["11"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.461, Color3.fromRGB(0, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
+
+
+-- SunnyDHub.BackgroundFrame.Side.LightBlue.UICorner
+SunnyDale["12"] = Instance.new("UICorner", SunnyDale["10"]);
+SunnyDale["12"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- SunnyDHub.BackgroundFrame.Side.Blue
+SunnyDale["13"] = Instance.new("Frame", SunnyDale["d"]);
+SunnyDale["13"]["BorderSizePixel"] = 0;
+SunnyDale["13"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+SunnyDale["13"]["Size"] = UDim2.new(1, 0, 1, 0);
+SunnyDale["13"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
+SunnyDale["13"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["13"]["Name"] = [[Blue]];
+SunnyDale["13"]["BackgroundTransparency"] = 0.6;
+
+
+-- SunnyDHub.BackgroundFrame.Side.Blue.UIGradient
+SunnyDale["14"] = Instance.new("UIGradient", SunnyDale["13"]);
+SunnyDale["14"]["Rotation"] = -70;
+SunnyDale["14"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.491, Color3.fromRGB(0, 50, 123)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
+
 
--- TropicHub.BackgroundFrame.Side.Blue.UICorner
-Tropicana["15"] = Instance.new("UICorner", Tropicana["13"]);
-Tropicana["15"]["CornerRadius"] = UDim.new(0, 10);
+-- SunnyDHub.BackgroundFrame.Side.Blue.UICorner
+SunnyDale["15"] = Instance.new("UICorner", SunnyDale["13"]);
+SunnyDale["15"]["CornerRadius"] = UDim.new(0, 10);
 
 
--- TropicHub.BackgroundFrame.Side.Cyan
-Tropicana["16"] = Instance.new("CanvasGroup", Tropicana["d"]);
-Tropicana["16"]["BorderSizePixel"] = 0;
-Tropicana["16"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
-Tropicana["16"]["Size"] = UDim2.new(1, 0, 1, 0);
-Tropicana["16"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
-Tropicana["16"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["16"]["Name"] = [[Cyan]];
-Tropicana["16"]["BackgroundTransparency"] = 0.8;
-
-
--- TropicHub.BackgroundFrame.Side.Cyan.UIGradient
-Tropicana["17"] = Instance.new("UIGradient", Tropicana["16"]);
-Tropicana["17"]["Rotation"] = -26;
-Tropicana["17"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(0, 35, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
-
-
--- TropicHub.BackgroundFrame.Side.Cyan.UICorner
-Tropicana["18"] = Instance.new("UICorner", Tropicana["16"]);
-Tropicana["18"]["CornerRadius"] = UDim.new(0, 10);
-
-
--- TropicHub.BackgroundFrame.Side.Cyan.AbstractBg
-Tropicana["19"] = Instance.new("ImageLabel", Tropicana["16"]);
-Tropicana["19"]["BorderSizePixel"] = 0;
-Tropicana["19"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["19"]["ImageColor3"] = Color3.fromRGB(0, 183, 22);
-Tropicana["19"]["Image"] = [[rbxassetid://88984077541230]];
-Tropicana["19"]["Size"] = UDim2.new(0, 549, 0, 364);
-Tropicana["19"]["Visible"] = false;
-Tropicana["19"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["19"]["BackgroundTransparency"] = 1;
-Tropicana["19"]["Rotation"] = 40;
-Tropicana["19"]["Name"] = [[AbstractBg]];
-Tropicana["19"]["Position"] = UDim2.new(0.41197, 0, 0.48528, 0);
-
-
--- TropicHub.BackgroundFrame.Side.TabButtons
-Tropicana["1a"] = Instance.new("ScrollingFrame", Tropicana["d"]);
-Tropicana["1a"]["ZIndex"] = 5;
-Tropicana["1a"]["BorderSizePixel"] = 0;
-Tropicana["1a"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
-Tropicana["1a"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
-Tropicana["1a"]["TopImage"] = [[rbxasset://textures/ui/Scroll/scroll-middle.png]];
-Tropicana["1a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["1a"]["Name"] = [[TabButtons]];
-Tropicana["1a"]["Selectable"] = false;
-Tropicana["1a"]["BottomImage"] = [[rbxasset://textures/ui/Scroll/scroll-middle.png]];
-Tropicana["1a"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-Tropicana["1a"]["Size"] = UDim2.new(0, 140, 0, 285);
-Tropicana["1a"]["ScrollBarImageColor3"] = Color3.fromRGB(118, 118, 118);
-Tropicana["1a"]["Position"] = UDim2.new(0, 0, 0, 59);
-Tropicana["1a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["1a"]["ScrollBarThickness"] = 2;
-Tropicana["1a"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.BackgroundFrame.Side.TabButtons.UIListLayout
-Tropicana["1b"] = Instance.new("UIListLayout", Tropicana["1a"]);
-Tropicana["1b"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
-
--- TropicHub.BackgroundFrame.Side.DraggablePart
-Tropicana["1c"] = Instance.new("Frame", Tropicana["d"]);
-Tropicana["1c"]["ZIndex"] = 5;
-Tropicana["1c"]["BorderSizePixel"] = 0;
-Tropicana["1c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["1c"]["Size"] = UDim2.new(0, 140, 0, 55);
-Tropicana["1c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["1c"]["Name"] = [[DraggablePart]];
-Tropicana["1c"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.BackgroundFrame.Side.DraggablePart.Logo
-Tropicana["1d"] = Instance.new("ImageLabel", Tropicana["1c"]);
-Tropicana["1d"]["BorderSizePixel"] = 0;
-Tropicana["1d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["1d"]["Image"] = [[rbxassetid://91500078475037]];
-Tropicana["1d"]["Size"] = UDim2.new(0, 33, 0, 35);
-Tropicana["1d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["1d"]["BackgroundTransparency"] = 1;
-Tropicana["1d"]["Name"] = [[Logo]];
-Tropicana["1d"]["Position"] = UDim2.new(0, 12, 0, 13);
-
-
--- TropicHub.BackgroundFrame.Side.DraggablePart.Logo.UIAspectRatioConstraint
-Tropicana["1e"] = Instance.new("UIAspectRatioConstraint", Tropicana["1d"]);
-
-
-
--- TropicHub.BackgroundFrame.Side.DraggablePart.Logo.UICorner
-Tropicana["1f"] = Instance.new("UICorner", Tropicana["1d"]);
-
-
-
--- TropicHub.BackgroundFrame.Side.DraggablePart.Title
-Tropicana["20"] = Instance.new("TextLabel", Tropicana["1c"]);
-Tropicana["20"]["TextWrapped"] = true;
-Tropicana["20"]["BorderSizePixel"] = 0;
-Tropicana["20"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-Tropicana["20"]["TextScaled"] = true;
-Tropicana["20"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["20"]["TextSize"] = 14;
-Tropicana["20"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-Tropicana["20"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["20"]["BackgroundTransparency"] = 1;
-Tropicana["20"]["AnchorPoint"] = Vector2.new(0, 0.5);
-Tropicana["20"]["Size"] = UDim2.new(0, 80, 0, 17);
-Tropicana["20"]["Visible"] = false;
-Tropicana["20"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["20"]["Text"] = [[Tropicana]];
-Tropicana["20"]["Name"] = [[Title]];
-Tropicana["20"]["Position"] = UDim2.new(0, 55, 0, 29);
-
-
--- TropicHub.BackgroundFrame.Side.DraggablePart.Title.UIGradient
-Tropicana["21"] = Instance.new("UIGradient", Tropicana["20"]);
-Tropicana["21"]["Rotation"] = -90;
-Tropicana["21"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
-
-
--- TropicHub.BackgroundFrame.DropShadowHolder
-Tropicana["22"] = Instance.new("Frame", Tropicana["2"]);
-Tropicana["22"]["ZIndex"] = 0;
-Tropicana["22"]["BorderSizePixel"] = 0;
-Tropicana["22"]["Size"] = UDim2.new(1, 0, 1, 0);
-Tropicana["22"]["Name"] = [[DropShadowHolder]];
-Tropicana["22"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.BackgroundFrame.DropShadowHolder.DropShadow
-Tropicana["23"] = Instance.new("ImageLabel", Tropicana["22"]);
-Tropicana["23"]["ZIndex"] = 0;
-Tropicana["23"]["BorderSizePixel"] = 0;
-Tropicana["23"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-Tropicana["23"]["ScaleType"] = Enum.ScaleType.Slice;
-Tropicana["23"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["23"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-Tropicana["23"]["Image"] = [[rbxassetid://6014261993]];
-Tropicana["23"]["Size"] = UDim2.new(1, 47, 1, 47);
-Tropicana["23"]["BackgroundTransparency"] = 1;
-Tropicana["23"]["Name"] = [[DropShadow]];
-Tropicana["23"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
-
-
--- TropicHub.BackgroundFrame.Cyan
-Tropicana["24"] = Instance.new("Frame", Tropicana["2"]);
-Tropicana["24"]["BorderSizePixel"] = 0;
-Tropicana["24"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
-Tropicana["24"]["ClipsDescendants"] = true;
-Tropicana["24"]["Size"] = UDim2.new(1, 0, 1, 0);
-Tropicana["24"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
-Tropicana["24"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["24"]["Name"] = [[Cyan]];
-Tropicana["24"]["BackgroundTransparency"] = 0.8;
-
-
--- TropicHub.BackgroundFrame.Cyan.UIGradient
-Tropicana["25"] = Instance.new("UIGradient", Tropicana["24"]);
-Tropicana["25"]["Rotation"] = -26;
-Tropicana["25"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(0, 35, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
-
-
--- TropicHub.BackgroundFrame.Cyan.UICorner
-Tropicana["26"] = Instance.new("UICorner", Tropicana["24"]);
-Tropicana["26"]["CornerRadius"] = UDim.new(0, 10);
-
-
--- TropicHub.Library
-Tropicana["27"] = Instance.new("ModuleScript", Tropicana["1"]);
-Tropicana["27"]["Name"] = [[Library]];
-
-
--- TropicHub.IconLib
-Tropicana["28"] = Instance.new("ModuleScript", Tropicana["1"]);
-Tropicana["28"]["Name"] = [[IconLib]];
-
-
--- TropicHub.Template
-Tropicana["29"] = Instance.new("Folder", Tropicana["1"]);
-Tropicana["29"]["Name"] = [[Template]];
-
-
--- TropicHub.Template.TabButton
-Tropicana["2a"] = Instance.new("TextButton", Tropicana["29"]);
-Tropicana["2a"]["BorderSizePixel"] = 0;
-Tropicana["2a"]["TextSize"] = 14;
-Tropicana["2a"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["2a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["2a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-Tropicana["2a"]["Size"] = UDim2.new(0, 137, 0, 39);
-Tropicana["2a"]["BackgroundTransparency"] = 1;
-Tropicana["2a"]["Name"] = [[TabButton]];
-Tropicana["2a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["2a"]["Text"] = [[]];
-Tropicana["2a"]["Visible"] = false;
-
-
--- TropicHub.Template.TabButton.Icon
-Tropicana["2b"] = Instance.new("ImageLabel", Tropicana["2a"]);
-Tropicana["2b"]["BorderSizePixel"] = 0;
-Tropicana["2b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["2b"]["AnchorPoint"] = Vector2.new(0, 0.5);
-Tropicana["2b"]["Image"] = [[rbxassetid://97623395395101]];
-Tropicana["2b"]["Size"] = UDim2.new(0, 25, 0, 25);
-Tropicana["2b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["2b"]["BackgroundTransparency"] = 1;
-Tropicana["2b"]["Name"] = [[Icon]];
-Tropicana["2b"]["Position"] = UDim2.new(0.07, 0, 0.5, 0);
-
-
--- TropicHub.Template.TabButton.Icon.UIAspectRatioConstraint
-Tropicana["2c"] = Instance.new("UIAspectRatioConstraint", Tropicana["2b"]);
-
-
-
--- TropicHub.Template.TabButton.Title
-Tropicana["2d"] = Instance.new("TextLabel", Tropicana["2a"]);
-Tropicana["2d"]["TextWrapped"] = true;
-Tropicana["2d"]["BorderSizePixel"] = 0;
-Tropicana["2d"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-Tropicana["2d"]["TextScaled"] = true;
-Tropicana["2d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["2d"]["TextSize"] = 14;
-Tropicana["2d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-Tropicana["2d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["2d"]["BackgroundTransparency"] = 1;
-Tropicana["2d"]["AnchorPoint"] = Vector2.new(0, 0.5);
-Tropicana["2d"]["Size"] = UDim2.new(0, 90, 0, 17);
-Tropicana["2d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["2d"]["Text"] = [[General]];
-Tropicana["2d"]["Name"] = [[Title]];
-Tropicana["2d"]["Position"] = UDim2.new(0.33, 0, 0.5, 0);
-
-
--- TropicHub.Template.TabButton.Title.UIGradient
-Tropicana["2e"] = Instance.new("UIGradient", Tropicana["2d"]);
-Tropicana["2e"]["Rotation"] = -90;
-Tropicana["2e"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
-
-
--- TropicHub.Template.TabFrame
-Tropicana["2f"] = Instance.new("Frame", Tropicana["29"]);
-Tropicana["2f"]["Visible"] = false;
-Tropicana["2f"]["ZIndex"] = 0;
-Tropicana["2f"]["BorderSizePixel"] = 0;
-Tropicana["2f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["2f"]["Size"] = UDim2.new(1, 0, 1, 0);
-Tropicana["2f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["2f"]["Name"] = [[TabFrame]];
-Tropicana["2f"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.Template.TabFrame.ScrollingFrameRight
-Tropicana["30"] = Instance.new("ScrollingFrame", Tropicana["2f"]);
-Tropicana["30"]["Active"] = true;
-Tropicana["30"]["ZIndex"] = 2;
-Tropicana["30"]["BorderSizePixel"] = 0;
-Tropicana["30"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
-Tropicana["30"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
-Tropicana["30"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["30"]["Name"] = [[ScrollingFrameRight]];
-Tropicana["30"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-Tropicana["30"]["Size"] = UDim2.new(0.5, 0, 1, 0);
-Tropicana["30"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["30"]["Position"] = UDim2.new(0.5, 0, 0, 0);
-Tropicana["30"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["30"]["ScrollBarThickness"] = 0;
-Tropicana["30"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.Template.TabFrame.ScrollingFrameRight.UIListLayout
-Tropicana["31"] = Instance.new("UIListLayout", Tropicana["30"]);
-Tropicana["31"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-Tropicana["31"]["Padding"] = UDim.new(0, 10);
-Tropicana["31"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
-
--- TropicHub.Template.TabFrame.ScrollingFrameRight.UIPadding
-Tropicana["32"] = Instance.new("UIPadding", Tropicana["30"]);
-Tropicana["32"]["PaddingTop"] = UDim.new(0, 10);
-Tropicana["32"]["PaddingBottom"] = UDim.new(0, 10);
-
-
--- TropicHub.Template.TabFrame.ScrollingFrameLeft
-Tropicana["33"] = Instance.new("ScrollingFrame", Tropicana["2f"]);
-Tropicana["33"]["Active"] = true;
-Tropicana["33"]["ZIndex"] = 0;
-Tropicana["33"]["BorderSizePixel"] = 0;
-Tropicana["33"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
-Tropicana["33"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
-Tropicana["33"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["33"]["Name"] = [[ScrollingFrameLeft]];
-Tropicana["33"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-Tropicana["33"]["Size"] = UDim2.new(0.5, 0, 1, 0);
-Tropicana["33"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["33"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["33"]["ScrollBarThickness"] = 0;
-Tropicana["33"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.Template.TabFrame.ScrollingFrameLeft.UIListLayout
-Tropicana["34"] = Instance.new("UIListLayout", Tropicana["33"]);
-Tropicana["34"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-Tropicana["34"]["Padding"] = UDim.new(0, 10);
-Tropicana["34"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
-
--- TropicHub.Template.TabFrame.ScrollingFrameLeft.UIPadding
-Tropicana["35"] = Instance.new("UIPadding", Tropicana["33"]);
-Tropicana["35"]["PaddingTop"] = UDim.new(0, 10);
-Tropicana["35"]["PaddingBottom"] = UDim.new(0, 10);
-
-
--- TropicHub.Template.Section
-Tropicana["36"] = Instance.new("Frame", Tropicana["29"]);
-Tropicana["36"]["Visible"] = false;
-Tropicana["36"]["ZIndex"] = 2;
-Tropicana["36"]["BorderSizePixel"] = 0;
-Tropicana["36"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["36"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["36"]["Size"] = UDim2.new(0, 145, 0, 2);
-Tropicana["36"]["Position"] = UDim2.new(0.04662, 0, 0.10811, 0);
-Tropicana["36"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["36"]["Name"] = [[Section]];
-Tropicana["36"]["BackgroundTransparency"] = 0.75;
-
-
--- TropicHub.Template.Section.UICorner
-Tropicana["37"] = Instance.new("UICorner", Tropicana["36"]);
-Tropicana["37"]["CornerRadius"] = UDim.new(0, 5);
-
-
--- TropicHub.Template.Section.Seperator
-Tropicana["38"] = Instance.new("Frame", Tropicana["36"]);
-Tropicana["38"]["BorderSizePixel"] = 0;
-Tropicana["38"]["BackgroundColor3"] = Color3.fromRGB(56, 56, 56);
-Tropicana["38"]["Size"] = UDim2.new(1, 0, 0, 2);
-Tropicana["38"]["Position"] = UDim2.new(0, 0, 0, 24);
-Tropicana["38"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["38"]["Name"] = [[Seperator]];
-
-
--- TropicHub.Template.Section.Seperator.UIGradient
-Tropicana["39"] = Instance.new("UIGradient", Tropicana["38"]);
-Tropicana["39"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(58, 144, 255))};
-
-
--- TropicHub.Template.Section.Title
-Tropicana["3a"] = Instance.new("TextLabel", Tropicana["36"]);
-Tropicana["3a"]["TextWrapped"] = true;
-Tropicana["3a"]["BorderSizePixel"] = 0;
-Tropicana["3a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-Tropicana["3a"]["TextScaled"] = true;
-Tropicana["3a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["3a"]["TextSize"] = 14;
-Tropicana["3a"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-Tropicana["3a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["3a"]["BackgroundTransparency"] = 1;
-Tropicana["3a"]["Size"] = UDim2.new(0, 95, 0, 13);
-Tropicana["3a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["3a"]["Text"] = [[Section]];
-Tropicana["3a"]["Name"] = [[Title]];
-Tropicana["3a"]["Position"] = UDim2.new(0, 8, 0, 7);
-
-
--- TropicHub.Template.Section.Title.UIGradient
-Tropicana["3b"] = Instance.new("UIGradient", Tropicana["3a"]);
-Tropicana["3b"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 90, 255)),ColorSequenceKeypoint.new(0.247, Color3.fromRGB(63, 156, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 248))};
-
-
--- TropicHub.Template.Section.SectionItems
-Tropicana["3c"] = Instance.new("Frame", Tropicana["36"]);
-Tropicana["3c"]["BorderSizePixel"] = 0;
-Tropicana["3c"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["3c"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["3c"]["Size"] = UDim2.new(0, 145, 0, 0);
-Tropicana["3c"]["Position"] = UDim2.new(0, 0, 0, 26);
-Tropicana["3c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["3c"]["Name"] = [[SectionItems]];
-Tropicana["3c"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.Template.Section.SectionItems.UIListLayout
-Tropicana["3d"] = Instance.new("UIListLayout", Tropicana["3c"]);
-Tropicana["3d"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-Tropicana["3d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
-
--- TropicHub.Template.Section.SectionItems.UIPadding
-Tropicana["3e"] = Instance.new("UIPadding", Tropicana["3c"]);
-Tropicana["3e"]["PaddingTop"] = UDim.new(0, 6);
-
-
--- TropicHub.Template.Section.Mark
-Tropicana["3f"] = Instance.new("Frame", Tropicana["36"]);
-Tropicana["3f"]["BorderSizePixel"] = 0;
-Tropicana["3f"]["BackgroundColor3"] = Color3.fromRGB(246, 246, 246);
-Tropicana["3f"]["Size"] = UDim2.new(1, 0, 0, 2);
-Tropicana["3f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["3f"]["Name"] = [[Mark]];
-
-
--- TropicHub.Template.Section.Mark.UIGradient
-Tropicana["40"] = Instance.new("UIGradient", Tropicana["3f"]);
-Tropicana["40"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
-
-
--- TropicHub.Template.Section.UIPadding
-Tropicana["41"] = Instance.new("UIPadding", Tropicana["36"]);
-Tropicana["41"]["PaddingBottom"] = UDim.new(0, 6);
-
-
--- TropicHub.Template.DropdownButton
-Tropicana["42"] = Instance.new("TextButton", Tropicana["29"]);
-Tropicana["42"]["TextWrapped"] = true;
-Tropicana["42"]["BorderSizePixel"] = 0;
-Tropicana["42"]["TextSize"] = 14;
-Tropicana["42"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
-Tropicana["42"]["TextScaled"] = true;
-Tropicana["42"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["42"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-Tropicana["42"]["Selectable"] = false;
-Tropicana["42"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-Tropicana["42"]["Size"] = UDim2.new(1, 0, 0.11026, 0);
-Tropicana["42"]["BackgroundTransparency"] = 1;
-Tropicana["42"]["Name"] = [[DropdownButton]];
-Tropicana["42"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["42"]["Text"] = [[Test1]];
-Tropicana["42"]["Visible"] = false;
-Tropicana["42"]["Position"] = UDim2.new(0.5, 0, 0.05513, 0);
-
-
--- TropicHub.Template.DropdownButton.UIGradient
-Tropicana["43"] = Instance.new("UIGradient", Tropicana["42"]);
-Tropicana["43"]["Enabled"] = false;
-Tropicana["43"]["Rotation"] = -90;
-Tropicana["43"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
-
-
--- TropicHub.Template.Notification
-Tropicana["44"] = Instance.new("Frame", Tropicana["29"]);
-Tropicana["44"]["Visible"] = false;
-Tropicana["44"]["BorderSizePixel"] = 0;
-Tropicana["44"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
-Tropicana["44"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-Tropicana["44"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["44"]["Size"] = UDim2.new(0, 265, 0, 65);
-Tropicana["44"]["Position"] = UDim2.new(0.8244, 0, 0.88221, 0);
-Tropicana["44"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["44"]["Name"] = [[Notification]];
-
-
--- TropicHub.Template.Notification.UICorner
-Tropicana["45"] = Instance.new("UICorner", Tropicana["44"]);
-Tropicana["45"]["CornerRadius"] = UDim.new(0, 10);
-
-
--- TropicHub.Template.Notification.UIGradient
-Tropicana["46"] = Instance.new("UIGradient", Tropicana["44"]);
-Tropicana["46"]["Rotation"] = 180;
-Tropicana["46"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(11, 11, 11)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(5, 185, 191)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(26, 26, 26))};
-
-
--- TropicHub.Template.Notification.LightBlue
-Tropicana["47"] = Instance.new("Frame", Tropicana["44"]);
-Tropicana["47"]["BorderSizePixel"] = 0;
-Tropicana["47"]["AutoLocalize"] = false;
-Tropicana["47"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
-Tropicana["47"]["BorderMode"] = Enum.BorderMode.Inset;
-Tropicana["47"]["Size"] = UDim2.new(1, 0, 1, 0);
-Tropicana["47"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
-Tropicana["47"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["47"]["Name"] = [[LightBlue]];
-Tropicana["47"]["BackgroundTransparency"] = 0.8;
-
-
--- TropicHub.Template.Notification.LightBlue.UIGradient
-Tropicana["48"] = Instance.new("UIGradient", Tropicana["47"]);
-Tropicana["48"]["Rotation"] = -77;
-Tropicana["48"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.461, Color3.fromRGB(0, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
-
-
--- TropicHub.Template.Notification.LightBlue.UICorner
-Tropicana["49"] = Instance.new("UICorner", Tropicana["47"]);
-Tropicana["49"]["CornerRadius"] = UDim.new(0, 10);
-
-
--- TropicHub.Template.Notification.LightBlue.UISizeConstraint
-Tropicana["4a"] = Instance.new("UISizeConstraint", Tropicana["47"]);
-Tropicana["4a"]["MaxSize"] = Vector2.new(265, math.huge);
-
-
--- TropicHub.Template.Notification.Blue
-Tropicana["4b"] = Instance.new("Frame", Tropicana["44"]);
-Tropicana["4b"]["BorderSizePixel"] = 0;
-Tropicana["4b"]["AutoLocalize"] = false;
-Tropicana["4b"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
-Tropicana["4b"]["BorderMode"] = Enum.BorderMode.Inset;
-Tropicana["4b"]["Size"] = UDim2.new(1, 0, 1, 0);
-Tropicana["4b"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
-Tropicana["4b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["4b"]["Name"] = [[Blue]];
-Tropicana["4b"]["BackgroundTransparency"] = 0.6;
-
-
--- TropicHub.Template.Notification.Blue.UIGradient
-Tropicana["4c"] = Instance.new("UIGradient", Tropicana["4b"]);
-Tropicana["4c"]["Rotation"] = 93;
-Tropicana["4c"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.491, Color3.fromRGB(0, 50, 123)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
-
-
--- TropicHub.Template.Notification.Blue.UICorner
-Tropicana["4d"] = Instance.new("UICorner", Tropicana["4b"]);
-Tropicana["4d"]["CornerRadius"] = UDim.new(0, 10);
-
-
--- TropicHub.Template.Notification.Blue.UISizeConstraint
-Tropicana["4e"] = Instance.new("UISizeConstraint", Tropicana["4b"]);
-Tropicana["4e"]["MaxSize"] = Vector2.new(265, math.huge);
-
-
--- TropicHub.Template.Notification.Cyan
-Tropicana["4f"] = Instance.new("Frame", Tropicana["44"]);
-Tropicana["4f"]["BorderSizePixel"] = 0;
-Tropicana["4f"]["AutoLocalize"] = false;
-Tropicana["4f"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
-Tropicana["4f"]["BorderMode"] = Enum.BorderMode.Inset;
-Tropicana["4f"]["ClipsDescendants"] = true;
-Tropicana["4f"]["Size"] = UDim2.new(1, 0, 1, 0);
-Tropicana["4f"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
-Tropicana["4f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["4f"]["Name"] = [[Cyan]];
-Tropicana["4f"]["BackgroundTransparency"] = 0.8;
-
-
--- TropicHub.Template.Notification.Cyan.UIGradient
-Tropicana["50"] = Instance.new("UIGradient", Tropicana["4f"]);
-Tropicana["50"]["Rotation"] = -98;
-Tropicana["50"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(0, 35, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
-
-
--- TropicHub.Template.Notification.Cyan.UICorner
-Tropicana["51"] = Instance.new("UICorner", Tropicana["4f"]);
-Tropicana["51"]["CornerRadius"] = UDim.new(0, 10);
-
-
--- TropicHub.Template.Notification.Cyan.UISizeConstraint
-Tropicana["52"] = Instance.new("UISizeConstraint", Tropicana["4f"]);
-Tropicana["52"]["MaxSize"] = Vector2.new(265, math.huge);
-
-
--- TropicHub.Template.Notification.Items
-Tropicana["53"] = Instance.new("ImageLabel", Tropicana["44"]);
-Tropicana["53"]["ZIndex"] = 2;
-Tropicana["53"]["BorderSizePixel"] = 0;
-Tropicana["53"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["53"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["53"]["Size"] = UDim2.new(1, 0, 1, 0);
-Tropicana["53"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["53"]["BackgroundTransparency"] = 1;
-Tropicana["53"]["Name"] = [[Items]];
-
-
--- TropicHub.Template.Notification.Items.UIListLayout
-Tropicana["54"] = Instance.new("UIListLayout", Tropicana["53"]);
-Tropicana["54"]["Padding"] = UDim.new(0, 5);
-Tropicana["54"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
-Tropicana["54"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
-
--- TropicHub.Template.Notification.Items.UIPadding
-Tropicana["55"] = Instance.new("UIPadding", Tropicana["53"]);
-Tropicana["55"]["PaddingTop"] = UDim.new(0, 15);
-Tropicana["55"]["PaddingLeft"] = UDim.new(0, 15);
-Tropicana["55"]["PaddingBottom"] = UDim.new(0, 15);
-
-
--- TropicHub.Template.Notification.Items.Title
-Tropicana["56"] = Instance.new("TextLabel", Tropicana["53"]);
-Tropicana["56"]["TextWrapped"] = true;
-Tropicana["56"]["BorderSizePixel"] = 0;
-Tropicana["56"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-Tropicana["56"]["TextScaled"] = true;
-Tropicana["56"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["56"]["TextSize"] = 14;
-Tropicana["56"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-Tropicana["56"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["56"]["BackgroundTransparency"] = 1;
-Tropicana["56"]["AnchorPoint"] = Vector2.new(0, 0.5);
-Tropicana["56"]["Size"] = UDim2.new(0, 235, 0, 15);
-Tropicana["56"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["56"]["Text"] = [[Notification]];
-Tropicana["56"]["Name"] = [[Title]];
-Tropicana["56"]["Position"] = UDim2.new(0, 0, 0, 9);
-
-
--- TropicHub.Template.Notification.Items.Title.UIGradient
-Tropicana["57"] = Instance.new("UIGradient", Tropicana["56"]);
-Tropicana["57"]["Rotation"] = -90;
-Tropicana["57"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
-
-
--- TropicHub.Template.Notification.Items.Title.Close
-Tropicana["58"] = Instance.new("ImageButton", Tropicana["56"]);
-Tropicana["58"]["BorderSizePixel"] = 0;
-Tropicana["58"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["58"]["AnchorPoint"] = Vector2.new(0, 0.5);
-Tropicana["58"]["Image"] = [[rbxassetid://10747384394]];
-Tropicana["58"]["Size"] = UDim2.new(0.09706, 0, 1.33333, 0);
-Tropicana["58"]["BackgroundTransparency"] = 1;
-Tropicana["58"]["Name"] = [[Close]];
-Tropicana["58"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["58"]["Position"] = UDim2.new(0.92, 0, 0.5, 0);
-
-
--- TropicHub.Template.Notification.Items.Title.Close.UIGradient
-Tropicana["59"] = Instance.new("UIGradient", Tropicana["58"]);
-Tropicana["59"]["Rotation"] = -90;
-Tropicana["59"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
-
-
--- TropicHub.Template.Notification.Items.Title.Close.UIAspectRatioConstraint
-Tropicana["5a"] = Instance.new("UIAspectRatioConstraint", Tropicana["58"]);
-Tropicana["5a"]["AspectRatio"] = 1.054;
-
-
--- TropicHub.Template.Notification.Items.Content
-Tropicana["5b"] = Instance.new("TextLabel", Tropicana["53"]);
-Tropicana["5b"]["TextWrapped"] = true;
-Tropicana["5b"]["BorderSizePixel"] = 0;
-Tropicana["5b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-Tropicana["5b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["5b"]["TextSize"] = 12;
-Tropicana["5b"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-Tropicana["5b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["5b"]["BackgroundTransparency"] = 1;
-Tropicana["5b"]["AnchorPoint"] = Vector2.new(0, 0.5);
-Tropicana["5b"]["Size"] = UDim2.new(0, 218, 0, 10);
-Tropicana["5b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["5b"]["Text"] = [[This is a notification]];
-Tropicana["5b"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["5b"]["Name"] = [[Content]];
-Tropicana["5b"]["Position"] = UDim2.new(0, 0, 0, 19);
-
-
--- TropicHub.Template.Notification.Items.Content.UIGradient
-Tropicana["5c"] = Instance.new("UIGradient", Tropicana["5b"]);
-Tropicana["5c"]["Enabled"] = false;
-Tropicana["5c"]["Rotation"] = -90;
-Tropicana["5c"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
-
-
--- TropicHub.Template.Notification.Items.SubContent
-Tropicana["5d"] = Instance.new("TextLabel", Tropicana["53"]);
-Tropicana["5d"]["TextWrapped"] = true;
-Tropicana["5d"]["BorderSizePixel"] = 0;
-Tropicana["5d"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-Tropicana["5d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["5d"]["TextSize"] = 12;
-Tropicana["5d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-Tropicana["5d"]["TextColor3"] = Color3.fromRGB(181, 181, 181);
-Tropicana["5d"]["BackgroundTransparency"] = 1;
-Tropicana["5d"]["AnchorPoint"] = Vector2.new(0, 0.5);
-Tropicana["5d"]["Size"] = UDim2.new(0, 218, 0, 10);
-Tropicana["5d"]["Visible"] = false;
-Tropicana["5d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["5d"]["Text"] = [[This is a notification]];
-Tropicana["5d"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["5d"]["Name"] = [[SubContent]];
-Tropicana["5d"]["Position"] = UDim2.new(0, 0, 0, 19);
-
-
--- TropicHub.Template.Notification.Items.SubContent.UIGradient
-Tropicana["5e"] = Instance.new("UIGradient", Tropicana["5d"]);
-Tropicana["5e"]["Enabled"] = false;
-Tropicana["5e"]["Rotation"] = -90;
-Tropicana["5e"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
-
-
--- TropicHub.Template.NotificationList
-Tropicana["5f"] = Instance.new("Frame", Tropicana["29"]);
-Tropicana["5f"]["Visible"] = false;
-Tropicana["5f"]["BorderSizePixel"] = 0;
-Tropicana["5f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["5f"]["Size"] = UDim2.new(0.3349, 0, 1, 0);
-Tropicana["5f"]["Position"] = UDim2.new(0.665, 0, 0, 0);
-Tropicana["5f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["5f"]["Name"] = [[NotificationList]];
-Tropicana["5f"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.Template.NotificationList.UIListLayout
-Tropicana["60"] = Instance.new("UIListLayout", Tropicana["5f"]);
-Tropicana["60"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Right;
-Tropicana["60"]["Padding"] = UDim.new(0, 10);
-Tropicana["60"]["VerticalAlignment"] = Enum.VerticalAlignment.Bottom;
-Tropicana["60"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
-
--- TropicHub.Template.NotificationList.UIPadding
-Tropicana["61"] = Instance.new("UIPadding", Tropicana["5f"]);
-Tropicana["61"]["PaddingRight"] = UDim.new(0, 30);
-Tropicana["61"]["PaddingBottom"] = UDim.new(0, 30);
-
-
--- TropicHub.Template.Button
-Tropicana["62"] = Instance.new("Frame", Tropicana["29"]);
-Tropicana["62"]["Visible"] = false;
-Tropicana["62"]["BorderSizePixel"] = 0;
-Tropicana["62"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["62"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["62"]["Size"] = UDim2.new(0, 145, 0, 39);
-Tropicana["62"]["Position"] = UDim2.new(0, 0, 0.58209, 0);
-Tropicana["62"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["62"]["Name"] = [[Button]];
-Tropicana["62"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.Template.Button.Button
-Tropicana["63"] = Instance.new("TextButton", Tropicana["62"]);
-Tropicana["63"]["BorderSizePixel"] = 0;
-Tropicana["63"]["AutoButtonColor"] = false;
-Tropicana["63"]["TextSize"] = 14;
-Tropicana["63"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["63"]["BackgroundColor3"] = Color3.fromRGB(41, 41, 41);
-Tropicana["63"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-Tropicana["63"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["63"]["Size"] = UDim2.new(0, 131, 0, 24);
-Tropicana["63"]["Name"] = [[Button]];
-Tropicana["63"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["63"]["Text"] = [[]];
-Tropicana["63"]["Position"] = UDim2.new(0.00752, 0, 0.16667, 0);
-
-
--- TropicHub.Template.Button.Button.UICorner
-Tropicana["64"] = Instance.new("UICorner", Tropicana["63"]);
-Tropicana["64"]["CornerRadius"] = UDim.new(0, 4);
-
-
--- TropicHub.Template.Button.Button.UIStroke
-Tropicana["65"] = Instance.new("UIStroke", Tropicana["63"]);
-Tropicana["65"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-Tropicana["65"]["Thickness"] = 1.5;
-Tropicana["65"]["Color"] = Color3.fromRGB(56, 56, 56);
-
-
--- TropicHub.Template.Button.Button.UIStroke.UIGradient
-Tropicana["66"] = Instance.new("UIGradient", Tropicana["65"]);
-Tropicana["66"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
-
-
--- TropicHub.Template.Button.Button.UIGradientOff
-Tropicana["67"] = Instance.new("UIGradient", Tropicana["63"]);
-Tropicana["67"]["Rotation"] = -90;
-Tropicana["67"]["Name"] = [[UIGradientOff]];
-Tropicana["67"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
-
-
--- TropicHub.Template.Button.Button.TextLabel
-Tropicana["68"] = Instance.new("TextLabel", Tropicana["63"]);
-Tropicana["68"]["TextWrapped"] = true;
-Tropicana["68"]["LineHeight"] = 1.1;
-Tropicana["68"]["BorderSizePixel"] = 0;
-Tropicana["68"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["68"]["TextSize"] = 14;
-Tropicana["68"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-Tropicana["68"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
-Tropicana["68"]["BackgroundTransparency"] = 1;
-Tropicana["68"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-Tropicana["68"]["Size"] = UDim2.new(0, 131, 0, 13);
-Tropicana["68"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["68"]["Text"] = [[Button]];
-Tropicana["68"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["68"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
-
-
--- TropicHub.Template.Button.Button.TextLabel.UIGradient
-Tropicana["69"] = Instance.new("UIGradient", Tropicana["68"]);
-Tropicana["69"]["Rotation"] = -90;
-Tropicana["69"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
-
-
--- TropicHub.Template.Button.Button.UIGradientOn
-Tropicana["6a"] = Instance.new("UIGradient", Tropicana["63"]);
-Tropicana["6a"]["Enabled"] = false;
-Tropicana["6a"]["Name"] = [[UIGradientOn]];
-Tropicana["6a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
-
-
--- TropicHub.Template.Button.Button.UIListLayout
-Tropicana["6b"] = Instance.new("UIListLayout", Tropicana["63"]);
-Tropicana["6b"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-Tropicana["6b"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
-Tropicana["6b"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
-
--- TropicHub.Template.Button.Button.UIPadding
-Tropicana["6c"] = Instance.new("UIPadding", Tropicana["63"]);
-Tropicana["6c"]["PaddingTop"] = UDim.new(0, 6);
-Tropicana["6c"]["PaddingBottom"] = UDim.new(0, 6);
-
-
--- TropicHub.Template.Button.UIListLayout
-Tropicana["6d"] = Instance.new("UIListLayout", Tropicana["62"]);
-Tropicana["6d"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-Tropicana["6d"]["Padding"] = UDim.new(0, 10);
-Tropicana["6d"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
-Tropicana["6d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-Tropicana["6d"]["FillDirection"] = Enum.FillDirection.Horizontal;
-
-
--- TropicHub.Template.Button.UIPadding
-Tropicana["6e"] = Instance.new("UIPadding", Tropicana["62"]);
-Tropicana["6e"]["PaddingRight"] = UDim.new(0, 6);
-Tropicana["6e"]["PaddingLeft"] = UDim.new(0, 6);
-
-
--- TropicHub.Template.Dropdown
-Tropicana["6f"] = Instance.new("Frame", Tropicana["29"]);
-Tropicana["6f"]["Visible"] = false;
-Tropicana["6f"]["BorderSizePixel"] = 0;
-Tropicana["6f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["6f"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["6f"]["Size"] = UDim2.new(0, 145, 0, 54);
-Tropicana["6f"]["Position"] = UDim2.new(0, 0, 0.78629, 0);
-Tropicana["6f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["6f"]["Name"] = [[Dropdown]];
-Tropicana["6f"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.Template.Dropdown.UIListLayout
-Tropicana["70"] = Instance.new("UIListLayout", Tropicana["6f"]);
-Tropicana["70"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-Tropicana["70"]["Padding"] = UDim.new(0, 5);
-Tropicana["70"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
-Tropicana["70"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
-
--- TropicHub.Template.Dropdown.UIPadding
-Tropicana["71"] = Instance.new("UIPadding", Tropicana["6f"]);
-Tropicana["71"]["PaddingRight"] = UDim.new(0, 6);
-Tropicana["71"]["PaddingLeft"] = UDim.new(0, 8);
-
-
--- TropicHub.Template.Dropdown.UIGradient
-Tropicana["72"] = Instance.new("UIGradient", Tropicana["6f"]);
-Tropicana["72"]["Rotation"] = -90;
-Tropicana["72"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
-
-
--- TropicHub.Template.Dropdown.OnChanged
-Tropicana["73"] = Instance.new("BindableEvent", Tropicana["6f"]);
-Tropicana["73"]["Name"] = [[OnChanged]];
-
-
--- TropicHub.Template.Dropdown.DropdownButton
-Tropicana["74"] = Instance.new("Frame", Tropicana["6f"]);
-Tropicana["74"]["BorderSizePixel"] = 0;
-Tropicana["74"]["BackgroundColor3"] = Color3.fromRGB(41, 41, 41);
-Tropicana["74"]["Selectable"] = true;
-Tropicana["74"]["ClipsDescendants"] = true;
-Tropicana["74"]["Size"] = UDim2.new(0, 130, 0, 18);
-Tropicana["74"]["Position"] = UDim2.new(-0.00763, 0, 0.14595, 0);
-Tropicana["74"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["74"]["Name"] = [[DropdownButton]];
-Tropicana["74"]["SelectionGroup"] = true;
-
-
--- TropicHub.Template.Dropdown.DropdownButton.Button
-Tropicana["75"] = Instance.new("TextButton", Tropicana["74"]);
-Tropicana["75"]["BorderSizePixel"] = 0;
-Tropicana["75"]["AutoButtonColor"] = false;
-Tropicana["75"]["TextSize"] = 14;
-Tropicana["75"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["75"]["BackgroundColor3"] = Color3.fromRGB(41, 41, 41);
-Tropicana["75"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-Tropicana["75"]["Size"] = UDim2.new(0, 130, 0, 18);
-Tropicana["75"]["Name"] = [[Button]];
-Tropicana["75"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["75"]["Text"] = [[]];
-
-
--- TropicHub.Template.Dropdown.DropdownButton.Button.UICorner
-Tropicana["76"] = Instance.new("UICorner", Tropicana["75"]);
-Tropicana["76"]["CornerRadius"] = UDim.new(0, 4);
-
-
--- TropicHub.Template.Dropdown.DropdownButton.Button.UIStroke
-Tropicana["77"] = Instance.new("UIStroke", Tropicana["75"]);
-Tropicana["77"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-Tropicana["77"]["Thickness"] = 1.5;
-Tropicana["77"]["Color"] = Color3.fromRGB(56, 56, 56);
-
-
--- TropicHub.Template.Dropdown.DropdownButton.Button.UIStroke.UIGradient
-Tropicana["78"] = Instance.new("UIGradient", Tropicana["77"]);
-Tropicana["78"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
-
-
--- TropicHub.Template.Dropdown.DropdownButton.Button.TextLabel
-Tropicana["79"] = Instance.new("TextLabel", Tropicana["75"]);
-Tropicana["79"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
-Tropicana["79"]["BorderSizePixel"] = 0;
-Tropicana["79"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["79"]["TextSize"] = 14;
-Tropicana["79"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-Tropicana["79"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
-Tropicana["79"]["BackgroundTransparency"] = 1;
-Tropicana["79"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-Tropicana["79"]["Size"] = UDim2.new(1, 0, 0.7, 0);
-Tropicana["79"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["79"]["Text"] = [[Test]];
-Tropicana["79"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
-
-
--- TropicHub.Template.Dropdown.DropdownButton.Button.TextLabel.UIGradient
-Tropicana["7a"] = Instance.new("UIGradient", Tropicana["79"]);
-Tropicana["7a"]["Rotation"] = -90;
-Tropicana["7a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
-
-
--- TropicHub.Template.Dropdown.DropdownButton.Button.UIGradientOff
-Tropicana["7b"] = Instance.new("UIGradient", Tropicana["75"]);
-Tropicana["7b"]["Rotation"] = -90;
-Tropicana["7b"]["Name"] = [[UIGradientOff]];
-Tropicana["7b"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
-
-
--- TropicHub.Template.Dropdown.DropdownButton.Button.UIGradientOn
-Tropicana["7c"] = Instance.new("UIGradient", Tropicana["75"]);
-Tropicana["7c"]["Enabled"] = false;
-Tropicana["7c"]["Name"] = [[UIGradientOn]];
-Tropicana["7c"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
-
-
--- TropicHub.Template.Dropdown.DropdownButton.UICorner
-Tropicana["7d"] = Instance.new("UICorner", Tropicana["74"]);
-Tropicana["7d"]["CornerRadius"] = UDim.new(0, 4);
-
-
--- TropicHub.Template.Dropdown.DropdownButton.UIStroke
-Tropicana["7e"] = Instance.new("UIStroke", Tropicana["74"]);
-Tropicana["7e"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-Tropicana["7e"]["Color"] = Color3.fromRGB(45, 45, 45);
-
-
--- TropicHub.Template.Dropdown.DropdownButton.UIStroke.UIGradient
-Tropicana["7f"] = Instance.new("UIGradient", Tropicana["7e"]);
-Tropicana["7f"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
-
-
--- TropicHub.Template.Dropdown.DropdownButton.ScrollingFrame
-Tropicana["80"] = Instance.new("ScrollingFrame", Tropicana["74"]);
-Tropicana["80"]["Active"] = true;
-Tropicana["80"]["BorderSizePixel"] = 0;
-Tropicana["80"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
-Tropicana["80"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
-Tropicana["80"]["TopImage"] = [[rbxasset://textures/ui/Scroll/scroll-middle.png]];
-Tropicana["80"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["80"]["BottomImage"] = [[rbxasset://textures/ui/Scroll/scroll-middle.png]];
-Tropicana["80"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-Tropicana["80"]["Size"] = UDim2.new(1, 0, 0.11377, 100);
-Tropicana["80"]["Position"] = UDim2.new(0, 0, 0, 48);
-Tropicana["80"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["80"]["ScrollBarThickness"] = 2;
-Tropicana["80"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.Template.Dropdown.DropdownButton.ScrollingFrame.UIListLayout
-Tropicana["81"] = Instance.new("UIListLayout", Tropicana["80"]);
-Tropicana["81"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-Tropicana["81"]["Padding"] = UDim.new(0, 5);
-Tropicana["81"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
-
--- TropicHub.Template.Dropdown.DropdownButton.SeacrhBox
-Tropicana["82"] = Instance.new("Frame", Tropicana["74"]);
-Tropicana["82"]["Active"] = true;
-Tropicana["82"]["BorderSizePixel"] = 0;
-Tropicana["82"]["BackgroundColor3"] = Color3.fromRGB(41, 41, 41);
-Tropicana["82"]["Selectable"] = true;
-Tropicana["82"]["AnchorPoint"] = Vector2.new(0.5, 0);
-Tropicana["82"]["Size"] = UDim2.new(0, 117, 0, 17);
-Tropicana["82"]["Position"] = UDim2.new(0.5, 0, 0, 25);
-Tropicana["82"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["82"]["Name"] = [[SeacrhBox]];
-
-
--- TropicHub.Template.Dropdown.DropdownButton.SeacrhBox.UIStroke
-Tropicana["83"] = Instance.new("UIStroke", Tropicana["82"]);
-Tropicana["83"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-Tropicana["83"]["Thickness"] = 1.5;
-Tropicana["83"]["Color"] = Color3.fromRGB(56, 56, 56);
-
-
--- TropicHub.Template.Dropdown.DropdownButton.SeacrhBox.UIStroke.UIGradient
-Tropicana["84"] = Instance.new("UIGradient", Tropicana["83"]);
-Tropicana["84"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
-
-
--- TropicHub.Template.Dropdown.DropdownButton.SeacrhBox.UIGradient
-Tropicana["85"] = Instance.new("UIGradient", Tropicana["82"]);
-Tropicana["85"]["Rotation"] = -90;
-Tropicana["85"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
-
-
--- TropicHub.Template.Dropdown.DropdownButton.SeacrhBox.TextBox
-Tropicana["86"] = Instance.new("TextBox", Tropicana["82"]);
-Tropicana["86"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["86"]["PlaceholderColor3"] = Color3.fromRGB(179, 179, 179);
-Tropicana["86"]["BorderSizePixel"] = 0;
-Tropicana["86"]["TextWrapped"] = true;
-Tropicana["86"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
-Tropicana["86"]["TextSize"] = 11;
-Tropicana["86"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["86"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-Tropicana["86"]["PlaceholderText"] = [[Search Here]];
-Tropicana["86"]["Size"] = UDim2.new(1, 0, 1, 0);
-Tropicana["86"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["86"]["Text"] = [[]];
-Tropicana["86"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.Template.Dropdown.DropdownButton.SeacrhBox.UICorner
-Tropicana["87"] = Instance.new("UICorner", Tropicana["82"]);
-Tropicana["87"]["CornerRadius"] = UDim.new(0, 4);
-
-
--- TropicHub.Template.Dropdown.DropdownButton.ScrollingFrameSearch
-Tropicana["88"] = Instance.new("ScrollingFrame", Tropicana["74"]);
-Tropicana["88"]["Visible"] = false;
-Tropicana["88"]["Active"] = true;
-Tropicana["88"]["BorderSizePixel"] = 0;
-Tropicana["88"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
-Tropicana["88"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
-Tropicana["88"]["TopImage"] = [[rbxasset://textures/ui/Scroll/scroll-middle.png]];
-Tropicana["88"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["88"]["Name"] = [[ScrollingFrameSearch]];
-Tropicana["88"]["BottomImage"] = [[rbxasset://textures/ui/Scroll/scroll-middle.png]];
-Tropicana["88"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-Tropicana["88"]["Size"] = UDim2.new(1, 0, 0.11377, 100);
-Tropicana["88"]["Position"] = UDim2.new(0, 0, 0, 48);
-Tropicana["88"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["88"]["ScrollBarThickness"] = 2;
-Tropicana["88"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.Template.Dropdown.DropdownButton.ScrollingFrameSearch.UIListLayout
-Tropicana["89"] = Instance.new("UIListLayout", Tropicana["88"]);
-Tropicana["89"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-Tropicana["89"]["Padding"] = UDim.new(0, 5);
-Tropicana["89"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
-
--- TropicHub.Template.Dropdown.DropdownButton.UIGradient
-Tropicana["8a"] = Instance.new("UIGradient", Tropicana["74"]);
-Tropicana["8a"]["Rotation"] = -90;
-Tropicana["8a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
-
-
--- TropicHub.Template.Dropdown.Title
-Tropicana["8b"] = Instance.new("TextLabel", Tropicana["6f"]);
-Tropicana["8b"]["TextWrapped"] = true;
-Tropicana["8b"]["LineHeight"] = 1.1;
-Tropicana["8b"]["BorderSizePixel"] = 0;
-Tropicana["8b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-Tropicana["8b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["8b"]["TextSize"] = 14;
-Tropicana["8b"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-Tropicana["8b"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
-Tropicana["8b"]["BackgroundTransparency"] = 1;
-Tropicana["8b"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-Tropicana["8b"]["Size"] = UDim2.new(0, 131, 0, 13);
-Tropicana["8b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["8b"]["Text"] = [[Dropdown]];
-Tropicana["8b"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["8b"]["Name"] = [[Title]];
-Tropicana["8b"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
-
-
--- TropicHub.Template.Paragraph
-Tropicana["8c"] = Instance.new("Frame", Tropicana["29"]);
-Tropicana["8c"]["Visible"] = false;
-Tropicana["8c"]["BorderSizePixel"] = 0;
-Tropicana["8c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["8c"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["8c"]["Size"] = UDim2.new(0, 145, 0, 42);
-Tropicana["8c"]["Position"] = UDim2.new(0, 0, 0.91602, 0);
-Tropicana["8c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["8c"]["Name"] = [[Paragraph]];
-Tropicana["8c"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.Template.Paragraph.UIListLayout
-Tropicana["8d"] = Instance.new("UIListLayout", Tropicana["8c"]);
-Tropicana["8d"]["Padding"] = UDim.new(0, 5);
-Tropicana["8d"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
-Tropicana["8d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-Tropicana["8d"]["FillDirection"] = Enum.FillDirection.Horizontal;
-
-
--- TropicHub.Template.Paragraph.Paragraph
-Tropicana["8e"] = Instance.new("Frame", Tropicana["8c"]);
-Tropicana["8e"]["BorderSizePixel"] = 0;
-Tropicana["8e"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["8e"]["Selectable"] = true;
-Tropicana["8e"]["ClipsDescendants"] = true;
-Tropicana["8e"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["8e"]["Size"] = UDim2.new(0, 130, 0, 28);
-Tropicana["8e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["8e"]["Name"] = [[Paragraph]];
-Tropicana["8e"]["BackgroundTransparency"] = 0.8;
-
-
--- TropicHub.Template.Paragraph.Paragraph.UICorner
-Tropicana["8f"] = Instance.new("UICorner", Tropicana["8e"]);
-Tropicana["8f"]["CornerRadius"] = UDim.new(0, 4);
-
-
--- TropicHub.Template.Paragraph.Paragraph.UIStroke
-Tropicana["90"] = Instance.new("UIStroke", Tropicana["8e"]);
-Tropicana["90"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-Tropicana["90"]["Thickness"] = 1.5;
-Tropicana["90"]["Color"] = Color3.fromRGB(56, 56, 56);
-
-
--- TropicHub.Template.Paragraph.Paragraph.UIStroke.UIGradient
-Tropicana["91"] = Instance.new("UIGradient", Tropicana["90"]);
-Tropicana["91"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
-
-
--- TropicHub.Template.Paragraph.Paragraph.Title
-Tropicana["92"] = Instance.new("TextLabel", Tropicana["8e"]);
-Tropicana["92"]["TextWrapped"] = true;
-Tropicana["92"]["BorderSizePixel"] = 0;
-Tropicana["92"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-Tropicana["92"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-Tropicana["92"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["92"]["TextSize"] = 17;
-Tropicana["92"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-Tropicana["92"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
-Tropicana["92"]["BackgroundTransparency"] = 1;
-Tropicana["92"]["RichText"] = true;
-Tropicana["92"]["Size"] = UDim2.new(0, 130, 0, 15);
-Tropicana["92"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["92"]["Text"] = [[Paragraph]];
-Tropicana["92"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["92"]["Name"] = [[Title]];
-Tropicana["92"]["Position"] = UDim2.new(0, 0, 0, 27);
-
-
--- TropicHub.Template.Paragraph.Paragraph.Title.UIPadding
-Tropicana["93"] = Instance.new("UIPadding", Tropicana["92"]);
-Tropicana["93"]["PaddingRight"] = UDim.new(0, 6);
-Tropicana["93"]["PaddingLeft"] = UDim.new(0, 6);
-
-
--- TropicHub.Template.Paragraph.Paragraph.UIPadding
-Tropicana["94"] = Instance.new("UIPadding", Tropicana["8e"]);
-Tropicana["94"]["PaddingTop"] = UDim.new(0, 8);
-Tropicana["94"]["PaddingRight"] = UDim.new(0, 5);
-Tropicana["94"]["PaddingLeft"] = UDim.new(0, 5);
-Tropicana["94"]["PaddingBottom"] = UDim.new(0, 8);
-
-
--- TropicHub.Template.Paragraph.Paragraph.UIListLayout
-Tropicana["95"] = Instance.new("UIListLayout", Tropicana["8e"]);
-Tropicana["95"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-Tropicana["95"]["Padding"] = UDim.new(0, 5);
-Tropicana["95"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
-
--- TropicHub.Template.Paragraph.Paragraph.Content
-Tropicana["96"] = Instance.new("TextLabel", Tropicana["8e"]);
-Tropicana["96"]["TextWrapped"] = true;
-Tropicana["96"]["BorderSizePixel"] = 0;
-Tropicana["96"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-Tropicana["96"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-Tropicana["96"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["96"]["TextSize"] = 13;
-Tropicana["96"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-Tropicana["96"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
-Tropicana["96"]["BackgroundTransparency"] = 1;
-Tropicana["96"]["RichText"] = true;
-Tropicana["96"]["Size"] = UDim2.new(0, 130, 0, 15);
-Tropicana["96"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["96"]["Text"] = [[Content]];
-Tropicana["96"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["96"]["Name"] = [[Content]];
-Tropicana["96"]["Position"] = UDim2.new(0, 0, 0, 27);
-
-
--- TropicHub.Template.Paragraph.Paragraph.Content.UIPadding
-Tropicana["97"] = Instance.new("UIPadding", Tropicana["96"]);
-Tropicana["97"]["PaddingRight"] = UDim.new(0, 6);
-Tropicana["97"]["PaddingLeft"] = UDim.new(0, 6);
-
-
--- TropicHub.Template.Paragraph.UIPadding
-Tropicana["98"] = Instance.new("UIPadding", Tropicana["8c"]);
-Tropicana["98"]["PaddingRight"] = UDim.new(0, 8);
-Tropicana["98"]["PaddingLeft"] = UDim.new(0, 8);
-
-
--- TropicHub.Template.Slider
-Tropicana["99"] = Instance.new("Frame", Tropicana["29"]);
-Tropicana["99"]["Visible"] = false;
-Tropicana["99"]["BorderSizePixel"] = 0;
-Tropicana["99"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["99"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["99"]["Size"] = UDim2.new(0, 145, 0, 47);
-Tropicana["99"]["Position"] = UDim2.new(0, 0, 0.63063, 0);
-Tropicana["99"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["99"]["Name"] = [[Slider]];
-Tropicana["99"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.Template.Slider.UIListLayout
-Tropicana["9a"] = Instance.new("UIListLayout", Tropicana["99"]);
-Tropicana["9a"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-Tropicana["9a"]["Padding"] = UDim.new(0, 6);
-Tropicana["9a"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
-Tropicana["9a"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
-
--- TropicHub.Template.Slider.UIPadding
-Tropicana["9b"] = Instance.new("UIPadding", Tropicana["99"]);
-Tropicana["9b"]["PaddingTop"] = UDim.new(0, 10);
-Tropicana["9b"]["PaddingRight"] = UDim.new(0, 6);
-Tropicana["9b"]["PaddingLeft"] = UDim.new(0, 8);
-Tropicana["9b"]["PaddingBottom"] = UDim.new(0, 10);
-
-
--- TropicHub.Template.Slider.Frame
-Tropicana["9c"] = Instance.new("Frame", Tropicana["99"]);
-Tropicana["9c"]["BorderSizePixel"] = 0;
-Tropicana["9c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["9c"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["9c"]["Size"] = UDim2.new(0, 125, 0, 13);
-Tropicana["9c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["9c"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.Template.Slider.Frame.UIListLayout
-Tropicana["9d"] = Instance.new("UIListLayout", Tropicana["9c"]);
-Tropicana["9d"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-Tropicana["9d"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
-Tropicana["9d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-Tropicana["9d"]["FillDirection"] = Enum.FillDirection.Horizontal;
-
-
--- TropicHub.Template.Slider.Frame.Title
-Tropicana["9e"] = Instance.new("TextLabel", Tropicana["9c"]);
-Tropicana["9e"]["TextWrapped"] = true;
-Tropicana["9e"]["BorderSizePixel"] = 0;
-Tropicana["9e"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-Tropicana["9e"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-Tropicana["9e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["9e"]["TextSize"] = 13;
-Tropicana["9e"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-Tropicana["9e"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
-Tropicana["9e"]["BackgroundTransparency"] = 1;
-Tropicana["9e"]["RichText"] = true;
-Tropicana["9e"]["Size"] = UDim2.new(0.75, 0, 0, 13);
-Tropicana["9e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["9e"]["Text"] = [[Slider]];
-Tropicana["9e"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["9e"]["Name"] = [[Title]];
-Tropicana["9e"]["Position"] = UDim2.new(0, 0, 0, 27);
-
-
--- TropicHub.Template.Slider.Frame.ValueText
-Tropicana["9f"] = Instance.new("TextBox", Tropicana["9c"]);
-Tropicana["9f"]["Active"] = false;
-Tropicana["9f"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
-Tropicana["9f"]["BorderSizePixel"] = 0;
-Tropicana["9f"]["TextXAlignment"] = Enum.TextXAlignment.Right;
-Tropicana["9f"]["TextWrapped"] = true;
-Tropicana["9f"]["TextSize"] = 14;
-Tropicana["9f"]["Name"] = [[ValueText]];
-Tropicana["9f"]["TextScaled"] = true;
-Tropicana["9f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["9f"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-Tropicana["9f"]["Selectable"] = false;
-Tropicana["9f"]["AnchorPoint"] = Vector2.new(0, 0.5);
-Tropicana["9f"]["Size"] = UDim2.new(0.25, -1, 0, 13);
-Tropicana["9f"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
-Tropicana["9f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["9f"]["Text"] = [[0]];
-Tropicana["9f"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.Template.Slider.Frame.ValueText.UIGradient
-Tropicana["a0"] = Instance.new("UIGradient", Tropicana["9f"]);
-Tropicana["a0"]["Enabled"] = false;
-Tropicana["a0"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 90, 255)),ColorSequenceKeypoint.new(0.247, Color3.fromRGB(63, 156, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 248))};
-
-
--- TropicHub.Template.Slider.Trigger
-Tropicana["a1"] = Instance.new("TextButton", Tropicana["99"]);
-Tropicana["a1"]["BorderSizePixel"] = 0;
-Tropicana["a1"]["AutoButtonColor"] = false;
-Tropicana["a1"]["TextSize"] = 14;
-Tropicana["a1"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["a1"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["a1"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-Tropicana["a1"]["Size"] = UDim2.new(0, 120, 0, 10);
-Tropicana["a1"]["BackgroundTransparency"] = 1;
-Tropicana["a1"]["Name"] = [[Trigger]];
-Tropicana["a1"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["a1"]["Text"] = [[]];
-Tropicana["a1"]["Position"] = UDim2.new(0.00763, 0, 0.59239, 0);
-
-
--- TropicHub.Template.Slider.Trigger.Fill
-Tropicana["a2"] = Instance.new("TextButton", Tropicana["a1"]);
-Tropicana["a2"]["Active"] = false;
-Tropicana["a2"]["Interactable"] = false;
-Tropicana["a2"]["BorderSizePixel"] = 0;
-Tropicana["a2"]["AutoButtonColor"] = false;
-Tropicana["a2"]["TextSize"] = 14;
-Tropicana["a2"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["a2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["a2"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-Tropicana["a2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-Tropicana["a2"]["Size"] = UDim2.new(0, 120, 0, 4);
-Tropicana["a2"]["Name"] = [[Fill]];
-Tropicana["a2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["a2"]["Text"] = [[]];
-Tropicana["a2"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
-
-
--- TropicHub.Template.Slider.Trigger.Fill.UIGradient
-Tropicana["a3"] = Instance.new("UIGradient", Tropicana["a2"]);
-Tropicana["a3"]["Rotation"] = 180;
-Tropicana["a3"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
-
-
--- TropicHub.Template.Slider.Trigger.Fill.UICorner
-Tropicana["a4"] = Instance.new("UICorner", Tropicana["a2"]);
-Tropicana["a4"]["CornerRadius"] = UDim.new(10, 10);
-
-
--- TropicHub.Template.Slider.Trigger.Fill.Circle
-Tropicana["a5"] = Instance.new("Frame", Tropicana["a2"]);
-Tropicana["a5"]["BorderSizePixel"] = 0;
-Tropicana["a5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["a5"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-Tropicana["a5"]["Size"] = UDim2.new(0, 10, 0, 10);
-Tropicana["a5"]["Position"] = UDim2.new(0, 0, 0.5, 0);
-Tropicana["a5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["a5"]["Name"] = [[Circle]];
-
-
--- TropicHub.Template.Slider.Trigger.Fill.Circle.UICorner
-Tropicana["a6"] = Instance.new("UICorner", Tropicana["a5"]);
-Tropicana["a6"]["CornerRadius"] = UDim.new(10, 10);
-
-
--- TropicHub.Template.Slider.OnChanged
-Tropicana["a7"] = Instance.new("BindableEvent", Tropicana["99"]);
-Tropicana["a7"]["Name"] = [[OnChanged]];
-
-
--- TropicHub.Template.Textbox
-Tropicana["a8"] = Instance.new("Frame", Tropicana["29"]);
-Tropicana["a8"]["Visible"] = false;
-Tropicana["a8"]["BorderSizePixel"] = 0;
-Tropicana["a8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["a8"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["a8"]["Size"] = UDim2.new(0, 145, 0, 35);
-Tropicana["a8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["a8"]["Name"] = [[Textbox]];
-Tropicana["a8"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.Template.Textbox.UIListLayout
-Tropicana["a9"] = Instance.new("UIListLayout", Tropicana["a8"]);
-Tropicana["a9"]["Padding"] = UDim.new(0, 5);
-Tropicana["a9"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
-Tropicana["a9"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-Tropicana["a9"]["FillDirection"] = Enum.FillDirection.Horizontal;
-
-
--- TropicHub.Template.Textbox.UIPadding
-Tropicana["aa"] = Instance.new("UIPadding", Tropicana["a8"]);
-Tropicana["aa"]["PaddingTop"] = UDim.new(0, 8);
-Tropicana["aa"]["PaddingRight"] = UDim.new(0, 8);
-Tropicana["aa"]["PaddingLeft"] = UDim.new(0, 8);
-Tropicana["aa"]["PaddingBottom"] = UDim.new(0, 8);
-
-
--- TropicHub.Template.Textbox.OnChanged
-Tropicana["ab"] = Instance.new("BindableEvent", Tropicana["a8"]);
-Tropicana["ab"]["Name"] = [[OnChanged]];
-
-
--- TropicHub.Template.Textbox.Title
-Tropicana["ac"] = Instance.new("TextLabel", Tropicana["a8"]);
-Tropicana["ac"]["TextWrapped"] = true;
-Tropicana["ac"]["BorderSizePixel"] = 0;
-Tropicana["ac"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-Tropicana["ac"]["TextTransparency"] = 0.7;
-Tropicana["ac"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["ac"]["TextSize"] = 13;
-Tropicana["ac"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-Tropicana["ac"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
-Tropicana["ac"]["BackgroundTransparency"] = 1;
-Tropicana["ac"]["Size"] = UDim2.new(0, 72, 0, 23);
-Tropicana["ac"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["ac"]["Text"] = [[Textbox]];
-Tropicana["ac"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["ac"]["Name"] = [[Title]];
-
-
--- TropicHub.Template.Textbox.Box
-Tropicana["ad"] = Instance.new("TextButton", Tropicana["a8"]);
-Tropicana["ad"]["TextWrapped"] = true;
-Tropicana["ad"]["BorderSizePixel"] = 0;
-Tropicana["ad"]["AutoButtonColor"] = false;
-Tropicana["ad"]["TextSize"] = 14;
-Tropicana["ad"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["ad"]["BackgroundColor3"] = Color3.fromRGB(41, 41, 41);
-Tropicana["ad"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-Tropicana["ad"]["Size"] = UDim2.new(0, 49, 0, 22);
-Tropicana["ad"]["Name"] = [[Box]];
-Tropicana["ad"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["ad"]["Text"] = [[]];
-Tropicana["ad"]["Position"] = UDim2.new(0.5969, 0, 0.02174, 0);
-
-
--- TropicHub.Template.Textbox.Box.UICorner
-Tropicana["ae"] = Instance.new("UICorner", Tropicana["ad"]);
-Tropicana["ae"]["CornerRadius"] = UDim.new(0, 4);
-
-
--- TropicHub.Template.Textbox.Box.UIStroke
-Tropicana["af"] = Instance.new("UIStroke", Tropicana["ad"]);
-Tropicana["af"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-Tropicana["af"]["Thickness"] = 1.5;
-Tropicana["af"]["Color"] = Color3.fromRGB(56, 56, 56);
-
-
--- TropicHub.Template.Textbox.Box.UIStroke.UIGradient
-Tropicana["b0"] = Instance.new("UIGradient", Tropicana["af"]);
-Tropicana["b0"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
-
-
--- TropicHub.Template.Textbox.Box.UIGradient
-Tropicana["b1"] = Instance.new("UIGradient", Tropicana["ad"]);
-Tropicana["b1"]["Rotation"] = -90;
-Tropicana["b1"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
-
-
--- TropicHub.Template.Textbox.Box.Textbox
-Tropicana["b2"] = Instance.new("TextBox", Tropicana["ad"]);
-Tropicana["b2"]["TextColor3"] = Color3.fromRGB(151, 151, 151);
-Tropicana["b2"]["PlaceholderColor3"] = Color3.fromRGB(96, 96, 96);
-Tropicana["b2"]["BorderSizePixel"] = 0;
-Tropicana["b2"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-Tropicana["b2"]["TextWrapped"] = true;
-Tropicana["b2"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
-Tropicana["b2"]["TextSize"] = 12;
-Tropicana["b2"]["Name"] = [[Textbox]];
-Tropicana["b2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["b2"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-Tropicana["b2"]["Selectable"] = false;
-Tropicana["b2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-Tropicana["b2"]["ClearTextOnFocus"] = false;
-Tropicana["b2"]["Size"] = UDim2.new(1, 0, 1, 0);
-Tropicana["b2"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
-Tropicana["b2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["b2"]["Text"] = [[]];
-Tropicana["b2"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.Template.Textbox.Box.Textbox.UIGradient
-Tropicana["b3"] = Instance.new("UIGradient", Tropicana["b2"]);
-Tropicana["b3"]["Enabled"] = false;
-Tropicana["b3"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 90, 255)),ColorSequenceKeypoint.new(0.247, Color3.fromRGB(63, 156, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 248))};
-
-
--- TropicHub.Template.Textbox.Box.Textbox.UIPadding
-Tropicana["b4"] = Instance.new("UIPadding", Tropicana["b2"]);
-Tropicana["b4"]["PaddingTop"] = UDim.new(0, 5);
-Tropicana["b4"]["PaddingLeft"] = UDim.new(0, 5);
-Tropicana["b4"]["PaddingBottom"] = UDim.new(0, 5);
-
-
--- TropicHub.Template.Toggle
-Tropicana["b5"] = Instance.new("Frame", Tropicana["29"]);
-Tropicana["b5"]["Visible"] = false;
-Tropicana["b5"]["BorderSizePixel"] = 0;
-Tropicana["b5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["b5"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["b5"]["Size"] = UDim2.new(0, 145, 0, 35);
-Tropicana["b5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["b5"]["Name"] = [[Toggle]];
-Tropicana["b5"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.Template.Toggle.UIListLayout
-Tropicana["b6"] = Instance.new("UIListLayout", Tropicana["b5"]);
-Tropicana["b6"]["Padding"] = UDim.new(0, 5);
-Tropicana["b6"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
-Tropicana["b6"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-Tropicana["b6"]["FillDirection"] = Enum.FillDirection.Horizontal;
-
-
--- TropicHub.Template.Toggle.UIPadding
-Tropicana["b7"] = Instance.new("UIPadding", Tropicana["b5"]);
-Tropicana["b7"]["PaddingTop"] = UDim.new(0, 5);
-Tropicana["b7"]["PaddingRight"] = UDim.new(0, 9);
-Tropicana["b7"]["PaddingLeft"] = UDim.new(0, 9);
-Tropicana["b7"]["PaddingBottom"] = UDim.new(0, 5);
-
-
--- TropicHub.Template.Toggle.State
-Tropicana["b8"] = Instance.new("BoolValue", Tropicana["b5"]);
-Tropicana["b8"]["Name"] = [[State]];
-Tropicana["b8"]["Value"] = true;
-
-
--- TropicHub.Template.Toggle.OnChanged
-Tropicana["b9"] = Instance.new("BindableEvent", Tropicana["b5"]);
-Tropicana["b9"]["Name"] = [[OnChanged]];
-
-
--- TropicHub.Template.Toggle.Title
-Tropicana["ba"] = Instance.new("TextLabel", Tropicana["b5"]);
-Tropicana["ba"]["TextWrapped"] = true;
-Tropicana["ba"]["BorderSizePixel"] = 0;
-Tropicana["ba"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-Tropicana["ba"]["TextTransparency"] = 0.7;
-Tropicana["ba"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-Tropicana["ba"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["ba"]["TextSize"] = 13;
-Tropicana["ba"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-Tropicana["ba"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
-Tropicana["ba"]["BackgroundTransparency"] = 1;
-Tropicana["ba"]["Size"] = UDim2.new(0, 98, 0, 13);
-Tropicana["ba"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["ba"]["Text"] = [[Toggle]];
-Tropicana["ba"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-Tropicana["ba"]["Name"] = [[Title]];
-Tropicana["ba"]["Position"] = UDim2.new(0, 0, 0, 27);
-
-
--- TropicHub.Template.Toggle.Toggle
-Tropicana["bb"] = Instance.new("TextButton", Tropicana["b5"]);
-Tropicana["bb"]["BorderSizePixel"] = 0;
-Tropicana["bb"]["AutoButtonColor"] = false;
-Tropicana["bb"]["TextSize"] = 14;
-Tropicana["bb"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["bb"]["BackgroundColor3"] = Color3.fromRGB(41, 41, 41);
-Tropicana["bb"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-Tropicana["bb"]["Size"] = UDim2.new(0, 22, 0, 22);
-Tropicana["bb"]["Name"] = [[Toggle]];
-Tropicana["bb"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["bb"]["Text"] = [[]];
-Tropicana["bb"]["Position"] = UDim2.new(0.05517, 0, 0.13333, 0);
-
-
--- TropicHub.Template.Toggle.Toggle.UICorner
-Tropicana["bc"] = Instance.new("UICorner", Tropicana["bb"]);
-Tropicana["bc"]["CornerRadius"] = UDim.new(0, 4);
-
-
--- TropicHub.Template.Toggle.Toggle.UIStroke
-Tropicana["bd"] = Instance.new("UIStroke", Tropicana["bb"]);
-Tropicana["bd"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-Tropicana["bd"]["Thickness"] = 1.5;
-Tropicana["bd"]["Color"] = Color3.fromRGB(56, 56, 56);
-
-
--- TropicHub.Template.Toggle.Toggle.UIStroke.UIGradient
-Tropicana["be"] = Instance.new("UIGradient", Tropicana["bd"]);
-Tropicana["be"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
-
-
--- TropicHub.Template.Toggle.Toggle.UIGradient
-Tropicana["bf"] = Instance.new("UIGradient", Tropicana["bb"]);
-Tropicana["bf"]["Rotation"] = -90;
-Tropicana["bf"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
-
-
--- TropicHub.Floating
-Tropicana["c0"] = Instance.new("Frame", Tropicana["1"]);
-Tropicana["c0"]["BorderSizePixel"] = 0;
-Tropicana["c0"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
-Tropicana["c0"]["Size"] = UDim2.new(0, 158, 0, 42);
-Tropicana["c0"]["Position"] = UDim2.new(0.02, 0, 0.1, 0);
-Tropicana["c0"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["c0"]["Name"] = [[Floating]];
-
-
--- TropicHub.Floating.UICorner
-Tropicana["c1"] = Instance.new("UICorner", Tropicana["c0"]);
-Tropicana["c1"]["CornerRadius"] = UDim.new(0, 10);
-
-
--- TropicHub.Floating.LightBlue
-Tropicana["c2"] = Instance.new("Frame", Tropicana["c0"]);
-Tropicana["c2"]["BorderSizePixel"] = 0;
-Tropicana["c2"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
-Tropicana["c2"]["Size"] = UDim2.new(1, 0, 1, 0);
-Tropicana["c2"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
-Tropicana["c2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["c2"]["Name"] = [[LightBlue]];
-Tropicana["c2"]["BackgroundTransparency"] = 0.8;
-
-
--- TropicHub.Floating.LightBlue.UIGradient
-Tropicana["c3"] = Instance.new("UIGradient", Tropicana["c2"]);
-Tropicana["c3"]["Rotation"] = 50;
-Tropicana["c3"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.461, Color3.fromRGB(0, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
-
-
--- TropicHub.Floating.LightBlue.UICorner
-Tropicana["c4"] = Instance.new("UICorner", Tropicana["c2"]);
-Tropicana["c4"]["CornerRadius"] = UDim.new(0, 10);
-
-
--- TropicHub.Floating.Blue
-Tropicana["c5"] = Instance.new("Frame", Tropicana["c0"]);
-Tropicana["c5"]["BorderSizePixel"] = 0;
-Tropicana["c5"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
-Tropicana["c5"]["Size"] = UDim2.new(1, 0, 1, 0);
-Tropicana["c5"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
-Tropicana["c5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["c5"]["Name"] = [[Blue]];
-Tropicana["c5"]["BackgroundTransparency"] = 0.6;
-
-
--- TropicHub.Floating.Blue.UIGradient
-Tropicana["c6"] = Instance.new("UIGradient", Tropicana["c5"]);
-Tropicana["c6"]["Rotation"] = -72;
-Tropicana["c6"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.491, Color3.fromRGB(0, 50, 123)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
-
-
--- TropicHub.Floating.Blue.UICorner
-Tropicana["c7"] = Instance.new("UICorner", Tropicana["c5"]);
-Tropicana["c7"]["CornerRadius"] = UDim.new(0, 10);
-
-
--- TropicHub.Floating.Cyan
-Tropicana["c8"] = Instance.new("CanvasGroup", Tropicana["c0"]);
-Tropicana["c8"]["BorderSizePixel"] = 0;
-Tropicana["c8"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
-Tropicana["c8"]["Size"] = UDim2.new(1, 0, 1, 0);
-Tropicana["c8"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
-Tropicana["c8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["c8"]["Name"] = [[Cyan]];
-Tropicana["c8"]["BackgroundTransparency"] = 0.8;
-
-
--- TropicHub.Floating.Cyan.UIGradient
-Tropicana["c9"] = Instance.new("UIGradient", Tropicana["c8"]);
-Tropicana["c9"]["Rotation"] = -26;
-Tropicana["c9"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(0, 35, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
-
-
--- TropicHub.Floating.Cyan.UICorner
-Tropicana["ca"] = Instance.new("UICorner", Tropicana["c8"]);
-Tropicana["ca"]["CornerRadius"] = UDim.new(0, 10);
-
-
--- TropicHub.Floating.Cyan.AbstractBg
-Tropicana["cb"] = Instance.new("ImageLabel", Tropicana["c8"]);
-Tropicana["cb"]["BorderSizePixel"] = 0;
-Tropicana["cb"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["cb"]["ImageColor3"] = Color3.fromRGB(0, 183, 22);
-Tropicana["cb"]["Image"] = [[rbxassetid://88984077541230]];
-Tropicana["cb"]["Size"] = UDim2.new(0, 549, 0, 364);
-Tropicana["cb"]["Visible"] = false;
-Tropicana["cb"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["cb"]["BackgroundTransparency"] = 1;
-Tropicana["cb"]["Rotation"] = 40;
-Tropicana["cb"]["Name"] = [[AbstractBg]];
-Tropicana["cb"]["Position"] = UDim2.new(0.41197, 0, 0.48528, 0);
-
-
--- TropicHub.Floating.DropShadowHolder
-Tropicana["cc"] = Instance.new("Frame", Tropicana["c0"]);
-Tropicana["cc"]["ZIndex"] = 0;
-Tropicana["cc"]["BorderSizePixel"] = 0;
-Tropicana["cc"]["Size"] = UDim2.new(1, 0, 1, 0);
-Tropicana["cc"]["Name"] = [[DropShadowHolder]];
-Tropicana["cc"]["BackgroundTransparency"] = 1;
-
-
--- TropicHub.Floating.DropShadowHolder.DropShadow
-Tropicana["cd"] = Instance.new("ImageLabel", Tropicana["cc"]);
-Tropicana["cd"]["ZIndex"] = 0;
-Tropicana["cd"]["BorderSizePixel"] = 0;
-Tropicana["cd"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-Tropicana["cd"]["ScaleType"] = Enum.ScaleType.Slice;
-Tropicana["cd"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["cd"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-Tropicana["cd"]["Image"] = [[rbxassetid://139899200368214]]; -- Lunor Diganti disini
-Tropicana["cd"]["Size"] = UDim2.new(1, 35, 1, 35);
-Tropicana["cd"]["BackgroundTransparency"] = 1;
-Tropicana["cd"]["Name"] = [[DropShadow]];
-Tropicana["cd"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
-
-
--- TropicHub.Floating.Folder
-Tropicana["ce"] = Instance.new("Folder", Tropicana["c0"]);
-
-
-
--- TropicHub.Floating.Folder.Logo
-Tropicana["cf"] = Instance.new("ImageLabel", SunnyDale["1c"]);
-Tropicana["cf"]["BorderSizePixel"] = 0;
-Tropicana["cf"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["cf"]["Image"] = [[rbxassetid://125372341595169]];
-Tropicana["cf"]["Size"] = UDim2.new(0, 24, 0, 25);
-Tropicana["cf"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["cf"]["BackgroundTransparency"] = 1;
-Tropicana["cf"]["Name"] = [[Logo]];
-Tropicana["cf"]["Position"] = UDim2.new(0, 8, 0, 8);
-
-
--- TropicHub.Floating.Folder.Logo.UIAspectRatioConstraint
-Tropicana["d0"] = Instance.new("UIAspectRatioConstraint", Tropicana["cf"]);
-
-
-
--- TropicHub.Floating.Folder.Logo.UICorner
-Tropicana["d1"] = Instance.new("UICorner", Tropicana["cf"]);
-
-
-
--- TropicHub.Floating.Folder.Frame
-Tropicana["d2"] = Instance.new("Frame", Tropicana["ce"]);
-Tropicana["d2"]["BorderSizePixel"] = 0;
-Tropicana["d2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["d2"]["AnchorPoint"] = Vector2.new(0, 0.5);
-Tropicana["d2"]["Size"] = UDim2.new(0, 2, 0, 27);
-Tropicana["d2"]["Position"] = UDim2.new(0, 40, 0.5, 0);
-Tropicana["d2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-
-
--- TropicHub.Floating.Folder.Frame.UIGradient
-Tropicana["d3"] = Instance.new("UIGradient", Tropicana["d2"]);
-Tropicana["d3"]["Rotation"] = -90;
-Tropicana["d3"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
-
-
--- TropicHub.Floating.Folder.Frame.UICorner
-Tropicana["d4"] = Instance.new("UICorner", Tropicana["d2"]);
-Tropicana["d4"]["CornerRadius"] = UDim.new(100, 100);
-
-
--- TropicHub.Floating.Folder.Title
-Tropicana["d5"] = Instance.new("TextLabel", Tropicana["ce"]);
-Tropicana["d5"]["TextWrapped"] = true;
-Tropicana["d5"]["BorderSizePixel"] = 0;
-Tropicana["d5"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-Tropicana["d5"]["TextScaled"] = true;
-Tropicana["d5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["d5"]["TextSize"] = 14;
-Tropicana["d5"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-Tropicana["d5"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["d5"]["BackgroundTransparency"] = 1;
-Tropicana["d5"]["AnchorPoint"] = Vector2.new(0, 0.5);
-Tropicana["d5"]["Size"] = UDim2.new(0, 70, 0, 15);
-Tropicana["d5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["d5"]["Text"] = [[Tropicana]];
-Tropicana["d5"]["Name"] = [[Title]];
-Tropicana["d5"]["Position"] = UDim2.new(0, 53, 0, 21);
-
-
--- TropicHub.Floating.Folder.Title.UIGradient
-Tropicana["d6"] = Instance.new("UIGradient", Tropicana["d5"]);
-Tropicana["d6"]["Rotation"] = -90;
-Tropicana["d6"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
-
-
--- TropicHub.Floating.Folder.Status
-Tropicana["d7"] = Instance.new("ImageButton", Tropicana["ce"]);
-Tropicana["d7"]["Active"] = false;
-Tropicana["d7"]["BorderSizePixel"] = 0;
-Tropicana["d7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["d7"]["Selectable"] = false;
-Tropicana["d7"]["AnchorPoint"] = Vector2.new(0, 0.5);
-Tropicana["d7"]["Image"] = [[rbxassetid://10734895698]];
-Tropicana["d7"]["Size"] = UDim2.new(0, 19, 0, 20);
-Tropicana["d7"]["BackgroundTransparency"] = 1;
-Tropicana["d7"]["Name"] = [[Status]];
-Tropicana["d7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["d7"]["Position"] = UDim2.new(0, 128, 0.5, 0);
-
-
--- TropicHub.Floating.Folder.Status.UIAspectRatioConstraint
-Tropicana["d8"] = Instance.new("UIAspectRatioConstraint", Tropicana["d7"]);
-
-
-
--- TropicHub.Floating.Folder.Status.UICorner
-Tropicana["d9"] = Instance.new("UICorner", Tropicana["d7"]);
-
-
-
--- TropicHub.Floating.Folder.Status.UIGradient
-Tropicana["da"] = Instance.new("UIGradient", Tropicana["d7"]);
-Tropicana["da"]["Rotation"] = -90;
-Tropicana["da"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
-
-
--- TropicHub.Floating.Folder.DraggablePart
-Tropicana["db"] = Instance.new("Frame", Tropicana["ce"]);
-Tropicana["db"]["BorderSizePixel"] = 0;
-Tropicana["db"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-Tropicana["db"]["Size"] = UDim2.new(0, 40, 0, 42);
-Tropicana["db"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-Tropicana["db"]["Name"] = [[DraggablePart]];
-Tropicana["db"]["BackgroundTransparency"] = 1;
-
-
--- Require Tropicana wrapper
-local Tropicana_REQUIRE = require;
-local Tropicana_MODULES = {};
+-- SunnyDHub.BackgroundFrame.Side.Cyan
+SunnyDale["16"] = Instance.new("CanvasGroup", SunnyDale["d"]);
+SunnyDale["16"]["BorderSizePixel"] = 0;
+SunnyDale["16"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+SunnyDale["16"]["Size"] = UDim2.new(1, 0, 1, 0);
+SunnyDale["16"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
+SunnyDale["16"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["16"]["Name"] = [[Cyan]];
+SunnyDale["16"]["BackgroundTransparency"] = 0.8;
+
+
+-- SunnyDHub.BackgroundFrame.Side.Cyan.UIGradient
+SunnyDale["17"] = Instance.new("UIGradient", SunnyDale["16"]);
+SunnyDale["17"]["Rotation"] = -26;
+SunnyDale["17"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(0, 35, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
+
+
+-- SunnyDHub.BackgroundFrame.Side.Cyan.UICorner
+SunnyDale["18"] = Instance.new("UICorner", SunnyDale["16"]);
+SunnyDale["18"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- SunnyDHub.BackgroundFrame.Side.Cyan.AbstractBg
+SunnyDale["19"] = Instance.new("ImageLabel", SunnyDale["16"]);
+SunnyDale["19"]["BorderSizePixel"] = 0;
+SunnyDale["19"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["19"]["ImageColor3"] = Color3.fromRGB(0, 183, 22);
+SunnyDale["19"]["Image"] = [[rbxassetid://88984077541230]];
+SunnyDale["19"]["Size"] = UDim2.new(0, 549, 0, 364);
+SunnyDale["19"]["Visible"] = false;
+SunnyDale["19"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["19"]["BackgroundTransparency"] = 1;
+SunnyDale["19"]["Rotation"] = 40;
+SunnyDale["19"]["Name"] = [[AbstractBg]];
+SunnyDale["19"]["Position"] = UDim2.new(0.41197, 0, 0.48528, 0);
+
+
+-- SunnyDHub.BackgroundFrame.Side.TabButtons
+SunnyDale["1a"] = Instance.new("ScrollingFrame", SunnyDale["d"]);
+SunnyDale["1a"]["ZIndex"] = 5;
+SunnyDale["1a"]["BorderSizePixel"] = 0;
+SunnyDale["1a"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
+SunnyDale["1a"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
+SunnyDale["1a"]["TopImage"] = [[rbxasset://textures/ui/Scroll/scroll-middle.png]];
+SunnyDale["1a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["1a"]["Name"] = [[TabButtons]];
+SunnyDale["1a"]["Selectable"] = false;
+SunnyDale["1a"]["BottomImage"] = [[rbxasset://textures/ui/Scroll/scroll-middle.png]];
+SunnyDale["1a"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
+SunnyDale["1a"]["Size"] = UDim2.new(0, 140, 0, 285);
+SunnyDale["1a"]["ScrollBarImageColor3"] = Color3.fromRGB(118, 118, 118);
+SunnyDale["1a"]["Position"] = UDim2.new(0, 0, 0, 59);
+SunnyDale["1a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["1a"]["ScrollBarThickness"] = 2;
+SunnyDale["1a"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.BackgroundFrame.Side.TabButtons.UIListLayout
+SunnyDale["1b"] = Instance.new("UIListLayout", SunnyDale["1a"]);
+SunnyDale["1b"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- SunnyDHub.BackgroundFrame.Side.DraggablePart
+SunnyDale["1c"] = Instance.new("Frame", SunnyDale["d"]);
+SunnyDale["1c"]["ZIndex"] = 5;
+SunnyDale["1c"]["BorderSizePixel"] = 0;
+SunnyDale["1c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["1c"]["Size"] = UDim2.new(0, 140, 0, 55);
+SunnyDale["1c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["1c"]["Name"] = [[DraggablePart]];
+SunnyDale["1c"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.BackgroundFrame.Side.DraggablePart.Logo
+SunnyDale["1d"] = Instance.new("ImageLabel", SunnyDale["1c"]);
+SunnyDale["1d"]["BorderSizePixel"] = 0;
+SunnyDale["1d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["1d"]["Image"] = [[rbxassetid://91500078475037]];
+SunnyDale["1d"]["Size"] = UDim2.new(0, 33, 0, 35);
+SunnyDale["1d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["1d"]["BackgroundTransparency"] = 1;
+SunnyDale["1d"]["Name"] = [[Logo]];
+SunnyDale["1d"]["Position"] = UDim2.new(0, 12, 0, 13);
+
+
+-- SunnyDHub.BackgroundFrame.Side.DraggablePart.Logo.UIAspectRatioConstraint
+SunnyDale["1e"] = Instance.new("UIAspectRatioConstraint", SunnyDale["1d"]);
+
+
+
+-- SunnyDHub.BackgroundFrame.Side.DraggablePart.Logo.UICorner
+SunnyDale["1f"] = Instance.new("UICorner", SunnyDale["1d"]);
+
+
+
+-- SunnyDHub.BackgroundFrame.Side.DraggablePart.Title
+SunnyDale["20"] = Instance.new("TextLabel", SunnyDale["1c"]);
+SunnyDale["20"]["TextWrapped"] = true;
+SunnyDale["20"]["BorderSizePixel"] = 0;
+SunnyDale["20"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+SunnyDale["20"]["TextScaled"] = true;
+SunnyDale["20"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["20"]["TextSize"] = 14;
+SunnyDale["20"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+SunnyDale["20"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["20"]["BackgroundTransparency"] = 1;
+SunnyDale["20"]["AnchorPoint"] = Vector2.new(0, 0.5);
+SunnyDale["20"]["Size"] = UDim2.new(0, 80, 0, 17);
+SunnyDale["20"]["Visible"] = false;
+SunnyDale["20"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["20"]["Text"] = [[SunnyDale]];
+SunnyDale["20"]["Name"] = [[Title]];
+SunnyDale["20"]["Position"] = UDim2.new(0, 55, 0, 29);
+
+
+-- SunnyDHub.BackgroundFrame.Side.DraggablePart.Title.UIGradient
+SunnyDale["21"] = Instance.new("UIGradient", SunnyDale["20"]);
+SunnyDale["21"]["Rotation"] = -90;
+SunnyDale["21"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
+
+
+-- SunnyDHub.BackgroundFrame.DropShadowHolder
+SunnyDale["22"] = Instance.new("Frame", SunnyDale["2"]);
+SunnyDale["22"]["ZIndex"] = 0;
+SunnyDale["22"]["BorderSizePixel"] = 0;
+SunnyDale["22"]["Size"] = UDim2.new(1, 0, 1, 0);
+SunnyDale["22"]["Name"] = [[DropShadowHolder]];
+SunnyDale["22"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.BackgroundFrame.DropShadowHolder.DropShadow
+SunnyDale["23"] = Instance.new("ImageLabel", SunnyDale["22"]);
+SunnyDale["23"]["ZIndex"] = 0;
+SunnyDale["23"]["BorderSizePixel"] = 0;
+SunnyDale["23"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
+SunnyDale["23"]["ScaleType"] = Enum.ScaleType.Slice;
+SunnyDale["23"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["23"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+SunnyDale["23"]["Image"] = [[rbxassetid://6014261993]];
+SunnyDale["23"]["Size"] = UDim2.new(1, 47, 1, 47);
+SunnyDale["23"]["BackgroundTransparency"] = 1;
+SunnyDale["23"]["Name"] = [[DropShadow]];
+SunnyDale["23"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- SunnyDHub.BackgroundFrame.Cyan
+SunnyDale["24"] = Instance.new("Frame", SunnyDale["2"]);
+SunnyDale["24"]["BorderSizePixel"] = 0;
+SunnyDale["24"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+SunnyDale["24"]["ClipsDescendants"] = true;
+SunnyDale["24"]["Size"] = UDim2.new(1, 0, 1, 0);
+SunnyDale["24"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
+SunnyDale["24"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["24"]["Name"] = [[Cyan]];
+SunnyDale["24"]["BackgroundTransparency"] = 0.8;
+
+
+-- SunnyDHub.BackgroundFrame.Cyan.UIGradient
+SunnyDale["25"] = Instance.new("UIGradient", SunnyDale["24"]);
+SunnyDale["25"]["Rotation"] = -26;
+SunnyDale["25"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(0, 35, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
+
+
+-- SunnyDHub.BackgroundFrame.Cyan.UICorner
+SunnyDale["26"] = Instance.new("UICorner", SunnyDale["24"]);
+SunnyDale["26"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- SunnyDHub.Library
+SunnyDale["27"] = Instance.new("ModuleScript", SunnyDale["1"]);
+SunnyDale["27"]["Name"] = [[Library]];
+
+
+-- SunnyDHub.IconLib
+SunnyDale["28"] = Instance.new("ModuleScript", SunnyDale["1"]);
+SunnyDale["28"]["Name"] = [[IconLib]];
+
+
+-- SunnyDHub.Template
+SunnyDale["29"] = Instance.new("Folder", SunnyDale["1"]);
+SunnyDale["29"]["Name"] = [[Template]];
+
+
+-- SunnyDHub.Template.TabButton
+SunnyDale["2a"] = Instance.new("TextButton", SunnyDale["29"]);
+SunnyDale["2a"]["BorderSizePixel"] = 0;
+SunnyDale["2a"]["TextSize"] = 14;
+SunnyDale["2a"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["2a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["2a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+SunnyDale["2a"]["Size"] = UDim2.new(0, 137, 0, 39);
+SunnyDale["2a"]["BackgroundTransparency"] = 1;
+SunnyDale["2a"]["Name"] = [[TabButton]];
+SunnyDale["2a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["2a"]["Text"] = [[]];
+SunnyDale["2a"]["Visible"] = false;
+
+
+-- SunnyDHub.Template.TabButton.Icon
+SunnyDale["2b"] = Instance.new("ImageLabel", SunnyDale["2a"]);
+SunnyDale["2b"]["BorderSizePixel"] = 0;
+SunnyDale["2b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["2b"]["AnchorPoint"] = Vector2.new(0, 0.5);
+SunnyDale["2b"]["Image"] = [[rbxassetid://97623395395101]];
+SunnyDale["2b"]["Size"] = UDim2.new(0, 25, 0, 25);
+SunnyDale["2b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["2b"]["BackgroundTransparency"] = 1;
+SunnyDale["2b"]["Name"] = [[Icon]];
+SunnyDale["2b"]["Position"] = UDim2.new(0.07, 0, 0.5, 0);
+
+
+-- SunnyDHub.Template.TabButton.Icon.UIAspectRatioConstraint
+SunnyDale["2c"] = Instance.new("UIAspectRatioConstraint", SunnyDale["2b"]);
+
+
+
+-- SunnyDHub.Template.TabButton.Title
+SunnyDale["2d"] = Instance.new("TextLabel", SunnyDale["2a"]);
+SunnyDale["2d"]["TextWrapped"] = true;
+SunnyDale["2d"]["BorderSizePixel"] = 0;
+SunnyDale["2d"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+SunnyDale["2d"]["TextScaled"] = true;
+SunnyDale["2d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["2d"]["TextSize"] = 14;
+SunnyDale["2d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+SunnyDale["2d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["2d"]["BackgroundTransparency"] = 1;
+SunnyDale["2d"]["AnchorPoint"] = Vector2.new(0, 0.5);
+SunnyDale["2d"]["Size"] = UDim2.new(0, 90, 0, 17);
+SunnyDale["2d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["2d"]["Text"] = [[General]];
+SunnyDale["2d"]["Name"] = [[Title]];
+SunnyDale["2d"]["Position"] = UDim2.new(0.33, 0, 0.5, 0);
+
+
+-- SunnyDHub.Template.TabButton.Title.UIGradient
+SunnyDale["2e"] = Instance.new("UIGradient", SunnyDale["2d"]);
+SunnyDale["2e"]["Rotation"] = -90;
+SunnyDale["2e"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
+
+
+-- SunnyDHub.Template.TabFrame
+SunnyDale["2f"] = Instance.new("Frame", SunnyDale["29"]);
+SunnyDale["2f"]["Visible"] = false;
+SunnyDale["2f"]["ZIndex"] = 0;
+SunnyDale["2f"]["BorderSizePixel"] = 0;
+SunnyDale["2f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["2f"]["Size"] = UDim2.new(1, 0, 1, 0);
+SunnyDale["2f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["2f"]["Name"] = [[TabFrame]];
+SunnyDale["2f"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.Template.TabFrame.ScrollingFrameRight
+SunnyDale["30"] = Instance.new("ScrollingFrame", SunnyDale["2f"]);
+SunnyDale["30"]["Active"] = true;
+SunnyDale["30"]["ZIndex"] = 2;
+SunnyDale["30"]["BorderSizePixel"] = 0;
+SunnyDale["30"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
+SunnyDale["30"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
+SunnyDale["30"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["30"]["Name"] = [[ScrollingFrameRight]];
+SunnyDale["30"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
+SunnyDale["30"]["Size"] = UDim2.new(0.5, 0, 1, 0);
+SunnyDale["30"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["30"]["Position"] = UDim2.new(0.5, 0, 0, 0);
+SunnyDale["30"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["30"]["ScrollBarThickness"] = 0;
+SunnyDale["30"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.Template.TabFrame.ScrollingFrameRight.UIListLayout
+SunnyDale["31"] = Instance.new("UIListLayout", SunnyDale["30"]);
+SunnyDale["31"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+SunnyDale["31"]["Padding"] = UDim.new(0, 10);
+SunnyDale["31"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- SunnyDHub.Template.TabFrame.ScrollingFrameRight.UIPadding
+SunnyDale["32"] = Instance.new("UIPadding", SunnyDale["30"]);
+SunnyDale["32"]["PaddingTop"] = UDim.new(0, 10);
+SunnyDale["32"]["PaddingBottom"] = UDim.new(0, 10);
+
+
+-- SunnyDHub.Template.TabFrame.ScrollingFrameLeft
+SunnyDale["33"] = Instance.new("ScrollingFrame", SunnyDale["2f"]);
+SunnyDale["33"]["Active"] = true;
+SunnyDale["33"]["ZIndex"] = 0;
+SunnyDale["33"]["BorderSizePixel"] = 0;
+SunnyDale["33"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
+SunnyDale["33"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
+SunnyDale["33"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["33"]["Name"] = [[ScrollingFrameLeft]];
+SunnyDale["33"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
+SunnyDale["33"]["Size"] = UDim2.new(0.5, 0, 1, 0);
+SunnyDale["33"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["33"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["33"]["ScrollBarThickness"] = 0;
+SunnyDale["33"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.Template.TabFrame.ScrollingFrameLeft.UIListLayout
+SunnyDale["34"] = Instance.new("UIListLayout", SunnyDale["33"]);
+SunnyDale["34"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+SunnyDale["34"]["Padding"] = UDim.new(0, 10);
+SunnyDale["34"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- SunnyDHub.Template.TabFrame.ScrollingFrameLeft.UIPadding
+SunnyDale["35"] = Instance.new("UIPadding", SunnyDale["33"]);
+SunnyDale["35"]["PaddingTop"] = UDim.new(0, 10);
+SunnyDale["35"]["PaddingBottom"] = UDim.new(0, 10);
+
+
+-- SunnyDHub.Template.Section
+SunnyDale["36"] = Instance.new("Frame", SunnyDale["29"]);
+SunnyDale["36"]["Visible"] = false;
+SunnyDale["36"]["ZIndex"] = 2;
+SunnyDale["36"]["BorderSizePixel"] = 0;
+SunnyDale["36"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["36"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["36"]["Size"] = UDim2.new(0, 145, 0, 2);
+SunnyDale["36"]["Position"] = UDim2.new(0.04662, 0, 0.10811, 0);
+SunnyDale["36"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["36"]["Name"] = [[Section]];
+SunnyDale["36"]["BackgroundTransparency"] = 0.75;
+
+
+-- SunnyDHub.Template.Section.UICorner
+SunnyDale["37"] = Instance.new("UICorner", SunnyDale["36"]);
+SunnyDale["37"]["CornerRadius"] = UDim.new(0, 5);
+
+
+-- SunnyDHub.Template.Section.Seperator
+SunnyDale["38"] = Instance.new("Frame", SunnyDale["36"]);
+SunnyDale["38"]["BorderSizePixel"] = 0;
+SunnyDale["38"]["BackgroundColor3"] = Color3.fromRGB(56, 56, 56);
+SunnyDale["38"]["Size"] = UDim2.new(1, 0, 0, 2);
+SunnyDale["38"]["Position"] = UDim2.new(0, 0, 0, 24);
+SunnyDale["38"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["38"]["Name"] = [[Seperator]];
+
+
+-- SunnyDHub.Template.Section.Seperator.UIGradient
+SunnyDale["39"] = Instance.new("UIGradient", SunnyDale["38"]);
+SunnyDale["39"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(58, 144, 255))};
+
+
+-- SunnyDHub.Template.Section.Title
+SunnyDale["3a"] = Instance.new("TextLabel", SunnyDale["36"]);
+SunnyDale["3a"]["TextWrapped"] = true;
+SunnyDale["3a"]["BorderSizePixel"] = 0;
+SunnyDale["3a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+SunnyDale["3a"]["TextScaled"] = true;
+SunnyDale["3a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["3a"]["TextSize"] = 14;
+SunnyDale["3a"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+SunnyDale["3a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["3a"]["BackgroundTransparency"] = 1;
+SunnyDale["3a"]["Size"] = UDim2.new(0, 95, 0, 13);
+SunnyDale["3a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["3a"]["Text"] = [[Section]];
+SunnyDale["3a"]["Name"] = [[Title]];
+SunnyDale["3a"]["Position"] = UDim2.new(0, 8, 0, 7);
+
+
+-- SunnyDHub.Template.Section.Title.UIGradient
+SunnyDale["3b"] = Instance.new("UIGradient", SunnyDale["3a"]);
+SunnyDale["3b"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 90, 255)),ColorSequenceKeypoint.new(0.247, Color3.fromRGB(63, 156, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 248))};
+
+
+-- SunnyDHub.Template.Section.SectionItems
+SunnyDale["3c"] = Instance.new("Frame", SunnyDale["36"]);
+SunnyDale["3c"]["BorderSizePixel"] = 0;
+SunnyDale["3c"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["3c"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["3c"]["Size"] = UDim2.new(0, 145, 0, 0);
+SunnyDale["3c"]["Position"] = UDim2.new(0, 0, 0, 26);
+SunnyDale["3c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["3c"]["Name"] = [[SectionItems]];
+SunnyDale["3c"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.Template.Section.SectionItems.UIListLayout
+SunnyDale["3d"] = Instance.new("UIListLayout", SunnyDale["3c"]);
+SunnyDale["3d"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+SunnyDale["3d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- SunnyDHub.Template.Section.SectionItems.UIPadding
+SunnyDale["3e"] = Instance.new("UIPadding", SunnyDale["3c"]);
+SunnyDale["3e"]["PaddingTop"] = UDim.new(0, 6);
+
+
+-- SunnyDHub.Template.Section.Mark
+SunnyDale["3f"] = Instance.new("Frame", SunnyDale["36"]);
+SunnyDale["3f"]["BorderSizePixel"] = 0;
+SunnyDale["3f"]["BackgroundColor3"] = Color3.fromRGB(246, 246, 246);
+SunnyDale["3f"]["Size"] = UDim2.new(1, 0, 0, 2);
+SunnyDale["3f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["3f"]["Name"] = [[Mark]];
+
+
+-- SunnyDHub.Template.Section.Mark.UIGradient
+SunnyDale["40"] = Instance.new("UIGradient", SunnyDale["3f"]);
+SunnyDale["40"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
+
+
+-- SunnyDHub.Template.Section.UIPadding
+SunnyDale["41"] = Instance.new("UIPadding", SunnyDale["36"]);
+SunnyDale["41"]["PaddingBottom"] = UDim.new(0, 6);
+
+
+-- SunnyDHub.Template.DropdownButton
+SunnyDale["42"] = Instance.new("TextButton", SunnyDale["29"]);
+SunnyDale["42"]["TextWrapped"] = true;
+SunnyDale["42"]["BorderSizePixel"] = 0;
+SunnyDale["42"]["TextSize"] = 14;
+SunnyDale["42"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
+SunnyDale["42"]["TextScaled"] = true;
+SunnyDale["42"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["42"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+SunnyDale["42"]["Selectable"] = false;
+SunnyDale["42"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+SunnyDale["42"]["Size"] = UDim2.new(1, 0, 0.11026, 0);
+SunnyDale["42"]["BackgroundTransparency"] = 1;
+SunnyDale["42"]["Name"] = [[DropdownButton]];
+SunnyDale["42"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["42"]["Text"] = [[Test1]];
+SunnyDale["42"]["Visible"] = false;
+SunnyDale["42"]["Position"] = UDim2.new(0.5, 0, 0.05513, 0);
+
+
+-- SunnyDHub.Template.DropdownButton.UIGradient
+SunnyDale["43"] = Instance.new("UIGradient", SunnyDale["42"]);
+SunnyDale["43"]["Enabled"] = false;
+SunnyDale["43"]["Rotation"] = -90;
+SunnyDale["43"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
+
+
+-- SunnyDHub.Template.Notification
+SunnyDale["44"] = Instance.new("Frame", SunnyDale["29"]);
+SunnyDale["44"]["Visible"] = false;
+SunnyDale["44"]["BorderSizePixel"] = 0;
+SunnyDale["44"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+SunnyDale["44"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+SunnyDale["44"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["44"]["Size"] = UDim2.new(0, 265, 0, 65);
+SunnyDale["44"]["Position"] = UDim2.new(0.8244, 0, 0.88221, 0);
+SunnyDale["44"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["44"]["Name"] = [[Notification]];
+
+
+-- SunnyDHub.Template.Notification.UICorner
+SunnyDale["45"] = Instance.new("UICorner", SunnyDale["44"]);
+SunnyDale["45"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- SunnyDHub.Template.Notification.UIGradient
+SunnyDale["46"] = Instance.new("UIGradient", SunnyDale["44"]);
+SunnyDale["46"]["Rotation"] = 180;
+SunnyDale["46"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(11, 11, 11)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(5, 185, 191)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(26, 26, 26))};
+
+
+-- SunnyDHub.Template.Notification.LightBlue
+SunnyDale["47"] = Instance.new("Frame", SunnyDale["44"]);
+SunnyDale["47"]["BorderSizePixel"] = 0;
+SunnyDale["47"]["AutoLocalize"] = false;
+SunnyDale["47"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+SunnyDale["47"]["BorderMode"] = Enum.BorderMode.Inset;
+SunnyDale["47"]["Size"] = UDim2.new(1, 0, 1, 0);
+SunnyDale["47"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
+SunnyDale["47"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["47"]["Name"] = [[LightBlue]];
+SunnyDale["47"]["BackgroundTransparency"] = 0.8;
+
+
+-- SunnyDHub.Template.Notification.LightBlue.UIGradient
+SunnyDale["48"] = Instance.new("UIGradient", SunnyDale["47"]);
+SunnyDale["48"]["Rotation"] = -77;
+SunnyDale["48"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.461, Color3.fromRGB(0, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
+
+
+-- SunnyDHub.Template.Notification.LightBlue.UICorner
+SunnyDale["49"] = Instance.new("UICorner", SunnyDale["47"]);
+SunnyDale["49"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- SunnyDHub.Template.Notification.LightBlue.UISizeConstraint
+SunnyDale["4a"] = Instance.new("UISizeConstraint", SunnyDale["47"]);
+SunnyDale["4a"]["MaxSize"] = Vector2.new(265, math.huge);
+
+
+-- SunnyDHub.Template.Notification.Blue
+SunnyDale["4b"] = Instance.new("Frame", SunnyDale["44"]);
+SunnyDale["4b"]["BorderSizePixel"] = 0;
+SunnyDale["4b"]["AutoLocalize"] = false;
+SunnyDale["4b"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+SunnyDale["4b"]["BorderMode"] = Enum.BorderMode.Inset;
+SunnyDale["4b"]["Size"] = UDim2.new(1, 0, 1, 0);
+SunnyDale["4b"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
+SunnyDale["4b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["4b"]["Name"] = [[Blue]];
+SunnyDale["4b"]["BackgroundTransparency"] = 0.6;
+
+
+-- SunnyDHub.Template.Notification.Blue.UIGradient
+SunnyDale["4c"] = Instance.new("UIGradient", SunnyDale["4b"]);
+SunnyDale["4c"]["Rotation"] = 93;
+SunnyDale["4c"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.491, Color3.fromRGB(0, 50, 123)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
+
+
+-- SunnyDHub.Template.Notification.Blue.UICorner
+SunnyDale["4d"] = Instance.new("UICorner", SunnyDale["4b"]);
+SunnyDale["4d"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- SunnyDHub.Template.Notification.Blue.UISizeConstraint
+SunnyDale["4e"] = Instance.new("UISizeConstraint", SunnyDale["4b"]);
+SunnyDale["4e"]["MaxSize"] = Vector2.new(265, math.huge);
+
+
+-- SunnyDHub.Template.Notification.Cyan
+SunnyDale["4f"] = Instance.new("Frame", SunnyDale["44"]);
+SunnyDale["4f"]["BorderSizePixel"] = 0;
+SunnyDale["4f"]["AutoLocalize"] = false;
+SunnyDale["4f"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+SunnyDale["4f"]["BorderMode"] = Enum.BorderMode.Inset;
+SunnyDale["4f"]["ClipsDescendants"] = true;
+SunnyDale["4f"]["Size"] = UDim2.new(1, 0, 1, 0);
+SunnyDale["4f"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
+SunnyDale["4f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["4f"]["Name"] = [[Cyan]];
+SunnyDale["4f"]["BackgroundTransparency"] = 0.8;
+
+
+-- SunnyDHub.Template.Notification.Cyan.UIGradient
+SunnyDale["50"] = Instance.new("UIGradient", SunnyDale["4f"]);
+SunnyDale["50"]["Rotation"] = -98;
+SunnyDale["50"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(0, 35, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
+
+
+-- SunnyDHub.Template.Notification.Cyan.UICorner
+SunnyDale["51"] = Instance.new("UICorner", SunnyDale["4f"]);
+SunnyDale["51"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- SunnyDHub.Template.Notification.Cyan.UISizeConstraint
+SunnyDale["52"] = Instance.new("UISizeConstraint", SunnyDale["4f"]);
+SunnyDale["52"]["MaxSize"] = Vector2.new(265, math.huge);
+
+
+-- SunnyDHub.Template.Notification.Items
+SunnyDale["53"] = Instance.new("ImageLabel", SunnyDale["44"]);
+SunnyDale["53"]["ZIndex"] = 2;
+SunnyDale["53"]["BorderSizePixel"] = 0;
+SunnyDale["53"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["53"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["53"]["Size"] = UDim2.new(1, 0, 1, 0);
+SunnyDale["53"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["53"]["BackgroundTransparency"] = 1;
+SunnyDale["53"]["Name"] = [[Items]];
+
+
+-- SunnyDHub.Template.Notification.Items.UIListLayout
+SunnyDale["54"] = Instance.new("UIListLayout", SunnyDale["53"]);
+SunnyDale["54"]["Padding"] = UDim.new(0, 5);
+SunnyDale["54"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
+SunnyDale["54"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- SunnyDHub.Template.Notification.Items.UIPadding
+SunnyDale["55"] = Instance.new("UIPadding", SunnyDale["53"]);
+SunnyDale["55"]["PaddingTop"] = UDim.new(0, 15);
+SunnyDale["55"]["PaddingLeft"] = UDim.new(0, 15);
+SunnyDale["55"]["PaddingBottom"] = UDim.new(0, 15);
+
+
+-- SunnyDHub.Template.Notification.Items.Title
+SunnyDale["56"] = Instance.new("TextLabel", SunnyDale["53"]);
+SunnyDale["56"]["TextWrapped"] = true;
+SunnyDale["56"]["BorderSizePixel"] = 0;
+SunnyDale["56"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+SunnyDale["56"]["TextScaled"] = true;
+SunnyDale["56"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["56"]["TextSize"] = 14;
+SunnyDale["56"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+SunnyDale["56"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["56"]["BackgroundTransparency"] = 1;
+SunnyDale["56"]["AnchorPoint"] = Vector2.new(0, 0.5);
+SunnyDale["56"]["Size"] = UDim2.new(0, 235, 0, 15);
+SunnyDale["56"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["56"]["Text"] = [[Notification]];
+SunnyDale["56"]["Name"] = [[Title]];
+SunnyDale["56"]["Position"] = UDim2.new(0, 0, 0, 9);
+
+
+-- SunnyDHub.Template.Notification.Items.Title.UIGradient
+SunnyDale["57"] = Instance.new("UIGradient", SunnyDale["56"]);
+SunnyDale["57"]["Rotation"] = -90;
+SunnyDale["57"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
+
+
+-- SunnyDHub.Template.Notification.Items.Title.Close
+SunnyDale["58"] = Instance.new("ImageButton", SunnyDale["56"]);
+SunnyDale["58"]["BorderSizePixel"] = 0;
+SunnyDale["58"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["58"]["AnchorPoint"] = Vector2.new(0, 0.5);
+SunnyDale["58"]["Image"] = [[rbxassetid://10747384394]];
+SunnyDale["58"]["Size"] = UDim2.new(0.09706, 0, 1.33333, 0);
+SunnyDale["58"]["BackgroundTransparency"] = 1;
+SunnyDale["58"]["Name"] = [[Close]];
+SunnyDale["58"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["58"]["Position"] = UDim2.new(0.92, 0, 0.5, 0);
+
+
+-- SunnyDHub.Template.Notification.Items.Title.Close.UIGradient
+SunnyDale["59"] = Instance.new("UIGradient", SunnyDale["58"]);
+SunnyDale["59"]["Rotation"] = -90;
+SunnyDale["59"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
+
+
+-- SunnyDHub.Template.Notification.Items.Title.Close.UIAspectRatioConstraint
+SunnyDale["5a"] = Instance.new("UIAspectRatioConstraint", SunnyDale["58"]);
+SunnyDale["5a"]["AspectRatio"] = 1.054;
+
+
+-- SunnyDHub.Template.Notification.Items.Content
+SunnyDale["5b"] = Instance.new("TextLabel", SunnyDale["53"]);
+SunnyDale["5b"]["TextWrapped"] = true;
+SunnyDale["5b"]["BorderSizePixel"] = 0;
+SunnyDale["5b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+SunnyDale["5b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["5b"]["TextSize"] = 12;
+SunnyDale["5b"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+SunnyDale["5b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["5b"]["BackgroundTransparency"] = 1;
+SunnyDale["5b"]["AnchorPoint"] = Vector2.new(0, 0.5);
+SunnyDale["5b"]["Size"] = UDim2.new(0, 218, 0, 10);
+SunnyDale["5b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["5b"]["Text"] = [[This is a notification]];
+SunnyDale["5b"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["5b"]["Name"] = [[Content]];
+SunnyDale["5b"]["Position"] = UDim2.new(0, 0, 0, 19);
+
+
+-- SunnyDHub.Template.Notification.Items.Content.UIGradient
+SunnyDale["5c"] = Instance.new("UIGradient", SunnyDale["5b"]);
+SunnyDale["5c"]["Enabled"] = false;
+SunnyDale["5c"]["Rotation"] = -90;
+SunnyDale["5c"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
+
+
+-- SunnyDHub.Template.Notification.Items.SubContent
+SunnyDale["5d"] = Instance.new("TextLabel", SunnyDale["53"]);
+SunnyDale["5d"]["TextWrapped"] = true;
+SunnyDale["5d"]["BorderSizePixel"] = 0;
+SunnyDale["5d"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+SunnyDale["5d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["5d"]["TextSize"] = 12;
+SunnyDale["5d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+SunnyDale["5d"]["TextColor3"] = Color3.fromRGB(181, 181, 181);
+SunnyDale["5d"]["BackgroundTransparency"] = 1;
+SunnyDale["5d"]["AnchorPoint"] = Vector2.new(0, 0.5);
+SunnyDale["5d"]["Size"] = UDim2.new(0, 218, 0, 10);
+SunnyDale["5d"]["Visible"] = false;
+SunnyDale["5d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["5d"]["Text"] = [[This is a notification]];
+SunnyDale["5d"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["5d"]["Name"] = [[SubContent]];
+SunnyDale["5d"]["Position"] = UDim2.new(0, 0, 0, 19);
+
+
+-- SunnyDHub.Template.Notification.Items.SubContent.UIGradient
+SunnyDale["5e"] = Instance.new("UIGradient", SunnyDale["5d"]);
+SunnyDale["5e"]["Enabled"] = false;
+SunnyDale["5e"]["Rotation"] = -90;
+SunnyDale["5e"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
+
+
+-- SunnyDHub.Template.NotificationList
+SunnyDale["5f"] = Instance.new("Frame", SunnyDale["29"]);
+SunnyDale["5f"]["Visible"] = false;
+SunnyDale["5f"]["BorderSizePixel"] = 0;
+SunnyDale["5f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["5f"]["Size"] = UDim2.new(0.3349, 0, 1, 0);
+SunnyDale["5f"]["Position"] = UDim2.new(0.665, 0, 0, 0);
+SunnyDale["5f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["5f"]["Name"] = [[NotificationList]];
+SunnyDale["5f"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.Template.NotificationList.UIListLayout
+SunnyDale["60"] = Instance.new("UIListLayout", SunnyDale["5f"]);
+SunnyDale["60"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Right;
+SunnyDale["60"]["Padding"] = UDim.new(0, 10);
+SunnyDale["60"]["VerticalAlignment"] = Enum.VerticalAlignment.Bottom;
+SunnyDale["60"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- SunnyDHub.Template.NotificationList.UIPadding
+SunnyDale["61"] = Instance.new("UIPadding", SunnyDale["5f"]);
+SunnyDale["61"]["PaddingRight"] = UDim.new(0, 30);
+SunnyDale["61"]["PaddingBottom"] = UDim.new(0, 30);
+
+
+-- SunnyDHub.Template.Button
+SunnyDale["62"] = Instance.new("Frame", SunnyDale["29"]);
+SunnyDale["62"]["Visible"] = false;
+SunnyDale["62"]["BorderSizePixel"] = 0;
+SunnyDale["62"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["62"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["62"]["Size"] = UDim2.new(0, 145, 0, 39);
+SunnyDale["62"]["Position"] = UDim2.new(0, 0, 0.58209, 0);
+SunnyDale["62"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["62"]["Name"] = [[Button]];
+SunnyDale["62"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.Template.Button.Button
+SunnyDale["63"] = Instance.new("TextButton", SunnyDale["62"]);
+SunnyDale["63"]["BorderSizePixel"] = 0;
+SunnyDale["63"]["AutoButtonColor"] = false;
+SunnyDale["63"]["TextSize"] = 14;
+SunnyDale["63"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["63"]["BackgroundColor3"] = Color3.fromRGB(41, 41, 41);
+SunnyDale["63"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+SunnyDale["63"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["63"]["Size"] = UDim2.new(0, 131, 0, 24);
+SunnyDale["63"]["Name"] = [[Button]];
+SunnyDale["63"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["63"]["Text"] = [[]];
+SunnyDale["63"]["Position"] = UDim2.new(0.00752, 0, 0.16667, 0);
+
+
+-- SunnyDHub.Template.Button.Button.UICorner
+SunnyDale["64"] = Instance.new("UICorner", SunnyDale["63"]);
+SunnyDale["64"]["CornerRadius"] = UDim.new(0, 4);
+
+
+-- SunnyDHub.Template.Button.Button.UIStroke
+SunnyDale["65"] = Instance.new("UIStroke", SunnyDale["63"]);
+SunnyDale["65"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+SunnyDale["65"]["Thickness"] = 1.5;
+SunnyDale["65"]["Color"] = Color3.fromRGB(56, 56, 56);
+
+
+-- SunnyDHub.Template.Button.Button.UIStroke.UIGradient
+SunnyDale["66"] = Instance.new("UIGradient", SunnyDale["65"]);
+SunnyDale["66"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
+
+
+-- SunnyDHub.Template.Button.Button.UIGradientOff
+SunnyDale["67"] = Instance.new("UIGradient", SunnyDale["63"]);
+SunnyDale["67"]["Rotation"] = -90;
+SunnyDale["67"]["Name"] = [[UIGradientOff]];
+SunnyDale["67"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
+
+
+-- SunnyDHub.Template.Button.Button.TextLabel
+SunnyDale["68"] = Instance.new("TextLabel", SunnyDale["63"]);
+SunnyDale["68"]["TextWrapped"] = true;
+SunnyDale["68"]["LineHeight"] = 1.1;
+SunnyDale["68"]["BorderSizePixel"] = 0;
+SunnyDale["68"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["68"]["TextSize"] = 14;
+SunnyDale["68"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+SunnyDale["68"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
+SunnyDale["68"]["BackgroundTransparency"] = 1;
+SunnyDale["68"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+SunnyDale["68"]["Size"] = UDim2.new(0, 131, 0, 13);
+SunnyDale["68"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["68"]["Text"] = [[Button]];
+SunnyDale["68"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["68"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- SunnyDHub.Template.Button.Button.TextLabel.UIGradient
+SunnyDale["69"] = Instance.new("UIGradient", SunnyDale["68"]);
+SunnyDale["69"]["Rotation"] = -90;
+SunnyDale["69"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
+
+
+-- SunnyDHub.Template.Button.Button.UIGradientOn
+SunnyDale["6a"] = Instance.new("UIGradient", SunnyDale["63"]);
+SunnyDale["6a"]["Enabled"] = false;
+SunnyDale["6a"]["Name"] = [[UIGradientOn]];
+SunnyDale["6a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
+
+
+-- SunnyDHub.Template.Button.Button.UIListLayout
+SunnyDale["6b"] = Instance.new("UIListLayout", SunnyDale["63"]);
+SunnyDale["6b"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+SunnyDale["6b"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
+SunnyDale["6b"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- SunnyDHub.Template.Button.Button.UIPadding
+SunnyDale["6c"] = Instance.new("UIPadding", SunnyDale["63"]);
+SunnyDale["6c"]["PaddingTop"] = UDim.new(0, 6);
+SunnyDale["6c"]["PaddingBottom"] = UDim.new(0, 6);
+
+
+-- SunnyDHub.Template.Button.UIListLayout
+SunnyDale["6d"] = Instance.new("UIListLayout", SunnyDale["62"]);
+SunnyDale["6d"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+SunnyDale["6d"]["Padding"] = UDim.new(0, 10);
+SunnyDale["6d"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
+SunnyDale["6d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+SunnyDale["6d"]["FillDirection"] = Enum.FillDirection.Horizontal;
+
+
+-- SunnyDHub.Template.Button.UIPadding
+SunnyDale["6e"] = Instance.new("UIPadding", SunnyDale["62"]);
+SunnyDale["6e"]["PaddingRight"] = UDim.new(0, 6);
+SunnyDale["6e"]["PaddingLeft"] = UDim.new(0, 6);
+
+
+-- SunnyDHub.Template.Dropdown
+SunnyDale["6f"] = Instance.new("Frame", SunnyDale["29"]);
+SunnyDale["6f"]["Visible"] = false;
+SunnyDale["6f"]["BorderSizePixel"] = 0;
+SunnyDale["6f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["6f"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["6f"]["Size"] = UDim2.new(0, 145, 0, 54);
+SunnyDale["6f"]["Position"] = UDim2.new(0, 0, 0.78629, 0);
+SunnyDale["6f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["6f"]["Name"] = [[Dropdown]];
+SunnyDale["6f"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.Template.Dropdown.UIListLayout
+SunnyDale["70"] = Instance.new("UIListLayout", SunnyDale["6f"]);
+SunnyDale["70"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+SunnyDale["70"]["Padding"] = UDim.new(0, 5);
+SunnyDale["70"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
+SunnyDale["70"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- SunnyDHub.Template.Dropdown.UIPadding
+SunnyDale["71"] = Instance.new("UIPadding", SunnyDale["6f"]);
+SunnyDale["71"]["PaddingRight"] = UDim.new(0, 6);
+SunnyDale["71"]["PaddingLeft"] = UDim.new(0, 8);
+
+
+-- SunnyDHub.Template.Dropdown.UIGradient
+SunnyDale["72"] = Instance.new("UIGradient", SunnyDale["6f"]);
+SunnyDale["72"]["Rotation"] = -90;
+SunnyDale["72"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
+
+
+-- SunnyDHub.Template.Dropdown.OnChanged
+SunnyDale["73"] = Instance.new("BindableEvent", SunnyDale["6f"]);
+SunnyDale["73"]["Name"] = [[OnChanged]];
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton
+SunnyDale["74"] = Instance.new("Frame", SunnyDale["6f"]);
+SunnyDale["74"]["BorderSizePixel"] = 0;
+SunnyDale["74"]["BackgroundColor3"] = Color3.fromRGB(41, 41, 41);
+SunnyDale["74"]["Selectable"] = true;
+SunnyDale["74"]["ClipsDescendants"] = true;
+SunnyDale["74"]["Size"] = UDim2.new(0, 130, 0, 18);
+SunnyDale["74"]["Position"] = UDim2.new(-0.00763, 0, 0.14595, 0);
+SunnyDale["74"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["74"]["Name"] = [[DropdownButton]];
+SunnyDale["74"]["SelectionGroup"] = true;
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.Button
+SunnyDale["75"] = Instance.new("TextButton", SunnyDale["74"]);
+SunnyDale["75"]["BorderSizePixel"] = 0;
+SunnyDale["75"]["AutoButtonColor"] = false;
+SunnyDale["75"]["TextSize"] = 14;
+SunnyDale["75"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["75"]["BackgroundColor3"] = Color3.fromRGB(41, 41, 41);
+SunnyDale["75"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+SunnyDale["75"]["Size"] = UDim2.new(0, 130, 0, 18);
+SunnyDale["75"]["Name"] = [[Button]];
+SunnyDale["75"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["75"]["Text"] = [[]];
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.Button.UICorner
+SunnyDale["76"] = Instance.new("UICorner", SunnyDale["75"]);
+SunnyDale["76"]["CornerRadius"] = UDim.new(0, 4);
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.Button.UIStroke
+SunnyDale["77"] = Instance.new("UIStroke", SunnyDale["75"]);
+SunnyDale["77"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+SunnyDale["77"]["Thickness"] = 1.5;
+SunnyDale["77"]["Color"] = Color3.fromRGB(56, 56, 56);
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.Button.UIStroke.UIGradient
+SunnyDale["78"] = Instance.new("UIGradient", SunnyDale["77"]);
+SunnyDale["78"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.Button.TextLabel
+SunnyDale["79"] = Instance.new("TextLabel", SunnyDale["75"]);
+SunnyDale["79"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
+SunnyDale["79"]["BorderSizePixel"] = 0;
+SunnyDale["79"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["79"]["TextSize"] = 14;
+SunnyDale["79"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+SunnyDale["79"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
+SunnyDale["79"]["BackgroundTransparency"] = 1;
+SunnyDale["79"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+SunnyDale["79"]["Size"] = UDim2.new(1, 0, 0.7, 0);
+SunnyDale["79"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["79"]["Text"] = [[Test]];
+SunnyDale["79"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.Button.TextLabel.UIGradient
+SunnyDale["7a"] = Instance.new("UIGradient", SunnyDale["79"]);
+SunnyDale["7a"]["Rotation"] = -90;
+SunnyDale["7a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.Button.UIGradientOff
+SunnyDale["7b"] = Instance.new("UIGradient", SunnyDale["75"]);
+SunnyDale["7b"]["Rotation"] = -90;
+SunnyDale["7b"]["Name"] = [[UIGradientOff]];
+SunnyDale["7b"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.Button.UIGradientOn
+SunnyDale["7c"] = Instance.new("UIGradient", SunnyDale["75"]);
+SunnyDale["7c"]["Enabled"] = false;
+SunnyDale["7c"]["Name"] = [[UIGradientOn]];
+SunnyDale["7c"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.UICorner
+SunnyDale["7d"] = Instance.new("UICorner", SunnyDale["74"]);
+SunnyDale["7d"]["CornerRadius"] = UDim.new(0, 4);
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.UIStroke
+SunnyDale["7e"] = Instance.new("UIStroke", SunnyDale["74"]);
+SunnyDale["7e"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+SunnyDale["7e"]["Color"] = Color3.fromRGB(45, 45, 45);
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.UIStroke.UIGradient
+SunnyDale["7f"] = Instance.new("UIGradient", SunnyDale["7e"]);
+SunnyDale["7f"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.ScrollingFrame
+SunnyDale["80"] = Instance.new("ScrollingFrame", SunnyDale["74"]);
+SunnyDale["80"]["Active"] = true;
+SunnyDale["80"]["BorderSizePixel"] = 0;
+SunnyDale["80"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
+SunnyDale["80"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
+SunnyDale["80"]["TopImage"] = [[rbxasset://textures/ui/Scroll/scroll-middle.png]];
+SunnyDale["80"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["80"]["BottomImage"] = [[rbxasset://textures/ui/Scroll/scroll-middle.png]];
+SunnyDale["80"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
+SunnyDale["80"]["Size"] = UDim2.new(1, 0, 0.11377, 100);
+SunnyDale["80"]["Position"] = UDim2.new(0, 0, 0, 48);
+SunnyDale["80"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["80"]["ScrollBarThickness"] = 2;
+SunnyDale["80"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.ScrollingFrame.UIListLayout
+SunnyDale["81"] = Instance.new("UIListLayout", SunnyDale["80"]);
+SunnyDale["81"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+SunnyDale["81"]["Padding"] = UDim.new(0, 5);
+SunnyDale["81"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.SeacrhBox
+SunnyDale["82"] = Instance.new("Frame", SunnyDale["74"]);
+SunnyDale["82"]["Active"] = true;
+SunnyDale["82"]["BorderSizePixel"] = 0;
+SunnyDale["82"]["BackgroundColor3"] = Color3.fromRGB(41, 41, 41);
+SunnyDale["82"]["Selectable"] = true;
+SunnyDale["82"]["AnchorPoint"] = Vector2.new(0.5, 0);
+SunnyDale["82"]["Size"] = UDim2.new(0, 117, 0, 17);
+SunnyDale["82"]["Position"] = UDim2.new(0.5, 0, 0, 25);
+SunnyDale["82"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["82"]["Name"] = [[SeacrhBox]];
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.SeacrhBox.UIStroke
+SunnyDale["83"] = Instance.new("UIStroke", SunnyDale["82"]);
+SunnyDale["83"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+SunnyDale["83"]["Thickness"] = 1.5;
+SunnyDale["83"]["Color"] = Color3.fromRGB(56, 56, 56);
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.SeacrhBox.UIStroke.UIGradient
+SunnyDale["84"] = Instance.new("UIGradient", SunnyDale["83"]);
+SunnyDale["84"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.SeacrhBox.UIGradient
+SunnyDale["85"] = Instance.new("UIGradient", SunnyDale["82"]);
+SunnyDale["85"]["Rotation"] = -90;
+SunnyDale["85"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.SeacrhBox.TextBox
+SunnyDale["86"] = Instance.new("TextBox", SunnyDale["82"]);
+SunnyDale["86"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["86"]["PlaceholderColor3"] = Color3.fromRGB(179, 179, 179);
+SunnyDale["86"]["BorderSizePixel"] = 0;
+SunnyDale["86"]["TextWrapped"] = true;
+SunnyDale["86"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
+SunnyDale["86"]["TextSize"] = 11;
+SunnyDale["86"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["86"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+SunnyDale["86"]["PlaceholderText"] = [[Search Here]];
+SunnyDale["86"]["Size"] = UDim2.new(1, 0, 1, 0);
+SunnyDale["86"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["86"]["Text"] = [[]];
+SunnyDale["86"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.SeacrhBox.UICorner
+SunnyDale["87"] = Instance.new("UICorner", SunnyDale["82"]);
+SunnyDale["87"]["CornerRadius"] = UDim.new(0, 4);
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.ScrollingFrameSearch
+SunnyDale["88"] = Instance.new("ScrollingFrame", SunnyDale["74"]);
+SunnyDale["88"]["Visible"] = false;
+SunnyDale["88"]["Active"] = true;
+SunnyDale["88"]["BorderSizePixel"] = 0;
+SunnyDale["88"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
+SunnyDale["88"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
+SunnyDale["88"]["TopImage"] = [[rbxasset://textures/ui/Scroll/scroll-middle.png]];
+SunnyDale["88"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["88"]["Name"] = [[ScrollingFrameSearch]];
+SunnyDale["88"]["BottomImage"] = [[rbxasset://textures/ui/Scroll/scroll-middle.png]];
+SunnyDale["88"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
+SunnyDale["88"]["Size"] = UDim2.new(1, 0, 0.11377, 100);
+SunnyDale["88"]["Position"] = UDim2.new(0, 0, 0, 48);
+SunnyDale["88"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["88"]["ScrollBarThickness"] = 2;
+SunnyDale["88"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.ScrollingFrameSearch.UIListLayout
+SunnyDale["89"] = Instance.new("UIListLayout", SunnyDale["88"]);
+SunnyDale["89"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+SunnyDale["89"]["Padding"] = UDim.new(0, 5);
+SunnyDale["89"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- SunnyDHub.Template.Dropdown.DropdownButton.UIGradient
+SunnyDale["8a"] = Instance.new("UIGradient", SunnyDale["74"]);
+SunnyDale["8a"]["Rotation"] = -90;
+SunnyDale["8a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
+
+
+-- SunnyDHub.Template.Dropdown.Title
+SunnyDale["8b"] = Instance.new("TextLabel", SunnyDale["6f"]);
+SunnyDale["8b"]["TextWrapped"] = true;
+SunnyDale["8b"]["LineHeight"] = 1.1;
+SunnyDale["8b"]["BorderSizePixel"] = 0;
+SunnyDale["8b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+SunnyDale["8b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["8b"]["TextSize"] = 14;
+SunnyDale["8b"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+SunnyDale["8b"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
+SunnyDale["8b"]["BackgroundTransparency"] = 1;
+SunnyDale["8b"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+SunnyDale["8b"]["Size"] = UDim2.new(0, 131, 0, 13);
+SunnyDale["8b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["8b"]["Text"] = [[Dropdown]];
+SunnyDale["8b"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["8b"]["Name"] = [[Title]];
+SunnyDale["8b"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- SunnyDHub.Template.Paragraph
+SunnyDale["8c"] = Instance.new("Frame", SunnyDale["29"]);
+SunnyDale["8c"]["Visible"] = false;
+SunnyDale["8c"]["BorderSizePixel"] = 0;
+SunnyDale["8c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["8c"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["8c"]["Size"] = UDim2.new(0, 145, 0, 42);
+SunnyDale["8c"]["Position"] = UDim2.new(0, 0, 0.91602, 0);
+SunnyDale["8c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["8c"]["Name"] = [[Paragraph]];
+SunnyDale["8c"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.Template.Paragraph.UIListLayout
+SunnyDale["8d"] = Instance.new("UIListLayout", SunnyDale["8c"]);
+SunnyDale["8d"]["Padding"] = UDim.new(0, 5);
+SunnyDale["8d"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
+SunnyDale["8d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+SunnyDale["8d"]["FillDirection"] = Enum.FillDirection.Horizontal;
+
+
+-- SunnyDHub.Template.Paragraph.Paragraph
+SunnyDale["8e"] = Instance.new("Frame", SunnyDale["8c"]);
+SunnyDale["8e"]["BorderSizePixel"] = 0;
+SunnyDale["8e"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["8e"]["Selectable"] = true;
+SunnyDale["8e"]["ClipsDescendants"] = true;
+SunnyDale["8e"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["8e"]["Size"] = UDim2.new(0, 130, 0, 28);
+SunnyDale["8e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["8e"]["Name"] = [[Paragraph]];
+SunnyDale["8e"]["BackgroundTransparency"] = 0.8;
+
+
+-- SunnyDHub.Template.Paragraph.Paragraph.UICorner
+SunnyDale["8f"] = Instance.new("UICorner", SunnyDale["8e"]);
+SunnyDale["8f"]["CornerRadius"] = UDim.new(0, 4);
+
+
+-- SunnyDHub.Template.Paragraph.Paragraph.UIStroke
+SunnyDale["90"] = Instance.new("UIStroke", SunnyDale["8e"]);
+SunnyDale["90"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+SunnyDale["90"]["Thickness"] = 1.5;
+SunnyDale["90"]["Color"] = Color3.fromRGB(56, 56, 56);
+
+
+-- SunnyDHub.Template.Paragraph.Paragraph.UIStroke.UIGradient
+SunnyDale["91"] = Instance.new("UIGradient", SunnyDale["90"]);
+SunnyDale["91"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
+
+
+-- SunnyDHub.Template.Paragraph.Paragraph.Title
+SunnyDale["92"] = Instance.new("TextLabel", SunnyDale["8e"]);
+SunnyDale["92"]["TextWrapped"] = true;
+SunnyDale["92"]["BorderSizePixel"] = 0;
+SunnyDale["92"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+SunnyDale["92"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+SunnyDale["92"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["92"]["TextSize"] = 17;
+SunnyDale["92"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+SunnyDale["92"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
+SunnyDale["92"]["BackgroundTransparency"] = 1;
+SunnyDale["92"]["RichText"] = true;
+SunnyDale["92"]["Size"] = UDim2.new(0, 130, 0, 15);
+SunnyDale["92"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["92"]["Text"] = [[Paragraph]];
+SunnyDale["92"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["92"]["Name"] = [[Title]];
+SunnyDale["92"]["Position"] = UDim2.new(0, 0, 0, 27);
+
+
+-- SunnyDHub.Template.Paragraph.Paragraph.Title.UIPadding
+SunnyDale["93"] = Instance.new("UIPadding", SunnyDale["92"]);
+SunnyDale["93"]["PaddingRight"] = UDim.new(0, 6);
+SunnyDale["93"]["PaddingLeft"] = UDim.new(0, 6);
+
+
+-- SunnyDHub.Template.Paragraph.Paragraph.UIPadding
+SunnyDale["94"] = Instance.new("UIPadding", SunnyDale["8e"]);
+SunnyDale["94"]["PaddingTop"] = UDim.new(0, 8);
+SunnyDale["94"]["PaddingRight"] = UDim.new(0, 5);
+SunnyDale["94"]["PaddingLeft"] = UDim.new(0, 5);
+SunnyDale["94"]["PaddingBottom"] = UDim.new(0, 8);
+
+
+-- SunnyDHub.Template.Paragraph.Paragraph.UIListLayout
+SunnyDale["95"] = Instance.new("UIListLayout", SunnyDale["8e"]);
+SunnyDale["95"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+SunnyDale["95"]["Padding"] = UDim.new(0, 5);
+SunnyDale["95"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- SunnyDHub.Template.Paragraph.Paragraph.Content
+SunnyDale["96"] = Instance.new("TextLabel", SunnyDale["8e"]);
+SunnyDale["96"]["TextWrapped"] = true;
+SunnyDale["96"]["BorderSizePixel"] = 0;
+SunnyDale["96"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+SunnyDale["96"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+SunnyDale["96"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["96"]["TextSize"] = 13;
+SunnyDale["96"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+SunnyDale["96"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
+SunnyDale["96"]["BackgroundTransparency"] = 1;
+SunnyDale["96"]["RichText"] = true;
+SunnyDale["96"]["Size"] = UDim2.new(0, 130, 0, 15);
+SunnyDale["96"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["96"]["Text"] = [[Content]];
+SunnyDale["96"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["96"]["Name"] = [[Content]];
+SunnyDale["96"]["Position"] = UDim2.new(0, 0, 0, 27);
+
+
+-- SunnyDHub.Template.Paragraph.Paragraph.Content.UIPadding
+SunnyDale["97"] = Instance.new("UIPadding", SunnyDale["96"]);
+SunnyDale["97"]["PaddingRight"] = UDim.new(0, 6);
+SunnyDale["97"]["PaddingLeft"] = UDim.new(0, 6);
+
+
+-- SunnyDHub.Template.Paragraph.UIPadding
+SunnyDale["98"] = Instance.new("UIPadding", SunnyDale["8c"]);
+SunnyDale["98"]["PaddingRight"] = UDim.new(0, 8);
+SunnyDale["98"]["PaddingLeft"] = UDim.new(0, 8);
+
+
+-- SunnyDHub.Template.Slider
+SunnyDale["99"] = Instance.new("Frame", SunnyDale["29"]);
+SunnyDale["99"]["Visible"] = false;
+SunnyDale["99"]["BorderSizePixel"] = 0;
+SunnyDale["99"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["99"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["99"]["Size"] = UDim2.new(0, 145, 0, 47);
+SunnyDale["99"]["Position"] = UDim2.new(0, 0, 0.63063, 0);
+SunnyDale["99"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["99"]["Name"] = [[Slider]];
+SunnyDale["99"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.Template.Slider.UIListLayout
+SunnyDale["9a"] = Instance.new("UIListLayout", SunnyDale["99"]);
+SunnyDale["9a"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+SunnyDale["9a"]["Padding"] = UDim.new(0, 6);
+SunnyDale["9a"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
+SunnyDale["9a"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- SunnyDHub.Template.Slider.UIPadding
+SunnyDale["9b"] = Instance.new("UIPadding", SunnyDale["99"]);
+SunnyDale["9b"]["PaddingTop"] = UDim.new(0, 10);
+SunnyDale["9b"]["PaddingRight"] = UDim.new(0, 6);
+SunnyDale["9b"]["PaddingLeft"] = UDim.new(0, 8);
+SunnyDale["9b"]["PaddingBottom"] = UDim.new(0, 10);
+
+
+-- SunnyDHub.Template.Slider.Frame
+SunnyDale["9c"] = Instance.new("Frame", SunnyDale["99"]);
+SunnyDale["9c"]["BorderSizePixel"] = 0;
+SunnyDale["9c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["9c"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["9c"]["Size"] = UDim2.new(0, 125, 0, 13);
+SunnyDale["9c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["9c"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.Template.Slider.Frame.UIListLayout
+SunnyDale["9d"] = Instance.new("UIListLayout", SunnyDale["9c"]);
+SunnyDale["9d"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+SunnyDale["9d"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
+SunnyDale["9d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+SunnyDale["9d"]["FillDirection"] = Enum.FillDirection.Horizontal;
+
+
+-- SunnyDHub.Template.Slider.Frame.Title
+SunnyDale["9e"] = Instance.new("TextLabel", SunnyDale["9c"]);
+SunnyDale["9e"]["TextWrapped"] = true;
+SunnyDale["9e"]["BorderSizePixel"] = 0;
+SunnyDale["9e"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+SunnyDale["9e"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+SunnyDale["9e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["9e"]["TextSize"] = 13;
+SunnyDale["9e"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+SunnyDale["9e"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
+SunnyDale["9e"]["BackgroundTransparency"] = 1;
+SunnyDale["9e"]["RichText"] = true;
+SunnyDale["9e"]["Size"] = UDim2.new(0.75, 0, 0, 13);
+SunnyDale["9e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["9e"]["Text"] = [[Slider]];
+SunnyDale["9e"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["9e"]["Name"] = [[Title]];
+SunnyDale["9e"]["Position"] = UDim2.new(0, 0, 0, 27);
+
+
+-- SunnyDHub.Template.Slider.Frame.ValueText
+SunnyDale["9f"] = Instance.new("TextBox", SunnyDale["9c"]);
+SunnyDale["9f"]["Active"] = false;
+SunnyDale["9f"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
+SunnyDale["9f"]["BorderSizePixel"] = 0;
+SunnyDale["9f"]["TextXAlignment"] = Enum.TextXAlignment.Right;
+SunnyDale["9f"]["TextWrapped"] = true;
+SunnyDale["9f"]["TextSize"] = 14;
+SunnyDale["9f"]["Name"] = [[ValueText]];
+SunnyDale["9f"]["TextScaled"] = true;
+SunnyDale["9f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["9f"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+SunnyDale["9f"]["Selectable"] = false;
+SunnyDale["9f"]["AnchorPoint"] = Vector2.new(0, 0.5);
+SunnyDale["9f"]["Size"] = UDim2.new(0.25, -1, 0, 13);
+SunnyDale["9f"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+SunnyDale["9f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["9f"]["Text"] = [[0]];
+SunnyDale["9f"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.Template.Slider.Frame.ValueText.UIGradient
+SunnyDale["a0"] = Instance.new("UIGradient", SunnyDale["9f"]);
+SunnyDale["a0"]["Enabled"] = false;
+SunnyDale["a0"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 90, 255)),ColorSequenceKeypoint.new(0.247, Color3.fromRGB(63, 156, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 248))};
+
+
+-- SunnyDHub.Template.Slider.Trigger
+SunnyDale["a1"] = Instance.new("TextButton", SunnyDale["99"]);
+SunnyDale["a1"]["BorderSizePixel"] = 0;
+SunnyDale["a1"]["AutoButtonColor"] = false;
+SunnyDale["a1"]["TextSize"] = 14;
+SunnyDale["a1"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["a1"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["a1"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+SunnyDale["a1"]["Size"] = UDim2.new(0, 120, 0, 10);
+SunnyDale["a1"]["BackgroundTransparency"] = 1;
+SunnyDale["a1"]["Name"] = [[Trigger]];
+SunnyDale["a1"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["a1"]["Text"] = [[]];
+SunnyDale["a1"]["Position"] = UDim2.new(0.00763, 0, 0.59239, 0);
+
+
+-- SunnyDHub.Template.Slider.Trigger.Fill
+SunnyDale["a2"] = Instance.new("TextButton", SunnyDale["a1"]);
+SunnyDale["a2"]["Active"] = false;
+SunnyDale["a2"]["Interactable"] = false;
+SunnyDale["a2"]["BorderSizePixel"] = 0;
+SunnyDale["a2"]["AutoButtonColor"] = false;
+SunnyDale["a2"]["TextSize"] = 14;
+SunnyDale["a2"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["a2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["a2"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+SunnyDale["a2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+SunnyDale["a2"]["Size"] = UDim2.new(0, 120, 0, 4);
+SunnyDale["a2"]["Name"] = [[Fill]];
+SunnyDale["a2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["a2"]["Text"] = [[]];
+SunnyDale["a2"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- SunnyDHub.Template.Slider.Trigger.Fill.UIGradient
+SunnyDale["a3"] = Instance.new("UIGradient", SunnyDale["a2"]);
+SunnyDale["a3"]["Rotation"] = 180;
+SunnyDale["a3"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
+
+
+-- SunnyDHub.Template.Slider.Trigger.Fill.UICorner
+SunnyDale["a4"] = Instance.new("UICorner", SunnyDale["a2"]);
+SunnyDale["a4"]["CornerRadius"] = UDim.new(10, 10);
+
+
+-- SunnyDHub.Template.Slider.Trigger.Fill.Circle
+SunnyDale["a5"] = Instance.new("Frame", SunnyDale["a2"]);
+SunnyDale["a5"]["BorderSizePixel"] = 0;
+SunnyDale["a5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["a5"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+SunnyDale["a5"]["Size"] = UDim2.new(0, 10, 0, 10);
+SunnyDale["a5"]["Position"] = UDim2.new(0, 0, 0.5, 0);
+SunnyDale["a5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["a5"]["Name"] = [[Circle]];
+
+
+-- SunnyDHub.Template.Slider.Trigger.Fill.Circle.UICorner
+SunnyDale["a6"] = Instance.new("UICorner", SunnyDale["a5"]);
+SunnyDale["a6"]["CornerRadius"] = UDim.new(10, 10);
+
+
+-- SunnyDHub.Template.Slider.OnChanged
+SunnyDale["a7"] = Instance.new("BindableEvent", SunnyDale["99"]);
+SunnyDale["a7"]["Name"] = [[OnChanged]];
+
+
+-- SunnyDHub.Template.Textbox
+SunnyDale["a8"] = Instance.new("Frame", SunnyDale["29"]);
+SunnyDale["a8"]["Visible"] = false;
+SunnyDale["a8"]["BorderSizePixel"] = 0;
+SunnyDale["a8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["a8"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["a8"]["Size"] = UDim2.new(0, 145, 0, 35);
+SunnyDale["a8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["a8"]["Name"] = [[Textbox]];
+SunnyDale["a8"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.Template.Textbox.UIListLayout
+SunnyDale["a9"] = Instance.new("UIListLayout", SunnyDale["a8"]);
+SunnyDale["a9"]["Padding"] = UDim.new(0, 5);
+SunnyDale["a9"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
+SunnyDale["a9"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+SunnyDale["a9"]["FillDirection"] = Enum.FillDirection.Horizontal;
+
+
+-- SunnyDHub.Template.Textbox.UIPadding
+SunnyDale["aa"] = Instance.new("UIPadding", SunnyDale["a8"]);
+SunnyDale["aa"]["PaddingTop"] = UDim.new(0, 8);
+SunnyDale["aa"]["PaddingRight"] = UDim.new(0, 8);
+SunnyDale["aa"]["PaddingLeft"] = UDim.new(0, 8);
+SunnyDale["aa"]["PaddingBottom"] = UDim.new(0, 8);
+
+
+-- SunnyDHub.Template.Textbox.OnChanged
+SunnyDale["ab"] = Instance.new("BindableEvent", SunnyDale["a8"]);
+SunnyDale["ab"]["Name"] = [[OnChanged]];
+
+
+-- SunnyDHub.Template.Textbox.Title
+SunnyDale["ac"] = Instance.new("TextLabel", SunnyDale["a8"]);
+SunnyDale["ac"]["TextWrapped"] = true;
+SunnyDale["ac"]["BorderSizePixel"] = 0;
+SunnyDale["ac"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+SunnyDale["ac"]["TextTransparency"] = 0.7;
+SunnyDale["ac"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["ac"]["TextSize"] = 13;
+SunnyDale["ac"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+SunnyDale["ac"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
+SunnyDale["ac"]["BackgroundTransparency"] = 1;
+SunnyDale["ac"]["Size"] = UDim2.new(0, 72, 0, 23);
+SunnyDale["ac"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["ac"]["Text"] = [[Textbox]];
+SunnyDale["ac"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["ac"]["Name"] = [[Title]];
+
+
+-- SunnyDHub.Template.Textbox.Box
+SunnyDale["ad"] = Instance.new("TextButton", SunnyDale["a8"]);
+SunnyDale["ad"]["TextWrapped"] = true;
+SunnyDale["ad"]["BorderSizePixel"] = 0;
+SunnyDale["ad"]["AutoButtonColor"] = false;
+SunnyDale["ad"]["TextSize"] = 14;
+SunnyDale["ad"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["ad"]["BackgroundColor3"] = Color3.fromRGB(41, 41, 41);
+SunnyDale["ad"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+SunnyDale["ad"]["Size"] = UDim2.new(0, 49, 0, 22);
+SunnyDale["ad"]["Name"] = [[Box]];
+SunnyDale["ad"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["ad"]["Text"] = [[]];
+SunnyDale["ad"]["Position"] = UDim2.new(0.5969, 0, 0.02174, 0);
+
+
+-- SunnyDHub.Template.Textbox.Box.UICorner
+SunnyDale["ae"] = Instance.new("UICorner", SunnyDale["ad"]);
+SunnyDale["ae"]["CornerRadius"] = UDim.new(0, 4);
+
+
+-- SunnyDHub.Template.Textbox.Box.UIStroke
+SunnyDale["af"] = Instance.new("UIStroke", SunnyDale["ad"]);
+SunnyDale["af"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+SunnyDale["af"]["Thickness"] = 1.5;
+SunnyDale["af"]["Color"] = Color3.fromRGB(56, 56, 56);
+
+
+-- SunnyDHub.Template.Textbox.Box.UIStroke.UIGradient
+SunnyDale["b0"] = Instance.new("UIGradient", SunnyDale["af"]);
+SunnyDale["b0"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
+
+
+-- SunnyDHub.Template.Textbox.Box.UIGradient
+SunnyDale["b1"] = Instance.new("UIGradient", SunnyDale["ad"]);
+SunnyDale["b1"]["Rotation"] = -90;
+SunnyDale["b1"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
+
+
+-- SunnyDHub.Template.Textbox.Box.Textbox
+SunnyDale["b2"] = Instance.new("TextBox", SunnyDale["ad"]);
+SunnyDale["b2"]["TextColor3"] = Color3.fromRGB(151, 151, 151);
+SunnyDale["b2"]["PlaceholderColor3"] = Color3.fromRGB(96, 96, 96);
+SunnyDale["b2"]["BorderSizePixel"] = 0;
+SunnyDale["b2"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+SunnyDale["b2"]["TextWrapped"] = true;
+SunnyDale["b2"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
+SunnyDale["b2"]["TextSize"] = 12;
+SunnyDale["b2"]["Name"] = [[Textbox]];
+SunnyDale["b2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["b2"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+SunnyDale["b2"]["Selectable"] = false;
+SunnyDale["b2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+SunnyDale["b2"]["ClearTextOnFocus"] = false;
+SunnyDale["b2"]["Size"] = UDim2.new(1, 0, 1, 0);
+SunnyDale["b2"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+SunnyDale["b2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["b2"]["Text"] = [[]];
+SunnyDale["b2"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.Template.Textbox.Box.Textbox.UIGradient
+SunnyDale["b3"] = Instance.new("UIGradient", SunnyDale["b2"]);
+SunnyDale["b3"]["Enabled"] = false;
+SunnyDale["b3"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 90, 255)),ColorSequenceKeypoint.new(0.247, Color3.fromRGB(63, 156, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 248))};
+
+
+-- SunnyDHub.Template.Textbox.Box.Textbox.UIPadding
+SunnyDale["b4"] = Instance.new("UIPadding", SunnyDale["b2"]);
+SunnyDale["b4"]["PaddingTop"] = UDim.new(0, 5);
+SunnyDale["b4"]["PaddingLeft"] = UDim.new(0, 5);
+SunnyDale["b4"]["PaddingBottom"] = UDim.new(0, 5);
+
+
+-- SunnyDHub.Template.Toggle
+SunnyDale["b5"] = Instance.new("Frame", SunnyDale["29"]);
+SunnyDale["b5"]["Visible"] = false;
+SunnyDale["b5"]["BorderSizePixel"] = 0;
+SunnyDale["b5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["b5"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["b5"]["Size"] = UDim2.new(0, 145, 0, 35);
+SunnyDale["b5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["b5"]["Name"] = [[Toggle]];
+SunnyDale["b5"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.Template.Toggle.UIListLayout
+SunnyDale["b6"] = Instance.new("UIListLayout", SunnyDale["b5"]);
+SunnyDale["b6"]["Padding"] = UDim.new(0, 5);
+SunnyDale["b6"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
+SunnyDale["b6"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+SunnyDale["b6"]["FillDirection"] = Enum.FillDirection.Horizontal;
+
+
+-- SunnyDHub.Template.Toggle.UIPadding
+SunnyDale["b7"] = Instance.new("UIPadding", SunnyDale["b5"]);
+SunnyDale["b7"]["PaddingTop"] = UDim.new(0, 5);
+SunnyDale["b7"]["PaddingRight"] = UDim.new(0, 9);
+SunnyDale["b7"]["PaddingLeft"] = UDim.new(0, 9);
+SunnyDale["b7"]["PaddingBottom"] = UDim.new(0, 5);
+
+
+-- SunnyDHub.Template.Toggle.State
+SunnyDale["b8"] = Instance.new("BoolValue", SunnyDale["b5"]);
+SunnyDale["b8"]["Name"] = [[State]];
+SunnyDale["b8"]["Value"] = true;
+
+
+-- SunnyDHub.Template.Toggle.OnChanged
+SunnyDale["b9"] = Instance.new("BindableEvent", SunnyDale["b5"]);
+SunnyDale["b9"]["Name"] = [[OnChanged]];
+
+
+-- SunnyDHub.Template.Toggle.Title
+SunnyDale["ba"] = Instance.new("TextLabel", SunnyDale["b5"]);
+SunnyDale["ba"]["TextWrapped"] = true;
+SunnyDale["ba"]["BorderSizePixel"] = 0;
+SunnyDale["ba"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+SunnyDale["ba"]["TextTransparency"] = 0.7;
+SunnyDale["ba"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+SunnyDale["ba"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["ba"]["TextSize"] = 13;
+SunnyDale["ba"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+SunnyDale["ba"]["TextColor3"] = Color3.fromRGB(246, 246, 246);
+SunnyDale["ba"]["BackgroundTransparency"] = 1;
+SunnyDale["ba"]["Size"] = UDim2.new(0, 98, 0, 13);
+SunnyDale["ba"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["ba"]["Text"] = [[Toggle]];
+SunnyDale["ba"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+SunnyDale["ba"]["Name"] = [[Title]];
+SunnyDale["ba"]["Position"] = UDim2.new(0, 0, 0, 27);
+
+
+-- SunnyDHub.Template.Toggle.Toggle
+SunnyDale["bb"] = Instance.new("TextButton", SunnyDale["b5"]);
+SunnyDale["bb"]["BorderSizePixel"] = 0;
+SunnyDale["bb"]["AutoButtonColor"] = false;
+SunnyDale["bb"]["TextSize"] = 14;
+SunnyDale["bb"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["bb"]["BackgroundColor3"] = Color3.fromRGB(41, 41, 41);
+SunnyDale["bb"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+SunnyDale["bb"]["Size"] = UDim2.new(0, 22, 0, 22);
+SunnyDale["bb"]["Name"] = [[Toggle]];
+SunnyDale["bb"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["bb"]["Text"] = [[]];
+SunnyDale["bb"]["Position"] = UDim2.new(0.05517, 0, 0.13333, 0);
+
+
+-- SunnyDHub.Template.Toggle.Toggle.UICorner
+SunnyDale["bc"] = Instance.new("UICorner", SunnyDale["bb"]);
+SunnyDale["bc"]["CornerRadius"] = UDim.new(0, 4);
+
+
+-- SunnyDHub.Template.Toggle.Toggle.UIStroke
+SunnyDale["bd"] = Instance.new("UIStroke", SunnyDale["bb"]);
+SunnyDale["bd"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+SunnyDale["bd"]["Thickness"] = 1.5;
+SunnyDale["bd"]["Color"] = Color3.fromRGB(56, 56, 56);
+
+
+-- SunnyDHub.Template.Toggle.Toggle.UIStroke.UIGradient
+SunnyDale["be"] = Instance.new("UIGradient", SunnyDale["bd"]);
+SunnyDale["be"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 39, 255))};
+
+
+-- SunnyDHub.Template.Toggle.Toggle.UIGradient
+SunnyDale["bf"] = Instance.new("UIGradient", SunnyDale["bb"]);
+SunnyDale["bf"]["Rotation"] = -90;
+SunnyDale["bf"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 180, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(14, 43, 140))};
+
+
+-- SunnyDHub.Floating
+SunnyDale["c0"] = Instance.new("Frame", SunnyDale["1"]);
+SunnyDale["c0"]["BorderSizePixel"] = 0;
+SunnyDale["c0"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+SunnyDale["c0"]["Size"] = UDim2.new(0, 158, 0, 42);
+SunnyDale["c0"]["Position"] = UDim2.new(0.02, 0, 0.1, 0);
+SunnyDale["c0"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["c0"]["Name"] = [[Floating]];
+
+
+-- SunnyDHub.Floating.UICorner
+SunnyDale["c1"] = Instance.new("UICorner", SunnyDale["c0"]);
+SunnyDale["c1"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- SunnyDHub.Floating.LightBlue
+SunnyDale["c2"] = Instance.new("Frame", SunnyDale["c0"]);
+SunnyDale["c2"]["BorderSizePixel"] = 0;
+SunnyDale["c2"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+SunnyDale["c2"]["Size"] = UDim2.new(1, 0, 1, 0);
+SunnyDale["c2"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
+SunnyDale["c2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["c2"]["Name"] = [[LightBlue]];
+SunnyDale["c2"]["BackgroundTransparency"] = 0.8;
+
+
+-- SunnyDHub.Floating.LightBlue.UIGradient
+SunnyDale["c3"] = Instance.new("UIGradient", SunnyDale["c2"]);
+SunnyDale["c3"]["Rotation"] = 50;
+SunnyDale["c3"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.461, Color3.fromRGB(0, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
+
+
+-- SunnyDHub.Floating.LightBlue.UICorner
+SunnyDale["c4"] = Instance.new("UICorner", SunnyDale["c2"]);
+SunnyDale["c4"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- SunnyDHub.Floating.Blue
+SunnyDale["c5"] = Instance.new("Frame", SunnyDale["c0"]);
+SunnyDale["c5"]["BorderSizePixel"] = 0;
+SunnyDale["c5"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+SunnyDale["c5"]["Size"] = UDim2.new(1, 0, 1, 0);
+SunnyDale["c5"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
+SunnyDale["c5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["c5"]["Name"] = [[Blue]];
+SunnyDale["c5"]["BackgroundTransparency"] = 0.6;
+
+
+-- SunnyDHub.Floating.Blue.UIGradient
+SunnyDale["c6"] = Instance.new("UIGradient", SunnyDale["c5"]);
+SunnyDale["c6"]["Rotation"] = -72;
+SunnyDale["c6"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.491, Color3.fromRGB(0, 50, 123)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
+
+
+-- SunnyDHub.Floating.Blue.UICorner
+SunnyDale["c7"] = Instance.new("UICorner", SunnyDale["c5"]);
+SunnyDale["c7"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- SunnyDHub.Floating.Cyan
+SunnyDale["c8"] = Instance.new("CanvasGroup", SunnyDale["c0"]);
+SunnyDale["c8"]["BorderSizePixel"] = 0;
+SunnyDale["c8"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+SunnyDale["c8"]["Size"] = UDim2.new(1, 0, 1, 0);
+SunnyDale["c8"]["Position"] = UDim2.new(-0.00013, 0, -0.00077, 0);
+SunnyDale["c8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["c8"]["Name"] = [[Cyan]];
+SunnyDale["c8"]["BackgroundTransparency"] = 0.8;
+
+
+-- SunnyDHub.Floating.Cyan.UIGradient
+SunnyDale["c9"] = Instance.new("UIGradient", SunnyDale["c8"]);
+SunnyDale["c9"]["Rotation"] = -26;
+SunnyDale["c9"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(16, 16, 16)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(0, 35, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(16, 16, 16))};
+
+
+-- SunnyDHub.Floating.Cyan.UICorner
+SunnyDale["ca"] = Instance.new("UICorner", SunnyDale["c8"]);
+SunnyDale["ca"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- SunnyDHub.Floating.Cyan.AbstractBg
+SunnyDale["cb"] = Instance.new("ImageLabel", SunnyDale["c8"]);
+SunnyDale["cb"]["BorderSizePixel"] = 0;
+SunnyDale["cb"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["cb"]["ImageColor3"] = Color3.fromRGB(0, 183, 22);
+SunnyDale["cb"]["Image"] = [[rbxassetid://88984077541230]];
+SunnyDale["cb"]["Size"] = UDim2.new(0, 549, 0, 364);
+SunnyDale["cb"]["Visible"] = false;
+SunnyDale["cb"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["cb"]["BackgroundTransparency"] = 1;
+SunnyDale["cb"]["Rotation"] = 40;
+SunnyDale["cb"]["Name"] = [[AbstractBg]];
+SunnyDale["cb"]["Position"] = UDim2.new(0.41197, 0, 0.48528, 0);
+
+
+-- SunnyDHub.Floating.DropShadowHolder
+SunnyDale["cc"] = Instance.new("Frame", SunnyDale["c0"]);
+SunnyDale["cc"]["ZIndex"] = 0;
+SunnyDale["cc"]["BorderSizePixel"] = 0;
+SunnyDale["cc"]["Size"] = UDim2.new(1, 0, 1, 0);
+SunnyDale["cc"]["Name"] = [[DropShadowHolder]];
+SunnyDale["cc"]["BackgroundTransparency"] = 1;
+
+
+-- SunnyDHub.Floating.DropShadowHolder.DropShadow
+SunnyDale["cd"] = Instance.new("ImageLabel", SunnyDale["cc"]);
+SunnyDale["cd"]["ZIndex"] = 0;
+SunnyDale["cd"]["BorderSizePixel"] = 0;
+SunnyDale["cd"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
+SunnyDale["cd"]["ScaleType"] = Enum.ScaleType.Slice;
+SunnyDale["cd"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["cd"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+SunnyDale["cd"]["Image"] = [[rbxassetid://139899200368214]]; -- Lunor Diganti disini
+SunnyDale["cd"]["Size"] = UDim2.new(1, 35, 1, 35);
+SunnyDale["cd"]["BackgroundTransparency"] = 1;
+SunnyDale["cd"]["Name"] = [[DropShadow]];
+SunnyDale["cd"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- SunnyDHub.Floating.Folder
+SunnyDale["ce"] = Instance.new("Folder", SunnyDale["c0"]);
+
+
+
+-- SunnyDHub.Floating.Folder.Logo
+SunnyDale["cf"] = Instance.new("ImageLabel", SunnyDale["C"]);
+SunnyDale["cf"]["BorderSizePixel"] = 0;
+SunnyDale["cf"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["cf"]["Image"] = [[rbxassetid://125372341595169]];
+SunnyDale["cf"]["Size"] = UDim2.new(0, 24, 0, 25);
+SunnyDale["cf"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["cf"]["BackgroundTransparency"] = 1;
+SunnyDale["cf"]["Name"] = [[Logo]];
+SunnyDale["cf"]["Position"] = UDim2.new(0, 8, 0, 8);
+
+
+-- SunnyDHub.Floating.Folder.Logo.UIAspectRatioConstraint
+SunnyDale["d0"] = Instance.new("UIAspectRatioConstraint", SunnyDale["cf"]);
+
+
+
+-- SunnyDHub.Floating.Folder.Logo.UICorner
+SunnyDale["d1"] = Instance.new("UICorner", SunnyDale["cf"]);
+
+
+
+-- SunnyDHub.Floating.Folder.Frame
+SunnyDale["d2"] = Instance.new("Frame", SunnyDale["ce"]);
+SunnyDale["d2"]["BorderSizePixel"] = 0;
+SunnyDale["d2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["d2"]["AnchorPoint"] = Vector2.new(0, 0.5);
+SunnyDale["d2"]["Size"] = UDim2.new(0, 2, 0, 27);
+SunnyDale["d2"]["Position"] = UDim2.new(0, 40, 0.5, 0);
+SunnyDale["d2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+
+-- SunnyDHub.Floating.Folder.Frame.UIGradient
+SunnyDale["d3"] = Instance.new("UIGradient", SunnyDale["d2"]);
+SunnyDale["d3"]["Rotation"] = -90;
+SunnyDale["d3"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
+
+
+-- SunnyDHub.Floating.Folder.Frame.UICorner
+SunnyDale["d4"] = Instance.new("UICorner", SunnyDale["d2"]);
+SunnyDale["d4"]["CornerRadius"] = UDim.new(100, 100);
+
+
+-- SunnyDHub.Floating.Folder.Title
+SunnyDale["d5"] = Instance.new("TextLabel", SunnyDale["ce"]);
+SunnyDale["d5"]["TextWrapped"] = true;
+SunnyDale["d5"]["BorderSizePixel"] = 0;
+SunnyDale["d5"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+SunnyDale["d5"]["TextScaled"] = true;
+SunnyDale["d5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["d5"]["TextSize"] = 14;
+SunnyDale["d5"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+SunnyDale["d5"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["d5"]["BackgroundTransparency"] = 1;
+SunnyDale["d5"]["AnchorPoint"] = Vector2.new(0, 0.5);
+SunnyDale["d5"]["Size"] = UDim2.new(0, 70, 0, 15);
+SunnyDale["d5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["d5"]["Text"] = [[SunnyDale]];
+SunnyDale["d5"]["Name"] = [[Title]];
+SunnyDale["d5"]["Position"] = UDim2.new(0, 53, 0, 21);
+
+
+-- SunnyDHub.Floating.Folder.Title.UIGradient
+SunnyDale["d6"] = Instance.new("UIGradient", SunnyDale["d5"]);
+SunnyDale["d6"]["Rotation"] = -90;
+SunnyDale["d6"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
+
+
+-- SunnyDHub.Floating.Folder.Status
+SunnyDale["d7"] = Instance.new("ImageButton", SunnyDale["ce"]);
+SunnyDale["d7"]["Active"] = false;
+SunnyDale["d7"]["BorderSizePixel"] = 0;
+SunnyDale["d7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["d7"]["Selectable"] = false;
+SunnyDale["d7"]["AnchorPoint"] = Vector2.new(0, 0.5);
+SunnyDale["d7"]["Image"] = [[rbxassetid://10734895698]];
+SunnyDale["d7"]["Size"] = UDim2.new(0, 19, 0, 20);
+SunnyDale["d7"]["BackgroundTransparency"] = 1;
+SunnyDale["d7"]["Name"] = [[Status]];
+SunnyDale["d7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["d7"]["Position"] = UDim2.new(0, 128, 0.5, 0);
+
+
+-- SunnyDHub.Floating.Folder.Status.UIAspectRatioConstraint
+SunnyDale["d8"] = Instance.new("UIAspectRatioConstraint", SunnyDale["d7"]);
+
+
+
+-- SunnyDHub.Floating.Folder.Status.UICorner
+SunnyDale["d9"] = Instance.new("UICorner", SunnyDale["d7"]);
+
+
+
+-- SunnyDHub.Floating.Folder.Status.UIGradient
+SunnyDale["da"] = Instance.new("UIGradient", SunnyDale["d7"]);
+SunnyDale["da"]["Rotation"] = -90;
+SunnyDale["da"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(3, 100, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 226))};
+
+
+-- SunnyDHub.Floating.Folder.DraggablePart
+SunnyDale["db"] = Instance.new("Frame", SunnyDale["ce"]);
+SunnyDale["db"]["BorderSizePixel"] = 0;
+SunnyDale["db"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+SunnyDale["db"]["Size"] = UDim2.new(0, 40, 0, 42);
+SunnyDale["db"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+SunnyDale["db"]["Name"] = [[DraggablePart]];
+SunnyDale["db"]["BackgroundTransparency"] = 1;
+
+
+-- Require SunnyDale wrapper
+local SunnyDale_REQUIRE = require;
+local SunnyDale_MODULES = {};
 local function require(Module:ModuleScript)
-	local ModuleState = Tropicana_MODULES[Module];
+	local ModuleState = SunnyDale_MODULES[Module];
 	if ModuleState then
 		if not ModuleState.Required then
 			ModuleState.Required = true;
@@ -1991,12 +1991,12 @@ local function require(Module:ModuleScript)
 		end
 		return ModuleState.Value;
 	end;
-	return Tropicana_REQUIRE(Module);
+	return SunnyDale_REQUIRE(Module);
 end
 
-Tropicana_MODULES[Tropicana["27"]] = {
+SunnyDale_MODULES[SunnyDale["27"]] = {
 	Closure = function()
-		local script = Tropicana["27"];local LIB = {}
+		local script = SunnyDale["27"];local LIB = {}
 		local TABLIST = {}
 
 		LIB.Options = {}
@@ -3687,9 +3687,9 @@ Tropicana_MODULES[Tropicana["27"]] = {
 		return LIB
 	end;
 };
-Tropicana_MODULES[Tropicana["28"]] = {
+SunnyDale_MODULES[SunnyDale["28"]] = {
 	Closure = function()
-		local script = Tropicana["28"];return {
+		local script = SunnyDale["28"];return {
 			assets = {
 				["accessibility"] = "rbxassetid://10709751939",
 				["activity"] = "rbxassetid://10709752035",
@@ -4514,4 +4514,4 @@ Tropicana_MODULES[Tropicana["28"]] = {
 	end;
 };
 
-return require(Tropicana["27"])
+return require(SunnyDale["27"])
