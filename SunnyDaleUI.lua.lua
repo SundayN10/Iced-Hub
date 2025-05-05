@@ -1871,7 +1871,7 @@ Tropicana["ce"] = Instance.new("Folder", Tropicana["c0"]);
 
 
 -- TropicHub.Floating.Folder.Logo
-Tropicana["cf"] = Instance.new("ImageLabel", SunnyDale["ce"]);
+Tropicana["cf"] = Instance.new("ImageLabel", SunnyDale["1c"]);
 Tropicana["cf"]["BorderSizePixel"] = 0;
 Tropicana["cf"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 Tropicana["cf"]["Image"] = [[rbxassetid://125372341595169]];
